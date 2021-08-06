@@ -1,0 +1,29 @@
+{
+  "gaApp": {
+    "workflowInstance": {
+      "home": {
+        "title": "Workflow Instances",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Workflow Instance",
+        "createOrEditLabel": "创建或编辑 Workflow Instance",
+        "notFound": "No Workflow Instances found"
+      },
+      "created": "Workflow Instance {{ param }} 创建成功",
+      "updated": "Workflow Instance {{ param }} 更新成功",
+      "deleted": "Workflow Instance {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Workflow Instance {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Workflow Instance"
+      },
+      "id": "ID",
+      "form": "Form",
+      "ddCardId": "Dd Card Id",
+      "title": "Title",
+      "ddUser": "Dd User",
+      "workflowTemplate": "Workflow Template",
+      "publicCardData": "Public Card Data"
+    }
+  }
+}

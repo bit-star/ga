@@ -1,0 +1,37 @@
+{
+  "gaApp": {
+    "publicCardData": {
+      "home": {
+        "title": "Public Card Data",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Public Card Data",
+        "createOrEditLabel": "Create or edit a Public Card Data",
+        "notFound": "No Public Card Data found"
+      },
+      "created": "A new Public Card Data is created with identifier {{ param }}",
+      "updated": "A Public Card Data is updated with identifier {{ param }}",
+      "deleted": "A Public Card Data is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Public Card Data {{ id }}?"
+      },
+      "detail": {
+        "title": "Public Card Data"
+      },
+      "id": "ID",
+      "name": "Name",
+      "fee": "Fee",
+      "reason": "Reason",
+      "itemType": "Item Type",
+      "typesOfFee": "Types Of Fee",
+      "agree": "Agree",
+      "requestid": "Requestid",
+      "workflowid": "Workflowid",
+      "valid": "Valid",
+      "privateCardData": "Private Card Data",
+      "operationResults": "Operation Results",
+      "conversation": "Conversation",
+      "workflowTemplate": "Workflow Template",
+      "workflowInstance": "Workflow Instance"
+    }
+  }
+}

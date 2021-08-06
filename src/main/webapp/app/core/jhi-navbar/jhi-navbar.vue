@@ -29,6 +29,46 @@
             <font-awesome-icon icon="th-list" />
             <span class="no-bold" v-text="$t('global.menu.entities.main')">Entities</span>
           </span>
+          <b-dropdown-item to="/link-system">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.linkSystem')">Link System</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/workflow-template">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.workflowTemplate')">Workflow Template</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/form-field">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.formField')">Form Field</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/operation-results">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.operationResults')">Operation Results</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/group-members">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.groupMembers')">Group Members</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/conversation">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.conversation')">Conversation</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/dd-user">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.ddUser')">Dd User</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/workflow-instance">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.workflowInstance')">Workflow Instance</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/public-card-data">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.publicCardData')">Public Card Data</span>
+          </b-dropdown-item>
+          <b-dropdown-item to="/private-card-data">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.privateCardData')">Private Card Data</span>
+          </b-dropdown-item>
           <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
         </b-nav-item-dropdown>
         <b-nav-item-dropdown

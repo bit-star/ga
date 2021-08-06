@@ -1,0 +1,31 @@
+{
+  "gaApp": {
+    "privateCardData": {
+      "home": {
+        "title": "Private Card Data",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Private Card Data",
+        "createOrEditLabel": "Create or edit a Private Card Data",
+        "notFound": "No Private Card Data found"
+      },
+      "created": "A new Private Card Data is created with identifier {{ param }}",
+      "updated": "A Private Card Data is updated with identifier {{ param }}",
+      "deleted": "A Private Card Data is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Private Card Data {{ id }}?"
+      },
+      "detail": {
+        "title": "Private Card Data"
+      },
+      "id": "ID",
+      "name": "Name",
+      "fee": "Fee",
+      "reason": "Reason",
+      "itemType": "Item Type",
+      "typesOfFee": "Types Of Fee",
+      "agree": "Agree",
+      "publicCardData": "Public Card Data",
+      "ddUser": "Dd User"
+    }
+  }
+}

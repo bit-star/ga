@@ -1,0 +1,31 @@
+{
+  "gaApp": {
+    "privateCardData": {
+      "home": {
+        "title": "Private Card Data",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Private Card Data",
+        "createOrEditLabel": "创建或编辑 Private Card Data",
+        "notFound": "No Private Card Data found"
+      },
+      "created": "Private Card Data {{ param }} 创建成功",
+      "updated": "Private Card Data {{ param }} 更新成功",
+      "deleted": "Private Card Data {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Private Card Data {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Private Card Data"
+      },
+      "id": "ID",
+      "name": "Name",
+      "fee": "Fee",
+      "reason": "Reason",
+      "itemType": "Item Type",
+      "typesOfFee": "Types Of Fee",
+      "agree": "Agree",
+      "publicCardData": "Public Card Data",
+      "ddUser": "Dd User"
+    }
+  }
+}

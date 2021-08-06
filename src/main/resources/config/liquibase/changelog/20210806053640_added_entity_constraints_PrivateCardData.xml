@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity PrivateCardData.
+    -->
+    <changeSet id="20210806053640-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="public_card_data_id"
+                                 baseTableName="private_card_data"
+                                 constraintName="fk_private_card_data__public_card_data_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="public_card_data"/>
+
+        <addForeignKeyConstraint baseColumnNames="dd_user_id"
+                                 baseTableName="private_card_data"
+                                 constraintName="fk_private_card_data__dd_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dd_user"/>
+    </changeSet>
+</databaseChangeLog>

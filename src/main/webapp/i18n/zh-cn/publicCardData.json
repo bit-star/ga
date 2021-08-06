@@ -1,0 +1,37 @@
+{
+  "gaApp": {
+    "publicCardData": {
+      "home": {
+        "title": "Public Card Data",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Public Card Data",
+        "createOrEditLabel": "创建或编辑 Public Card Data",
+        "notFound": "No Public Card Data found"
+      },
+      "created": "Public Card Data {{ param }} 创建成功",
+      "updated": "Public Card Data {{ param }} 更新成功",
+      "deleted": "Public Card Data {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Public Card Data {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Public Card Data"
+      },
+      "id": "ID",
+      "name": "Name",
+      "fee": "Fee",
+      "reason": "Reason",
+      "itemType": "Item Type",
+      "typesOfFee": "Types Of Fee",
+      "agree": "Agree",
+      "requestid": "Requestid",
+      "workflowid": "Workflowid",
+      "valid": "Valid",
+      "privateCardData": "Private Card Data",
+      "operationResults": "Operation Results",
+      "conversation": "Conversation",
+      "workflowTemplate": "Workflow Template",
+      "workflowInstance": "Workflow Instance"
+    }
+  }
+}

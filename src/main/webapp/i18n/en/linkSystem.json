@@ -1,0 +1,25 @@
+{
+  "gaApp": {
+    "linkSystem": {
+      "home": {
+        "title": "Link Systems",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Link System",
+        "createOrEditLabel": "Create or edit a Link System",
+        "notFound": "No Link Systems found"
+      },
+      "created": "A new Link System is created with identifier {{ param }}",
+      "updated": "A Link System is updated with identifier {{ param }}",
+      "deleted": "A Link System is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Link System {{ id }}?"
+      },
+      "detail": {
+        "title": "Link System"
+      },
+      "id": "ID",
+      "name": "Name",
+      "workflowTemplate": "Workflow Template"
+    }
+  }
+}

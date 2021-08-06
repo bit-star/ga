@@ -1,0 +1,77 @@
+{
+  "name": "WorkflowTemplate",
+  "fields": [
+    {
+      "fieldName": "formId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "workflowId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "workflowName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "workflowTypeId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "workflowTypeName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ddGroupTemplateId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "chatidField",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cardidField",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "commentsField",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "publicCardData",
+      "otherEntityRelationshipName": "workflowTemplate",
+      "relationshipName": "publicCardData"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "formField",
+      "otherEntityRelationshipName": "workflowTemplate",
+      "relationshipName": "formField"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "linkSystem",
+      "otherEntityRelationshipName": "workflowTemplate",
+      "relationshipName": "linkSystem"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "workflowInstance",
+      "otherEntityRelationshipName": "workflowTemplate",
+      "relationshipName": "workflowInstance"
+    }
+  ],
+  "entityTableName": "workflow_template",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210806053632"
+}

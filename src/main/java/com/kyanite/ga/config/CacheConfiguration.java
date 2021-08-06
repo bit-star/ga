@@ -48,6 +48,29 @@ public class CacheConfiguration {
             createCache(cm, com.kyanite.ga.domain.User.class.getName());
             createCache(cm, com.kyanite.ga.domain.Authority.class.getName());
             createCache(cm, com.kyanite.ga.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.kyanite.ga.domain.LinkSystem.class.getName());
+            createCache(cm, com.kyanite.ga.domain.LinkSystem.class.getName() + ".workflowTemplates");
+            createCache(cm, com.kyanite.ga.domain.WorkflowTemplate.class.getName());
+            createCache(cm, com.kyanite.ga.domain.WorkflowTemplate.class.getName() + ".publicCardData");
+            createCache(cm, com.kyanite.ga.domain.WorkflowTemplate.class.getName() + ".formFields");
+            createCache(cm, com.kyanite.ga.domain.WorkflowTemplate.class.getName() + ".workflowInstances");
+            createCache(cm, com.kyanite.ga.domain.FormField.class.getName());
+            createCache(cm, com.kyanite.ga.domain.OperationResults.class.getName());
+            createCache(cm, com.kyanite.ga.domain.GroupMembers.class.getName());
+            createCache(cm, com.kyanite.ga.domain.Conversation.class.getName());
+            createCache(cm, com.kyanite.ga.domain.Conversation.class.getName() + ".publicCardData");
+            createCache(cm, com.kyanite.ga.domain.Conversation.class.getName() + ".groupMembers");
+            createCache(cm, com.kyanite.ga.domain.DdUser.class.getName());
+            createCache(cm, com.kyanite.ga.domain.DdUser.class.getName() + ".groupMembers");
+            createCache(cm, com.kyanite.ga.domain.DdUser.class.getName() + ".privateCardData");
+            createCache(cm, com.kyanite.ga.domain.DdUser.class.getName() + ".operationResults");
+            createCache(cm, com.kyanite.ga.domain.WorkflowInstance.class.getName());
+            createCache(cm, com.kyanite.ga.domain.WorkflowInstance.class.getName() + ".ddUsers");
+            createCache(cm, com.kyanite.ga.domain.PublicCardData.class.getName());
+            createCache(cm, com.kyanite.ga.domain.PublicCardData.class.getName() + ".privateCardData");
+            createCache(cm, com.kyanite.ga.domain.PublicCardData.class.getName() + ".operationResults");
+            createCache(cm, com.kyanite.ga.domain.PublicCardData.class.getName() + ".workflowInstances");
+            createCache(cm, com.kyanite.ga.domain.PrivateCardData.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

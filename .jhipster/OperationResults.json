@@ -1,0 +1,42 @@
+{
+  "name": "OperationResults",
+  "fields": [
+    {
+      "fieldName": "operationType",
+      "fieldType": "OperationType",
+      "fieldValues": "Agree,Refuse,Comment"
+    },
+    {
+      "fieldName": "time",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "text",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ddUser",
+      "otherEntityRelationshipName": "operationResults",
+      "relationshipName": "ddUser"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "publicCardData",
+      "otherEntityRelationshipName": "operationResults",
+      "relationshipName": "publicCardData"
+    }
+  ],
+  "entityTableName": "operation_results",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210806053634"
+}

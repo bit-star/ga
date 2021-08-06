@@ -1,0 +1,29 @@
+{
+  "gaApp": {
+    "workflowInstance": {
+      "home": {
+        "title": "Workflow Instances",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Workflow Instance",
+        "createOrEditLabel": "Create or edit a Workflow Instance",
+        "notFound": "No Workflow Instances found"
+      },
+      "created": "A new Workflow Instance is created with identifier {{ param }}",
+      "updated": "A Workflow Instance is updated with identifier {{ param }}",
+      "deleted": "A Workflow Instance is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Workflow Instance {{ id }}?"
+      },
+      "detail": {
+        "title": "Workflow Instance"
+      },
+      "id": "ID",
+      "form": "Form",
+      "ddCardId": "Dd Card Id",
+      "title": "Title",
+      "ddUser": "Dd User",
+      "workflowTemplate": "Workflow Template",
+      "publicCardData": "Public Card Data"
+    }
+  }
+}
