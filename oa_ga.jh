@@ -1,0 +1,152 @@
+
+
+entity LinkSystem {
+   name String
+}
+
+
+
+
+entity WorkflowTemplate {
+  formId	String	//表单id
+  workflowId	String	//流程id
+  workflowName	String	//流程名称
+  workflowTypeId	String	//流程类型id
+  workflowTypeName	String	//流程类型名称
+  ddGroupTemplateId String 
+  //3个约定字段
+  chatidField String
+  cardidField String
+  commentsField String
+}
+
+
+entity FormField {
+	name String
+    value String
+    lable String
+}
+
+entity OperationResults{
+	operationType OperationType
+    time Instant
+    text String
+}
+
+entity GroupMembers{
+	groupRole GroupRole
+}
+
+enum GroupRole{
+	Ang , Refuse , Comment 
+}
+
+
+enum OperationType{
+	Agree , Refuse , Comment 
+}
+
+
+
+entity Conversation {
+  id String
+  name String
+}
+
+
+
+entity DdUser {
+    unionid String,
+    remark String,
+    userid  String,
+    isLeaderInDepts  String,
+    isBoss  Boolean,
+    hiredDate BigDecimal,
+    isSenior  Boolean,
+    tel  String,
+    department String,
+    workPlace  String ,
+    orderInDepts  TextBlob,
+    mobile  String ,
+    errmsg  String ,
+    active  Boolean,
+    avatar  String ,
+    isAdmin Boolean,
+    isHide Boolean,
+    jobnumber  String,
+    name  String,
+    extattr TextBlob,
+    stateCode  String,
+    position  TextBlob,
+    roles  String
+}
+
+entity WorkflowInstance {
+	form TextBlob,
+    ddCardId String
+    title String
+}
+
+entity PublicCardData {
+	name String,
+    fee String,
+    reason String,
+    itemType String,
+    typesOfFee String,
+    agree Boolean,
+    requestid Long,
+    workflowid Long,
+    valid Boolean
+}
+
+entity PrivateCardData {
+	name String,
+    fee String,
+    reason String,
+    itemType String,
+    typesOfFee String,
+    agree Boolean
+}
+
+enum ItemType {
+	CostBudget,
+    ContractAmount
+}
+
+enum TypesOfFee {
+	InternalWork,   IT , DueDiligence, 
+    FDueDiligence , TaxDueDiligence, BrandPromotion , 
+    BusinessActivity , Other , InvestorRelations
+    HeadhuntingFee, Marketing , InvestmentBankingFee
+}
+
+
+relationship  OneToMany {
+	PublicCardData to PrivateCardData
+    Conversation to PublicCardData
+    Conversation to GroupMembers
+    DdUser to GroupMembers
+    DdUser to PrivateCardData
+    LinkSystem to WorkflowTemplate
+    WorkflowTemplate to PublicCardData
+    WorkflowTemplate to FormField
+    WorkflowInstance to DdUser
+    DdUser to OperationResults
+    PublicCardData to OperationResults
+}
+
+
+
+
+relationship  ManyToOne {
+	WorkflowInstance to WorkflowTemplate
+  	WorkflowInstance to PublicCardData
+}
+
+
+
+
+service all with serviceClass
+
+
+
