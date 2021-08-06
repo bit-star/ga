@@ -43,7 +43,20 @@
     "devServerPort": 9060,
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "reactive": false
+    "reactive": false,
+    "entities": [
+      "LinkSystem",
+      "WorkflowTemplate",
+      "FormField",
+      "OperationResults",
+      "GroupMembers",
+      "Conversation",
+      "DdUser",
+      "WorkflowInstance",
+      "PublicCardData",
+      "PrivateCardData"
+    ],
+    "lastLiquibaseTimestamp": 1628228200000
   },
   "git-provider": "GitHub",
   "git-company": "bit-star",

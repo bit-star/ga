@@ -1,0 +1,34 @@
+{
+  "name": "GroupMembers",
+  "fields": [
+    {
+      "fieldName": "groupRole",
+      "fieldType": "GroupRole",
+      "fieldValues": "Ang,Refuse,Comment"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "conversation",
+      "otherEntityRelationshipName": "groupMembers",
+      "relationshipName": "conversation"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ddUser",
+      "otherEntityRelationshipName": "groupMembers",
+      "relationshipName": "ddUser"
+    }
+  ],
+  "entityTableName": "group_members",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210806053635"
+}

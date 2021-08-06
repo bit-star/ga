@@ -1,0 +1,53 @@
+{
+  "name": "PrivateCardData",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fee",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "itemType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typesOfFee",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "agree",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "publicCardData",
+      "otherEntityRelationshipName": "privateCardData",
+      "relationshipName": "publicCardData"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ddUser",
+      "otherEntityRelationshipName": "privateCardData",
+      "relationshipName": "ddUser"
+    }
+  ],
+  "entityTableName": "private_card_data",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210806053640"
+}

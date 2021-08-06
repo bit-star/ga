@@ -1,0 +1,10 @@
+{
+  "gaApp": {
+    "OperationType": {
+      "null": "",
+      "Agree": "Agree",
+      "Refuse": "Refuse",
+      "Comment": "Comment"
+    }
+  }
+}

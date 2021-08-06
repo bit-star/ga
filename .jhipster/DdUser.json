@@ -1,0 +1,136 @@
+{
+  "name": "DdUser",
+  "fields": [
+    {
+      "fieldName": "unionid",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "remark",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "userid",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isLeaderInDepts",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isBoss",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "hiredDate",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "isSenior",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "tel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "workPlace",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orderInDepts",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "mobile",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "errmsg",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "active",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "avatar",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isAdmin",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isHide",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "jobnumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "extattr",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "stateCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "position",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "roles",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "groupMembers",
+      "otherEntityRelationshipName": "ddUser",
+      "relationshipName": "groupMembers"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "privateCardData",
+      "otherEntityRelationshipName": "ddUser",
+      "relationshipName": "privateCardData"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "operationResults",
+      "otherEntityRelationshipName": "ddUser",
+      "relationshipName": "operationResults"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "workflowInstance",
+      "otherEntityRelationshipName": "ddUser",
+      "relationshipName": "workflowInstance"
+    }
+  ],
+  "entityTableName": "dd_user",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210806053637"
+}

@@ -1,0 +1,36 @@
+{
+  "gaApp": {
+    "workflowTemplate": {
+      "home": {
+        "title": "Workflow Templates",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Workflow Template",
+        "createOrEditLabel": "创建或编辑 Workflow Template",
+        "notFound": "No Workflow Templates found"
+      },
+      "created": "Workflow Template {{ param }} 创建成功",
+      "updated": "Workflow Template {{ param }} 更新成功",
+      "deleted": "Workflow Template {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Workflow Template {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Workflow Template"
+      },
+      "id": "ID",
+      "formId": "Form Id",
+      "workflowId": "Workflow Id",
+      "workflowName": "Workflow Name",
+      "workflowTypeId": "Workflow Type Id",
+      "workflowTypeName": "Workflow Type Name",
+      "ddGroupTemplateId": "Dd Group Template Id",
+      "chatidField": "Chatid Field",
+      "cardidField": "Cardid Field",
+      "commentsField": "Comments Field",
+      "publicCardData": "Public Card Data",
+      "formField": "Form Field",
+      "linkSystem": "Link System",
+      "workflowInstance": "Workflow Instance"
+    }
+  }
+}

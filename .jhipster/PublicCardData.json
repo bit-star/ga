@@ -1,0 +1,83 @@
+{
+  "name": "PublicCardData",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fee",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "itemType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "typesOfFee",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "agree",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "requestid",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "workflowid",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "valid",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "privateCardData",
+      "otherEntityRelationshipName": "publicCardData",
+      "relationshipName": "privateCardData"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "operationResults",
+      "otherEntityRelationshipName": "publicCardData",
+      "relationshipName": "operationResults"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "conversation",
+      "otherEntityRelationshipName": "publicCardData",
+      "relationshipName": "conversation"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "workflowTemplate",
+      "otherEntityRelationshipName": "publicCardData",
+      "relationshipName": "workflowTemplate"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "workflowInstance",
+      "otherEntityRelationshipName": "publicCardData",
+      "relationshipName": "workflowInstance"
+    }
+  ],
+  "entityTableName": "public_card_data",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210806053639"
+}

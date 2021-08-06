@@ -28,6 +28,16 @@ import TrackerService from './admin/tracker/tracker.service';
 import UserOAuth2Service from '@/entities/user/user.oauth2.service';
 /* tslint:disable */
 
+import LinkSystemService from '@/entities/link-system/link-system.service';
+import WorkflowTemplateService from '@/entities/workflow-template/workflow-template.service';
+import FormFieldService from '@/entities/form-field/form-field.service';
+import OperationResultsService from '@/entities/operation-results/operation-results.service';
+import GroupMembersService from '@/entities/group-members/group-members.service';
+import ConversationService from '@/entities/conversation/conversation.service';
+import DdUserService from '@/entities/dd-user/dd-user.service';
+import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
+import PublicCardDataService from '@/entities/public-card-data/public-card-data.service';
+import PrivateCardDataService from '@/entities/private-card-data/private-card-data.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -88,6 +98,16 @@ new Vue({
 
     userOAuth2Service: () => new UserOAuth2Service(),
     translationService: () => translationService,
+    linkSystemService: () => new LinkSystemService(),
+    workflowTemplateService: () => new WorkflowTemplateService(),
+    formFieldService: () => new FormFieldService(),
+    operationResultsService: () => new OperationResultsService(),
+    groupMembersService: () => new GroupMembersService(),
+    conversationService: () => new ConversationService(),
+    ddUserService: () => new DdUserService(),
+    workflowInstanceService: () => new WorkflowInstanceService(),
+    publicCardDataService: () => new PublicCardDataService(),
+    privateCardDataService: () => new PrivateCardDataService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

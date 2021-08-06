@@ -1,0 +1,48 @@
+{
+  "name": "WorkflowInstance",
+  "fields": [
+    {
+      "fieldName": "form",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "ddCardId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ddUser",
+      "otherEntityRelationshipName": "workflowInstance",
+      "relationshipName": "ddUser"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "workflowTemplate",
+      "otherEntityRelationshipName": "workflowInstance",
+      "relationshipName": "workflowTemplate"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "publicCardData",
+      "otherEntityRelationshipName": "workflowInstance",
+      "relationshipName": "publicCardData"
+    }
+  ],
+  "entityTableName": "workflow_instance",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210806053638"
+}

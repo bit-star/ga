@@ -7,6 +7,16 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "linkSystem": "Link System",
+        "workflowTemplate": "Workflow Template",
+        "formField": "Form Field",
+        "operationResults": "Operation Results",
+        "groupMembers": "Group Members",
+        "conversation": "Conversation",
+        "ddUser": "Dd User",
+        "workflowInstance": "Workflow Instance",
+        "publicCardData": "Public Card Data",
+        "privateCardData": "Private Card Data",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

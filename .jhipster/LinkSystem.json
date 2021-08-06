@@ -1,0 +1,27 @@
+{
+  "name": "LinkSystem",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "workflowTemplate",
+      "otherEntityRelationshipName": "linkSystem",
+      "relationshipName": "workflowTemplate"
+    }
+  ],
+  "entityTableName": "link_system",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210806053631"
+}

@@ -1,0 +1,28 @@
+{
+  "gaApp": {
+    "operationResults": {
+      "home": {
+        "title": "Operation Results",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Operation Results",
+        "createOrEditLabel": "创建或编辑 Operation Results",
+        "notFound": "No Operation Results found"
+      },
+      "created": "Operation Results {{ param }} 创建成功",
+      "updated": "Operation Results {{ param }} 更新成功",
+      "deleted": "Operation Results {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Operation Results {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Operation Results"
+      },
+      "id": "ID",
+      "operationType": "Operation Type",
+      "time": "Time",
+      "text": "Text",
+      "ddUser": "Dd User",
+      "publicCardData": "Public Card Data"
+    }
+  }
+}
