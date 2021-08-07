@@ -13,7 +13,8 @@ entity WorkflowTemplate {
   workflowName	String	//流程名称
   workflowTypeId	String	//流程类型id
   workflowTypeName	String	//流程类型名称
-  ddGroupTemplateId String 
+  ddGroupTemplateId String //
+  eMobileCreatePageUrl String
   //3个约定字段
   chatidField String
   cardidField String
