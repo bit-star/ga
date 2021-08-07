@@ -103,6 +103,26 @@
             />
           </div>
           <div class="form-group">
+            <label
+              class="form-control-label"
+              v-text="$t('gaApp.workflowTemplate.eMobileCreatePageUrl')"
+              for="workflow-template-eMobileCreatePageUrl"
+              >E Mobile Create Page Url</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="eMobileCreatePageUrl"
+              id="workflow-template-eMobileCreatePageUrl"
+              data-cy="eMobileCreatePageUrl"
+              :class="{
+                valid: !$v.workflowTemplate.eMobileCreatePageUrl.$invalid,
+                invalid: $v.workflowTemplate.eMobileCreatePageUrl.$invalid,
+              }"
+              v-model="$v.workflowTemplate.eMobileCreatePageUrl.$model"
+            />
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.workflowTemplate.chatidField')" for="workflow-template-chatidField"
               >Chatid Field</label
             >

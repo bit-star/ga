@@ -35,6 +35,7 @@
             <th scope="row"><span v-text="$t('gaApp.workflowTemplate.workflowTypeId')">Workflow Type Id</span></th>
             <th scope="row"><span v-text="$t('gaApp.workflowTemplate.workflowTypeName')">Workflow Type Name</span></th>
             <th scope="row"><span v-text="$t('gaApp.workflowTemplate.ddGroupTemplateId')">Dd Group Template Id</span></th>
+            <th scope="row"><span v-text="$t('gaApp.workflowTemplate.eMobileCreatePageUrl')">E Mobile Create Page Url</span></th>
             <th scope="row"><span v-text="$t('gaApp.workflowTemplate.chatidField')">Chatid Field</span></th>
             <th scope="row"><span v-text="$t('gaApp.workflowTemplate.cardidField')">Cardid Field</span></th>
             <th scope="row"><span v-text="$t('gaApp.workflowTemplate.commentsField')">Comments Field</span></th>
@@ -55,6 +56,7 @@
             <td>{{ workflowTemplate.workflowTypeId }}</td>
             <td>{{ workflowTemplate.workflowTypeName }}</td>
             <td>{{ workflowTemplate.ddGroupTemplateId }}</td>
+            <td>{{ workflowTemplate.eMobileCreatePageUrl }}</td>
             <td>{{ workflowTemplate.chatidField }}</td>
             <td>{{ workflowTemplate.cardidField }}</td>
             <td>{{ workflowTemplate.commentsField }}</td>

@@ -26,6 +26,10 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "eMobileCreatePageUrl",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "chatidField",
       "fieldType": "String"
     },

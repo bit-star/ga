@@ -66,6 +66,9 @@ public class WorkflowTemplateService {
                     if (workflowTemplate.getDdGroupTemplateId() != null) {
                         existingWorkflowTemplate.setDdGroupTemplateId(workflowTemplate.getDdGroupTemplateId());
                     }
+                    if (workflowTemplate.geteMobileCreatePageUrl() != null) {
+                        existingWorkflowTemplate.seteMobileCreatePageUrl(workflowTemplate.geteMobileCreatePageUrl());
+                    }
                     if (workflowTemplate.getChatidField() != null) {
                         existingWorkflowTemplate.setChatidField(workflowTemplate.getChatidField());
                     }

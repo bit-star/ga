@@ -23,6 +23,7 @@ const validations: any = {
     workflowTypeId: {},
     workflowTypeName: {},
     ddGroupTemplateId: {},
+    eMobileCreatePageUrl: {},
     chatidField: {},
     cardidField: {},
     commentsField: {},

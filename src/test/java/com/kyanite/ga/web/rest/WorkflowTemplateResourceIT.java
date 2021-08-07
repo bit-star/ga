@@ -47,6 +47,9 @@ class WorkflowTemplateResourceIT {
     private static final String DEFAULT_DD_GROUP_TEMPLATE_ID = "AAAAAAAAAA";
     private static final String UPDATED_DD_GROUP_TEMPLATE_ID = "BBBBBBBBBB";
 
+    private static final String DEFAULT_E_MOBILE_CREATE_PAGE_URL = "AAAAAAAAAA";
+    private static final String UPDATED_E_MOBILE_CREATE_PAGE_URL = "BBBBBBBBBB";
+
     private static final String DEFAULT_CHATID_FIELD = "AAAAAAAAAA";
     private static final String UPDATED_CHATID_FIELD = "BBBBBBBBBB";
 
@@ -87,6 +90,7 @@ class WorkflowTemplateResourceIT {
             .workflowTypeId(DEFAULT_WORKFLOW_TYPE_ID)
             .workflowTypeName(DEFAULT_WORKFLOW_TYPE_NAME)
             .ddGroupTemplateId(DEFAULT_DD_GROUP_TEMPLATE_ID)
+            .eMobileCreatePageUrl(DEFAULT_E_MOBILE_CREATE_PAGE_URL)
             .chatidField(DEFAULT_CHATID_FIELD)
             .cardidField(DEFAULT_CARDID_FIELD)
             .commentsField(DEFAULT_COMMENTS_FIELD);
@@ -107,6 +111,7 @@ class WorkflowTemplateResourceIT {
             .workflowTypeId(UPDATED_WORKFLOW_TYPE_ID)
             .workflowTypeName(UPDATED_WORKFLOW_TYPE_NAME)
             .ddGroupTemplateId(UPDATED_DD_GROUP_TEMPLATE_ID)
+            .eMobileCreatePageUrl(UPDATED_E_MOBILE_CREATE_PAGE_URL)
             .chatidField(UPDATED_CHATID_FIELD)
             .cardidField(UPDATED_CARDID_FIELD)
             .commentsField(UPDATED_COMMENTS_FIELD);
@@ -139,6 +144,7 @@ class WorkflowTemplateResourceIT {
         assertThat(testWorkflowTemplate.getWorkflowTypeId()).isEqualTo(DEFAULT_WORKFLOW_TYPE_ID);
         assertThat(testWorkflowTemplate.getWorkflowTypeName()).isEqualTo(DEFAULT_WORKFLOW_TYPE_NAME);
         assertThat(testWorkflowTemplate.getDdGroupTemplateId()).isEqualTo(DEFAULT_DD_GROUP_TEMPLATE_ID);
+        assertThat(testWorkflowTemplate.geteMobileCreatePageUrl()).isEqualTo(DEFAULT_E_MOBILE_CREATE_PAGE_URL);
         assertThat(testWorkflowTemplate.getChatidField()).isEqualTo(DEFAULT_CHATID_FIELD);
         assertThat(testWorkflowTemplate.getCardidField()).isEqualTo(DEFAULT_CARDID_FIELD);
         assertThat(testWorkflowTemplate.getCommentsField()).isEqualTo(DEFAULT_COMMENTS_FIELD);
@@ -182,6 +188,7 @@ class WorkflowTemplateResourceIT {
             .andExpect(jsonPath("$.[*].workflowTypeId").value(hasItem(DEFAULT_WORKFLOW_TYPE_ID)))
             .andExpect(jsonPath("$.[*].workflowTypeName").value(hasItem(DEFAULT_WORKFLOW_TYPE_NAME)))
             .andExpect(jsonPath("$.[*].ddGroupTemplateId").value(hasItem(DEFAULT_DD_GROUP_TEMPLATE_ID)))
+            .andExpect(jsonPath("$.[*].eMobileCreatePageUrl").value(hasItem(DEFAULT_E_MOBILE_CREATE_PAGE_URL)))
             .andExpect(jsonPath("$.[*].chatidField").value(hasItem(DEFAULT_CHATID_FIELD)))
             .andExpect(jsonPath("$.[*].cardidField").value(hasItem(DEFAULT_CARDID_FIELD)))
             .andExpect(jsonPath("$.[*].commentsField").value(hasItem(DEFAULT_COMMENTS_FIELD)));
@@ -205,6 +212,7 @@ class WorkflowTemplateResourceIT {
             .andExpect(jsonPath("$.workflowTypeId").value(DEFAULT_WORKFLOW_TYPE_ID))
             .andExpect(jsonPath("$.workflowTypeName").value(DEFAULT_WORKFLOW_TYPE_NAME))
             .andExpect(jsonPath("$.ddGroupTemplateId").value(DEFAULT_DD_GROUP_TEMPLATE_ID))
+            .andExpect(jsonPath("$.eMobileCreatePageUrl").value(DEFAULT_E_MOBILE_CREATE_PAGE_URL))
             .andExpect(jsonPath("$.chatidField").value(DEFAULT_CHATID_FIELD))
             .andExpect(jsonPath("$.cardidField").value(DEFAULT_CARDID_FIELD))
             .andExpect(jsonPath("$.commentsField").value(DEFAULT_COMMENTS_FIELD));
@@ -236,6 +244,7 @@ class WorkflowTemplateResourceIT {
             .workflowTypeId(UPDATED_WORKFLOW_TYPE_ID)
             .workflowTypeName(UPDATED_WORKFLOW_TYPE_NAME)
             .ddGroupTemplateId(UPDATED_DD_GROUP_TEMPLATE_ID)
+            .eMobileCreatePageUrl(UPDATED_E_MOBILE_CREATE_PAGE_URL)
             .chatidField(UPDATED_CHATID_FIELD)
             .cardidField(UPDATED_CARDID_FIELD)
             .commentsField(UPDATED_COMMENTS_FIELD);
@@ -258,6 +267,7 @@ class WorkflowTemplateResourceIT {
         assertThat(testWorkflowTemplate.getWorkflowTypeId()).isEqualTo(UPDATED_WORKFLOW_TYPE_ID);
         assertThat(testWorkflowTemplate.getWorkflowTypeName()).isEqualTo(UPDATED_WORKFLOW_TYPE_NAME);
         assertThat(testWorkflowTemplate.getDdGroupTemplateId()).isEqualTo(UPDATED_DD_GROUP_TEMPLATE_ID);
+        assertThat(testWorkflowTemplate.geteMobileCreatePageUrl()).isEqualTo(UPDATED_E_MOBILE_CREATE_PAGE_URL);
         assertThat(testWorkflowTemplate.getChatidField()).isEqualTo(UPDATED_CHATID_FIELD);
         assertThat(testWorkflowTemplate.getCardidField()).isEqualTo(UPDATED_CARDID_FIELD);
         assertThat(testWorkflowTemplate.getCommentsField()).isEqualTo(UPDATED_COMMENTS_FIELD);
@@ -338,6 +348,7 @@ class WorkflowTemplateResourceIT {
             .workflowId(UPDATED_WORKFLOW_ID)
             .workflowTypeId(UPDATED_WORKFLOW_TYPE_ID)
             .workflowTypeName(UPDATED_WORKFLOW_TYPE_NAME)
+            .cardidField(UPDATED_CARDID_FIELD)
             .commentsField(UPDATED_COMMENTS_FIELD);
 
         restWorkflowTemplateMockMvc
@@ -358,8 +369,9 @@ class WorkflowTemplateResourceIT {
         assertThat(testWorkflowTemplate.getWorkflowTypeId()).isEqualTo(UPDATED_WORKFLOW_TYPE_ID);
         assertThat(testWorkflowTemplate.getWorkflowTypeName()).isEqualTo(UPDATED_WORKFLOW_TYPE_NAME);
         assertThat(testWorkflowTemplate.getDdGroupTemplateId()).isEqualTo(DEFAULT_DD_GROUP_TEMPLATE_ID);
+        assertThat(testWorkflowTemplate.geteMobileCreatePageUrl()).isEqualTo(DEFAULT_E_MOBILE_CREATE_PAGE_URL);
         assertThat(testWorkflowTemplate.getChatidField()).isEqualTo(DEFAULT_CHATID_FIELD);
-        assertThat(testWorkflowTemplate.getCardidField()).isEqualTo(DEFAULT_CARDID_FIELD);
+        assertThat(testWorkflowTemplate.getCardidField()).isEqualTo(UPDATED_CARDID_FIELD);
         assertThat(testWorkflowTemplate.getCommentsField()).isEqualTo(UPDATED_COMMENTS_FIELD);
     }
 
@@ -382,6 +394,7 @@ class WorkflowTemplateResourceIT {
             .workflowTypeId(UPDATED_WORKFLOW_TYPE_ID)
             .workflowTypeName(UPDATED_WORKFLOW_TYPE_NAME)
             .ddGroupTemplateId(UPDATED_DD_GROUP_TEMPLATE_ID)
+            .eMobileCreatePageUrl(UPDATED_E_MOBILE_CREATE_PAGE_URL)
             .chatidField(UPDATED_CHATID_FIELD)
             .cardidField(UPDATED_CARDID_FIELD)
             .commentsField(UPDATED_COMMENTS_FIELD);
@@ -404,6 +417,7 @@ class WorkflowTemplateResourceIT {
         assertThat(testWorkflowTemplate.getWorkflowTypeId()).isEqualTo(UPDATED_WORKFLOW_TYPE_ID);
         assertThat(testWorkflowTemplate.getWorkflowTypeName()).isEqualTo(UPDATED_WORKFLOW_TYPE_NAME);
         assertThat(testWorkflowTemplate.getDdGroupTemplateId()).isEqualTo(UPDATED_DD_GROUP_TEMPLATE_ID);
+        assertThat(testWorkflowTemplate.geteMobileCreatePageUrl()).isEqualTo(UPDATED_E_MOBILE_CREATE_PAGE_URL);
         assertThat(testWorkflowTemplate.getChatidField()).isEqualTo(UPDATED_CHATID_FIELD);
         assertThat(testWorkflowTemplate.getCardidField()).isEqualTo(UPDATED_CARDID_FIELD);
         assertThat(testWorkflowTemplate.getCommentsField()).isEqualTo(UPDATED_COMMENTS_FIELD);
