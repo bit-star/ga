@@ -24,6 +24,7 @@
       "workflowTypeId": "Workflow Type Id",
       "workflowTypeName": "Workflow Type Name",
       "ddGroupTemplateId": "Dd Group Template Id",
+      "eMobileCreatePageUrl": "E Mobile Create Page Url",
       "chatidField": "Chatid Field",
       "cardidField": "Cardid Field",
       "commentsField": "Comments Field",

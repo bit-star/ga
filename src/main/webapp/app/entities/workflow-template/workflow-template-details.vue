@@ -43,6 +43,12 @@
             <span>{{ workflowTemplate.ddGroupTemplateId }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.workflowTemplate.eMobileCreatePageUrl')">E Mobile Create Page Url</span>
+          </dt>
+          <dd>
+            <span>{{ workflowTemplate.eMobileCreatePageUrl }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.workflowTemplate.chatidField')">Chatid Field</span>
           </dt>
           <dd>

@@ -11,6 +11,7 @@ export interface IWorkflowTemplate {
   workflowTypeId?: string | null;
   workflowTypeName?: string | null;
   ddGroupTemplateId?: string | null;
+  eMobileCreatePageUrl?: string | null;
   chatidField?: string | null;
   cardidField?: string | null;
   commentsField?: string | null;
@@ -29,6 +30,7 @@ export class WorkflowTemplate implements IWorkflowTemplate {
     public workflowTypeId?: string | null,
     public workflowTypeName?: string | null,
     public ddGroupTemplateId?: string | null,
+    public eMobileCreatePageUrl?: string | null,
     public chatidField?: string | null,
     public cardidField?: string | null,
     public commentsField?: string | null,

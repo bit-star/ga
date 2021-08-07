@@ -40,6 +40,9 @@ public class WorkflowTemplate implements Serializable {
     @Column(name = "dd_group_template_id")
     private String ddGroupTemplateId;
 
+    @Column(name = "e_mobile_create_page_url")
+    private String eMobileCreatePageUrl;
+
     @Column(name = "chatid_field")
     private String chatidField;
 
@@ -161,6 +164,19 @@ public class WorkflowTemplate implements Serializable {
 
     public void setDdGroupTemplateId(String ddGroupTemplateId) {
         this.ddGroupTemplateId = ddGroupTemplateId;
+    }
+
+    public String geteMobileCreatePageUrl() {
+        return this.eMobileCreatePageUrl;
+    }
+
+    public WorkflowTemplate eMobileCreatePageUrl(String eMobileCreatePageUrl) {
+        this.eMobileCreatePageUrl = eMobileCreatePageUrl;
+        return this;
+    }
+
+    public void seteMobileCreatePageUrl(String eMobileCreatePageUrl) {
+        this.eMobileCreatePageUrl = eMobileCreatePageUrl;
     }
 
     public String getChatidField() {
@@ -338,6 +354,7 @@ public class WorkflowTemplate implements Serializable {
             ", workflowTypeId='" + getWorkflowTypeId() + "'" +
             ", workflowTypeName='" + getWorkflowTypeName() + "'" +
             ", ddGroupTemplateId='" + getDdGroupTemplateId() + "'" +
+            ", eMobileCreatePageUrl='" + geteMobileCreatePageUrl() + "'" +
             ", chatidField='" + getChatidField() + "'" +
             ", cardidField='" + getCardidField() + "'" +
             ", commentsField='" + getCommentsField() + "'" +

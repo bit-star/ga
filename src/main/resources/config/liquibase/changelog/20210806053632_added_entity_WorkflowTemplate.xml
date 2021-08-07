@@ -32,6 +32,9 @@
             <column name="dd_group_template_id" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="e_mobile_create_page_url" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="chatid_field" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -70,6 +73,7 @@
             <column name="workflow_type_id" type="string"/>
             <column name="workflow_type_name" type="string"/>
             <column name="dd_group_template_id" type="string"/>
+            <column name="e_mobile_create_page_url" type="string"/>
             <column name="chatid_field" type="string"/>
             <column name="cardid_field" type="string"/>
             <column name="comments_field" type="string"/>
