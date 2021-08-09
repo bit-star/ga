@@ -1,8 +1,5 @@
 import { Component, Vue, Inject } from 'vue-property-decorator';
 
-import PublicCardDataService from '@/entities/public-card-data/public-card-data.service';
-import { IPublicCardData } from '@/shared/model/public-card-data.model';
-
 import FormFieldService from '@/entities/form-field/form-field.service';
 import { IFormField } from '@/shared/model/form-field.model';
 
@@ -39,10 +36,6 @@ const validations: any = {
 export default class WorkflowTemplateUpdate extends Vue {
   @Inject('workflowTemplateService') private workflowTemplateService: () => WorkflowTemplateService;
   public workflowTemplate: IWorkflowTemplate = new WorkflowTemplate();
-
-  @Inject('publicCardDataService') private publicCardDataService: () => PublicCardDataService;
-
-  public publicCardData: IPublicCardData[] = [];
 
   @Inject('formFieldService') private formFieldService: () => FormFieldService;
 
@@ -125,11 +118,6 @@ export default class WorkflowTemplateUpdate extends Vue {
   }
 
   public initRelationships(): void {
-    this.publicCardDataService()
-      .retrieve()
-      .then(res => {
-        this.publicCardData = res.data;
-      });
     this.formFieldService()
       .retrieve()
       .then(res => {

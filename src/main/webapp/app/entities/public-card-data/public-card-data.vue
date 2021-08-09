@@ -44,7 +44,6 @@
             <th scope="row"><span v-text="$t('gaApp.publicCardData.content')">Content</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowInstance')">Workflow Instance</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.conversation')">Conversation</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowTemplate')">Workflow Template</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -79,13 +78,6 @@
               <div v-if="publicCardData.conversation">
                 <router-link :to="{ name: 'ConversationView', params: { conversationId: publicCardData.conversation.id } }">{{
                   publicCardData.conversation.id
-                }}</router-link>
-              </div>
-            </td>
-            <td>
-              <div v-if="publicCardData.workflowTemplate">
-                <router-link :to="{ name: 'WorkflowTemplateView', params: { workflowTemplateId: publicCardData.workflowTemplate.id } }">{{
-                  publicCardData.workflowTemplate.id
                 }}</router-link>
               </div>
             </td>

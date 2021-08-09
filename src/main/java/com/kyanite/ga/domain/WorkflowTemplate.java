@@ -63,14 +63,6 @@ public class WorkflowTemplate implements Serializable {
 
     @OneToMany(mappedBy = "workflowTemplate")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(
-        value = { "privateCardData", "operationResults", "workflowInstance", "conversation", "workflowTemplate" },
-        allowSetters = true
-    )
-    private Set<PublicCardData> publicCardData = new HashSet<>();
-
-    @OneToMany(mappedBy = "workflowTemplate")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "workflowTemplate" }, allowSetters = true)
     private Set<FormField> formFields = new HashSet<>();
 
@@ -264,37 +256,6 @@ public class WorkflowTemplate implements Serializable {
 
     public void setCommentsField(String commentsField) {
         this.commentsField = commentsField;
-    }
-
-    public Set<PublicCardData> getPublicCardData() {
-        return this.publicCardData;
-    }
-
-    public WorkflowTemplate publicCardData(Set<PublicCardData> publicCardData) {
-        this.setPublicCardData(publicCardData);
-        return this;
-    }
-
-    public WorkflowTemplate addPublicCardData(PublicCardData publicCardData) {
-        this.publicCardData.add(publicCardData);
-        publicCardData.setWorkflowTemplate(this);
-        return this;
-    }
-
-    public WorkflowTemplate removePublicCardData(PublicCardData publicCardData) {
-        this.publicCardData.remove(publicCardData);
-        publicCardData.setWorkflowTemplate(null);
-        return this;
-    }
-
-    public void setPublicCardData(Set<PublicCardData> publicCardData) {
-        if (this.publicCardData != null) {
-            this.publicCardData.forEach(i -> i.setWorkflowTemplate(null));
-        }
-        if (publicCardData != null) {
-            publicCardData.forEach(i -> i.setWorkflowTemplate(this));
-        }
-        this.publicCardData = publicCardData;
     }
 
     public Set<FormField> getFormFields() {

@@ -78,12 +78,6 @@
       "otherEntityName": "conversation",
       "otherEntityRelationshipName": "publicCardData",
       "relationshipName": "conversation"
-    },
-    {
-      "relationshipType": "many-to-one",
-      "otherEntityName": "workflowTemplate",
-      "otherEntityRelationshipName": "publicCardData",
-      "relationshipName": "workflowTemplate"
     }
   ],
   "entityTableName": "public_card_data",

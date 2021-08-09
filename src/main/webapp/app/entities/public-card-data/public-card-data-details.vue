@@ -104,16 +104,6 @@
               }}</router-link>
             </div>
           </dd>
-          <dt>
-            <span v-text="$t('gaApp.publicCardData.workflowTemplate')">Workflow Template</span>
-          </dt>
-          <dd>
-            <div v-if="publicCardData.workflowTemplate">
-              <router-link :to="{ name: 'WorkflowTemplateView', params: { workflowTemplateId: publicCardData.workflowTemplate.id } }">{{
-                publicCardData.workflowTemplate.id
-              }}</router-link>
-            </div>
-          </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
           <font-awesome-icon icon="arrow-left"></font-awesome-icon>&nbsp;<span v-text="$t('entity.action.back')"> Back</span>

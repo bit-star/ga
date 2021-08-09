@@ -135,7 +135,6 @@ relationship  OneToMany {
     DdUser to GroupMembers
     DdUser to PrivateCardData
     LinkSystem to WorkflowTemplate
-    WorkflowTemplate to PublicCardData
     WorkflowTemplate to FormField
     WorkflowInstance{Approver} to DdUser
     DdUser to OperationResults
