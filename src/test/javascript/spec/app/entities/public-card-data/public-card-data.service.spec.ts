@@ -39,6 +39,7 @@ describe('Service Tests', () => {
         'AAAAAAA',
         'AAAAAAA',
         'AAAAAAA',
+        'AAAAAAA',
         false,
         'AAAAAAA',
         'AAAAAAA',
@@ -98,6 +99,7 @@ describe('Service Tests', () => {
             requestid: 1,
             workflowid: 1,
             valid: true,
+            link: 'BBBBBB',
             name: 'BBBBBB',
             feeValue: 'BBBBBB',
             reason: 'BBBBBB',
@@ -134,10 +136,10 @@ describe('Service Tests', () => {
         const patchObject = Object.assign(
           {
             workflowid: 1,
+            link: 'BBBBBB',
             name: 'BBBBBB',
-            feeValue: 'BBBBBB',
+            typesOfFee: 'BBBBBB',
             agree: true,
-            finish: 'BBBBBB',
           },
           new PublicCardData()
         );
@@ -168,6 +170,7 @@ describe('Service Tests', () => {
             requestid: 1,
             workflowid: 1,
             valid: true,
+            link: 'BBBBBB',
             name: 'BBBBBB',
             feeValue: 'BBBBBB',
             reason: 'BBBBBB',

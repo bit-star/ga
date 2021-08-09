@@ -57,6 +57,9 @@ public class PublicCardDataService {
                     if (publicCardData.getValid() != null) {
                         existingPublicCardData.setValid(publicCardData.getValid());
                     }
+                    if (publicCardData.getLink() != null) {
+                        existingPublicCardData.setLink(publicCardData.getLink());
+                    }
                     if (publicCardData.getName() != null) {
                         existingPublicCardData.setName(publicCardData.getName());
                     }

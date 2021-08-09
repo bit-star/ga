@@ -32,6 +32,7 @@
             <th scope="row"><span v-text="$t('gaApp.publicCardData.requestid')">Requestid</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowid')">Workflowid</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.valid')">Valid</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.link')">Link</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.name')">Name</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.feeValue')">Fee Value</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.reason')">Reason</span></th>
@@ -57,6 +58,7 @@
             <td>{{ publicCardData.requestid }}</td>
             <td>{{ publicCardData.workflowid }}</td>
             <td>{{ publicCardData.valid }}</td>
+            <td>{{ publicCardData.link }}</td>
             <td>{{ publicCardData.name }}</td>
             <td>{{ publicCardData.feeValue }}</td>
             <td>{{ publicCardData.reason }}</td>
