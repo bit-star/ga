@@ -24,9 +24,8 @@
               id="group-members-groupRole"
               data-cy="groupRole"
             >
-              <option value="Ang" v-bind:label="$t('gaApp.GroupRole.Ang')">Ang</option>
-              <option value="Refuse" v-bind:label="$t('gaApp.GroupRole.Refuse')">Refuse</option>
-              <option value="Comment" v-bind:label="$t('gaApp.GroupRole.Comment')">Comment</option>
+              <option value="Approver" v-bind:label="$t('gaApp.GroupRole.Approver')">Approver</option>
+              <option value="OrdinaryMember" v-bind:label="$t('gaApp.GroupRole.OrdinaryMember')">OrdinaryMember</option>
             </select>
           </div>
           <div class="form-group">

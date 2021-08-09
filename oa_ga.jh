@@ -40,7 +40,7 @@ entity GroupMembers{
 }
 
 enum GroupRole{
-	Ang , Refuse , Comment 
+	Approver , OrdinaryMember 
 }
 
 

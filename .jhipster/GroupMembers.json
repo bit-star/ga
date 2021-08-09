@@ -4,7 +4,7 @@
     {
       "fieldName": "groupRole",
       "fieldType": "GroupRole",
-      "fieldValues": "Ang,Refuse,Comment"
+      "fieldValues": "Approver,OrdinaryMember"
     }
   ],
   "relationships": [
