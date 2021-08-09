@@ -44,7 +44,8 @@
       "groupMembers": "Group Members",
       "privateCardData": "Private Card Data",
       "operationResults": "Operation Results",
-      "workflowInstance": "Workflow Instance"
+      "workflowInstance": "Workflow Instance",
+      "createdInstance": "Created Instance"
     }
   }
 }

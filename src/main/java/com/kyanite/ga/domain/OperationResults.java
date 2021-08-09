@@ -33,7 +33,10 @@ public class OperationResults implements Serializable {
     private String text;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "groupMembers", "privateCardData", "operationResults", "workflowInstance" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = { "groupMembers", "privateCardData", "operationResults", "workflowInstance", "createdInstances" },
+        allowSetters = true
+    )
     private DdUser ddUser;
 
     @ManyToOne

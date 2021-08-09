@@ -19,5 +19,11 @@
                                  constraintName="fk_workflow_instance__public_card_data_id"
                                  referencedColumnNames="id"
                                  referencedTableName="public_card_data"/>
+
+        <addForeignKeyConstraint baseColumnNames="creator_id"
+                                 baseTableName="workflow_instance"
+                                 constraintName="fk_workflow_instance__creator_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dd_user"/>
     </changeSet>
 </databaseChangeLog>

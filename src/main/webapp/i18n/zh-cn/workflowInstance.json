@@ -21,9 +21,10 @@
       "form": "Form",
       "ddCardId": "Dd Card Id",
       "title": "Title",
-      "ddUser": "Dd User",
+      "approver": "Approver",
       "workflowTemplate": "Workflow Template",
-      "publicCardData": "Public Card Data"
+      "publicCardData": "Public Card Data",
+      "creator": "Creator"
     }
   }
 }

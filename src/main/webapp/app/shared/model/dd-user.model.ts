@@ -32,6 +32,7 @@ export interface IDdUser {
   privateCardData?: IPrivateCardData[] | null;
   operationResults?: IOperationResults[] | null;
   workflowInstance?: IWorkflowInstance | null;
+  createdInstances?: IWorkflowInstance[] | null;
 }
 
 export class DdUser implements IDdUser {
@@ -63,7 +64,8 @@ export class DdUser implements IDdUser {
     public groupMembers?: IGroupMembers[] | null,
     public privateCardData?: IPrivateCardData[] | null,
     public operationResults?: IOperationResults[] | null,
-    public workflowInstance?: IWorkflowInstance | null
+    public workflowInstance?: IWorkflowInstance | null,
+    public createdInstances?: IWorkflowInstance[] | null
   ) {
     this.isBoss = this.isBoss ?? false;
     this.isSenior = this.isSenior ?? false;

@@ -119,8 +119,14 @@
     {
       "relationshipType": "many-to-one",
       "otherEntityName": "workflowInstance",
-      "otherEntityRelationshipName": "ddUser",
+      "otherEntityRelationshipName": "approver",
       "relationshipName": "workflowInstance"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "workflowInstance",
+      "otherEntityRelationshipName": "creator",
+      "relationshipName": "createdInstance"
     }
   ],
   "entityTableName": "dd_user",
