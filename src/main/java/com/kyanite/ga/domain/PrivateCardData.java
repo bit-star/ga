@@ -20,32 +20,14 @@ public class PrivateCardData implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "fee_value")
-    private String feeValue;
-
-    @Column(name = "reason")
-    private String reason;
-
-    @Column(name = "item_type")
-    private String itemType;
-
-    @Column(name = "types_of_fee")
-    private String typesOfFee;
-
     @Column(name = "agree")
     private Boolean agree;
 
     @Column(name = "finish")
     private String finish;
 
-    @Column(name = "status")
-    private String status;
-
-    @Column(name = "content")
-    private String content;
+    @Column(name = "authority")
+    private String authority;
 
     @ManyToOne
     @JsonIgnoreProperties(
@@ -75,71 +57,6 @@ public class PrivateCardData implements Serializable {
         return this;
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public PrivateCardData name(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getFeeValue() {
-        return this.feeValue;
-    }
-
-    public PrivateCardData feeValue(String feeValue) {
-        this.feeValue = feeValue;
-        return this;
-    }
-
-    public void setFeeValue(String feeValue) {
-        this.feeValue = feeValue;
-    }
-
-    public String getReason() {
-        return this.reason;
-    }
-
-    public PrivateCardData reason(String reason) {
-        this.reason = reason;
-        return this;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
-
-    public String getItemType() {
-        return this.itemType;
-    }
-
-    public PrivateCardData itemType(String itemType) {
-        this.itemType = itemType;
-        return this;
-    }
-
-    public void setItemType(String itemType) {
-        this.itemType = itemType;
-    }
-
-    public String getTypesOfFee() {
-        return this.typesOfFee;
-    }
-
-    public PrivateCardData typesOfFee(String typesOfFee) {
-        this.typesOfFee = typesOfFee;
-        return this;
-    }
-
-    public void setTypesOfFee(String typesOfFee) {
-        this.typesOfFee = typesOfFee;
-    }
-
     public Boolean getAgree() {
         return this.agree;
     }
@@ -166,30 +83,17 @@ public class PrivateCardData implements Serializable {
         this.finish = finish;
     }
 
-    public String getStatus() {
-        return this.status;
+    public String getAuthority() {
+        return this.authority;
     }
 
-    public PrivateCardData status(String status) {
-        this.status = status;
+    public PrivateCardData authority(String authority) {
+        this.authority = authority;
         return this;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getContent() {
-        return this.content;
-    }
-
-    public PrivateCardData content(String content) {
-        this.content = content;
-        return this;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
+    public void setAuthority(String authority) {
+        this.authority = authority;
     }
 
     public PublicCardData getPublicCardData() {
@@ -242,15 +146,9 @@ public class PrivateCardData implements Serializable {
     public String toString() {
         return "PrivateCardData{" +
             "id=" + getId() +
-            ", name='" + getName() + "'" +
-            ", feeValue='" + getFeeValue() + "'" +
-            ", reason='" + getReason() + "'" +
-            ", itemType='" + getItemType() + "'" +
-            ", typesOfFee='" + getTypesOfFee() + "'" +
             ", agree='" + getAgree() + "'" +
             ", finish='" + getFinish() + "'" +
-            ", status='" + getStatus() + "'" +
-            ", content='" + getContent() + "'" +
+            ", authority='" + getAuthority() + "'" +
             "}";
     }
 }

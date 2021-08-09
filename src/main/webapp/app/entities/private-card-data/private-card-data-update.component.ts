@@ -11,15 +11,9 @@ import PrivateCardDataService from './private-card-data.service';
 
 const validations: any = {
   privateCardData: {
-    name: {},
-    feeValue: {},
-    reason: {},
-    itemType: {},
-    typesOfFee: {},
     agree: {},
     finish: {},
-    status: {},
-    content: {},
+    authority: {},
   },
 };
 

@@ -29,15 +29,9 @@
         <thead>
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
-            <th scope="row"><span v-text="$t('gaApp.privateCardData.name')">Name</span></th>
-            <th scope="row"><span v-text="$t('gaApp.privateCardData.feeValue')">Fee Value</span></th>
-            <th scope="row"><span v-text="$t('gaApp.privateCardData.reason')">Reason</span></th>
-            <th scope="row"><span v-text="$t('gaApp.privateCardData.itemType')">Item Type</span></th>
-            <th scope="row"><span v-text="$t('gaApp.privateCardData.typesOfFee')">Types Of Fee</span></th>
             <th scope="row"><span v-text="$t('gaApp.privateCardData.agree')">Agree</span></th>
             <th scope="row"><span v-text="$t('gaApp.privateCardData.finish')">Finish</span></th>
-            <th scope="row"><span v-text="$t('gaApp.privateCardData.status')">Status</span></th>
-            <th scope="row"><span v-text="$t('gaApp.privateCardData.content')">Content</span></th>
+            <th scope="row"><span v-text="$t('gaApp.privateCardData.authority')">Authority</span></th>
             <th scope="row"><span v-text="$t('gaApp.privateCardData.publicCardData')">Public Card Data</span></th>
             <th scope="row"><span v-text="$t('gaApp.privateCardData.ddUser')">Dd User</span></th>
             <th scope="row"></th>
@@ -50,15 +44,9 @@
                 privateCardData.id
               }}</router-link>
             </td>
-            <td>{{ privateCardData.name }}</td>
-            <td>{{ privateCardData.feeValue }}</td>
-            <td>{{ privateCardData.reason }}</td>
-            <td>{{ privateCardData.itemType }}</td>
-            <td>{{ privateCardData.typesOfFee }}</td>
             <td>{{ privateCardData.agree }}</td>
             <td>{{ privateCardData.finish }}</td>
-            <td>{{ privateCardData.status }}</td>
-            <td>{{ privateCardData.content }}</td>
+            <td>{{ privateCardData.authority }}</td>
             <td>
               <div v-if="privateCardData.publicCardData">
                 <router-link :to="{ name: 'PublicCardDataView', params: { publicCardDataId: privateCardData.publicCardData.id } }">{{

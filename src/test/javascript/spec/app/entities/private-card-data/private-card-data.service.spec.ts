@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new PrivateCardDataService();
-      elemDefault = new PrivateCardData(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new PrivateCardData(123, false, 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -81,15 +81,9 @@ describe('Service Tests', () => {
       it('should update a PrivateCardData', async () => {
         const returnedFromService = Object.assign(
           {
-            name: 'BBBBBB',
-            feeValue: 'BBBBBB',
-            reason: 'BBBBBB',
-            itemType: 'BBBBBB',
-            typesOfFee: 'BBBBBB',
             agree: true,
             finish: 'BBBBBB',
-            status: 'BBBBBB',
-            content: 'BBBBBB',
+            authority: 'BBBBBB',
           },
           elemDefault
         );
@@ -114,15 +108,7 @@ describe('Service Tests', () => {
       });
 
       it('should partial update a PrivateCardData', async () => {
-        const patchObject = Object.assign(
-          {
-            itemType: 'BBBBBB',
-            agree: true,
-            status: 'BBBBBB',
-            content: 'BBBBBB',
-          },
-          new PrivateCardData()
-        );
+        const patchObject = Object.assign({}, new PrivateCardData());
         const returnedFromService = Object.assign(patchObject, elemDefault);
 
         const expected = Object.assign({}, returnedFromService);
@@ -147,15 +133,9 @@ describe('Service Tests', () => {
       it('should return a list of PrivateCardData', async () => {
         const returnedFromService = Object.assign(
           {
-            name: 'BBBBBB',
-            feeValue: 'BBBBBB',
-            reason: 'BBBBBB',
-            itemType: 'BBBBBB',
-            typesOfFee: 'BBBBBB',
             agree: true,
             finish: 'BBBBBB',
-            status: 'BBBBBB',
-            content: 'BBBBBB',
+            authority: 'BBBBBB',
           },
           elemDefault
         );
