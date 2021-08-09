@@ -29,9 +29,9 @@
       "valid": "Valid",
       "privateCardData": "Private Card Data",
       "operationResults": "Operation Results",
+      "workflowInstance": "Workflow Instance",
       "conversation": "Conversation",
-      "workflowTemplate": "Workflow Template",
-      "workflowInstance": "Workflow Instance"
+      "workflowTemplate": "Workflow Template"
     }
   }
 }

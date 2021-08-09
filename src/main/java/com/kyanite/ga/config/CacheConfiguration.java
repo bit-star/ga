@@ -73,6 +73,7 @@ public class CacheConfiguration {
             createCache(cm, com.kyanite.ga.domain.PrivateCardData.class.getName());
             createCache(cm, com.kyanite.ga.domain.DdUser.class.getName() + ".createdInstances");
             createCache(cm, com.kyanite.ga.domain.WorkflowInstance.class.getName() + ".approvers");
+            createCache(cm, com.kyanite.ga.domain.WorkflowInstance.class.getName() + ".publicCardData");
             // jhipster-needle-ehcache-add-entry
         };
     }

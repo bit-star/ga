@@ -129,6 +129,31 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.publicCardData.workflowInstance')" for="public-card-data-workflowInstance"
+              >Workflow Instance</label
+            >
+            <select
+              class="form-control"
+              id="public-card-data-workflowInstance"
+              data-cy="workflowInstance"
+              name="workflowInstance"
+              v-model="publicCardData.workflowInstance"
+            >
+              <option v-bind:value="null"></option>
+              <option
+                v-bind:value="
+                  publicCardData.workflowInstance && workflowInstanceOption.id === publicCardData.workflowInstance.id
+                    ? publicCardData.workflowInstance
+                    : workflowInstanceOption
+                "
+                v-for="workflowInstanceOption in workflowInstances"
+                :key="workflowInstanceOption.id"
+              >
+                {{ workflowInstanceOption.id }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.conversation')" for="public-card-data-conversation"
               >Conversation</label
             >

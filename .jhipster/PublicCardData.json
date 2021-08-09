@@ -53,6 +53,12 @@
     },
     {
       "relationshipType": "many-to-one",
+      "otherEntityName": "workflowInstance",
+      "otherEntityRelationshipName": "publicCardData",
+      "relationshipName": "workflowInstance"
+    },
+    {
+      "relationshipType": "many-to-one",
       "otherEntityName": "conversation",
       "otherEntityRelationshipName": "publicCardData",
       "relationshipName": "conversation"
@@ -62,12 +68,6 @@
       "otherEntityName": "workflowTemplate",
       "otherEntityRelationshipName": "publicCardData",
       "relationshipName": "workflowTemplate"
-    },
-    {
-      "relationshipType": "one-to-many",
-      "otherEntityName": "workflowInstance",
-      "otherEntityRelationshipName": "publicCardData",
-      "relationshipName": "workflowInstance"
     }
   ],
   "entityTableName": "public_card_data",

@@ -35,16 +35,6 @@
             </div>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.workflowInstance.publicCardData')">Public Card Data</span>
-          </dt>
-          <dd>
-            <div v-if="workflowInstance.publicCardData">
-              <router-link :to="{ name: 'PublicCardDataView', params: { publicCardDataId: workflowInstance.publicCardData.id } }">{{
-                workflowInstance.publicCardData.id
-              }}</router-link>
-            </div>
-          </dd>
-          <dt>
             <span v-text="$t('gaApp.workflowInstance.creator')">Creator</span>
           </dt>
           <dd>

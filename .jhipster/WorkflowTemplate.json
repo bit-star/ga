@@ -26,6 +26,10 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "ddCardTemplateId",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "eMobileCreatePageUrl",
       "fieldType": "String"
     },
@@ -34,7 +38,7 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "cardidField",
+      "fieldName": "sourceField",
       "fieldType": "String"
     },
     {

@@ -41,6 +41,9 @@
             <column name="valid" type="boolean">
                 <constraints nullable="true" />
             </column>
+            <column name="workflow_instance_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
             <column name="conversation_id" type="varchar(255)">
                 <constraints nullable="true" />
             </column>

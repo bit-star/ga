@@ -14,12 +14,6 @@
                                  referencedColumnNames="id"
                                  referencedTableName="workflow_template"/>
 
-        <addForeignKeyConstraint baseColumnNames="public_card_data_id"
-                                 baseTableName="workflow_instance"
-                                 constraintName="fk_workflow_instance__public_card_data_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="public_card_data"/>
-
         <addForeignKeyConstraint baseColumnNames="creator_id"
                                  baseTableName="workflow_instance"
                                  constraintName="fk_workflow_instance__creator_id"

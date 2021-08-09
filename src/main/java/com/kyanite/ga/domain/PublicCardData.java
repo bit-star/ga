@@ -60,17 +60,16 @@ public class PublicCardData implements Serializable {
     private Set<OperationResults> operationResults = new HashSet<>();
 
     @ManyToOne
+    @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "creator", "publicCardData" }, allowSetters = true)
+    private WorkflowInstance workflowInstance;
+
+    @ManyToOne
     @JsonIgnoreProperties(value = { "publicCardData", "groupMembers" }, allowSetters = true)
     private Conversation conversation;
 
     @ManyToOne
     @JsonIgnoreProperties(value = { "publicCardData", "formFields", "linkSystem", "workflowInstances" }, allowSetters = true)
     private WorkflowTemplate workflowTemplate;
-
-    @OneToMany(mappedBy = "publicCardData")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "publicCardData", "creator" }, allowSetters = true)
-    private Set<WorkflowInstance> workflowInstances = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -265,6 +264,19 @@ public class PublicCardData implements Serializable {
         this.operationResults = operationResults;
     }
 
+    public WorkflowInstance getWorkflowInstance() {
+        return this.workflowInstance;
+    }
+
+    public PublicCardData workflowInstance(WorkflowInstance workflowInstance) {
+        this.setWorkflowInstance(workflowInstance);
+        return this;
+    }
+
+    public void setWorkflowInstance(WorkflowInstance workflowInstance) {
+        this.workflowInstance = workflowInstance;
+    }
+
     public Conversation getConversation() {
         return this.conversation;
     }
@@ -289,37 +301,6 @@ public class PublicCardData implements Serializable {
 
     public void setWorkflowTemplate(WorkflowTemplate workflowTemplate) {
         this.workflowTemplate = workflowTemplate;
-    }
-
-    public Set<WorkflowInstance> getWorkflowInstances() {
-        return this.workflowInstances;
-    }
-
-    public PublicCardData workflowInstances(Set<WorkflowInstance> workflowInstances) {
-        this.setWorkflowInstances(workflowInstances);
-        return this;
-    }
-
-    public PublicCardData addWorkflowInstance(WorkflowInstance workflowInstance) {
-        this.workflowInstances.add(workflowInstance);
-        workflowInstance.setPublicCardData(this);
-        return this;
-    }
-
-    public PublicCardData removeWorkflowInstance(WorkflowInstance workflowInstance) {
-        this.workflowInstances.remove(workflowInstance);
-        workflowInstance.setPublicCardData(null);
-        return this;
-    }
-
-    public void setWorkflowInstances(Set<WorkflowInstance> workflowInstances) {
-        if (this.workflowInstances != null) {
-            this.workflowInstances.forEach(i -> i.setPublicCardData(null));
-        }
-        if (workflowInstances != null) {
-            workflowInstances.forEach(i -> i.setPublicCardData(this));
-        }
-        this.workflowInstances = workflowInstances;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

@@ -43,6 +43,12 @@
             <span>{{ workflowTemplate.ddGroupTemplateId }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.workflowTemplate.ddCardTemplateId')">Dd Card Template Id</span>
+          </dt>
+          <dd>
+            <span>{{ workflowTemplate.ddCardTemplateId }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.workflowTemplate.eMobileCreatePageUrl')">E Mobile Create Page Url</span>
           </dt>
           <dd>
@@ -55,10 +61,10 @@
             <span>{{ workflowTemplate.chatidField }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.workflowTemplate.cardidField')">Cardid Field</span>
+            <span v-text="$t('gaApp.workflowTemplate.sourceField')">Source Field</span>
           </dt>
           <dd>
-            <span>{{ workflowTemplate.cardidField }}</span>
+            <span>{{ workflowTemplate.sourceField }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.workflowTemplate.commentsField')">Comments Field</span>

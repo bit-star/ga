@@ -26,9 +26,6 @@
             <column name="workflow_template_id" type="bigint">
                 <constraints nullable="true" />
             </column>
-            <column name="public_card_data_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
             <column name="creator_id" type="bigint">
                 <constraints nullable="true" />
             </column>

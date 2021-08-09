@@ -105,6 +105,23 @@
           <div class="form-group">
             <label
               class="form-control-label"
+              v-text="$t('gaApp.workflowTemplate.ddCardTemplateId')"
+              for="workflow-template-ddCardTemplateId"
+              >Dd Card Template Id</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="ddCardTemplateId"
+              id="workflow-template-ddCardTemplateId"
+              data-cy="ddCardTemplateId"
+              :class="{ valid: !$v.workflowTemplate.ddCardTemplateId.$invalid, invalid: $v.workflowTemplate.ddCardTemplateId.$invalid }"
+              v-model="$v.workflowTemplate.ddCardTemplateId.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label
+              class="form-control-label"
               v-text="$t('gaApp.workflowTemplate.eMobileCreatePageUrl')"
               for="workflow-template-eMobileCreatePageUrl"
               >E Mobile Create Page Url</label
@@ -137,17 +154,17 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.workflowTemplate.cardidField')" for="workflow-template-cardidField"
-              >Cardid Field</label
+            <label class="form-control-label" v-text="$t('gaApp.workflowTemplate.sourceField')" for="workflow-template-sourceField"
+              >Source Field</label
             >
             <input
               type="text"
               class="form-control"
-              name="cardidField"
-              id="workflow-template-cardidField"
-              data-cy="cardidField"
-              :class="{ valid: !$v.workflowTemplate.cardidField.$invalid, invalid: $v.workflowTemplate.cardidField.$invalid }"
-              v-model="$v.workflowTemplate.cardidField.$model"
+              name="sourceField"
+              id="workflow-template-sourceField"
+              data-cy="sourceField"
+              :class="{ valid: !$v.workflowTemplate.sourceField.$invalid, invalid: $v.workflowTemplate.sourceField.$invalid }"
+              v-model="$v.workflowTemplate.sourceField.$model"
             />
           </div>
           <div class="form-group">

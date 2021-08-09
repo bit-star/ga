@@ -1,8 +1,8 @@
 import { IPrivateCardData } from '@/shared/model/private-card-data.model';
 import { IOperationResults } from '@/shared/model/operation-results.model';
+import { IWorkflowInstance } from '@/shared/model/workflow-instance.model';
 import { IConversation } from '@/shared/model/conversation.model';
 import { IWorkflowTemplate } from '@/shared/model/workflow-template.model';
-import { IWorkflowInstance } from '@/shared/model/workflow-instance.model';
 
 export interface IPublicCardData {
   id?: number;
@@ -17,9 +17,9 @@ export interface IPublicCardData {
   valid?: boolean | null;
   privateCardData?: IPrivateCardData[] | null;
   operationResults?: IOperationResults[] | null;
+  workflowInstance?: IWorkflowInstance | null;
   conversation?: IConversation | null;
   workflowTemplate?: IWorkflowTemplate | null;
-  workflowInstances?: IWorkflowInstance[] | null;
 }
 
 export class PublicCardData implements IPublicCardData {
@@ -36,9 +36,9 @@ export class PublicCardData implements IPublicCardData {
     public valid?: boolean | null,
     public privateCardData?: IPrivateCardData[] | null,
     public operationResults?: IOperationResults[] | null,
+    public workflowInstance?: IWorkflowInstance | null,
     public conversation?: IConversation | null,
-    public workflowTemplate?: IWorkflowTemplate | null,
-    public workflowInstances?: IWorkflowInstance[] | null
+    public workflowTemplate?: IWorkflowTemplate | null
   ) {
     this.agree = this.agree ?? false;
     this.valid = this.valid ?? false;

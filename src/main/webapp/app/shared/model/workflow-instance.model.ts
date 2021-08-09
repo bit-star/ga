@@ -9,8 +9,8 @@ export interface IWorkflowInstance {
   title?: string | null;
   approvers?: IDdUser[] | null;
   workflowTemplate?: IWorkflowTemplate | null;
-  publicCardData?: IPublicCardData | null;
   creator?: IDdUser | null;
+  publicCardData?: IPublicCardData[] | null;
 }
 
 export class WorkflowInstance implements IWorkflowInstance {
@@ -21,7 +21,7 @@ export class WorkflowInstance implements IWorkflowInstance {
     public title?: string | null,
     public approvers?: IDdUser[] | null,
     public workflowTemplate?: IWorkflowTemplate | null,
-    public publicCardData?: IPublicCardData | null,
-    public creator?: IDdUser | null
+    public creator?: IDdUser | null,
+    public publicCardData?: IPublicCardData[] | null
   ) {}
 }

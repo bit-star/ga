@@ -6,14 +6,14 @@ import { IPrivateCardData } from '@/shared/model/private-card-data.model';
 import OperationResultsService from '@/entities/operation-results/operation-results.service';
 import { IOperationResults } from '@/shared/model/operation-results.model';
 
+import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
+import { IWorkflowInstance } from '@/shared/model/workflow-instance.model';
+
 import ConversationService from '@/entities/conversation/conversation.service';
 import { IConversation } from '@/shared/model/conversation.model';
 
 import WorkflowTemplateService from '@/entities/workflow-template/workflow-template.service';
 import { IWorkflowTemplate } from '@/shared/model/workflow-template.model';
-
-import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
-import { IWorkflowInstance } from '@/shared/model/workflow-instance.model';
 
 import { IPublicCardData, PublicCardData } from '@/shared/model/public-card-data.model';
 import PublicCardDataService from './public-card-data.service';
@@ -47,6 +47,10 @@ export default class PublicCardDataUpdate extends Vue {
 
   public operationResults: IOperationResults[] = [];
 
+  @Inject('workflowInstanceService') private workflowInstanceService: () => WorkflowInstanceService;
+
+  public workflowInstances: IWorkflowInstance[] = [];
+
   @Inject('conversationService') private conversationService: () => ConversationService;
 
   public conversations: IConversation[] = [];
@@ -54,10 +58,6 @@ export default class PublicCardDataUpdate extends Vue {
   @Inject('workflowTemplateService') private workflowTemplateService: () => WorkflowTemplateService;
 
   public workflowTemplates: IWorkflowTemplate[] = [];
-
-  @Inject('workflowInstanceService') private workflowInstanceService: () => WorkflowInstanceService;
-
-  public workflowInstances: IWorkflowInstance[] = [];
   public isSaving = false;
   public currentLanguage = '';
 
@@ -138,6 +138,11 @@ export default class PublicCardDataUpdate extends Vue {
       .then(res => {
         this.operationResults = res.data;
       });
+    this.workflowInstanceService()
+      .retrieve()
+      .then(res => {
+        this.workflowInstances = res.data;
+      });
     this.conversationService()
       .retrieve()
       .then(res => {
@@ -147,11 +152,6 @@ export default class PublicCardDataUpdate extends Vue {
       .retrieve()
       .then(res => {
         this.workflowTemplates = res.data;
-      });
-    this.workflowInstanceService()
-      .retrieve()
-      .then(res => {
-        this.workflowInstances = res.data;
       });
   }
 }
