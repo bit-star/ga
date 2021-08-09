@@ -137,6 +137,20 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.workflowTemplate.ddRobotCode')" for="workflow-template-ddRobotCode"
+              >Dd Robot Code</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="ddRobotCode"
+              id="workflow-template-ddRobotCode"
+              data-cy="ddRobotCode"
+              :class="{ valid: !$v.workflowTemplate.ddRobotCode.$invalid, invalid: $v.workflowTemplate.ddRobotCode.$invalid }"
+              v-model="$v.workflowTemplate.ddRobotCode.$model"
+            />
+          </div>
+          <div class="form-group">
             <label
               class="form-control-label"
               v-text="$t('gaApp.workflowTemplate.eMobileCreatePageUrl')"

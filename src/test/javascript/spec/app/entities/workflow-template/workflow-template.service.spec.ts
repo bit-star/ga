@@ -42,6 +42,7 @@ describe('Service Tests', () => {
         'AAAAAAA',
         'AAAAAAA',
         'AAAAAAA',
+        'AAAAAAA',
         'AAAAAAA'
       );
     });
@@ -103,6 +104,7 @@ describe('Service Tests', () => {
             ddGroupTemplateId: 'BBBBBB',
             ddCardTemplateId: 'BBBBBB',
             ddCardCallBackKey: 'BBBBBB',
+            ddRobotCode: 'BBBBBB',
             eMobileCreatePageUrl: 'BBBBBB',
             chatidField: 'BBBBBB',
             sourceField: 'BBBBBB',
@@ -136,8 +138,8 @@ describe('Service Tests', () => {
             formId: 'BBBBBB',
             workflowTypeId: 'BBBBBB',
             ddCardTemplateId: 'BBBBBB',
+            chatidField: 'BBBBBB',
             sourceField: 'BBBBBB',
-            commentsField: 'BBBBBB',
           },
           new WorkflowTemplate()
         );
@@ -173,6 +175,7 @@ describe('Service Tests', () => {
             ddGroupTemplateId: 'BBBBBB',
             ddCardTemplateId: 'BBBBBB',
             ddCardCallBackKey: 'BBBBBB',
+            ddRobotCode: 'BBBBBB',
             eMobileCreatePageUrl: 'BBBBBB',
             chatidField: 'BBBBBB',
             sourceField: 'BBBBBB',
