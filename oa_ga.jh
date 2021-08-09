@@ -138,10 +138,10 @@ relationship  OneToMany {
 
 
 
-
 relationship  ManyToOne {
 	WorkflowInstance to WorkflowTemplate
   	WorkflowInstance to PublicCardData
+    WorkflowInstance{creator} to DdUser
 }
 
 
