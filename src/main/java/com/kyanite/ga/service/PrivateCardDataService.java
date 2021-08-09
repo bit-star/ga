@@ -51,8 +51,8 @@ public class PrivateCardDataService {
                     if (privateCardData.getName() != null) {
                         existingPrivateCardData.setName(privateCardData.getName());
                     }
-                    if (privateCardData.getFee() != null) {
-                        existingPrivateCardData.setFee(privateCardData.getFee());
+                    if (privateCardData.getFeeValue() != null) {
+                        existingPrivateCardData.setFeeValue(privateCardData.getFeeValue());
                     }
                     if (privateCardData.getReason() != null) {
                         existingPrivateCardData.setReason(privateCardData.getReason());
@@ -65,6 +65,15 @@ public class PrivateCardDataService {
                     }
                     if (privateCardData.getAgree() != null) {
                         existingPrivateCardData.setAgree(privateCardData.getAgree());
+                    }
+                    if (privateCardData.getFinish() != null) {
+                        existingPrivateCardData.setFinish(privateCardData.getFinish());
+                    }
+                    if (privateCardData.getStatus() != null) {
+                        existingPrivateCardData.setStatus(privateCardData.getStatus());
+                    }
+                    if (privateCardData.getContent() != null) {
+                        existingPrivateCardData.setContent(privateCardData.getContent());
                     }
 
                     return existingPrivateCardData;

@@ -122,6 +122,23 @@
           <div class="form-group">
             <label
               class="form-control-label"
+              v-text="$t('gaApp.workflowTemplate.ddCardCallBackKey')"
+              for="workflow-template-ddCardCallBackKey"
+              >Dd Card Call Back Key</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="ddCardCallBackKey"
+              id="workflow-template-ddCardCallBackKey"
+              data-cy="ddCardCallBackKey"
+              :class="{ valid: !$v.workflowTemplate.ddCardCallBackKey.$invalid, invalid: $v.workflowTemplate.ddCardCallBackKey.$invalid }"
+              v-model="$v.workflowTemplate.ddCardCallBackKey.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label
+              class="form-control-label"
               v-text="$t('gaApp.workflowTemplate.eMobileCreatePageUrl')"
               for="workflow-template-eMobileCreatePageUrl"
               >E Mobile Create Page Url</label

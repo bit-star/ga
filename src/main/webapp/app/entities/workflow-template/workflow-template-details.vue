@@ -49,6 +49,12 @@
             <span>{{ workflowTemplate.ddCardTemplateId }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.workflowTemplate.ddCardCallBackKey')">Dd Card Call Back Key</span>
+          </dt>
+          <dd>
+            <span>{{ workflowTemplate.ddCardCallBackKey }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.workflowTemplate.eMobileCreatePageUrl')">E Mobile Create Page Url</span>
           </dt>
           <dd>

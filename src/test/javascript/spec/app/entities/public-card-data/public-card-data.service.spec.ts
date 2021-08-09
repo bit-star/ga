@@ -29,7 +29,21 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new PublicCardDataService();
-      elemDefault = new PublicCardData(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false, 0, 0, false);
+      elemDefault = new PublicCardData(
+        123,
+        0,
+        0,
+        false,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        false,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA'
+      );
     });
 
     describe('Service methods', () => {
@@ -81,15 +95,18 @@ describe('Service Tests', () => {
       it('should update a PublicCardData', async () => {
         const returnedFromService = Object.assign(
           {
+            requestid: 1,
+            workflowid: 1,
+            valid: true,
             name: 'BBBBBB',
-            fee: 'BBBBBB',
+            feeValue: 'BBBBBB',
             reason: 'BBBBBB',
             itemType: 'BBBBBB',
             typesOfFee: 'BBBBBB',
             agree: true,
-            requestid: 1,
-            workflowid: 1,
-            valid: true,
+            finish: 'BBBBBB',
+            status: 'BBBBBB',
+            content: 'BBBBBB',
           },
           elemDefault
         );
@@ -116,10 +133,11 @@ describe('Service Tests', () => {
       it('should partial update a PublicCardData', async () => {
         const patchObject = Object.assign(
           {
-            fee: 'BBBBBB',
-            itemType: 'BBBBBB',
-            typesOfFee: 'BBBBBB',
-            valid: true,
+            workflowid: 1,
+            name: 'BBBBBB',
+            feeValue: 'BBBBBB',
+            agree: true,
+            finish: 'BBBBBB',
           },
           new PublicCardData()
         );
@@ -147,15 +165,18 @@ describe('Service Tests', () => {
       it('should return a list of PublicCardData', async () => {
         const returnedFromService = Object.assign(
           {
+            requestid: 1,
+            workflowid: 1,
+            valid: true,
             name: 'BBBBBB',
-            fee: 'BBBBBB',
+            feeValue: 'BBBBBB',
             reason: 'BBBBBB',
             itemType: 'BBBBBB',
             typesOfFee: 'BBBBBB',
             agree: true,
-            requestid: 1,
-            workflowid: 1,
-            valid: true,
+            finish: 'BBBBBB',
+            status: 'BBBBBB',
+            content: 'BBBBBB',
           },
           elemDefault
         );

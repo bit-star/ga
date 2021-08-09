@@ -23,8 +23,8 @@ public class PrivateCardData implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "fee")
-    private String fee;
+    @Column(name = "fee_value")
+    private String feeValue;
 
     @Column(name = "reason")
     private String reason;
@@ -37,6 +37,15 @@ public class PrivateCardData implements Serializable {
 
     @Column(name = "agree")
     private Boolean agree;
+
+    @Column(name = "finish")
+    private String finish;
+
+    @Column(name = "status")
+    private String status;
+
+    @Column(name = "content")
+    private String content;
 
     @ManyToOne
     @JsonIgnoreProperties(
@@ -79,17 +88,17 @@ public class PrivateCardData implements Serializable {
         this.name = name;
     }
 
-    public String getFee() {
-        return this.fee;
+    public String getFeeValue() {
+        return this.feeValue;
     }
 
-    public PrivateCardData fee(String fee) {
-        this.fee = fee;
+    public PrivateCardData feeValue(String feeValue) {
+        this.feeValue = feeValue;
         return this;
     }
 
-    public void setFee(String fee) {
-        this.fee = fee;
+    public void setFeeValue(String feeValue) {
+        this.feeValue = feeValue;
     }
 
     public String getReason() {
@@ -144,6 +153,45 @@ public class PrivateCardData implements Serializable {
         this.agree = agree;
     }
 
+    public String getFinish() {
+        return this.finish;
+    }
+
+    public PrivateCardData finish(String finish) {
+        this.finish = finish;
+        return this;
+    }
+
+    public void setFinish(String finish) {
+        this.finish = finish;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public PrivateCardData status(String status) {
+        this.status = status;
+        return this;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getContent() {
+        return this.content;
+    }
+
+    public PrivateCardData content(String content) {
+        this.content = content;
+        return this;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     public PublicCardData getPublicCardData() {
         return this.publicCardData;
     }
@@ -195,11 +243,14 @@ public class PrivateCardData implements Serializable {
         return "PrivateCardData{" +
             "id=" + getId() +
             ", name='" + getName() + "'" +
-            ", fee='" + getFee() + "'" +
+            ", feeValue='" + getFeeValue() + "'" +
             ", reason='" + getReason() + "'" +
             ", itemType='" + getItemType() + "'" +
             ", typesOfFee='" + getTypesOfFee() + "'" +
             ", agree='" + getAgree() + "'" +
+            ", finish='" + getFinish() + "'" +
+            ", status='" + getStatus() + "'" +
+            ", content='" + getContent() + "'" +
             "}";
     }
 }

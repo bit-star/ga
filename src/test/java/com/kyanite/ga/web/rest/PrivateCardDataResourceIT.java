@@ -32,8 +32,8 @@ class PrivateCardDataResourceIT {
     private static final String DEFAULT_NAME = "AAAAAAAAAA";
     private static final String UPDATED_NAME = "BBBBBBBBBB";
 
-    private static final String DEFAULT_FEE = "AAAAAAAAAA";
-    private static final String UPDATED_FEE = "BBBBBBBBBB";
+    private static final String DEFAULT_FEE_VALUE = "AAAAAAAAAA";
+    private static final String UPDATED_FEE_VALUE = "BBBBBBBBBB";
 
     private static final String DEFAULT_REASON = "AAAAAAAAAA";
     private static final String UPDATED_REASON = "BBBBBBBBBB";
@@ -46,6 +46,15 @@ class PrivateCardDataResourceIT {
 
     private static final Boolean DEFAULT_AGREE = false;
     private static final Boolean UPDATED_AGREE = true;
+
+    private static final String DEFAULT_FINISH = "AAAAAAAAAA";
+    private static final String UPDATED_FINISH = "BBBBBBBBBB";
+
+    private static final String DEFAULT_STATUS = "AAAAAAAAAA";
+    private static final String UPDATED_STATUS = "BBBBBBBBBB";
+
+    private static final String DEFAULT_CONTENT = "AAAAAAAAAA";
+    private static final String UPDATED_CONTENT = "BBBBBBBBBB";
 
     private static final String ENTITY_API_URL = "/api/private-card-data";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -73,11 +82,14 @@ class PrivateCardDataResourceIT {
     public static PrivateCardData createEntity(EntityManager em) {
         PrivateCardData privateCardData = new PrivateCardData()
             .name(DEFAULT_NAME)
-            .fee(DEFAULT_FEE)
+            .feeValue(DEFAULT_FEE_VALUE)
             .reason(DEFAULT_REASON)
             .itemType(DEFAULT_ITEM_TYPE)
             .typesOfFee(DEFAULT_TYPES_OF_FEE)
-            .agree(DEFAULT_AGREE);
+            .agree(DEFAULT_AGREE)
+            .finish(DEFAULT_FINISH)
+            .status(DEFAULT_STATUS)
+            .content(DEFAULT_CONTENT);
         return privateCardData;
     }
 
@@ -90,11 +102,14 @@ class PrivateCardDataResourceIT {
     public static PrivateCardData createUpdatedEntity(EntityManager em) {
         PrivateCardData privateCardData = new PrivateCardData()
             .name(UPDATED_NAME)
-            .fee(UPDATED_FEE)
+            .feeValue(UPDATED_FEE_VALUE)
             .reason(UPDATED_REASON)
             .itemType(UPDATED_ITEM_TYPE)
             .typesOfFee(UPDATED_TYPES_OF_FEE)
-            .agree(UPDATED_AGREE);
+            .agree(UPDATED_AGREE)
+            .finish(UPDATED_FINISH)
+            .status(UPDATED_STATUS)
+            .content(UPDATED_CONTENT);
         return privateCardData;
     }
 
@@ -119,11 +134,14 @@ class PrivateCardDataResourceIT {
         assertThat(privateCardDataList).hasSize(databaseSizeBeforeCreate + 1);
         PrivateCardData testPrivateCardData = privateCardDataList.get(privateCardDataList.size() - 1);
         assertThat(testPrivateCardData.getName()).isEqualTo(DEFAULT_NAME);
-        assertThat(testPrivateCardData.getFee()).isEqualTo(DEFAULT_FEE);
+        assertThat(testPrivateCardData.getFeeValue()).isEqualTo(DEFAULT_FEE_VALUE);
         assertThat(testPrivateCardData.getReason()).isEqualTo(DEFAULT_REASON);
         assertThat(testPrivateCardData.getItemType()).isEqualTo(DEFAULT_ITEM_TYPE);
         assertThat(testPrivateCardData.getTypesOfFee()).isEqualTo(DEFAULT_TYPES_OF_FEE);
         assertThat(testPrivateCardData.getAgree()).isEqualTo(DEFAULT_AGREE);
+        assertThat(testPrivateCardData.getFinish()).isEqualTo(DEFAULT_FINISH);
+        assertThat(testPrivateCardData.getStatus()).isEqualTo(DEFAULT_STATUS);
+        assertThat(testPrivateCardData.getContent()).isEqualTo(DEFAULT_CONTENT);
     }
 
     @Test
@@ -159,11 +177,14 @@ class PrivateCardDataResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(privateCardData.getId().intValue())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
-            .andExpect(jsonPath("$.[*].fee").value(hasItem(DEFAULT_FEE)))
+            .andExpect(jsonPath("$.[*].feeValue").value(hasItem(DEFAULT_FEE_VALUE)))
             .andExpect(jsonPath("$.[*].reason").value(hasItem(DEFAULT_REASON)))
             .andExpect(jsonPath("$.[*].itemType").value(hasItem(DEFAULT_ITEM_TYPE)))
             .andExpect(jsonPath("$.[*].typesOfFee").value(hasItem(DEFAULT_TYPES_OF_FEE)))
-            .andExpect(jsonPath("$.[*].agree").value(hasItem(DEFAULT_AGREE.booleanValue())));
+            .andExpect(jsonPath("$.[*].agree").value(hasItem(DEFAULT_AGREE.booleanValue())))
+            .andExpect(jsonPath("$.[*].finish").value(hasItem(DEFAULT_FINISH)))
+            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS)))
+            .andExpect(jsonPath("$.[*].content").value(hasItem(DEFAULT_CONTENT)));
     }
 
     @Test
@@ -179,11 +200,14 @@ class PrivateCardDataResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(privateCardData.getId().intValue()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
-            .andExpect(jsonPath("$.fee").value(DEFAULT_FEE))
+            .andExpect(jsonPath("$.feeValue").value(DEFAULT_FEE_VALUE))
             .andExpect(jsonPath("$.reason").value(DEFAULT_REASON))
             .andExpect(jsonPath("$.itemType").value(DEFAULT_ITEM_TYPE))
             .andExpect(jsonPath("$.typesOfFee").value(DEFAULT_TYPES_OF_FEE))
-            .andExpect(jsonPath("$.agree").value(DEFAULT_AGREE.booleanValue()));
+            .andExpect(jsonPath("$.agree").value(DEFAULT_AGREE.booleanValue()))
+            .andExpect(jsonPath("$.finish").value(DEFAULT_FINISH))
+            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS))
+            .andExpect(jsonPath("$.content").value(DEFAULT_CONTENT));
     }
 
     @Test
@@ -207,11 +231,14 @@ class PrivateCardDataResourceIT {
         em.detach(updatedPrivateCardData);
         updatedPrivateCardData
             .name(UPDATED_NAME)
-            .fee(UPDATED_FEE)
+            .feeValue(UPDATED_FEE_VALUE)
             .reason(UPDATED_REASON)
             .itemType(UPDATED_ITEM_TYPE)
             .typesOfFee(UPDATED_TYPES_OF_FEE)
-            .agree(UPDATED_AGREE);
+            .agree(UPDATED_AGREE)
+            .finish(UPDATED_FINISH)
+            .status(UPDATED_STATUS)
+            .content(UPDATED_CONTENT);
 
         restPrivateCardDataMockMvc
             .perform(
@@ -226,11 +253,14 @@ class PrivateCardDataResourceIT {
         assertThat(privateCardDataList).hasSize(databaseSizeBeforeUpdate);
         PrivateCardData testPrivateCardData = privateCardDataList.get(privateCardDataList.size() - 1);
         assertThat(testPrivateCardData.getName()).isEqualTo(UPDATED_NAME);
-        assertThat(testPrivateCardData.getFee()).isEqualTo(UPDATED_FEE);
+        assertThat(testPrivateCardData.getFeeValue()).isEqualTo(UPDATED_FEE_VALUE);
         assertThat(testPrivateCardData.getReason()).isEqualTo(UPDATED_REASON);
         assertThat(testPrivateCardData.getItemType()).isEqualTo(UPDATED_ITEM_TYPE);
         assertThat(testPrivateCardData.getTypesOfFee()).isEqualTo(UPDATED_TYPES_OF_FEE);
         assertThat(testPrivateCardData.getAgree()).isEqualTo(UPDATED_AGREE);
+        assertThat(testPrivateCardData.getFinish()).isEqualTo(UPDATED_FINISH);
+        assertThat(testPrivateCardData.getStatus()).isEqualTo(UPDATED_STATUS);
+        assertThat(testPrivateCardData.getContent()).isEqualTo(UPDATED_CONTENT);
     }
 
     @Test
@@ -303,7 +333,11 @@ class PrivateCardDataResourceIT {
         PrivateCardData partialUpdatedPrivateCardData = new PrivateCardData();
         partialUpdatedPrivateCardData.setId(privateCardData.getId());
 
-        partialUpdatedPrivateCardData.fee(UPDATED_FEE).itemType(UPDATED_ITEM_TYPE).typesOfFee(UPDATED_TYPES_OF_FEE);
+        partialUpdatedPrivateCardData
+            .feeValue(UPDATED_FEE_VALUE)
+            .itemType(UPDATED_ITEM_TYPE)
+            .typesOfFee(UPDATED_TYPES_OF_FEE)
+            .content(UPDATED_CONTENT);
 
         restPrivateCardDataMockMvc
             .perform(
@@ -318,11 +352,14 @@ class PrivateCardDataResourceIT {
         assertThat(privateCardDataList).hasSize(databaseSizeBeforeUpdate);
         PrivateCardData testPrivateCardData = privateCardDataList.get(privateCardDataList.size() - 1);
         assertThat(testPrivateCardData.getName()).isEqualTo(DEFAULT_NAME);
-        assertThat(testPrivateCardData.getFee()).isEqualTo(UPDATED_FEE);
+        assertThat(testPrivateCardData.getFeeValue()).isEqualTo(UPDATED_FEE_VALUE);
         assertThat(testPrivateCardData.getReason()).isEqualTo(DEFAULT_REASON);
         assertThat(testPrivateCardData.getItemType()).isEqualTo(UPDATED_ITEM_TYPE);
         assertThat(testPrivateCardData.getTypesOfFee()).isEqualTo(UPDATED_TYPES_OF_FEE);
         assertThat(testPrivateCardData.getAgree()).isEqualTo(DEFAULT_AGREE);
+        assertThat(testPrivateCardData.getFinish()).isEqualTo(DEFAULT_FINISH);
+        assertThat(testPrivateCardData.getStatus()).isEqualTo(DEFAULT_STATUS);
+        assertThat(testPrivateCardData.getContent()).isEqualTo(UPDATED_CONTENT);
     }
 
     @Test
@@ -339,11 +376,14 @@ class PrivateCardDataResourceIT {
 
         partialUpdatedPrivateCardData
             .name(UPDATED_NAME)
-            .fee(UPDATED_FEE)
+            .feeValue(UPDATED_FEE_VALUE)
             .reason(UPDATED_REASON)
             .itemType(UPDATED_ITEM_TYPE)
             .typesOfFee(UPDATED_TYPES_OF_FEE)
-            .agree(UPDATED_AGREE);
+            .agree(UPDATED_AGREE)
+            .finish(UPDATED_FINISH)
+            .status(UPDATED_STATUS)
+            .content(UPDATED_CONTENT);
 
         restPrivateCardDataMockMvc
             .perform(
@@ -358,11 +398,14 @@ class PrivateCardDataResourceIT {
         assertThat(privateCardDataList).hasSize(databaseSizeBeforeUpdate);
         PrivateCardData testPrivateCardData = privateCardDataList.get(privateCardDataList.size() - 1);
         assertThat(testPrivateCardData.getName()).isEqualTo(UPDATED_NAME);
-        assertThat(testPrivateCardData.getFee()).isEqualTo(UPDATED_FEE);
+        assertThat(testPrivateCardData.getFeeValue()).isEqualTo(UPDATED_FEE_VALUE);
         assertThat(testPrivateCardData.getReason()).isEqualTo(UPDATED_REASON);
         assertThat(testPrivateCardData.getItemType()).isEqualTo(UPDATED_ITEM_TYPE);
         assertThat(testPrivateCardData.getTypesOfFee()).isEqualTo(UPDATED_TYPES_OF_FEE);
         assertThat(testPrivateCardData.getAgree()).isEqualTo(UPDATED_AGREE);
+        assertThat(testPrivateCardData.getFinish()).isEqualTo(UPDATED_FINISH);
+        assertThat(testPrivateCardData.getStatus()).isEqualTo(UPDATED_STATUS);
+        assertThat(testPrivateCardData.getContent()).isEqualTo(UPDATED_CONTENT);
     }
 
     @Test

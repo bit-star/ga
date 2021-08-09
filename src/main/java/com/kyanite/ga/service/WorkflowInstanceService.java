@@ -57,6 +57,12 @@ public class WorkflowInstanceService {
                     if (workflowInstance.getTitle() != null) {
                         existingWorkflowInstance.setTitle(workflowInstance.getTitle());
                     }
+                    if (workflowInstance.getDdCardTemplateId() != null) {
+                        existingWorkflowInstance.setDdCardTemplateId(workflowInstance.getDdCardTemplateId());
+                    }
+                    if (workflowInstance.getDdCardCallBackKey() != null) {
+                        existingWorkflowInstance.setDdCardCallBackKey(workflowInstance.getDdCardCallBackKey());
+                    }
 
                     return existingWorkflowInstance;
                 }

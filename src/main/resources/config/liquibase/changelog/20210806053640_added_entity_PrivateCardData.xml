@@ -17,7 +17,7 @@
             <column name="name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="fee" type="varchar(255)">
+            <column name="fee_value" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="reason" type="varchar(255)">
@@ -30,6 +30,15 @@
                 <constraints nullable="true" />
             </column>
             <column name="agree" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="finish" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="content" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="public_card_data_id" type="bigint">
@@ -59,11 +68,14 @@
                   tableName="private_card_data">
             <column name="id" type="numeric"/>
             <column name="name" type="string"/>
-            <column name="fee" type="string"/>
+            <column name="fee_value" type="string"/>
             <column name="reason" type="string"/>
             <column name="item_type" type="string"/>
             <column name="types_of_fee" type="string"/>
             <column name="agree" type="boolean"/>
+            <column name="finish" type="string"/>
+            <column name="status" type="string"/>
+            <column name="content" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

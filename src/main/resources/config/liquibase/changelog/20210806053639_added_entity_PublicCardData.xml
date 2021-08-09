@@ -14,10 +14,19 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="requestid" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="workflowid" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="valid" type="boolean">
+                <constraints nullable="true" />
+            </column>
             <column name="name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="fee" type="varchar(255)">
+            <column name="fee_value" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="reason" type="varchar(255)">
@@ -32,13 +41,13 @@
             <column name="agree" type="boolean">
                 <constraints nullable="true" />
             </column>
-            <column name="requestid" type="bigint">
+            <column name="finish" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="workflowid" type="bigint">
+            <column name="status" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="valid" type="boolean">
+            <column name="content" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="workflow_instance_id" type="bigint">
@@ -70,15 +79,18 @@
                   separator=";"
                   tableName="public_card_data">
             <column name="id" type="numeric"/>
+            <column name="requestid" type="numeric"/>
+            <column name="workflowid" type="numeric"/>
+            <column name="valid" type="boolean"/>
             <column name="name" type="string"/>
-            <column name="fee" type="string"/>
+            <column name="fee_value" type="string"/>
             <column name="reason" type="string"/>
             <column name="item_type" type="string"/>
             <column name="types_of_fee" type="string"/>
             <column name="agree" type="boolean"/>
-            <column name="requestid" type="numeric"/>
-            <column name="workflowid" type="numeric"/>
-            <column name="valid" type="boolean"/>
+            <column name="finish" type="string"/>
+            <column name="status" type="string"/>
+            <column name="content" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

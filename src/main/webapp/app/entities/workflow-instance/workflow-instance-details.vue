@@ -25,6 +25,18 @@
             <span>{{ workflowInstance.title }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.workflowInstance.ddCardTemplateId')">Dd Card Template Id</span>
+          </dt>
+          <dd>
+            <span>{{ workflowInstance.ddCardTemplateId }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.workflowInstance.ddCardCallBackKey')">Dd Card Call Back Key</span>
+          </dt>
+          <dd>
+            <span>{{ workflowInstance.ddCardCallBackKey }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.workflowInstance.workflowTemplate')">Workflow Template</span>
           </dt>
           <dd>

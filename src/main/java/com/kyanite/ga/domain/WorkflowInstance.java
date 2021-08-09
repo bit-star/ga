@@ -32,6 +32,12 @@ public class WorkflowInstance implements Serializable {
     @Column(name = "title")
     private String title;
 
+    @Column(name = "dd_card_template_id")
+    private String ddCardTemplateId;
+
+    @Column(name = "dd_card_call_back_key")
+    private String ddCardCallBackKey;
+
     @OneToMany(mappedBy = "workflowInstance")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(
@@ -110,6 +116,32 @@ public class WorkflowInstance implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getDdCardTemplateId() {
+        return this.ddCardTemplateId;
+    }
+
+    public WorkflowInstance ddCardTemplateId(String ddCardTemplateId) {
+        this.ddCardTemplateId = ddCardTemplateId;
+        return this;
+    }
+
+    public void setDdCardTemplateId(String ddCardTemplateId) {
+        this.ddCardTemplateId = ddCardTemplateId;
+    }
+
+    public String getDdCardCallBackKey() {
+        return this.ddCardCallBackKey;
+    }
+
+    public WorkflowInstance ddCardCallBackKey(String ddCardCallBackKey) {
+        this.ddCardCallBackKey = ddCardCallBackKey;
+        return this;
+    }
+
+    public void setDdCardCallBackKey(String ddCardCallBackKey) {
+        this.ddCardCallBackKey = ddCardCallBackKey;
     }
 
     public Set<DdUser> getApprovers() {
@@ -227,6 +259,8 @@ public class WorkflowInstance implements Serializable {
             ", form='" + getForm() + "'" +
             ", ddCardId='" + getDdCardId() + "'" +
             ", title='" + getTitle() + "'" +
+            ", ddCardTemplateId='" + getDdCardTemplateId() + "'" +
+            ", ddCardCallBackKey='" + getDdCardCallBackKey() + "'" +
             "}";
     }
 }

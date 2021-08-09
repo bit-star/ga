@@ -7,16 +7,34 @@
         </h2>
         <dl class="row jh-entity-details">
           <dt>
+            <span v-text="$t('gaApp.publicCardData.requestid')">Requestid</span>
+          </dt>
+          <dd>
+            <span>{{ publicCardData.requestid }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.publicCardData.workflowid')">Workflowid</span>
+          </dt>
+          <dd>
+            <span>{{ publicCardData.workflowid }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.publicCardData.valid')">Valid</span>
+          </dt>
+          <dd>
+            <span>{{ publicCardData.valid }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.publicCardData.name')">Name</span>
           </dt>
           <dd>
             <span>{{ publicCardData.name }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.publicCardData.fee')">Fee</span>
+            <span v-text="$t('gaApp.publicCardData.feeValue')">Fee Value</span>
           </dt>
           <dd>
-            <span>{{ publicCardData.fee }}</span>
+            <span>{{ publicCardData.feeValue }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.publicCardData.reason')">Reason</span>
@@ -43,22 +61,22 @@
             <span>{{ publicCardData.agree }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.publicCardData.requestid')">Requestid</span>
+            <span v-text="$t('gaApp.publicCardData.finish')">Finish</span>
           </dt>
           <dd>
-            <span>{{ publicCardData.requestid }}</span>
+            <span>{{ publicCardData.finish }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.publicCardData.workflowid')">Workflowid</span>
+            <span v-text="$t('gaApp.publicCardData.status')">Status</span>
           </dt>
           <dd>
-            <span>{{ publicCardData.workflowid }}</span>
+            <span>{{ publicCardData.status }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.publicCardData.valid')">Valid</span>
+            <span v-text="$t('gaApp.publicCardData.content')">Content</span>
           </dt>
           <dd>
-            <span>{{ publicCardData.valid }}</span>
+            <span>{{ publicCardData.content }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.publicCardData.workflowInstance')">Workflow Instance</span>

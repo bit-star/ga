@@ -32,6 +32,8 @@
             <th scope="row"><span v-text="$t('gaApp.workflowInstance.form')">Form</span></th>
             <th scope="row"><span v-text="$t('gaApp.workflowInstance.ddCardId')">Dd Card Id</span></th>
             <th scope="row"><span v-text="$t('gaApp.workflowInstance.title')">Title</span></th>
+            <th scope="row"><span v-text="$t('gaApp.workflowInstance.ddCardTemplateId')">Dd Card Template Id</span></th>
+            <th scope="row"><span v-text="$t('gaApp.workflowInstance.ddCardCallBackKey')">Dd Card Call Back Key</span></th>
             <th scope="row"><span v-text="$t('gaApp.workflowInstance.workflowTemplate')">Workflow Template</span></th>
             <th scope="row"><span v-text="$t('gaApp.workflowInstance.creator')">Creator</span></th>
             <th scope="row"></th>
@@ -47,6 +49,8 @@
             <td>{{ workflowInstance.form }}</td>
             <td>{{ workflowInstance.ddCardId }}</td>
             <td>{{ workflowInstance.title }}</td>
+            <td>{{ workflowInstance.ddCardTemplateId }}</td>
+            <td>{{ workflowInstance.ddCardCallBackKey }}</td>
             <td>
               <div v-if="workflowInstance.workflowTemplate">
                 <router-link :to="{ name: 'WorkflowTemplateView', params: { workflowTemplateId: workflowInstance.workflowTemplate.id } }">{{

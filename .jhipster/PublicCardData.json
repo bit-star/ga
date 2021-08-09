@@ -2,11 +2,23 @@
   "name": "PublicCardData",
   "fields": [
     {
+      "fieldName": "requestid",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "workflowid",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "valid",
+      "fieldType": "Boolean"
+    },
+    {
       "fieldName": "name",
       "fieldType": "String"
     },
     {
-      "fieldName": "fee",
+      "fieldName": "feeValue",
       "fieldType": "String"
     },
     {
@@ -26,16 +38,16 @@
       "fieldType": "Boolean"
     },
     {
-      "fieldName": "requestid",
-      "fieldType": "Long"
+      "fieldName": "finish",
+      "fieldType": "String"
     },
     {
-      "fieldName": "workflowid",
-      "fieldType": "Long"
+      "fieldName": "status",
+      "fieldType": "String"
     },
     {
-      "fieldName": "valid",
-      "fieldType": "Boolean"
+      "fieldName": "content",
+      "fieldType": "String"
     }
   ],
   "relationships": [

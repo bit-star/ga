@@ -24,6 +24,7 @@ const validations: any = {
     workflowTypeName: {},
     ddGroupTemplateId: {},
     ddCardTemplateId: {},
+    ddCardCallBackKey: {},
     eMobileCreatePageUrl: {},
     chatidField: {},
     sourceField: {},
