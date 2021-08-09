@@ -30,10 +30,7 @@ public class PrivateCardData implements Serializable {
     private String authority;
 
     @ManyToOne
-    @JsonIgnoreProperties(
-        value = { "privateCardData", "operationResults", "workflowInstance", "conversation", "workflowTemplate" },
-        allowSetters = true
-    )
+    @JsonIgnoreProperties(value = { "privateCardData", "operationResults", "workflowInstance", "conversation" }, allowSetters = true)
     private PublicCardData publicCardData;
 
     @ManyToOne

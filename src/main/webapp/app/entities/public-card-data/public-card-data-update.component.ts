@@ -12,9 +12,6 @@ import { IWorkflowInstance } from '@/shared/model/workflow-instance.model';
 import ConversationService from '@/entities/conversation/conversation.service';
 import { IConversation } from '@/shared/model/conversation.model';
 
-import WorkflowTemplateService from '@/entities/workflow-template/workflow-template.service';
-import { IWorkflowTemplate } from '@/shared/model/workflow-template.model';
-
 import { IPublicCardData, PublicCardData } from '@/shared/model/public-card-data.model';
 import PublicCardDataService from './public-card-data.service';
 
@@ -58,10 +55,6 @@ export default class PublicCardDataUpdate extends Vue {
   @Inject('conversationService') private conversationService: () => ConversationService;
 
   public conversations: IConversation[] = [];
-
-  @Inject('workflowTemplateService') private workflowTemplateService: () => WorkflowTemplateService;
-
-  public workflowTemplates: IWorkflowTemplate[] = [];
   public isSaving = false;
   public currentLanguage = '';
 
@@ -151,11 +144,6 @@ export default class PublicCardDataUpdate extends Vue {
       .retrieve()
       .then(res => {
         this.conversations = res.data;
-      });
-    this.workflowTemplateService()
-      .retrieve()
-      .then(res => {
-        this.workflowTemplates = res.data;
       });
   }
 }

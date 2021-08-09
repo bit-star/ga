@@ -34,8 +34,7 @@
       "privateCardData": "Private Card Data",
       "operationResults": "Operation Results",
       "workflowInstance": "Workflow Instance",
-      "conversation": "Conversation",
-      "workflowTemplate": "Workflow Template"
+      "conversation": "Conversation"
     }
   }
 }

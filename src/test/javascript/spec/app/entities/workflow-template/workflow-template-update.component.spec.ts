@@ -8,8 +8,6 @@ import WorkflowTemplateUpdateComponent from '@/entities/workflow-template/workfl
 import WorkflowTemplateClass from '@/entities/workflow-template/workflow-template-update.component';
 import WorkflowTemplateService from '@/entities/workflow-template/workflow-template.service';
 
-import PublicCardDataService from '@/entities/public-card-data/public-card-data.service';
-
 import FormFieldService from '@/entities/form-field/form-field.service';
 
 import LinkSystemService from '@/entities/link-system/link-system.service';
@@ -45,8 +43,6 @@ describe('Component Tests', () => {
         router,
         provide: {
           workflowTemplateService: () => workflowTemplateServiceStub,
-
-          publicCardDataService: () => new PublicCardDataService(),
 
           formFieldService: () => new FormFieldService(),
 

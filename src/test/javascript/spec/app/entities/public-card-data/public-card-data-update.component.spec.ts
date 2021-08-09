@@ -16,8 +16,6 @@ import WorkflowInstanceService from '@/entities/workflow-instance/workflow-insta
 
 import ConversationService from '@/entities/conversation/conversation.service';
 
-import WorkflowTemplateService from '@/entities/workflow-template/workflow-template.service';
-
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
@@ -55,8 +53,6 @@ describe('Component Tests', () => {
           workflowInstanceService: () => new WorkflowInstanceService(),
 
           conversationService: () => new ConversationService(),
-
-          workflowTemplateService: () => new WorkflowTemplateService(),
         },
       });
       comp = wrapper.vm;

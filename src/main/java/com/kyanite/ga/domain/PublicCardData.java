@@ -79,10 +79,6 @@ public class PublicCardData implements Serializable {
     @JsonIgnoreProperties(value = { "publicCardData", "groupMembers" }, allowSetters = true)
     private Conversation conversation;
 
-    @ManyToOne
-    @JsonIgnoreProperties(value = { "publicCardData", "formFields", "linkSystem", "workflowInstances" }, allowSetters = true)
-    private WorkflowTemplate workflowTemplate;
-
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -352,19 +348,6 @@ public class PublicCardData implements Serializable {
 
     public void setConversation(Conversation conversation) {
         this.conversation = conversation;
-    }
-
-    public WorkflowTemplate getWorkflowTemplate() {
-        return this.workflowTemplate;
-    }
-
-    public PublicCardData workflowTemplate(WorkflowTemplate workflowTemplate) {
-        this.setWorkflowTemplate(workflowTemplate);
-        return this;
-    }
-
-    public void setWorkflowTemplate(WorkflowTemplate workflowTemplate) {
-        this.workflowTemplate = workflowTemplate;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

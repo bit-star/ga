@@ -30,7 +30,7 @@ public class FormField implements Serializable {
     private String lable;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "publicCardData", "formFields", "linkSystem", "workflowInstances" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "formFields", "linkSystem", "workflowInstances" }, allowSetters = true)
     private WorkflowTemplate workflowTemplate;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

@@ -57,12 +57,6 @@
   "relationships": [
     {
       "relationshipType": "one-to-many",
-      "otherEntityName": "publicCardData",
-      "otherEntityRelationshipName": "workflowTemplate",
-      "relationshipName": "publicCardData"
-    },
-    {
-      "relationshipType": "one-to-many",
       "otherEntityName": "formField",
       "otherEntityRelationshipName": "workflowTemplate",
       "relationshipName": "formField"

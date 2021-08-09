@@ -226,31 +226,6 @@
               </option>
             </select>
           </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.publicCardData.workflowTemplate')" for="public-card-data-workflowTemplate"
-              >Workflow Template</label
-            >
-            <select
-              class="form-control"
-              id="public-card-data-workflowTemplate"
-              data-cy="workflowTemplate"
-              name="workflowTemplate"
-              v-model="publicCardData.workflowTemplate"
-            >
-              <option v-bind:value="null"></option>
-              <option
-                v-bind:value="
-                  publicCardData.workflowTemplate && workflowTemplateOption.id === publicCardData.workflowTemplate.id
-                    ? publicCardData.workflowTemplate
-                    : workflowTemplateOption
-                "
-                v-for="workflowTemplateOption in workflowTemplates"
-                :key="workflowTemplateOption.id"
-              >
-                {{ workflowTemplateOption.id }}
-              </option>
-            </select>
-          </div>
         </div>
         <div>
           <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" v-on:click="previousState()">

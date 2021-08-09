@@ -27,7 +27,7 @@ public class LinkSystem implements Serializable {
 
     @OneToMany(mappedBy = "linkSystem")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "publicCardData", "formFields", "linkSystem", "workflowInstances" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "formFields", "linkSystem", "workflowInstances" }, allowSetters = true)
     private Set<WorkflowTemplate> workflowTemplates = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

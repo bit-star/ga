@@ -26,10 +26,7 @@ public class Conversation implements Serializable {
 
     @OneToMany(mappedBy = "conversation")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(
-        value = { "privateCardData", "operationResults", "workflowInstance", "conversation", "workflowTemplate" },
-        allowSetters = true
-    )
+    @JsonIgnoreProperties(value = { "privateCardData", "operationResults", "workflowInstance", "conversation" }, allowSetters = true)
     private Set<PublicCardData> publicCardData = new HashSet<>();
 
     @OneToMany(mappedBy = "conversation")
