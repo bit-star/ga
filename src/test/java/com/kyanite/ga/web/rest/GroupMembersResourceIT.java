@@ -30,8 +30,8 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class GroupMembersResourceIT {
 
-    private static final GroupRole DEFAULT_GROUP_ROLE = GroupRole.Ang;
-    private static final GroupRole UPDATED_GROUP_ROLE = GroupRole.Refuse;
+    private static final GroupRole DEFAULT_GROUP_ROLE = GroupRole.Approver;
+    private static final GroupRole UPDATED_GROUP_ROLE = GroupRole.OrdinaryMember;
 
     private static final String ENTITY_API_URL = "/api/group-members";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";

@@ -1,7 +1,5 @@
 export enum GroupRole {
-  Ang = 'Ang',
+  Approver = 'Approver',
 
-  Refuse = 'Refuse',
-
-  Comment = 'Comment',
+  OrdinaryMember = 'OrdinaryMember',
 }

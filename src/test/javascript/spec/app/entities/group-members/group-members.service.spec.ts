@@ -30,7 +30,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new GroupMembersService();
-      elemDefault = new GroupMembers(123, GroupRole.Ang);
+      elemDefault = new GroupMembers(123, GroupRole.Approver);
     });
 
     describe('Service methods', () => {
