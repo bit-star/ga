@@ -131,17 +131,17 @@ relationship  OneToMany {
     LinkSystem to WorkflowTemplate
     WorkflowTemplate to PublicCardData
     WorkflowTemplate to FormField
-    WorkflowInstance to DdUser
+    WorkflowInstance{Approver} to DdUser
     DdUser to OperationResults
     PublicCardData to OperationResults
 }
 
 
 
-
 relationship  ManyToOne {
 	WorkflowInstance to WorkflowTemplate
   	WorkflowInstance to PublicCardData
+    WorkflowInstance{creator} to DdUser{createdInstance}
 }
 
 
