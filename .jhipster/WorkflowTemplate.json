@@ -34,6 +34,10 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "ddRobotCode",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "eMobileCreatePageUrl",
       "fieldType": "String"
     },

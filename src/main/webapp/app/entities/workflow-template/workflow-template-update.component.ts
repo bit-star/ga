@@ -25,6 +25,7 @@ const validations: any = {
     ddGroupTemplateId: {},
     ddCardTemplateId: {},
     ddCardCallBackKey: {},
+    ddRobotCode: {},
     eMobileCreatePageUrl: {},
     chatidField: {},
     sourceField: {},

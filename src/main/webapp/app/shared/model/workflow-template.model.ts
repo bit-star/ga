@@ -13,6 +13,7 @@ export interface IWorkflowTemplate {
   ddGroupTemplateId?: string | null;
   ddCardTemplateId?: string | null;
   ddCardCallBackKey?: string | null;
+  ddRobotCode?: string | null;
   eMobileCreatePageUrl?: string | null;
   chatidField?: string | null;
   sourceField?: string | null;
@@ -34,6 +35,7 @@ export class WorkflowTemplate implements IWorkflowTemplate {
     public ddGroupTemplateId?: string | null,
     public ddCardTemplateId?: string | null,
     public ddCardCallBackKey?: string | null,
+    public ddRobotCode?: string | null,
     public eMobileCreatePageUrl?: string | null,
     public chatidField?: string | null,
     public sourceField?: string | null,

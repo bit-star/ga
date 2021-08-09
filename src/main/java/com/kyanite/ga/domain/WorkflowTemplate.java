@@ -46,6 +46,9 @@ public class WorkflowTemplate implements Serializable {
     @Column(name = "dd_card_call_back_key")
     private String ddCardCallBackKey;
 
+    @Column(name = "dd_robot_code")
+    private String ddRobotCode;
+
     @Column(name = "e_mobile_create_page_url")
     private String eMobileCreatePageUrl;
 
@@ -196,6 +199,19 @@ public class WorkflowTemplate implements Serializable {
 
     public void setDdCardCallBackKey(String ddCardCallBackKey) {
         this.ddCardCallBackKey = ddCardCallBackKey;
+    }
+
+    public String getDdRobotCode() {
+        return this.ddRobotCode;
+    }
+
+    public WorkflowTemplate ddRobotCode(String ddRobotCode) {
+        this.ddRobotCode = ddRobotCode;
+        return this;
+    }
+
+    public void setDdRobotCode(String ddRobotCode) {
+        this.ddRobotCode = ddRobotCode;
     }
 
     public String geteMobileCreatePageUrl() {
@@ -388,6 +404,7 @@ public class WorkflowTemplate implements Serializable {
             ", ddGroupTemplateId='" + getDdGroupTemplateId() + "'" +
             ", ddCardTemplateId='" + getDdCardTemplateId() + "'" +
             ", ddCardCallBackKey='" + getDdCardCallBackKey() + "'" +
+            ", ddRobotCode='" + getDdRobotCode() + "'" +
             ", eMobileCreatePageUrl='" + geteMobileCreatePageUrl() + "'" +
             ", chatidField='" + getChatidField() + "'" +
             ", sourceField='" + getSourceField() + "'" +

@@ -26,6 +26,7 @@
       "ddGroupTemplateId": "Dd Group Template Id",
       "ddCardTemplateId": "Dd Card Template Id",
       "ddCardCallBackKey": "Dd Card Call Back Key",
+      "ddRobotCode": "Dd Robot Code",
       "eMobileCreatePageUrl": "E Mobile Create Page Url",
       "chatidField": "Chatid Field",
       "sourceField": "Source Field",
