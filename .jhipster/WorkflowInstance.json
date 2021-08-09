@@ -20,7 +20,7 @@
       "relationshipType": "one-to-many",
       "otherEntityName": "ddUser",
       "otherEntityRelationshipName": "workflowInstance",
-      "relationshipName": "ddUser"
+      "relationshipName": "approver"
     },
     {
       "relationshipType": "many-to-one",
@@ -33,6 +33,12 @@
       "otherEntityName": "publicCardData",
       "otherEntityRelationshipName": "workflowInstance",
       "relationshipName": "publicCardData"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ddUser",
+      "otherEntityRelationshipName": "createdInstance",
+      "relationshipName": "creator"
     }
   ],
   "entityTableName": "workflow_instance",

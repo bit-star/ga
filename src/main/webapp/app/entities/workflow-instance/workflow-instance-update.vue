@@ -104,6 +104,21 @@
               </option>
             </select>
           </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.workflowInstance.creator')" for="workflow-instance-creator">Creator</label>
+            <select class="form-control" id="workflow-instance-creator" data-cy="creator" name="creator" v-model="workflowInstance.creator">
+              <option v-bind:value="null"></option>
+              <option
+                v-bind:value="
+                  workflowInstance.creator && ddUserOption.id === workflowInstance.creator.id ? workflowInstance.creator : ddUserOption
+                "
+                v-for="ddUserOption in ddUsers"
+                :key="ddUserOption.id"
+              >
+                {{ ddUserOption.id }}
+              </option>
+            </select>
+          </div>
         </div>
         <div>
           <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" v-on:click="previousState()">

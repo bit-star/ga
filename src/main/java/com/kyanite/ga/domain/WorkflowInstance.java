@@ -34,8 +34,11 @@ public class WorkflowInstance implements Serializable {
 
     @OneToMany(mappedBy = "workflowInstance")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "groupMembers", "privateCardData", "operationResults", "workflowInstance" }, allowSetters = true)
-    private Set<DdUser> ddUsers = new HashSet<>();
+    @JsonIgnoreProperties(
+        value = { "groupMembers", "privateCardData", "operationResults", "workflowInstance", "createdInstances" },
+        allowSetters = true
+    )
+    private Set<DdUser> approvers = new HashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties(value = { "publicCardData", "formFields", "linkSystem", "workflowInstances" }, allowSetters = true)
@@ -47,6 +50,13 @@ public class WorkflowInstance implements Serializable {
         allowSetters = true
     )
     private PublicCardData publicCardData;
+
+    @ManyToOne
+    @JsonIgnoreProperties(
+        value = { "groupMembers", "privateCardData", "operationResults", "workflowInstance", "createdInstances" },
+        allowSetters = true
+    )
+    private DdUser creator;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -101,35 +111,35 @@ public class WorkflowInstance implements Serializable {
         this.title = title;
     }
 
-    public Set<DdUser> getDdUsers() {
-        return this.ddUsers;
+    public Set<DdUser> getApprovers() {
+        return this.approvers;
     }
 
-    public WorkflowInstance ddUsers(Set<DdUser> ddUsers) {
-        this.setDdUsers(ddUsers);
+    public WorkflowInstance approvers(Set<DdUser> ddUsers) {
+        this.setApprovers(ddUsers);
         return this;
     }
 
-    public WorkflowInstance addDdUser(DdUser ddUser) {
-        this.ddUsers.add(ddUser);
+    public WorkflowInstance addApprover(DdUser ddUser) {
+        this.approvers.add(ddUser);
         ddUser.setWorkflowInstance(this);
         return this;
     }
 
-    public WorkflowInstance removeDdUser(DdUser ddUser) {
-        this.ddUsers.remove(ddUser);
+    public WorkflowInstance removeApprover(DdUser ddUser) {
+        this.approvers.remove(ddUser);
         ddUser.setWorkflowInstance(null);
         return this;
     }
 
-    public void setDdUsers(Set<DdUser> ddUsers) {
-        if (this.ddUsers != null) {
-            this.ddUsers.forEach(i -> i.setWorkflowInstance(null));
+    public void setApprovers(Set<DdUser> ddUsers) {
+        if (this.approvers != null) {
+            this.approvers.forEach(i -> i.setWorkflowInstance(null));
         }
         if (ddUsers != null) {
             ddUsers.forEach(i -> i.setWorkflowInstance(this));
         }
-        this.ddUsers = ddUsers;
+        this.approvers = ddUsers;
     }
 
     public WorkflowTemplate getWorkflowTemplate() {
@@ -156,6 +166,19 @@ public class WorkflowInstance implements Serializable {
 
     public void setPublicCardData(PublicCardData publicCardData) {
         this.publicCardData = publicCardData;
+    }
+
+    public DdUser getCreator() {
+        return this.creator;
+    }
+
+    public WorkflowInstance creator(DdUser ddUser) {
+        this.setCreator(ddUser);
+        return this;
+    }
+
+    public void setCreator(DdUser ddUser) {
+        this.creator = ddUser;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

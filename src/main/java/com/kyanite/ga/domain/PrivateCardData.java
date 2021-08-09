@@ -46,7 +46,10 @@ public class PrivateCardData implements Serializable {
     private PublicCardData publicCardData;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "groupMembers", "privateCardData", "operationResults", "workflowInstance" }, allowSetters = true)
+    @JsonIgnoreProperties(
+        value = { "groupMembers", "privateCardData", "operationResults", "workflowInstance", "createdInstances" },
+        allowSetters = true
+    )
     private DdUser ddUser;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

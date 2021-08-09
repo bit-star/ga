@@ -111,8 +111,13 @@ public class DdUser implements Serializable {
     private Set<OperationResults> operationResults = new HashSet<>();
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "ddUsers", "workflowTemplate", "publicCardData" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "publicCardData", "creator" }, allowSetters = true)
     private WorkflowInstance workflowInstance;
+
+    @OneToMany(mappedBy = "creator")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "publicCardData", "creator" }, allowSetters = true)
+    private Set<WorkflowInstance> createdInstances = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -531,6 +536,37 @@ public class DdUser implements Serializable {
 
     public void setWorkflowInstance(WorkflowInstance workflowInstance) {
         this.workflowInstance = workflowInstance;
+    }
+
+    public Set<WorkflowInstance> getCreatedInstances() {
+        return this.createdInstances;
+    }
+
+    public DdUser createdInstances(Set<WorkflowInstance> workflowInstances) {
+        this.setCreatedInstances(workflowInstances);
+        return this;
+    }
+
+    public DdUser addCreatedInstance(WorkflowInstance workflowInstance) {
+        this.createdInstances.add(workflowInstance);
+        workflowInstance.setCreator(this);
+        return this;
+    }
+
+    public DdUser removeCreatedInstance(WorkflowInstance workflowInstance) {
+        this.createdInstances.remove(workflowInstance);
+        workflowInstance.setCreator(null);
+        return this;
+    }
+
+    public void setCreatedInstances(Set<WorkflowInstance> workflowInstances) {
+        if (this.createdInstances != null) {
+            this.createdInstances.forEach(i -> i.setCreator(null));
+        }
+        if (workflowInstances != null) {
+            workflowInstances.forEach(i -> i.setCreator(this));
+        }
+        this.createdInstances = workflowInstances;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
