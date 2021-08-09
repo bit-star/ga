@@ -7,6 +7,8 @@ export interface IWorkflowInstance {
   form?: string | null;
   ddCardId?: string | null;
   title?: string | null;
+  ddCardTemplateId?: string | null;
+  ddCardCallBackKey?: string | null;
   approvers?: IDdUser[] | null;
   workflowTemplate?: IWorkflowTemplate | null;
   creator?: IDdUser | null;
@@ -19,6 +21,8 @@ export class WorkflowInstance implements IWorkflowInstance {
     public form?: string | null,
     public ddCardId?: string | null,
     public title?: string | null,
+    public ddCardTemplateId?: string | null,
+    public ddCardCallBackKey?: string | null,
     public approvers?: IDdUser[] | null,
     public workflowTemplate?: IWorkflowTemplate | null,
     public creator?: IDdUser | null,

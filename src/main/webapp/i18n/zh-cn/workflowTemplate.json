@@ -25,6 +25,7 @@
       "workflowTypeName": "Workflow Type Name",
       "ddGroupTemplateId": "Dd Group Template Id",
       "ddCardTemplateId": "Dd Card Template Id",
+      "ddCardCallBackKey": "Dd Card Call Back Key",
       "eMobileCreatePageUrl": "E Mobile Create Page Url",
       "chatidField": "Chatid Field",
       "sourceField": "Source Field",

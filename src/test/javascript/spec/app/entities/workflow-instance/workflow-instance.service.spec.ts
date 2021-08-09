@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new WorkflowInstanceService();
-      elemDefault = new WorkflowInstance(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new WorkflowInstance(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -84,6 +84,8 @@ describe('Service Tests', () => {
             form: 'BBBBBB',
             ddCardId: 'BBBBBB',
             title: 'BBBBBB',
+            ddCardTemplateId: 'BBBBBB',
+            ddCardCallBackKey: 'BBBBBB',
           },
           elemDefault
         );
@@ -111,6 +113,7 @@ describe('Service Tests', () => {
         const patchObject = Object.assign(
           {
             form: 'BBBBBB',
+            ddCardCallBackKey: 'BBBBBB',
           },
           new WorkflowInstance()
         );
@@ -141,6 +144,8 @@ describe('Service Tests', () => {
             form: 'BBBBBB',
             ddCardId: 'BBBBBB',
             title: 'BBBBBB',
+            ddCardTemplateId: 'BBBBBB',
+            ddCardCallBackKey: 'BBBBBB',
           },
           elemDefault
         );

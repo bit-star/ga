@@ -69,6 +69,9 @@ public class WorkflowTemplateService {
                     if (workflowTemplate.getDdCardTemplateId() != null) {
                         existingWorkflowTemplate.setDdCardTemplateId(workflowTemplate.getDdCardTemplateId());
                     }
+                    if (workflowTemplate.getDdCardCallBackKey() != null) {
+                        existingWorkflowTemplate.setDdCardCallBackKey(workflowTemplate.getDdCardCallBackKey());
+                    }
                     if (workflowTemplate.geteMobileCreatePageUrl() != null) {
                         existingWorkflowTemplate.seteMobileCreatePageUrl(workflowTemplate.geteMobileCreatePageUrl());
                     }

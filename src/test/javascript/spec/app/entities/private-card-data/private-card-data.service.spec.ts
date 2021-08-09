@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new PrivateCardDataService();
-      elemDefault = new PrivateCardData(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false);
+      elemDefault = new PrivateCardData(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -82,11 +82,14 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             name: 'BBBBBB',
-            fee: 'BBBBBB',
+            feeValue: 'BBBBBB',
             reason: 'BBBBBB',
             itemType: 'BBBBBB',
             typesOfFee: 'BBBBBB',
             agree: true,
+            finish: 'BBBBBB',
+            status: 'BBBBBB',
+            content: 'BBBBBB',
           },
           elemDefault
         );
@@ -115,6 +118,8 @@ describe('Service Tests', () => {
           {
             itemType: 'BBBBBB',
             agree: true,
+            status: 'BBBBBB',
+            content: 'BBBBBB',
           },
           new PrivateCardData()
         );
@@ -143,11 +148,14 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             name: 'BBBBBB',
-            fee: 'BBBBBB',
+            feeValue: 'BBBBBB',
             reason: 'BBBBBB',
             itemType: 'BBBBBB',
             typesOfFee: 'BBBBBB',
             agree: true,
+            finish: 'BBBBBB',
+            status: 'BBBBBB',
+            content: 'BBBBBB',
           },
           elemDefault
         );

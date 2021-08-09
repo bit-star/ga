@@ -6,7 +6,7 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "fee",
+      "fieldName": "feeValue",
       "fieldType": "String"
     },
     {
@@ -24,6 +24,18 @@
     {
       "fieldName": "agree",
       "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "finish",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "String"
     }
   ],
   "relationships": [

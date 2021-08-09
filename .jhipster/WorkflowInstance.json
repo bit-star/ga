@@ -13,6 +13,14 @@
     {
       "fieldName": "title",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "ddCardTemplateId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ddCardCallBackKey",
+      "fieldType": "String"
     }
   ],
   "relationships": [

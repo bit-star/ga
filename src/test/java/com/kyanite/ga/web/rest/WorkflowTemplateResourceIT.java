@@ -50,6 +50,9 @@ class WorkflowTemplateResourceIT {
     private static final String DEFAULT_DD_CARD_TEMPLATE_ID = "AAAAAAAAAA";
     private static final String UPDATED_DD_CARD_TEMPLATE_ID = "BBBBBBBBBB";
 
+    private static final String DEFAULT_DD_CARD_CALL_BACK_KEY = "AAAAAAAAAA";
+    private static final String UPDATED_DD_CARD_CALL_BACK_KEY = "BBBBBBBBBB";
+
     private static final String DEFAULT_E_MOBILE_CREATE_PAGE_URL = "AAAAAAAAAA";
     private static final String UPDATED_E_MOBILE_CREATE_PAGE_URL = "BBBBBBBBBB";
 
@@ -94,6 +97,7 @@ class WorkflowTemplateResourceIT {
             .workflowTypeName(DEFAULT_WORKFLOW_TYPE_NAME)
             .ddGroupTemplateId(DEFAULT_DD_GROUP_TEMPLATE_ID)
             .ddCardTemplateId(DEFAULT_DD_CARD_TEMPLATE_ID)
+            .ddCardCallBackKey(DEFAULT_DD_CARD_CALL_BACK_KEY)
             .eMobileCreatePageUrl(DEFAULT_E_MOBILE_CREATE_PAGE_URL)
             .chatidField(DEFAULT_CHATID_FIELD)
             .sourceField(DEFAULT_SOURCE_FIELD)
@@ -116,6 +120,7 @@ class WorkflowTemplateResourceIT {
             .workflowTypeName(UPDATED_WORKFLOW_TYPE_NAME)
             .ddGroupTemplateId(UPDATED_DD_GROUP_TEMPLATE_ID)
             .ddCardTemplateId(UPDATED_DD_CARD_TEMPLATE_ID)
+            .ddCardCallBackKey(UPDATED_DD_CARD_CALL_BACK_KEY)
             .eMobileCreatePageUrl(UPDATED_E_MOBILE_CREATE_PAGE_URL)
             .chatidField(UPDATED_CHATID_FIELD)
             .sourceField(UPDATED_SOURCE_FIELD)
@@ -150,6 +155,7 @@ class WorkflowTemplateResourceIT {
         assertThat(testWorkflowTemplate.getWorkflowTypeName()).isEqualTo(DEFAULT_WORKFLOW_TYPE_NAME);
         assertThat(testWorkflowTemplate.getDdGroupTemplateId()).isEqualTo(DEFAULT_DD_GROUP_TEMPLATE_ID);
         assertThat(testWorkflowTemplate.getDdCardTemplateId()).isEqualTo(DEFAULT_DD_CARD_TEMPLATE_ID);
+        assertThat(testWorkflowTemplate.getDdCardCallBackKey()).isEqualTo(DEFAULT_DD_CARD_CALL_BACK_KEY);
         assertThat(testWorkflowTemplate.geteMobileCreatePageUrl()).isEqualTo(DEFAULT_E_MOBILE_CREATE_PAGE_URL);
         assertThat(testWorkflowTemplate.getChatidField()).isEqualTo(DEFAULT_CHATID_FIELD);
         assertThat(testWorkflowTemplate.getSourceField()).isEqualTo(DEFAULT_SOURCE_FIELD);
@@ -195,6 +201,7 @@ class WorkflowTemplateResourceIT {
             .andExpect(jsonPath("$.[*].workflowTypeName").value(hasItem(DEFAULT_WORKFLOW_TYPE_NAME)))
             .andExpect(jsonPath("$.[*].ddGroupTemplateId").value(hasItem(DEFAULT_DD_GROUP_TEMPLATE_ID)))
             .andExpect(jsonPath("$.[*].ddCardTemplateId").value(hasItem(DEFAULT_DD_CARD_TEMPLATE_ID)))
+            .andExpect(jsonPath("$.[*].ddCardCallBackKey").value(hasItem(DEFAULT_DD_CARD_CALL_BACK_KEY)))
             .andExpect(jsonPath("$.[*].eMobileCreatePageUrl").value(hasItem(DEFAULT_E_MOBILE_CREATE_PAGE_URL)))
             .andExpect(jsonPath("$.[*].chatidField").value(hasItem(DEFAULT_CHATID_FIELD)))
             .andExpect(jsonPath("$.[*].sourceField").value(hasItem(DEFAULT_SOURCE_FIELD)))
@@ -220,6 +227,7 @@ class WorkflowTemplateResourceIT {
             .andExpect(jsonPath("$.workflowTypeName").value(DEFAULT_WORKFLOW_TYPE_NAME))
             .andExpect(jsonPath("$.ddGroupTemplateId").value(DEFAULT_DD_GROUP_TEMPLATE_ID))
             .andExpect(jsonPath("$.ddCardTemplateId").value(DEFAULT_DD_CARD_TEMPLATE_ID))
+            .andExpect(jsonPath("$.ddCardCallBackKey").value(DEFAULT_DD_CARD_CALL_BACK_KEY))
             .andExpect(jsonPath("$.eMobileCreatePageUrl").value(DEFAULT_E_MOBILE_CREATE_PAGE_URL))
             .andExpect(jsonPath("$.chatidField").value(DEFAULT_CHATID_FIELD))
             .andExpect(jsonPath("$.sourceField").value(DEFAULT_SOURCE_FIELD))
@@ -253,6 +261,7 @@ class WorkflowTemplateResourceIT {
             .workflowTypeName(UPDATED_WORKFLOW_TYPE_NAME)
             .ddGroupTemplateId(UPDATED_DD_GROUP_TEMPLATE_ID)
             .ddCardTemplateId(UPDATED_DD_CARD_TEMPLATE_ID)
+            .ddCardCallBackKey(UPDATED_DD_CARD_CALL_BACK_KEY)
             .eMobileCreatePageUrl(UPDATED_E_MOBILE_CREATE_PAGE_URL)
             .chatidField(UPDATED_CHATID_FIELD)
             .sourceField(UPDATED_SOURCE_FIELD)
@@ -277,6 +286,7 @@ class WorkflowTemplateResourceIT {
         assertThat(testWorkflowTemplate.getWorkflowTypeName()).isEqualTo(UPDATED_WORKFLOW_TYPE_NAME);
         assertThat(testWorkflowTemplate.getDdGroupTemplateId()).isEqualTo(UPDATED_DD_GROUP_TEMPLATE_ID);
         assertThat(testWorkflowTemplate.getDdCardTemplateId()).isEqualTo(UPDATED_DD_CARD_TEMPLATE_ID);
+        assertThat(testWorkflowTemplate.getDdCardCallBackKey()).isEqualTo(UPDATED_DD_CARD_CALL_BACK_KEY);
         assertThat(testWorkflowTemplate.geteMobileCreatePageUrl()).isEqualTo(UPDATED_E_MOBILE_CREATE_PAGE_URL);
         assertThat(testWorkflowTemplate.getChatidField()).isEqualTo(UPDATED_CHATID_FIELD);
         assertThat(testWorkflowTemplate.getSourceField()).isEqualTo(UPDATED_SOURCE_FIELD);
@@ -358,6 +368,7 @@ class WorkflowTemplateResourceIT {
             .workflowId(UPDATED_WORKFLOW_ID)
             .workflowTypeId(UPDATED_WORKFLOW_TYPE_ID)
             .workflowTypeName(UPDATED_WORKFLOW_TYPE_NAME)
+            .eMobileCreatePageUrl(UPDATED_E_MOBILE_CREATE_PAGE_URL)
             .chatidField(UPDATED_CHATID_FIELD)
             .sourceField(UPDATED_SOURCE_FIELD)
             .commentsField(UPDATED_COMMENTS_FIELD);
@@ -381,7 +392,8 @@ class WorkflowTemplateResourceIT {
         assertThat(testWorkflowTemplate.getWorkflowTypeName()).isEqualTo(UPDATED_WORKFLOW_TYPE_NAME);
         assertThat(testWorkflowTemplate.getDdGroupTemplateId()).isEqualTo(DEFAULT_DD_GROUP_TEMPLATE_ID);
         assertThat(testWorkflowTemplate.getDdCardTemplateId()).isEqualTo(DEFAULT_DD_CARD_TEMPLATE_ID);
-        assertThat(testWorkflowTemplate.geteMobileCreatePageUrl()).isEqualTo(DEFAULT_E_MOBILE_CREATE_PAGE_URL);
+        assertThat(testWorkflowTemplate.getDdCardCallBackKey()).isEqualTo(DEFAULT_DD_CARD_CALL_BACK_KEY);
+        assertThat(testWorkflowTemplate.geteMobileCreatePageUrl()).isEqualTo(UPDATED_E_MOBILE_CREATE_PAGE_URL);
         assertThat(testWorkflowTemplate.getChatidField()).isEqualTo(UPDATED_CHATID_FIELD);
         assertThat(testWorkflowTemplate.getSourceField()).isEqualTo(UPDATED_SOURCE_FIELD);
         assertThat(testWorkflowTemplate.getCommentsField()).isEqualTo(UPDATED_COMMENTS_FIELD);
@@ -407,6 +419,7 @@ class WorkflowTemplateResourceIT {
             .workflowTypeName(UPDATED_WORKFLOW_TYPE_NAME)
             .ddGroupTemplateId(UPDATED_DD_GROUP_TEMPLATE_ID)
             .ddCardTemplateId(UPDATED_DD_CARD_TEMPLATE_ID)
+            .ddCardCallBackKey(UPDATED_DD_CARD_CALL_BACK_KEY)
             .eMobileCreatePageUrl(UPDATED_E_MOBILE_CREATE_PAGE_URL)
             .chatidField(UPDATED_CHATID_FIELD)
             .sourceField(UPDATED_SOURCE_FIELD)
@@ -431,6 +444,7 @@ class WorkflowTemplateResourceIT {
         assertThat(testWorkflowTemplate.getWorkflowTypeName()).isEqualTo(UPDATED_WORKFLOW_TYPE_NAME);
         assertThat(testWorkflowTemplate.getDdGroupTemplateId()).isEqualTo(UPDATED_DD_GROUP_TEMPLATE_ID);
         assertThat(testWorkflowTemplate.getDdCardTemplateId()).isEqualTo(UPDATED_DD_CARD_TEMPLATE_ID);
+        assertThat(testWorkflowTemplate.getDdCardCallBackKey()).isEqualTo(UPDATED_DD_CARD_CALL_BACK_KEY);
         assertThat(testWorkflowTemplate.geteMobileCreatePageUrl()).isEqualTo(UPDATED_E_MOBILE_CREATE_PAGE_URL);
         assertThat(testWorkflowTemplate.getChatidField()).isEqualTo(UPDATED_CHATID_FIELD);
         assertThat(testWorkflowTemplate.getSourceField()).isEqualTo(UPDATED_SOURCE_FIELD);

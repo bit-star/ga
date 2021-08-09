@@ -13,10 +13,10 @@
             <span>{{ privateCardData.name }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.privateCardData.fee')">Fee</span>
+            <span v-text="$t('gaApp.privateCardData.feeValue')">Fee Value</span>
           </dt>
           <dd>
-            <span>{{ privateCardData.fee }}</span>
+            <span>{{ privateCardData.feeValue }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.privateCardData.reason')">Reason</span>
@@ -41,6 +41,24 @@
           </dt>
           <dd>
             <span>{{ privateCardData.agree }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.privateCardData.finish')">Finish</span>
+          </dt>
+          <dd>
+            <span>{{ privateCardData.finish }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.privateCardData.status')">Status</span>
+          </dt>
+          <dd>
+            <span>{{ privateCardData.status }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.privateCardData.content')">Content</span>
+          </dt>
+          <dd>
+            <span>{{ privateCardData.content }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.privateCardData.publicCardData')">Public Card Data</span>

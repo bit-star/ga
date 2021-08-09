@@ -20,15 +20,18 @@ import PublicCardDataService from './public-card-data.service';
 
 const validations: any = {
   publicCardData: {
+    requestid: {},
+    workflowid: {},
+    valid: {},
     name: {},
-    fee: {},
+    feeValue: {},
     reason: {},
     itemType: {},
     typesOfFee: {},
     agree: {},
-    requestid: {},
-    workflowid: {},
-    valid: {},
+    finish: {},
+    status: {},
+    content: {},
   },
 };
 

@@ -6,15 +6,18 @@ import { IWorkflowTemplate } from '@/shared/model/workflow-template.model';
 
 export interface IPublicCardData {
   id?: number;
+  requestid?: number | null;
+  workflowid?: number | null;
+  valid?: boolean | null;
   name?: string | null;
-  fee?: string | null;
+  feeValue?: string | null;
   reason?: string | null;
   itemType?: string | null;
   typesOfFee?: string | null;
   agree?: boolean | null;
-  requestid?: number | null;
-  workflowid?: number | null;
-  valid?: boolean | null;
+  finish?: string | null;
+  status?: string | null;
+  content?: string | null;
   privateCardData?: IPrivateCardData[] | null;
   operationResults?: IOperationResults[] | null;
   workflowInstance?: IWorkflowInstance | null;
@@ -25,22 +28,25 @@ export interface IPublicCardData {
 export class PublicCardData implements IPublicCardData {
   constructor(
     public id?: number,
+    public requestid?: number | null,
+    public workflowid?: number | null,
+    public valid?: boolean | null,
     public name?: string | null,
-    public fee?: string | null,
+    public feeValue?: string | null,
     public reason?: string | null,
     public itemType?: string | null,
     public typesOfFee?: string | null,
     public agree?: boolean | null,
-    public requestid?: number | null,
-    public workflowid?: number | null,
-    public valid?: boolean | null,
+    public finish?: string | null,
+    public status?: string | null,
+    public content?: string | null,
     public privateCardData?: IPrivateCardData[] | null,
     public operationResults?: IOperationResults[] | null,
     public workflowInstance?: IWorkflowInstance | null,
     public conversation?: IConversation | null,
     public workflowTemplate?: IWorkflowTemplate | null
   ) {
-    this.agree = this.agree ?? false;
     this.valid = this.valid ?? false;
+    this.agree = this.agree ?? false;
   }
 }

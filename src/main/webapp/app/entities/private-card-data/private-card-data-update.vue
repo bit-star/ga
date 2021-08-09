@@ -27,15 +27,17 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.privateCardData.fee')" for="private-card-data-fee">Fee</label>
+            <label class="form-control-label" v-text="$t('gaApp.privateCardData.feeValue')" for="private-card-data-feeValue"
+              >Fee Value</label
+            >
             <input
               type="text"
               class="form-control"
-              name="fee"
-              id="private-card-data-fee"
-              data-cy="fee"
-              :class="{ valid: !$v.privateCardData.fee.$invalid, invalid: $v.privateCardData.fee.$invalid }"
-              v-model="$v.privateCardData.fee.$model"
+              name="feeValue"
+              id="private-card-data-feeValue"
+              data-cy="feeValue"
+              :class="{ valid: !$v.privateCardData.feeValue.$invalid, invalid: $v.privateCardData.feeValue.$invalid }"
+              v-model="$v.privateCardData.feeValue.$model"
             />
           </div>
           <div class="form-group">
@@ -88,6 +90,42 @@
               data-cy="agree"
               :class="{ valid: !$v.privateCardData.agree.$invalid, invalid: $v.privateCardData.agree.$invalid }"
               v-model="$v.privateCardData.agree.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.privateCardData.finish')" for="private-card-data-finish">Finish</label>
+            <input
+              type="text"
+              class="form-control"
+              name="finish"
+              id="private-card-data-finish"
+              data-cy="finish"
+              :class="{ valid: !$v.privateCardData.finish.$invalid, invalid: $v.privateCardData.finish.$invalid }"
+              v-model="$v.privateCardData.finish.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.privateCardData.status')" for="private-card-data-status">Status</label>
+            <input
+              type="text"
+              class="form-control"
+              name="status"
+              id="private-card-data-status"
+              data-cy="status"
+              :class="{ valid: !$v.privateCardData.status.$invalid, invalid: $v.privateCardData.status.$invalid }"
+              v-model="$v.privateCardData.status.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.privateCardData.content')" for="private-card-data-content">Content</label>
+            <input
+              type="text"
+              class="form-control"
+              name="content"
+              id="private-card-data-content"
+              data-cy="content"
+              :class="{ valid: !$v.privateCardData.content.$invalid, invalid: $v.privateCardData.content.$invalid }"
+              v-model="$v.privateCardData.content.$model"
             />
           </div>
           <div class="form-group">

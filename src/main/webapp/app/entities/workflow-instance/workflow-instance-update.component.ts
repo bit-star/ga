@@ -20,6 +20,8 @@ const validations: any = {
     form: {},
     ddCardId: {},
     title: {},
+    ddCardTemplateId: {},
+    ddCardCallBackKey: {},
   },
 };
 

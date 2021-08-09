@@ -39,6 +39,12 @@ class WorkflowInstanceResourceIT {
     private static final String DEFAULT_TITLE = "AAAAAAAAAA";
     private static final String UPDATED_TITLE = "BBBBBBBBBB";
 
+    private static final String DEFAULT_DD_CARD_TEMPLATE_ID = "AAAAAAAAAA";
+    private static final String UPDATED_DD_CARD_TEMPLATE_ID = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DD_CARD_CALL_BACK_KEY = "AAAAAAAAAA";
+    private static final String UPDATED_DD_CARD_CALL_BACK_KEY = "BBBBBBBBBB";
+
     private static final String ENTITY_API_URL = "/api/workflow-instances";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -63,7 +69,12 @@ class WorkflowInstanceResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static WorkflowInstance createEntity(EntityManager em) {
-        WorkflowInstance workflowInstance = new WorkflowInstance().form(DEFAULT_FORM).ddCardId(DEFAULT_DD_CARD_ID).title(DEFAULT_TITLE);
+        WorkflowInstance workflowInstance = new WorkflowInstance()
+            .form(DEFAULT_FORM)
+            .ddCardId(DEFAULT_DD_CARD_ID)
+            .title(DEFAULT_TITLE)
+            .ddCardTemplateId(DEFAULT_DD_CARD_TEMPLATE_ID)
+            .ddCardCallBackKey(DEFAULT_DD_CARD_CALL_BACK_KEY);
         return workflowInstance;
     }
 
@@ -74,7 +85,12 @@ class WorkflowInstanceResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static WorkflowInstance createUpdatedEntity(EntityManager em) {
-        WorkflowInstance workflowInstance = new WorkflowInstance().form(UPDATED_FORM).ddCardId(UPDATED_DD_CARD_ID).title(UPDATED_TITLE);
+        WorkflowInstance workflowInstance = new WorkflowInstance()
+            .form(UPDATED_FORM)
+            .ddCardId(UPDATED_DD_CARD_ID)
+            .title(UPDATED_TITLE)
+            .ddCardTemplateId(UPDATED_DD_CARD_TEMPLATE_ID)
+            .ddCardCallBackKey(UPDATED_DD_CARD_CALL_BACK_KEY);
         return workflowInstance;
     }
 
@@ -101,6 +117,8 @@ class WorkflowInstanceResourceIT {
         assertThat(testWorkflowInstance.getForm()).isEqualTo(DEFAULT_FORM);
         assertThat(testWorkflowInstance.getDdCardId()).isEqualTo(DEFAULT_DD_CARD_ID);
         assertThat(testWorkflowInstance.getTitle()).isEqualTo(DEFAULT_TITLE);
+        assertThat(testWorkflowInstance.getDdCardTemplateId()).isEqualTo(DEFAULT_DD_CARD_TEMPLATE_ID);
+        assertThat(testWorkflowInstance.getDdCardCallBackKey()).isEqualTo(DEFAULT_DD_CARD_CALL_BACK_KEY);
     }
 
     @Test
@@ -137,7 +155,9 @@ class WorkflowInstanceResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(workflowInstance.getId().intValue())))
             .andExpect(jsonPath("$.[*].form").value(hasItem(DEFAULT_FORM.toString())))
             .andExpect(jsonPath("$.[*].ddCardId").value(hasItem(DEFAULT_DD_CARD_ID)))
-            .andExpect(jsonPath("$.[*].title").value(hasItem(DEFAULT_TITLE)));
+            .andExpect(jsonPath("$.[*].title").value(hasItem(DEFAULT_TITLE)))
+            .andExpect(jsonPath("$.[*].ddCardTemplateId").value(hasItem(DEFAULT_DD_CARD_TEMPLATE_ID)))
+            .andExpect(jsonPath("$.[*].ddCardCallBackKey").value(hasItem(DEFAULT_DD_CARD_CALL_BACK_KEY)));
     }
 
     @Test
@@ -154,7 +174,9 @@ class WorkflowInstanceResourceIT {
             .andExpect(jsonPath("$.id").value(workflowInstance.getId().intValue()))
             .andExpect(jsonPath("$.form").value(DEFAULT_FORM.toString()))
             .andExpect(jsonPath("$.ddCardId").value(DEFAULT_DD_CARD_ID))
-            .andExpect(jsonPath("$.title").value(DEFAULT_TITLE));
+            .andExpect(jsonPath("$.title").value(DEFAULT_TITLE))
+            .andExpect(jsonPath("$.ddCardTemplateId").value(DEFAULT_DD_CARD_TEMPLATE_ID))
+            .andExpect(jsonPath("$.ddCardCallBackKey").value(DEFAULT_DD_CARD_CALL_BACK_KEY));
     }
 
     @Test
@@ -176,7 +198,12 @@ class WorkflowInstanceResourceIT {
         WorkflowInstance updatedWorkflowInstance = workflowInstanceRepository.findById(workflowInstance.getId()).get();
         // Disconnect from session so that the updates on updatedWorkflowInstance are not directly saved in db
         em.detach(updatedWorkflowInstance);
-        updatedWorkflowInstance.form(UPDATED_FORM).ddCardId(UPDATED_DD_CARD_ID).title(UPDATED_TITLE);
+        updatedWorkflowInstance
+            .form(UPDATED_FORM)
+            .ddCardId(UPDATED_DD_CARD_ID)
+            .title(UPDATED_TITLE)
+            .ddCardTemplateId(UPDATED_DD_CARD_TEMPLATE_ID)
+            .ddCardCallBackKey(UPDATED_DD_CARD_CALL_BACK_KEY);
 
         restWorkflowInstanceMockMvc
             .perform(
@@ -193,6 +220,8 @@ class WorkflowInstanceResourceIT {
         assertThat(testWorkflowInstance.getForm()).isEqualTo(UPDATED_FORM);
         assertThat(testWorkflowInstance.getDdCardId()).isEqualTo(UPDATED_DD_CARD_ID);
         assertThat(testWorkflowInstance.getTitle()).isEqualTo(UPDATED_TITLE);
+        assertThat(testWorkflowInstance.getDdCardTemplateId()).isEqualTo(UPDATED_DD_CARD_TEMPLATE_ID);
+        assertThat(testWorkflowInstance.getDdCardCallBackKey()).isEqualTo(UPDATED_DD_CARD_CALL_BACK_KEY);
     }
 
     @Test
@@ -265,7 +294,7 @@ class WorkflowInstanceResourceIT {
         WorkflowInstance partialUpdatedWorkflowInstance = new WorkflowInstance();
         partialUpdatedWorkflowInstance.setId(workflowInstance.getId());
 
-        partialUpdatedWorkflowInstance.title(UPDATED_TITLE);
+        partialUpdatedWorkflowInstance.title(UPDATED_TITLE).ddCardCallBackKey(UPDATED_DD_CARD_CALL_BACK_KEY);
 
         restWorkflowInstanceMockMvc
             .perform(
@@ -282,6 +311,8 @@ class WorkflowInstanceResourceIT {
         assertThat(testWorkflowInstance.getForm()).isEqualTo(DEFAULT_FORM);
         assertThat(testWorkflowInstance.getDdCardId()).isEqualTo(DEFAULT_DD_CARD_ID);
         assertThat(testWorkflowInstance.getTitle()).isEqualTo(UPDATED_TITLE);
+        assertThat(testWorkflowInstance.getDdCardTemplateId()).isEqualTo(DEFAULT_DD_CARD_TEMPLATE_ID);
+        assertThat(testWorkflowInstance.getDdCardCallBackKey()).isEqualTo(UPDATED_DD_CARD_CALL_BACK_KEY);
     }
 
     @Test
@@ -296,7 +327,12 @@ class WorkflowInstanceResourceIT {
         WorkflowInstance partialUpdatedWorkflowInstance = new WorkflowInstance();
         partialUpdatedWorkflowInstance.setId(workflowInstance.getId());
 
-        partialUpdatedWorkflowInstance.form(UPDATED_FORM).ddCardId(UPDATED_DD_CARD_ID).title(UPDATED_TITLE);
+        partialUpdatedWorkflowInstance
+            .form(UPDATED_FORM)
+            .ddCardId(UPDATED_DD_CARD_ID)
+            .title(UPDATED_TITLE)
+            .ddCardTemplateId(UPDATED_DD_CARD_TEMPLATE_ID)
+            .ddCardCallBackKey(UPDATED_DD_CARD_CALL_BACK_KEY);
 
         restWorkflowInstanceMockMvc
             .perform(
@@ -313,6 +349,8 @@ class WorkflowInstanceResourceIT {
         assertThat(testWorkflowInstance.getForm()).isEqualTo(UPDATED_FORM);
         assertThat(testWorkflowInstance.getDdCardId()).isEqualTo(UPDATED_DD_CARD_ID);
         assertThat(testWorkflowInstance.getTitle()).isEqualTo(UPDATED_TITLE);
+        assertThat(testWorkflowInstance.getDdCardTemplateId()).isEqualTo(UPDATED_DD_CARD_TEMPLATE_ID);
+        assertThat(testWorkflowInstance.getDdCardCallBackKey()).isEqualTo(UPDATED_DD_CARD_CALL_BACK_KEY);
     }
 
     @Test

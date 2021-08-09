@@ -15,6 +15,7 @@ entity WorkflowTemplate {
   workflowTypeName	String	//流程类型名称
   ddGroupTemplateId String //
   ddCardTemplateId String //
+  ddCardCallBackKey String //
   eMobileCreatePageUrl String
   //3个约定字段
   chatidField String
@@ -87,27 +88,35 @@ entity WorkflowInstance {
 	form TextBlob,
     ddCardId String
     title String
+    ddCardTemplateId String //
+    ddCardCallBackKey String //
 }
 
 entity PublicCardData {
+	requestid Long,
+    workflowid Long,
+    valid Boolean
 	name String,
-    fee String,
+    feeValue String,
     reason String,
     itemType String,
     typesOfFee String,
     agree Boolean,
-    requestid Long,
-    workflowid Long,
-    valid Boolean
+    finish String
+    status String
+    content String
 }
 
 entity PrivateCardData {
 	name String,
-    fee String,
+    feeValue String,
     reason String,
     itemType String,
     typesOfFee String,
     agree Boolean
+    finish String
+    status String
+    content String
 }
 
 enum ItemType {

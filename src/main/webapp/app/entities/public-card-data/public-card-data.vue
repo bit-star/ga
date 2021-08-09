@@ -29,15 +29,18 @@
         <thead>
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.requestid')">Requestid</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowid')">Workflowid</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.valid')">Valid</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.name')">Name</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.fee')">Fee</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.feeValue')">Fee Value</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.reason')">Reason</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.itemType')">Item Type</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.typesOfFee')">Types Of Fee</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.agree')">Agree</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.requestid')">Requestid</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowid')">Workflowid</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.valid')">Valid</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.finish')">Finish</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.status')">Status</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.content')">Content</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowInstance')">Workflow Instance</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.conversation')">Conversation</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowTemplate')">Workflow Template</span></th>
@@ -51,15 +54,18 @@
                 publicCardData.id
               }}</router-link>
             </td>
+            <td>{{ publicCardData.requestid }}</td>
+            <td>{{ publicCardData.workflowid }}</td>
+            <td>{{ publicCardData.valid }}</td>
             <td>{{ publicCardData.name }}</td>
-            <td>{{ publicCardData.fee }}</td>
+            <td>{{ publicCardData.feeValue }}</td>
             <td>{{ publicCardData.reason }}</td>
             <td>{{ publicCardData.itemType }}</td>
             <td>{{ publicCardData.typesOfFee }}</td>
             <td>{{ publicCardData.agree }}</td>
-            <td>{{ publicCardData.requestid }}</td>
-            <td>{{ publicCardData.workflowid }}</td>
-            <td>{{ publicCardData.valid }}</td>
+            <td>{{ publicCardData.finish }}</td>
+            <td>{{ publicCardData.status }}</td>
+            <td>{{ publicCardData.content }}</td>
             <td>
               <div v-if="publicCardData.workflowInstance">
                 <router-link :to="{ name: 'WorkflowInstanceView', params: { workflowInstanceId: publicCardData.workflowInstance.id } }">{{

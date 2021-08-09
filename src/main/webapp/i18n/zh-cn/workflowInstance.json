@@ -21,6 +21,8 @@
       "form": "Form",
       "ddCardId": "Dd Card Id",
       "title": "Title",
+      "ddCardTemplateId": "Dd Card Template Id",
+      "ddCardCallBackKey": "Dd Card Call Back Key",
       "approver": "Approver",
       "workflowTemplate": "Workflow Template",
       "creator": "Creator",

@@ -23,6 +23,12 @@
             <column name="title" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="dd_card_template_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="dd_card_call_back_key" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="workflow_template_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -52,6 +58,8 @@
             <column name="form" type="clob"/>
             <column name="dd_card_id" type="string"/>
             <column name="title" type="string"/>
+            <column name="dd_card_template_id" type="string"/>
+            <column name="dd_card_call_back_key" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

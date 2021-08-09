@@ -54,6 +54,40 @@
           <div class="form-group">
             <label
               class="form-control-label"
+              v-text="$t('gaApp.workflowInstance.ddCardTemplateId')"
+              for="workflow-instance-ddCardTemplateId"
+              >Dd Card Template Id</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="ddCardTemplateId"
+              id="workflow-instance-ddCardTemplateId"
+              data-cy="ddCardTemplateId"
+              :class="{ valid: !$v.workflowInstance.ddCardTemplateId.$invalid, invalid: $v.workflowInstance.ddCardTemplateId.$invalid }"
+              v-model="$v.workflowInstance.ddCardTemplateId.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label
+              class="form-control-label"
+              v-text="$t('gaApp.workflowInstance.ddCardCallBackKey')"
+              for="workflow-instance-ddCardCallBackKey"
+              >Dd Card Call Back Key</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="ddCardCallBackKey"
+              id="workflow-instance-ddCardCallBackKey"
+              data-cy="ddCardCallBackKey"
+              :class="{ valid: !$v.workflowInstance.ddCardCallBackKey.$invalid, invalid: $v.workflowInstance.ddCardCallBackKey.$invalid }"
+              v-model="$v.workflowInstance.ddCardCallBackKey.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label
+              class="form-control-label"
               v-text="$t('gaApp.workflowInstance.workflowTemplate')"
               for="workflow-instance-workflowTemplate"
               >Workflow Template</label

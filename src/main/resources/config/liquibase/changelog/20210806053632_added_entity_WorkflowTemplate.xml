@@ -35,6 +35,9 @@
             <column name="dd_card_template_id" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="dd_card_call_back_key" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="e_mobile_create_page_url" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -77,6 +80,7 @@
             <column name="workflow_type_name" type="string"/>
             <column name="dd_group_template_id" type="string"/>
             <column name="dd_card_template_id" type="string"/>
+            <column name="dd_card_call_back_key" type="string"/>
             <column name="e_mobile_create_page_url" type="string"/>
             <column name="chatid_field" type="string"/>
             <column name="source_field" type="string"/>

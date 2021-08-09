@@ -19,11 +19,14 @@
       },
       "id": "ID",
       "name": "Name",
-      "fee": "Fee",
+      "feeValue": "Fee Value",
       "reason": "Reason",
       "itemType": "Item Type",
       "typesOfFee": "Types Of Fee",
       "agree": "Agree",
+      "finish": "Finish",
+      "status": "Status",
+      "content": "Content",
       "publicCardData": "Public Card Data",
       "ddUser": "Dd User"
     }

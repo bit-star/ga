@@ -48,11 +48,20 @@ public class PublicCardDataService {
             .findById(publicCardData.getId())
             .map(
                 existingPublicCardData -> {
+                    if (publicCardData.getRequestid() != null) {
+                        existingPublicCardData.setRequestid(publicCardData.getRequestid());
+                    }
+                    if (publicCardData.getWorkflowid() != null) {
+                        existingPublicCardData.setWorkflowid(publicCardData.getWorkflowid());
+                    }
+                    if (publicCardData.getValid() != null) {
+                        existingPublicCardData.setValid(publicCardData.getValid());
+                    }
                     if (publicCardData.getName() != null) {
                         existingPublicCardData.setName(publicCardData.getName());
                     }
-                    if (publicCardData.getFee() != null) {
-                        existingPublicCardData.setFee(publicCardData.getFee());
+                    if (publicCardData.getFeeValue() != null) {
+                        existingPublicCardData.setFeeValue(publicCardData.getFeeValue());
                     }
                     if (publicCardData.getReason() != null) {
                         existingPublicCardData.setReason(publicCardData.getReason());
@@ -66,14 +75,14 @@ public class PublicCardDataService {
                     if (publicCardData.getAgree() != null) {
                         existingPublicCardData.setAgree(publicCardData.getAgree());
                     }
-                    if (publicCardData.getRequestid() != null) {
-                        existingPublicCardData.setRequestid(publicCardData.getRequestid());
+                    if (publicCardData.getFinish() != null) {
+                        existingPublicCardData.setFinish(publicCardData.getFinish());
                     }
-                    if (publicCardData.getWorkflowid() != null) {
-                        existingPublicCardData.setWorkflowid(publicCardData.getWorkflowid());
+                    if (publicCardData.getStatus() != null) {
+                        existingPublicCardData.setStatus(publicCardData.getStatus());
                     }
-                    if (publicCardData.getValid() != null) {
-                        existingPublicCardData.setValid(publicCardData.getValid());
+                    if (publicCardData.getContent() != null) {
+                        existingPublicCardData.setContent(publicCardData.getContent());
                     }
 
                     return existingPublicCardData;

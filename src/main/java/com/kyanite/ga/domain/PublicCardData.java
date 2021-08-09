@@ -22,11 +22,20 @@ public class PublicCardData implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "requestid")
+    private Long requestid;
+
+    @Column(name = "workflowid")
+    private Long workflowid;
+
+    @Column(name = "valid")
+    private Boolean valid;
+
     @Column(name = "name")
     private String name;
 
-    @Column(name = "fee")
-    private String fee;
+    @Column(name = "fee_value")
+    private String feeValue;
 
     @Column(name = "reason")
     private String reason;
@@ -40,14 +49,14 @@ public class PublicCardData implements Serializable {
     @Column(name = "agree")
     private Boolean agree;
 
-    @Column(name = "requestid")
-    private Long requestid;
+    @Column(name = "finish")
+    private String finish;
 
-    @Column(name = "workflowid")
-    private Long workflowid;
+    @Column(name = "status")
+    private String status;
 
-    @Column(name = "valid")
-    private Boolean valid;
+    @Column(name = "content")
+    private String content;
 
     @OneToMany(mappedBy = "publicCardData")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
@@ -85,6 +94,45 @@ public class PublicCardData implements Serializable {
         return this;
     }
 
+    public Long getRequestid() {
+        return this.requestid;
+    }
+
+    public PublicCardData requestid(Long requestid) {
+        this.requestid = requestid;
+        return this;
+    }
+
+    public void setRequestid(Long requestid) {
+        this.requestid = requestid;
+    }
+
+    public Long getWorkflowid() {
+        return this.workflowid;
+    }
+
+    public PublicCardData workflowid(Long workflowid) {
+        this.workflowid = workflowid;
+        return this;
+    }
+
+    public void setWorkflowid(Long workflowid) {
+        this.workflowid = workflowid;
+    }
+
+    public Boolean getValid() {
+        return this.valid;
+    }
+
+    public PublicCardData valid(Boolean valid) {
+        this.valid = valid;
+        return this;
+    }
+
+    public void setValid(Boolean valid) {
+        this.valid = valid;
+    }
+
     public String getName() {
         return this.name;
     }
@@ -98,17 +146,17 @@ public class PublicCardData implements Serializable {
         this.name = name;
     }
 
-    public String getFee() {
-        return this.fee;
+    public String getFeeValue() {
+        return this.feeValue;
     }
 
-    public PublicCardData fee(String fee) {
-        this.fee = fee;
+    public PublicCardData feeValue(String feeValue) {
+        this.feeValue = feeValue;
         return this;
     }
 
-    public void setFee(String fee) {
-        this.fee = fee;
+    public void setFeeValue(String feeValue) {
+        this.feeValue = feeValue;
     }
 
     public String getReason() {
@@ -163,43 +211,43 @@ public class PublicCardData implements Serializable {
         this.agree = agree;
     }
 
-    public Long getRequestid() {
-        return this.requestid;
+    public String getFinish() {
+        return this.finish;
     }
 
-    public PublicCardData requestid(Long requestid) {
-        this.requestid = requestid;
+    public PublicCardData finish(String finish) {
+        this.finish = finish;
         return this;
     }
 
-    public void setRequestid(Long requestid) {
-        this.requestid = requestid;
+    public void setFinish(String finish) {
+        this.finish = finish;
     }
 
-    public Long getWorkflowid() {
-        return this.workflowid;
+    public String getStatus() {
+        return this.status;
     }
 
-    public PublicCardData workflowid(Long workflowid) {
-        this.workflowid = workflowid;
+    public PublicCardData status(String status) {
+        this.status = status;
         return this;
     }
 
-    public void setWorkflowid(Long workflowid) {
-        this.workflowid = workflowid;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public Boolean getValid() {
-        return this.valid;
+    public String getContent() {
+        return this.content;
     }
 
-    public PublicCardData valid(Boolean valid) {
-        this.valid = valid;
+    public PublicCardData content(String content) {
+        this.content = content;
         return this;
     }
 
-    public void setValid(Boolean valid) {
-        this.valid = valid;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public Set<PrivateCardData> getPrivateCardData() {
@@ -327,15 +375,18 @@ public class PublicCardData implements Serializable {
     public String toString() {
         return "PublicCardData{" +
             "id=" + getId() +
+            ", requestid=" + getRequestid() +
+            ", workflowid=" + getWorkflowid() +
+            ", valid='" + getValid() + "'" +
             ", name='" + getName() + "'" +
-            ", fee='" + getFee() + "'" +
+            ", feeValue='" + getFeeValue() + "'" +
             ", reason='" + getReason() + "'" +
             ", itemType='" + getItemType() + "'" +
             ", typesOfFee='" + getTypesOfFee() + "'" +
             ", agree='" + getAgree() + "'" +
-            ", requestid=" + getRequestid() +
-            ", workflowid=" + getWorkflowid() +
-            ", valid='" + getValid() + "'" +
+            ", finish='" + getFinish() + "'" +
+            ", status='" + getStatus() + "'" +
+            ", content='" + getContent() + "'" +
             "}";
     }
 }
