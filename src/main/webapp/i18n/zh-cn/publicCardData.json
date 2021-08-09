@@ -21,6 +21,7 @@
       "requestid": "Requestid",
       "workflowid": "Workflowid",
       "valid": "Valid",
+      "link": "Link",
       "name": "Name",
       "feeValue": "Fee Value",
       "reason": "Reason",

@@ -14,6 +14,10 @@
       "fieldType": "Boolean"
     },
     {
+      "fieldName": "link",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "name",
       "fieldType": "String"
     },

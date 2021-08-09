@@ -25,6 +25,12 @@
             <span>{{ publicCardData.valid }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.publicCardData.link')">Link</span>
+          </dt>
+          <dd>
+            <span>{{ publicCardData.link }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.publicCardData.name')">Name</span>
           </dt>
           <dd>
