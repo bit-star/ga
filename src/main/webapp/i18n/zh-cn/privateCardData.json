@@ -18,15 +18,9 @@
         "title": "Private Card Data"
       },
       "id": "ID",
-      "name": "Name",
-      "feeValue": "Fee Value",
-      "reason": "Reason",
-      "itemType": "Item Type",
-      "typesOfFee": "Types Of Fee",
       "agree": "Agree",
       "finish": "Finish",
-      "status": "Status",
-      "content": "Content",
+      "authority": "Authority",
       "publicCardData": "Public Card Data",
       "ddUser": "Dd User"
     }

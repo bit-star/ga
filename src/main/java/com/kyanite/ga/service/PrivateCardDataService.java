@@ -48,32 +48,14 @@ public class PrivateCardDataService {
             .findById(privateCardData.getId())
             .map(
                 existingPrivateCardData -> {
-                    if (privateCardData.getName() != null) {
-                        existingPrivateCardData.setName(privateCardData.getName());
-                    }
-                    if (privateCardData.getFeeValue() != null) {
-                        existingPrivateCardData.setFeeValue(privateCardData.getFeeValue());
-                    }
-                    if (privateCardData.getReason() != null) {
-                        existingPrivateCardData.setReason(privateCardData.getReason());
-                    }
-                    if (privateCardData.getItemType() != null) {
-                        existingPrivateCardData.setItemType(privateCardData.getItemType());
-                    }
-                    if (privateCardData.getTypesOfFee() != null) {
-                        existingPrivateCardData.setTypesOfFee(privateCardData.getTypesOfFee());
-                    }
                     if (privateCardData.getAgree() != null) {
                         existingPrivateCardData.setAgree(privateCardData.getAgree());
                     }
                     if (privateCardData.getFinish() != null) {
                         existingPrivateCardData.setFinish(privateCardData.getFinish());
                     }
-                    if (privateCardData.getStatus() != null) {
-                        existingPrivateCardData.setStatus(privateCardData.getStatus());
-                    }
-                    if (privateCardData.getContent() != null) {
-                        existingPrivateCardData.setContent(privateCardData.getContent());
+                    if (privateCardData.getAuthority() != null) {
+                        existingPrivateCardData.setAuthority(privateCardData.getAuthority());
                     }
 
                     return existingPrivateCardData;

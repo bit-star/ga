@@ -2,26 +2,6 @@
   "name": "PrivateCardData",
   "fields": [
     {
-      "fieldName": "name",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "feeValue",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "reason",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "itemType",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "typesOfFee",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "agree",
       "fieldType": "Boolean"
     },
@@ -30,11 +10,7 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "status",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "content",
+      "fieldName": "authority",
       "fieldType": "String"
     }
   ],

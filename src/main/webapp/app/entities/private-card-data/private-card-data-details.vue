@@ -7,36 +7,6 @@
         </h2>
         <dl class="row jh-entity-details">
           <dt>
-            <span v-text="$t('gaApp.privateCardData.name')">Name</span>
-          </dt>
-          <dd>
-            <span>{{ privateCardData.name }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.privateCardData.feeValue')">Fee Value</span>
-          </dt>
-          <dd>
-            <span>{{ privateCardData.feeValue }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.privateCardData.reason')">Reason</span>
-          </dt>
-          <dd>
-            <span>{{ privateCardData.reason }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.privateCardData.itemType')">Item Type</span>
-          </dt>
-          <dd>
-            <span>{{ privateCardData.itemType }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.privateCardData.typesOfFee')">Types Of Fee</span>
-          </dt>
-          <dd>
-            <span>{{ privateCardData.typesOfFee }}</span>
-          </dd>
-          <dt>
             <span v-text="$t('gaApp.privateCardData.agree')">Agree</span>
           </dt>
           <dd>
@@ -49,16 +19,10 @@
             <span>{{ privateCardData.finish }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.privateCardData.status')">Status</span>
+            <span v-text="$t('gaApp.privateCardData.authority')">Authority</span>
           </dt>
           <dd>
-            <span>{{ privateCardData.status }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.privateCardData.content')">Content</span>
-          </dt>
-          <dd>
-            <span>{{ privateCardData.content }}</span>
+            <span>{{ privateCardData.authority }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.privateCardData.publicCardData')">Public Card Data</span>

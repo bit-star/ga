@@ -110,15 +110,9 @@ entity PublicCardData {
 }
 
 entity PrivateCardData {
-	name String,
-    feeValue String,
-    reason String,
-    itemType String,
-    typesOfFee String,
     agree Boolean
     finish String
-    status String
-    content String
+    authority String
 }
 
 enum ItemType {
