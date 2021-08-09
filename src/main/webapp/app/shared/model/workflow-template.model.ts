@@ -11,9 +11,10 @@ export interface IWorkflowTemplate {
   workflowTypeId?: string | null;
   workflowTypeName?: string | null;
   ddGroupTemplateId?: string | null;
+  ddCardTemplateId?: string | null;
   eMobileCreatePageUrl?: string | null;
   chatidField?: string | null;
-  cardidField?: string | null;
+  sourceField?: string | null;
   commentsField?: string | null;
   publicCardData?: IPublicCardData[] | null;
   formFields?: IFormField[] | null;
@@ -30,9 +31,10 @@ export class WorkflowTemplate implements IWorkflowTemplate {
     public workflowTypeId?: string | null,
     public workflowTypeName?: string | null,
     public ddGroupTemplateId?: string | null,
+    public ddCardTemplateId?: string | null,
     public eMobileCreatePageUrl?: string | null,
     public chatidField?: string | null,
-    public cardidField?: string | null,
+    public sourceField?: string | null,
     public commentsField?: string | null,
     public publicCardData?: IPublicCardData[] | null,
     public formFields?: IFormField[] | null,

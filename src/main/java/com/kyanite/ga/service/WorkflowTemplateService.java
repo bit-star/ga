@@ -66,14 +66,17 @@ public class WorkflowTemplateService {
                     if (workflowTemplate.getDdGroupTemplateId() != null) {
                         existingWorkflowTemplate.setDdGroupTemplateId(workflowTemplate.getDdGroupTemplateId());
                     }
+                    if (workflowTemplate.getDdCardTemplateId() != null) {
+                        existingWorkflowTemplate.setDdCardTemplateId(workflowTemplate.getDdCardTemplateId());
+                    }
                     if (workflowTemplate.geteMobileCreatePageUrl() != null) {
                         existingWorkflowTemplate.seteMobileCreatePageUrl(workflowTemplate.geteMobileCreatePageUrl());
                     }
                     if (workflowTemplate.getChatidField() != null) {
                         existingWorkflowTemplate.setChatidField(workflowTemplate.getChatidField());
                     }
-                    if (workflowTemplate.getCardidField() != null) {
-                        existingWorkflowTemplate.setCardidField(workflowTemplate.getCardidField());
+                    if (workflowTemplate.getSourceField() != null) {
+                        existingWorkflowTemplate.setSourceField(workflowTemplate.getSourceField());
                     }
                     if (workflowTemplate.getCommentsField() != null) {
                         existingWorkflowTemplate.setCommentsField(workflowTemplate.getCommentsField());

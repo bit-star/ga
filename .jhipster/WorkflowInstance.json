@@ -30,15 +30,15 @@
     },
     {
       "relationshipType": "many-to-one",
-      "otherEntityName": "publicCardData",
-      "otherEntityRelationshipName": "workflowInstance",
-      "relationshipName": "publicCardData"
-    },
-    {
-      "relationshipType": "many-to-one",
       "otherEntityName": "ddUser",
       "otherEntityRelationshipName": "createdInstance",
       "relationshipName": "creator"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "publicCardData",
+      "otherEntityRelationshipName": "workflowInstance",
+      "relationshipName": "publicCardData"
     }
   ],
   "entityTableName": "workflow_instance",

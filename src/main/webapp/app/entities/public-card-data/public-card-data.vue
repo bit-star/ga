@@ -38,6 +38,7 @@
             <th scope="row"><span v-text="$t('gaApp.publicCardData.requestid')">Requestid</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowid')">Workflowid</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.valid')">Valid</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowInstance')">Workflow Instance</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.conversation')">Conversation</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowTemplate')">Workflow Template</span></th>
             <th scope="row"></th>
@@ -59,6 +60,13 @@
             <td>{{ publicCardData.requestid }}</td>
             <td>{{ publicCardData.workflowid }}</td>
             <td>{{ publicCardData.valid }}</td>
+            <td>
+              <div v-if="publicCardData.workflowInstance">
+                <router-link :to="{ name: 'WorkflowInstanceView', params: { workflowInstanceId: publicCardData.workflowInstance.id } }">{{
+                  publicCardData.workflowInstance.id
+                }}</router-link>
+              </div>
+            </td>
             <td>
               <div v-if="publicCardData.conversation">
                 <router-link :to="{ name: 'ConversationView', params: { conversationId: publicCardData.conversation.id } }">{{

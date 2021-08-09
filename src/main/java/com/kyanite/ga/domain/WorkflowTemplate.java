@@ -40,14 +40,17 @@ public class WorkflowTemplate implements Serializable {
     @Column(name = "dd_group_template_id")
     private String ddGroupTemplateId;
 
+    @Column(name = "dd_card_template_id")
+    private String ddCardTemplateId;
+
     @Column(name = "e_mobile_create_page_url")
     private String eMobileCreatePageUrl;
 
     @Column(name = "chatid_field")
     private String chatidField;
 
-    @Column(name = "cardid_field")
-    private String cardidField;
+    @Column(name = "source_field")
+    private String sourceField;
 
     @Column(name = "comments_field")
     private String commentsField;
@@ -55,7 +58,7 @@ public class WorkflowTemplate implements Serializable {
     @OneToMany(mappedBy = "workflowTemplate")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(
-        value = { "privateCardData", "operationResults", "conversation", "workflowTemplate", "workflowInstances" },
+        value = { "privateCardData", "operationResults", "workflowInstance", "conversation", "workflowTemplate" },
         allowSetters = true
     )
     private Set<PublicCardData> publicCardData = new HashSet<>();
@@ -71,7 +74,7 @@ public class WorkflowTemplate implements Serializable {
 
     @OneToMany(mappedBy = "workflowTemplate")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "publicCardData", "creator" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "creator", "publicCardData" }, allowSetters = true)
     private Set<WorkflowInstance> workflowInstances = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -166,6 +169,19 @@ public class WorkflowTemplate implements Serializable {
         this.ddGroupTemplateId = ddGroupTemplateId;
     }
 
+    public String getDdCardTemplateId() {
+        return this.ddCardTemplateId;
+    }
+
+    public WorkflowTemplate ddCardTemplateId(String ddCardTemplateId) {
+        this.ddCardTemplateId = ddCardTemplateId;
+        return this;
+    }
+
+    public void setDdCardTemplateId(String ddCardTemplateId) {
+        this.ddCardTemplateId = ddCardTemplateId;
+    }
+
     public String geteMobileCreatePageUrl() {
         return this.eMobileCreatePageUrl;
     }
@@ -192,17 +208,17 @@ public class WorkflowTemplate implements Serializable {
         this.chatidField = chatidField;
     }
 
-    public String getCardidField() {
-        return this.cardidField;
+    public String getSourceField() {
+        return this.sourceField;
     }
 
-    public WorkflowTemplate cardidField(String cardidField) {
-        this.cardidField = cardidField;
+    public WorkflowTemplate sourceField(String sourceField) {
+        this.sourceField = sourceField;
         return this;
     }
 
-    public void setCardidField(String cardidField) {
-        this.cardidField = cardidField;
+    public void setSourceField(String sourceField) {
+        this.sourceField = sourceField;
     }
 
     public String getCommentsField() {
@@ -354,9 +370,10 @@ public class WorkflowTemplate implements Serializable {
             ", workflowTypeId='" + getWorkflowTypeId() + "'" +
             ", workflowTypeName='" + getWorkflowTypeName() + "'" +
             ", ddGroupTemplateId='" + getDdGroupTemplateId() + "'" +
+            ", ddCardTemplateId='" + getDdCardTemplateId() + "'" +
             ", eMobileCreatePageUrl='" + geteMobileCreatePageUrl() + "'" +
             ", chatidField='" + getChatidField() + "'" +
-            ", cardidField='" + getCardidField() + "'" +
+            ", sourceField='" + getSourceField() + "'" +
             ", commentsField='" + getCommentsField() + "'" +
             "}";
     }

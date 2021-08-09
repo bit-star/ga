@@ -61,6 +61,16 @@
             <span>{{ publicCardData.valid }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.publicCardData.workflowInstance')">Workflow Instance</span>
+          </dt>
+          <dd>
+            <div v-if="publicCardData.workflowInstance">
+              <router-link :to="{ name: 'WorkflowInstanceView', params: { workflowInstanceId: publicCardData.workflowInstance.id } }">{{
+                publicCardData.workflowInstance.id
+              }}</router-link>
+            </div>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.publicCardData.conversation')">Conversation</span>
           </dt>
           <dd>

@@ -80,31 +80,6 @@
             </select>
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.workflowInstance.publicCardData')" for="workflow-instance-publicCardData"
-              >Public Card Data</label
-            >
-            <select
-              class="form-control"
-              id="workflow-instance-publicCardData"
-              data-cy="publicCardData"
-              name="publicCardData"
-              v-model="workflowInstance.publicCardData"
-            >
-              <option v-bind:value="null"></option>
-              <option
-                v-bind:value="
-                  workflowInstance.publicCardData && publicCardDataOption.id === workflowInstance.publicCardData.id
-                    ? workflowInstance.publicCardData
-                    : publicCardDataOption
-                "
-                v-for="publicCardDataOption in publicCardData"
-                :key="publicCardDataOption.id"
-              >
-                {{ publicCardDataOption.id }}
-              </option>
-            </select>
-          </div>
-          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.workflowInstance.creator')" for="workflow-instance-creator">Creator</label>
             <select class="form-control" id="workflow-instance-creator" data-cy="creator" name="creator" v-model="workflowInstance.creator">
               <option v-bind:value="null"></option>

@@ -111,12 +111,12 @@ public class DdUser implements Serializable {
     private Set<OperationResults> operationResults = new HashSet<>();
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "publicCardData", "creator" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "creator", "publicCardData" }, allowSetters = true)
     private WorkflowInstance workflowInstance;
 
     @OneToMany(mappedBy = "creator")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "publicCardData", "creator" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "creator", "publicCardData" }, allowSetters = true)
     private Set<WorkflowInstance> createdInstances = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

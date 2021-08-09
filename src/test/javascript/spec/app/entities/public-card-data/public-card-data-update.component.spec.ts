@@ -12,11 +12,11 @@ import PrivateCardDataService from '@/entities/private-card-data/private-card-da
 
 import OperationResultsService from '@/entities/operation-results/operation-results.service';
 
+import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
+
 import ConversationService from '@/entities/conversation/conversation.service';
 
 import WorkflowTemplateService from '@/entities/workflow-template/workflow-template.service';
-
-import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
 
 const localVue = createLocalVue();
 
@@ -52,11 +52,11 @@ describe('Component Tests', () => {
 
           operationResultsService: () => new OperationResultsService(),
 
+          workflowInstanceService: () => new WorkflowInstanceService(),
+
           conversationService: () => new ConversationService(),
 
           workflowTemplateService: () => new WorkflowTemplateService(),
-
-          workflowInstanceService: () => new WorkflowInstanceService(),
         },
       });
       comp = wrapper.vm;

@@ -14,10 +14,11 @@ entity WorkflowTemplate {
   workflowTypeId	String	//流程类型id
   workflowTypeName	String	//流程类型名称
   ddGroupTemplateId String //
+  ddCardTemplateId String //
   eMobileCreatePageUrl String
   //3个约定字段
   chatidField String
-  cardidField String
+  sourceField String
   commentsField String
 }
 
@@ -140,7 +141,7 @@ relationship  OneToMany {
 
 relationship  ManyToOne {
 	WorkflowInstance to WorkflowTemplate
-  	WorkflowInstance to PublicCardData
+    PublicCardData to WorkflowInstance
     WorkflowInstance{creator} to DdUser{createdInstance}
 }
 

@@ -23,8 +23,8 @@
       "title": "Title",
       "approver": "Approver",
       "workflowTemplate": "Workflow Template",
-      "publicCardData": "Public Card Data",
-      "creator": "Creator"
+      "creator": "Creator",
+      "publicCardData": "Public Card Data"
     }
   }
 }
