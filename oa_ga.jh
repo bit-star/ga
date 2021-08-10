@@ -139,7 +139,6 @@ enum TypesOfFee {
 relationship  OneToMany {
 	PublicCardData to PrivateCardData
     Conversation to PublicCardData
-    Conversation to DdUser
     DdUser to PrivateCardData
     LinkSystem to WorkflowTemplate
     WorkflowTemplate to FormField
@@ -155,6 +154,10 @@ relationship  ManyToOne {
 	WorkflowInstance to WorkflowTemplate
     PublicCardData to WorkflowInstance
     WorkflowInstance{creator} to DdUser{createdInstance}
+}
+
+relationship  ManyToOne {
+    Conversation to DdUser
 }
 
 
