@@ -26,9 +26,12 @@ entity WorkflowTemplate {
 
 
 entity FormField {
-	name String
+	fieldname String
     value String
-    lable String
+    fielddbtype String
+    lablename String
+    show Boolean
+    orderNum Integer
 }
 
 entity OperationResults{
@@ -37,13 +40,18 @@ entity OperationResults{
     text String
 }
 
-entity GroupMembers{
-	groupRole GroupRole
+
+
+entity Approver{
+	approverRole ApproverRole
 }
 
-enum GroupRole{
-	Approver , OrdinaryMember 
+
+
+enum ApproverRole{
+	Approver , Proposer 
 }
+
 
 
 enum OperationType{
@@ -131,12 +139,12 @@ enum TypesOfFee {
 relationship  OneToMany {
 	PublicCardData to PrivateCardData
     Conversation to PublicCardData
-    Conversation to GroupMembers
-    DdUser to GroupMembers
+    Conversation to DdUser
     DdUser to PrivateCardData
     LinkSystem to WorkflowTemplate
     WorkflowTemplate to FormField
-    WorkflowInstance{Approver} to DdUser
+    WorkflowInstance to Approver
+    DdUser to Approver
     DdUser to OperationResults
     PublicCardData to OperationResults
 }
