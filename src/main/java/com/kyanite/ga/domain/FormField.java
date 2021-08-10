@@ -20,14 +20,23 @@ public class FormField implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "fieldname")
+    private String fieldname;
 
     @Column(name = "value")
     private String value;
 
-    @Column(name = "lable")
-    private String lable;
+    @Column(name = "fielddbtype")
+    private String fielddbtype;
+
+    @Column(name = "lablename")
+    private String lablename;
+
+    @Column(name = "jhi_show")
+    private Boolean show;
+
+    @Column(name = "order_num")
+    private Integer orderNum;
 
     @ManyToOne
     @JsonIgnoreProperties(value = { "formFields", "linkSystem", "workflowInstances" }, allowSetters = true)
@@ -47,17 +56,17 @@ public class FormField implements Serializable {
         return this;
     }
 
-    public String getName() {
-        return this.name;
+    public String getFieldname() {
+        return this.fieldname;
     }
 
-    public FormField name(String name) {
-        this.name = name;
+    public FormField fieldname(String fieldname) {
+        this.fieldname = fieldname;
         return this;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFieldname(String fieldname) {
+        this.fieldname = fieldname;
     }
 
     public String getValue() {
@@ -73,17 +82,56 @@ public class FormField implements Serializable {
         this.value = value;
     }
 
-    public String getLable() {
-        return this.lable;
+    public String getFielddbtype() {
+        return this.fielddbtype;
     }
 
-    public FormField lable(String lable) {
-        this.lable = lable;
+    public FormField fielddbtype(String fielddbtype) {
+        this.fielddbtype = fielddbtype;
         return this;
     }
 
-    public void setLable(String lable) {
-        this.lable = lable;
+    public void setFielddbtype(String fielddbtype) {
+        this.fielddbtype = fielddbtype;
+    }
+
+    public String getLablename() {
+        return this.lablename;
+    }
+
+    public FormField lablename(String lablename) {
+        this.lablename = lablename;
+        return this;
+    }
+
+    public void setLablename(String lablename) {
+        this.lablename = lablename;
+    }
+
+    public Boolean getShow() {
+        return this.show;
+    }
+
+    public FormField show(Boolean show) {
+        this.show = show;
+        return this;
+    }
+
+    public void setShow(Boolean show) {
+        this.show = show;
+    }
+
+    public Integer getOrderNum() {
+        return this.orderNum;
+    }
+
+    public FormField orderNum(Integer orderNum) {
+        this.orderNum = orderNum;
+        return this;
+    }
+
+    public void setOrderNum(Integer orderNum) {
+        this.orderNum = orderNum;
     }
 
     public WorkflowTemplate getWorkflowTemplate() {
@@ -123,9 +171,12 @@ public class FormField implements Serializable {
     public String toString() {
         return "FormField{" +
             "id=" + getId() +
-            ", name='" + getName() + "'" +
+            ", fieldname='" + getFieldname() + "'" +
             ", value='" + getValue() + "'" +
-            ", lable='" + getLable() + "'" +
+            ", fielddbtype='" + getFielddbtype() + "'" +
+            ", lablename='" + getLablename() + "'" +
+            ", show='" + getShow() + "'" +
+            ", orderNum=" + getOrderNum() +
             "}";
     }
 }

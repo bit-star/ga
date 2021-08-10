@@ -2,18 +2,26 @@ import { IWorkflowTemplate } from '@/shared/model/workflow-template.model';
 
 export interface IFormField {
   id?: number;
-  name?: string | null;
+  fieldname?: string | null;
   value?: string | null;
-  lable?: string | null;
+  fielddbtype?: string | null;
+  lablename?: string | null;
+  show?: boolean | null;
+  orderNum?: number | null;
   workflowTemplate?: IWorkflowTemplate | null;
 }
 
 export class FormField implements IFormField {
   constructor(
     public id?: number,
-    public name?: string | null,
+    public fieldname?: string | null,
     public value?: string | null,
-    public lable?: string | null,
+    public fielddbtype?: string | null,
+    public lablename?: string | null,
+    public show?: boolean | null,
+    public orderNum?: number | null,
     public workflowTemplate?: IWorkflowTemplate | null
-  ) {}
+  ) {
+    this.show = this.show ?? false;
+  }
 }

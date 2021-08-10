@@ -10,7 +10,7 @@ import ConversationService from '@/entities/conversation/conversation.service';
 
 import PublicCardDataService from '@/entities/public-card-data/public-card-data.service';
 
-import GroupMembersService from '@/entities/group-members/group-members.service';
+import DdUserService from '@/entities/dd-user/dd-user.service';
 
 const localVue = createLocalVue();
 
@@ -44,7 +44,7 @@ describe('Component Tests', () => {
 
           publicCardDataService: () => new PublicCardDataService(),
 
-          groupMembersService: () => new GroupMembersService(),
+          ddUserService: () => new DdUserService(),
         },
       });
       comp = wrapper.vm;

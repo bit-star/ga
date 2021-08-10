@@ -41,10 +41,10 @@
       "stateCode": "State Code",
       "position": "Position",
       "roles": "Roles",
-      "groupMembers": "Group Members",
       "privateCardData": "Private Card Data",
+      "approver": "Approver",
       "operationResults": "Operation Results",
-      "workflowInstance": "Workflow Instance",
+      "conversation": "Conversation",
       "createdInstance": "Created Instance"
     }
   }

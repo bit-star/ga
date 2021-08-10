@@ -286,27 +286,17 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.ddUser.workflowInstance')" for="dd-user-workflowInstance"
-              >Workflow Instance</label
-            >
-            <select
-              class="form-control"
-              id="dd-user-workflowInstance"
-              data-cy="workflowInstance"
-              name="workflowInstance"
-              v-model="ddUser.workflowInstance"
-            >
+            <label class="form-control-label" v-text="$t('gaApp.ddUser.conversation')" for="dd-user-conversation">Conversation</label>
+            <select class="form-control" id="dd-user-conversation" data-cy="conversation" name="conversation" v-model="ddUser.conversation">
               <option v-bind:value="null"></option>
               <option
                 v-bind:value="
-                  ddUser.workflowInstance && workflowInstanceOption.id === ddUser.workflowInstance.id
-                    ? ddUser.workflowInstance
-                    : workflowInstanceOption
+                  ddUser.conversation && conversationOption.id === ddUser.conversation.id ? ddUser.conversation : conversationOption
                 "
-                v-for="workflowInstanceOption in workflowInstances"
-                :key="workflowInstanceOption.id"
+                v-for="conversationOption in conversations"
+                :key="conversationOption.id"
               >
-                {{ workflowInstanceOption.id }}
+                {{ conversationOption.id }}
               </option>
             </select>
           </div>

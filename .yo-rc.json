@@ -54,9 +54,10 @@
       "DdUser",
       "WorkflowInstance",
       "PublicCardData",
-      "PrivateCardData"
+      "PrivateCardData",
+      "Approver"
     ],
-    "lastLiquibaseTimestamp": 1628228200000
+    "lastLiquibaseTimestamp": 1628583234000
   },
   "git-provider": "GitHub",
   "git-company": "bit-star",

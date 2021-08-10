@@ -3,8 +3,8 @@ import { Component, Vue, Inject } from 'vue-property-decorator';
 import PublicCardDataService from '@/entities/public-card-data/public-card-data.service';
 import { IPublicCardData } from '@/shared/model/public-card-data.model';
 
-import GroupMembersService from '@/entities/group-members/group-members.service';
-import { IGroupMembers } from '@/shared/model/group-members.model';
+import DdUserService from '@/entities/dd-user/dd-user.service';
+import { IDdUser } from '@/shared/model/dd-user.model';
 
 import { IConversation, Conversation } from '@/shared/model/conversation.model';
 import ConversationService from './conversation.service';
@@ -26,9 +26,9 @@ export default class ConversationUpdate extends Vue {
 
   public publicCardData: IPublicCardData[] = [];
 
-  @Inject('groupMembersService') private groupMembersService: () => GroupMembersService;
+  @Inject('ddUserService') private ddUserService: () => DdUserService;
 
-  public groupMembers: IGroupMembers[] = [];
+  public ddUsers: IDdUser[] = [];
   public isSaving = false;
   public currentLanguage = '';
 
@@ -104,10 +104,10 @@ export default class ConversationUpdate extends Vue {
       .then(res => {
         this.publicCardData = res.data;
       });
-    this.groupMembersService()
+    this.ddUserService()
       .retrieve()
       .then(res => {
-        this.groupMembers = res.data;
+        this.ddUsers = res.data;
       });
   }
 }

@@ -1,0 +1,9 @@
+{
+  "gaApp": {
+    "ApproverRole": {
+      "null": "",
+      "Approver": "Approver",
+      "Proposer": "Proposer"
+    }
+  }
+}

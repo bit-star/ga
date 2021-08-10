@@ -8,9 +8,11 @@ import WorkflowInstanceUpdateComponent from '@/entities/workflow-instance/workfl
 import WorkflowInstanceClass from '@/entities/workflow-instance/workflow-instance-update.component';
 import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
 
-import DdUserService from '@/entities/dd-user/dd-user.service';
+import ApproverService from '@/entities/approver/approver.service';
 
 import WorkflowTemplateService from '@/entities/workflow-template/workflow-template.service';
+
+import DdUserService from '@/entities/dd-user/dd-user.service';
 
 import PublicCardDataService from '@/entities/public-card-data/public-card-data.service';
 
@@ -44,9 +46,11 @@ describe('Component Tests', () => {
         provide: {
           workflowInstanceService: () => workflowInstanceServiceStub,
 
-          ddUserService: () => new DdUserService(),
+          approverService: () => new ApproverService(),
 
           workflowTemplateService: () => new WorkflowTemplateService(),
+
+          ddUserService: () => new DdUserService(),
 
           publicCardDataService: () => new PublicCardDataService(),
         },

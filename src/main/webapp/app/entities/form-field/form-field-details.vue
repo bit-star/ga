@@ -7,10 +7,10 @@
         </h2>
         <dl class="row jh-entity-details">
           <dt>
-            <span v-text="$t('gaApp.formField.name')">Name</span>
+            <span v-text="$t('gaApp.formField.fieldname')">Fieldname</span>
           </dt>
           <dd>
-            <span>{{ formField.name }}</span>
+            <span>{{ formField.fieldname }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.formField.value')">Value</span>
@@ -19,10 +19,28 @@
             <span>{{ formField.value }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.formField.lable')">Lable</span>
+            <span v-text="$t('gaApp.formField.fielddbtype')">Fielddbtype</span>
           </dt>
           <dd>
-            <span>{{ formField.lable }}</span>
+            <span>{{ formField.fielddbtype }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.formField.lablename')">Lablename</span>
+          </dt>
+          <dd>
+            <span>{{ formField.lablename }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.formField.show')">Show</span>
+          </dt>
+          <dd>
+            <span>{{ formField.show }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.formField.orderNum')">Order Num</span>
+          </dt>
+          <dd>
+            <span>{{ formField.orderNum }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.formField.workflowTemplate')">Workflow Template</span>

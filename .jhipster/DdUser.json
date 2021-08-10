@@ -100,15 +100,15 @@
   "relationships": [
     {
       "relationshipType": "one-to-many",
-      "otherEntityName": "groupMembers",
-      "otherEntityRelationshipName": "ddUser",
-      "relationshipName": "groupMembers"
-    },
-    {
-      "relationshipType": "one-to-many",
       "otherEntityName": "privateCardData",
       "otherEntityRelationshipName": "ddUser",
       "relationshipName": "privateCardData"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "approver",
+      "otherEntityRelationshipName": "ddUser",
+      "relationshipName": "approver"
     },
     {
       "relationshipType": "one-to-many",
@@ -118,9 +118,9 @@
     },
     {
       "relationshipType": "many-to-one",
-      "otherEntityName": "workflowInstance",
-      "otherEntityRelationshipName": "approver",
-      "relationshipName": "workflowInstance"
+      "otherEntityName": "conversation",
+      "otherEntityRelationshipName": "ddUser",
+      "relationshipName": "conversation"
     },
     {
       "relationshipType": "one-to-many",

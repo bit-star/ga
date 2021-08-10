@@ -97,13 +97,13 @@ public class DdUser implements Serializable {
 
     @OneToMany(mappedBy = "ddUser")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "conversation", "ddUser" }, allowSetters = true)
-    private Set<GroupMembers> groupMembers = new HashSet<>();
+    @JsonIgnoreProperties(value = { "publicCardData", "ddUser" }, allowSetters = true)
+    private Set<PrivateCardData> privateCardData = new HashSet<>();
 
     @OneToMany(mappedBy = "ddUser")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "publicCardData", "ddUser" }, allowSetters = true)
-    private Set<PrivateCardData> privateCardData = new HashSet<>();
+    @JsonIgnoreProperties(value = { "workflowInstance", "ddUser" }, allowSetters = true)
+    private Set<Approver> approvers = new HashSet<>();
 
     @OneToMany(mappedBy = "ddUser")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
@@ -111,8 +111,8 @@ public class DdUser implements Serializable {
     private Set<OperationResults> operationResults = new HashSet<>();
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "creator", "publicCardData" }, allowSetters = true)
-    private WorkflowInstance workflowInstance;
+    @JsonIgnoreProperties(value = { "publicCardData", "ddUsers" }, allowSetters = true)
+    private Conversation conversation;
 
     @OneToMany(mappedBy = "creator")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
@@ -432,37 +432,6 @@ public class DdUser implements Serializable {
         this.roles = roles;
     }
 
-    public Set<GroupMembers> getGroupMembers() {
-        return this.groupMembers;
-    }
-
-    public DdUser groupMembers(Set<GroupMembers> groupMembers) {
-        this.setGroupMembers(groupMembers);
-        return this;
-    }
-
-    public DdUser addGroupMembers(GroupMembers groupMembers) {
-        this.groupMembers.add(groupMembers);
-        groupMembers.setDdUser(this);
-        return this;
-    }
-
-    public DdUser removeGroupMembers(GroupMembers groupMembers) {
-        this.groupMembers.remove(groupMembers);
-        groupMembers.setDdUser(null);
-        return this;
-    }
-
-    public void setGroupMembers(Set<GroupMembers> groupMembers) {
-        if (this.groupMembers != null) {
-            this.groupMembers.forEach(i -> i.setDdUser(null));
-        }
-        if (groupMembers != null) {
-            groupMembers.forEach(i -> i.setDdUser(this));
-        }
-        this.groupMembers = groupMembers;
-    }
-
     public Set<PrivateCardData> getPrivateCardData() {
         return this.privateCardData;
     }
@@ -492,6 +461,37 @@ public class DdUser implements Serializable {
             privateCardData.forEach(i -> i.setDdUser(this));
         }
         this.privateCardData = privateCardData;
+    }
+
+    public Set<Approver> getApprovers() {
+        return this.approvers;
+    }
+
+    public DdUser approvers(Set<Approver> approvers) {
+        this.setApprovers(approvers);
+        return this;
+    }
+
+    public DdUser addApprover(Approver approver) {
+        this.approvers.add(approver);
+        approver.setDdUser(this);
+        return this;
+    }
+
+    public DdUser removeApprover(Approver approver) {
+        this.approvers.remove(approver);
+        approver.setDdUser(null);
+        return this;
+    }
+
+    public void setApprovers(Set<Approver> approvers) {
+        if (this.approvers != null) {
+            this.approvers.forEach(i -> i.setDdUser(null));
+        }
+        if (approvers != null) {
+            approvers.forEach(i -> i.setDdUser(this));
+        }
+        this.approvers = approvers;
     }
 
     public Set<OperationResults> getOperationResults() {
@@ -525,17 +525,17 @@ public class DdUser implements Serializable {
         this.operationResults = operationResults;
     }
 
-    public WorkflowInstance getWorkflowInstance() {
-        return this.workflowInstance;
+    public Conversation getConversation() {
+        return this.conversation;
     }
 
-    public DdUser workflowInstance(WorkflowInstance workflowInstance) {
-        this.setWorkflowInstance(workflowInstance);
+    public DdUser conversation(Conversation conversation) {
+        this.setConversation(conversation);
         return this;
     }
 
-    public void setWorkflowInstance(WorkflowInstance workflowInstance) {
-        this.workflowInstance = workflowInstance;
+    public void setConversation(Conversation conversation) {
+        this.conversation = conversation;
     }
 
     public Set<WorkflowInstance> getCreatedInstances() {

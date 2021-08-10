@@ -29,9 +29,12 @@
         <thead>
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.name')">Name</span></th>
+            <th scope="row"><span v-text="$t('gaApp.formField.fieldname')">Fieldname</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.value')">Value</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.lable')">Lable</span></th>
+            <th scope="row"><span v-text="$t('gaApp.formField.fielddbtype')">Fielddbtype</span></th>
+            <th scope="row"><span v-text="$t('gaApp.formField.lablename')">Lablename</span></th>
+            <th scope="row"><span v-text="$t('gaApp.formField.show')">Show</span></th>
+            <th scope="row"><span v-text="$t('gaApp.formField.orderNum')">Order Num</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.workflowTemplate')">Workflow Template</span></th>
             <th scope="row"></th>
           </tr>
@@ -41,9 +44,12 @@
             <td>
               <router-link :to="{ name: 'FormFieldView', params: { formFieldId: formField.id } }">{{ formField.id }}</router-link>
             </td>
-            <td>{{ formField.name }}</td>
+            <td>{{ formField.fieldname }}</td>
             <td>{{ formField.value }}</td>
-            <td>{{ formField.lable }}</td>
+            <td>{{ formField.fielddbtype }}</td>
+            <td>{{ formField.lablename }}</td>
+            <td>{{ formField.show }}</td>
+            <td>{{ formField.orderNum }}</td>
             <td>
               <div v-if="formField.workflowTemplate">
                 <router-link :to="{ name: 'WorkflowTemplateView', params: { workflowTemplateId: formField.workflowTemplate.id } }">{{

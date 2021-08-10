@@ -29,14 +29,23 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class FormFieldResourceIT {
 
-    private static final String DEFAULT_NAME = "AAAAAAAAAA";
-    private static final String UPDATED_NAME = "BBBBBBBBBB";
+    private static final String DEFAULT_FIELDNAME = "AAAAAAAAAA";
+    private static final String UPDATED_FIELDNAME = "BBBBBBBBBB";
 
     private static final String DEFAULT_VALUE = "AAAAAAAAAA";
     private static final String UPDATED_VALUE = "BBBBBBBBBB";
 
-    private static final String DEFAULT_LABLE = "AAAAAAAAAA";
-    private static final String UPDATED_LABLE = "BBBBBBBBBB";
+    private static final String DEFAULT_FIELDDBTYPE = "AAAAAAAAAA";
+    private static final String UPDATED_FIELDDBTYPE = "BBBBBBBBBB";
+
+    private static final String DEFAULT_LABLENAME = "AAAAAAAAAA";
+    private static final String UPDATED_LABLENAME = "BBBBBBBBBB";
+
+    private static final Boolean DEFAULT_SHOW = false;
+    private static final Boolean UPDATED_SHOW = true;
+
+    private static final Integer DEFAULT_ORDER_NUM = 1;
+    private static final Integer UPDATED_ORDER_NUM = 2;
 
     private static final String ENTITY_API_URL = "/api/form-fields";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -62,7 +71,13 @@ class FormFieldResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static FormField createEntity(EntityManager em) {
-        FormField formField = new FormField().name(DEFAULT_NAME).value(DEFAULT_VALUE).lable(DEFAULT_LABLE);
+        FormField formField = new FormField()
+            .fieldname(DEFAULT_FIELDNAME)
+            .value(DEFAULT_VALUE)
+            .fielddbtype(DEFAULT_FIELDDBTYPE)
+            .lablename(DEFAULT_LABLENAME)
+            .show(DEFAULT_SHOW)
+            .orderNum(DEFAULT_ORDER_NUM);
         return formField;
     }
 
@@ -73,7 +88,13 @@ class FormFieldResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static FormField createUpdatedEntity(EntityManager em) {
-        FormField formField = new FormField().name(UPDATED_NAME).value(UPDATED_VALUE).lable(UPDATED_LABLE);
+        FormField formField = new FormField()
+            .fieldname(UPDATED_FIELDNAME)
+            .value(UPDATED_VALUE)
+            .fielddbtype(UPDATED_FIELDDBTYPE)
+            .lablename(UPDATED_LABLENAME)
+            .show(UPDATED_SHOW)
+            .orderNum(UPDATED_ORDER_NUM);
         return formField;
     }
 
@@ -95,9 +116,12 @@ class FormFieldResourceIT {
         List<FormField> formFieldList = formFieldRepository.findAll();
         assertThat(formFieldList).hasSize(databaseSizeBeforeCreate + 1);
         FormField testFormField = formFieldList.get(formFieldList.size() - 1);
-        assertThat(testFormField.getName()).isEqualTo(DEFAULT_NAME);
+        assertThat(testFormField.getFieldname()).isEqualTo(DEFAULT_FIELDNAME);
         assertThat(testFormField.getValue()).isEqualTo(DEFAULT_VALUE);
-        assertThat(testFormField.getLable()).isEqualTo(DEFAULT_LABLE);
+        assertThat(testFormField.getFielddbtype()).isEqualTo(DEFAULT_FIELDDBTYPE);
+        assertThat(testFormField.getLablename()).isEqualTo(DEFAULT_LABLENAME);
+        assertThat(testFormField.getShow()).isEqualTo(DEFAULT_SHOW);
+        assertThat(testFormField.getOrderNum()).isEqualTo(DEFAULT_ORDER_NUM);
     }
 
     @Test
@@ -130,9 +154,12 @@ class FormFieldResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(formField.getId().intValue())))
-            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
+            .andExpect(jsonPath("$.[*].fieldname").value(hasItem(DEFAULT_FIELDNAME)))
             .andExpect(jsonPath("$.[*].value").value(hasItem(DEFAULT_VALUE)))
-            .andExpect(jsonPath("$.[*].lable").value(hasItem(DEFAULT_LABLE)));
+            .andExpect(jsonPath("$.[*].fielddbtype").value(hasItem(DEFAULT_FIELDDBTYPE)))
+            .andExpect(jsonPath("$.[*].lablename").value(hasItem(DEFAULT_LABLENAME)))
+            .andExpect(jsonPath("$.[*].show").value(hasItem(DEFAULT_SHOW.booleanValue())))
+            .andExpect(jsonPath("$.[*].orderNum").value(hasItem(DEFAULT_ORDER_NUM)));
     }
 
     @Test
@@ -147,9 +174,12 @@ class FormFieldResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(formField.getId().intValue()))
-            .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
+            .andExpect(jsonPath("$.fieldname").value(DEFAULT_FIELDNAME))
             .andExpect(jsonPath("$.value").value(DEFAULT_VALUE))
-            .andExpect(jsonPath("$.lable").value(DEFAULT_LABLE));
+            .andExpect(jsonPath("$.fielddbtype").value(DEFAULT_FIELDDBTYPE))
+            .andExpect(jsonPath("$.lablename").value(DEFAULT_LABLENAME))
+            .andExpect(jsonPath("$.show").value(DEFAULT_SHOW.booleanValue()))
+            .andExpect(jsonPath("$.orderNum").value(DEFAULT_ORDER_NUM));
     }
 
     @Test
@@ -171,7 +201,13 @@ class FormFieldResourceIT {
         FormField updatedFormField = formFieldRepository.findById(formField.getId()).get();
         // Disconnect from session so that the updates on updatedFormField are not directly saved in db
         em.detach(updatedFormField);
-        updatedFormField.name(UPDATED_NAME).value(UPDATED_VALUE).lable(UPDATED_LABLE);
+        updatedFormField
+            .fieldname(UPDATED_FIELDNAME)
+            .value(UPDATED_VALUE)
+            .fielddbtype(UPDATED_FIELDDBTYPE)
+            .lablename(UPDATED_LABLENAME)
+            .show(UPDATED_SHOW)
+            .orderNum(UPDATED_ORDER_NUM);
 
         restFormFieldMockMvc
             .perform(
@@ -185,9 +221,12 @@ class FormFieldResourceIT {
         List<FormField> formFieldList = formFieldRepository.findAll();
         assertThat(formFieldList).hasSize(databaseSizeBeforeUpdate);
         FormField testFormField = formFieldList.get(formFieldList.size() - 1);
-        assertThat(testFormField.getName()).isEqualTo(UPDATED_NAME);
+        assertThat(testFormField.getFieldname()).isEqualTo(UPDATED_FIELDNAME);
         assertThat(testFormField.getValue()).isEqualTo(UPDATED_VALUE);
-        assertThat(testFormField.getLable()).isEqualTo(UPDATED_LABLE);
+        assertThat(testFormField.getFielddbtype()).isEqualTo(UPDATED_FIELDDBTYPE);
+        assertThat(testFormField.getLablename()).isEqualTo(UPDATED_LABLENAME);
+        assertThat(testFormField.getShow()).isEqualTo(UPDATED_SHOW);
+        assertThat(testFormField.getOrderNum()).isEqualTo(UPDATED_ORDER_NUM);
     }
 
     @Test
@@ -258,7 +297,7 @@ class FormFieldResourceIT {
         FormField partialUpdatedFormField = new FormField();
         partialUpdatedFormField.setId(formField.getId());
 
-        partialUpdatedFormField.name(UPDATED_NAME).value(UPDATED_VALUE);
+        partialUpdatedFormField.fieldname(UPDATED_FIELDNAME).value(UPDATED_VALUE).lablename(UPDATED_LABLENAME);
 
         restFormFieldMockMvc
             .perform(
@@ -272,9 +311,12 @@ class FormFieldResourceIT {
         List<FormField> formFieldList = formFieldRepository.findAll();
         assertThat(formFieldList).hasSize(databaseSizeBeforeUpdate);
         FormField testFormField = formFieldList.get(formFieldList.size() - 1);
-        assertThat(testFormField.getName()).isEqualTo(UPDATED_NAME);
+        assertThat(testFormField.getFieldname()).isEqualTo(UPDATED_FIELDNAME);
         assertThat(testFormField.getValue()).isEqualTo(UPDATED_VALUE);
-        assertThat(testFormField.getLable()).isEqualTo(DEFAULT_LABLE);
+        assertThat(testFormField.getFielddbtype()).isEqualTo(DEFAULT_FIELDDBTYPE);
+        assertThat(testFormField.getLablename()).isEqualTo(UPDATED_LABLENAME);
+        assertThat(testFormField.getShow()).isEqualTo(DEFAULT_SHOW);
+        assertThat(testFormField.getOrderNum()).isEqualTo(DEFAULT_ORDER_NUM);
     }
 
     @Test
@@ -289,7 +331,13 @@ class FormFieldResourceIT {
         FormField partialUpdatedFormField = new FormField();
         partialUpdatedFormField.setId(formField.getId());
 
-        partialUpdatedFormField.name(UPDATED_NAME).value(UPDATED_VALUE).lable(UPDATED_LABLE);
+        partialUpdatedFormField
+            .fieldname(UPDATED_FIELDNAME)
+            .value(UPDATED_VALUE)
+            .fielddbtype(UPDATED_FIELDDBTYPE)
+            .lablename(UPDATED_LABLENAME)
+            .show(UPDATED_SHOW)
+            .orderNum(UPDATED_ORDER_NUM);
 
         restFormFieldMockMvc
             .perform(
@@ -303,9 +351,12 @@ class FormFieldResourceIT {
         List<FormField> formFieldList = formFieldRepository.findAll();
         assertThat(formFieldList).hasSize(databaseSizeBeforeUpdate);
         FormField testFormField = formFieldList.get(formFieldList.size() - 1);
-        assertThat(testFormField.getName()).isEqualTo(UPDATED_NAME);
+        assertThat(testFormField.getFieldname()).isEqualTo(UPDATED_FIELDNAME);
         assertThat(testFormField.getValue()).isEqualTo(UPDATED_VALUE);
-        assertThat(testFormField.getLable()).isEqualTo(UPDATED_LABLE);
+        assertThat(testFormField.getFielddbtype()).isEqualTo(UPDATED_FIELDDBTYPE);
+        assertThat(testFormField.getLablename()).isEqualTo(UPDATED_LABLENAME);
+        assertThat(testFormField.getShow()).isEqualTo(UPDATED_SHOW);
+        assertThat(testFormField.getOrderNum()).isEqualTo(UPDATED_ORDER_NUM);
     }
 
     @Test

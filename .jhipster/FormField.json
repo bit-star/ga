@@ -2,7 +2,7 @@
   "name": "FormField",
   "fields": [
     {
-      "fieldName": "name",
+      "fieldName": "fieldname",
       "fieldType": "String"
     },
     {
@@ -10,8 +10,20 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "lable",
+      "fieldName": "fielddbtype",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "lablename",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "show",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "orderNum",
+      "fieldType": "Integer"
     }
   ],
   "relationships": [

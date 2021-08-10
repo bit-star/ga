@@ -8,9 +8,12 @@ import FormFieldService from './form-field.service';
 
 const validations: any = {
   formField: {
-    name: {},
+    fieldname: {},
     value: {},
-    lable: {},
+    fielddbtype: {},
+    lablename: {},
+    show: {},
+    orderNum: {},
   },
 };
 
