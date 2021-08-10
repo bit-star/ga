@@ -123,10 +123,11 @@
       "relationshipName": "createdInstance"
     },
     {
-      "relationshipType": "one-to-many",
+      "relationshipType": "many-to-many",
       "otherEntityName": "conversation",
       "otherEntityRelationshipName": "ddUser",
-      "relationshipName": "conversation"
+      "relationshipName": "conversation",
+      "ownerSide": false
     }
   ],
   "entityTableName": "dd_user",
