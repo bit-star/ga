@@ -12,11 +12,11 @@ import { IApprover } from '@/shared/model/approver.model';
 import OperationResultsService from '@/entities/operation-results/operation-results.service';
 import { IOperationResults } from '@/shared/model/operation-results.model';
 
-import ConversationService from '@/entities/conversation/conversation.service';
-import { IConversation } from '@/shared/model/conversation.model';
-
 import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
 import { IWorkflowInstance } from '@/shared/model/workflow-instance.model';
+
+import ConversationService from '@/entities/conversation/conversation.service';
+import { IConversation } from '@/shared/model/conversation.model';
 
 import { IDdUser, DdUser } from '@/shared/model/dd-user.model';
 import DdUserService from './dd-user.service';
@@ -68,13 +68,13 @@ export default class DdUserUpdate extends mixins(JhiDataUtils) {
 
   public operationResults: IOperationResults[] = [];
 
-  @Inject('conversationService') private conversationService: () => ConversationService;
-
-  public conversations: IConversation[] = [];
-
   @Inject('workflowInstanceService') private workflowInstanceService: () => WorkflowInstanceService;
 
   public workflowInstances: IWorkflowInstance[] = [];
+
+  @Inject('conversationService') private conversationService: () => ConversationService;
+
+  public conversations: IConversation[] = [];
   public isSaving = false;
   public currentLanguage = '';
 
@@ -160,15 +160,15 @@ export default class DdUserUpdate extends mixins(JhiDataUtils) {
       .then(res => {
         this.operationResults = res.data;
       });
-    this.conversationService()
-      .retrieve()
-      .then(res => {
-        this.conversations = res.data;
-      });
     this.workflowInstanceService()
       .retrieve()
       .then(res => {
         this.workflowInstances = res.data;
+      });
+    this.conversationService()
+      .retrieve()
+      .then(res => {
+        this.conversations = res.data;
       });
   }
 }

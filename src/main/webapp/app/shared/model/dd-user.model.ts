@@ -1,8 +1,8 @@
 import { IPrivateCardData } from '@/shared/model/private-card-data.model';
 import { IApprover } from '@/shared/model/approver.model';
 import { IOperationResults } from '@/shared/model/operation-results.model';
-import { IConversation } from '@/shared/model/conversation.model';
 import { IWorkflowInstance } from '@/shared/model/workflow-instance.model';
+import { IConversation } from '@/shared/model/conversation.model';
 
 export interface IDdUser {
   id?: number;
@@ -32,8 +32,8 @@ export interface IDdUser {
   privateCardData?: IPrivateCardData[] | null;
   approvers?: IApprover[] | null;
   operationResults?: IOperationResults[] | null;
-  conversation?: IConversation | null;
   createdInstances?: IWorkflowInstance[] | null;
+  conversations?: IConversation[] | null;
 }
 
 export class DdUser implements IDdUser {
@@ -65,8 +65,8 @@ export class DdUser implements IDdUser {
     public privateCardData?: IPrivateCardData[] | null,
     public approvers?: IApprover[] | null,
     public operationResults?: IOperationResults[] | null,
-    public conversation?: IConversation | null,
-    public createdInstances?: IWorkflowInstance[] | null
+    public createdInstances?: IWorkflowInstance[] | null,
+    public conversations?: IConversation[] | null
   ) {
     this.isBoss = this.isBoss ?? false;
     this.isSenior = this.isSenior ?? false;

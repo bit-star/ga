@@ -110,14 +110,15 @@ public class DdUser implements Serializable {
     @JsonIgnoreProperties(value = { "ddUser", "publicCardData" }, allowSetters = true)
     private Set<OperationResults> operationResults = new HashSet<>();
 
-    @ManyToOne
-    @JsonIgnoreProperties(value = { "publicCardData", "ddUsers" }, allowSetters = true)
-    private Conversation conversation;
-
     @OneToMany(mappedBy = "creator")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "creator", "publicCardData" }, allowSetters = true)
     private Set<WorkflowInstance> createdInstances = new HashSet<>();
+
+    @OneToMany(mappedBy = "ddUser")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "publicCardData", "ddUser" }, allowSetters = true)
+    private Set<Conversation> conversations = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -525,19 +526,6 @@ public class DdUser implements Serializable {
         this.operationResults = operationResults;
     }
 
-    public Conversation getConversation() {
-        return this.conversation;
-    }
-
-    public DdUser conversation(Conversation conversation) {
-        this.setConversation(conversation);
-        return this;
-    }
-
-    public void setConversation(Conversation conversation) {
-        this.conversation = conversation;
-    }
-
     public Set<WorkflowInstance> getCreatedInstances() {
         return this.createdInstances;
     }
@@ -567,6 +555,37 @@ public class DdUser implements Serializable {
             workflowInstances.forEach(i -> i.setCreator(this));
         }
         this.createdInstances = workflowInstances;
+    }
+
+    public Set<Conversation> getConversations() {
+        return this.conversations;
+    }
+
+    public DdUser conversations(Set<Conversation> conversations) {
+        this.setConversations(conversations);
+        return this;
+    }
+
+    public DdUser addConversation(Conversation conversation) {
+        this.conversations.add(conversation);
+        conversation.setDdUser(this);
+        return this;
+    }
+
+    public DdUser removeConversation(Conversation conversation) {
+        this.conversations.remove(conversation);
+        conversation.setDdUser(null);
+        return this;
+    }
+
+    public void setConversations(Set<Conversation> conversations) {
+        if (this.conversations != null) {
+            this.conversations.forEach(i -> i.setDdUser(null));
+        }
+        if (conversations != null) {
+            conversations.forEach(i -> i.setDdUser(this));
+        }
+        this.conversations = conversations;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

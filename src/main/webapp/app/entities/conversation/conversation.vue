@@ -30,6 +30,7 @@
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
             <th scope="row"><span v-text="$t('gaApp.conversation.name')">Name</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.ddUser')">Dd User</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -41,6 +42,13 @@
               }}</router-link>
             </td>
             <td>{{ conversation.name }}</td>
+            <td>
+              <div v-if="conversation.ddUser">
+                <router-link :to="{ name: 'DdUserView', params: { ddUserId: conversation.ddUser.id } }">{{
+                  conversation.ddUser.id
+                }}</router-link>
+              </div>
+            </td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link :to="{ name: 'ConversationView', params: { conversationId: conversation.id } }" custom v-slot="{ navigate }">

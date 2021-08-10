@@ -26,6 +26,19 @@
               v-model="$v.conversation.name.$model"
             />
           </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.conversation.ddUser')" for="conversation-ddUser">Dd User</label>
+            <select class="form-control" id="conversation-ddUser" data-cy="ddUser" name="ddUser" v-model="conversation.ddUser">
+              <option v-bind:value="null"></option>
+              <option
+                v-bind:value="conversation.ddUser && ddUserOption.id === conversation.ddUser.id ? conversation.ddUser : ddUserOption"
+                v-for="ddUserOption in ddUsers"
+                :key="ddUserOption.id"
+              >
+                {{ ddUserOption.id }}
+              </option>
+            </select>
+          </div>
         </div>
         <div>
           <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" v-on:click="previousState()">
