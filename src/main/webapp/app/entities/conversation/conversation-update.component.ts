@@ -49,6 +49,7 @@ export default class ConversationUpdate extends Vue {
         this.currentLanguage = this.$store.getters.currentLanguage;
       }
     );
+    this.conversation.ddUsers = [];
   }
 
   public save(): void {
@@ -109,5 +110,16 @@ export default class ConversationUpdate extends Vue {
       .then(res => {
         this.ddUsers = res.data;
       });
+  }
+
+  public getSelected(selectedVals, option): any {
+    if (selectedVals) {
+      for (let i = 0; i < selectedVals.length; i++) {
+        if (option.id === selectedVals[i].id) {
+          return selectedVals[i];
+        }
+      }
+    }
+    return option;
   }
 }

@@ -27,14 +27,17 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.conversation.ddUser')" for="conversation-ddUser">Dd User</label>
-            <select class="form-control" id="conversation-ddUser" data-cy="ddUser" name="ddUser" v-model="conversation.ddUser">
-              <option v-bind:value="null"></option>
-              <option
-                v-bind:value="conversation.ddUser && ddUserOption.id === conversation.ddUser.id ? conversation.ddUser : ddUserOption"
-                v-for="ddUserOption in ddUsers"
-                :key="ddUserOption.id"
-              >
+            <label v-text="$t('gaApp.conversation.ddUser')" for="conversation-ddUser">Dd User</label>
+            <select
+              class="form-control"
+              id="conversation-ddUser"
+              data-cy="ddUser"
+              multiple
+              name="ddUser"
+              v-if="conversation.ddUsers !== undefined"
+              v-model="conversation.ddUsers"
+            >
+              <option v-bind:value="getSelected(conversation.ddUsers, ddUserOption)" v-for="ddUserOption in ddUsers" :key="ddUserOption.id">
                 {{ ddUserOption.id }}
               </option>
             </select>

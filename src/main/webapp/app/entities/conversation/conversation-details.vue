@@ -16,11 +16,10 @@
             <span v-text="$t('gaApp.conversation.ddUser')">Dd User</span>
           </dt>
           <dd>
-            <div v-if="conversation.ddUser">
-              <router-link :to="{ name: 'DdUserView', params: { ddUserId: conversation.ddUser.id } }">{{
-                conversation.ddUser.id
-              }}</router-link>
-            </div>
+            <span v-for="(ddUser, i) in conversation.ddUsers" :key="ddUser.id"
+              >{{ i > 0 ? ', ' : '' }}
+              <router-link :to="{ name: 'DdUserView', params: { ddUserId: ddUser.id } }">{{ ddUser.id }}</router-link>
+            </span>
           </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

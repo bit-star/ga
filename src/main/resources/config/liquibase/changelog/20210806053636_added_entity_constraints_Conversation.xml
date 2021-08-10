@@ -8,9 +8,15 @@
     -->
     <changeSet id="20210806053636-2" author="jhipster">
 
+        <addForeignKeyConstraint baseColumnNames="conversation_id"
+                                 baseTableName="rel_conversation__dd_user"
+                                 constraintName="fk_rel_conversation__dd_user__conversation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="conversation"/>
+
         <addForeignKeyConstraint baseColumnNames="dd_user_id"
-                                 baseTableName="conversation"
-                                 constraintName="fk_conversation__dd_user_id"
+                                 baseTableName="rel_conversation__dd_user"
+                                 constraintName="fk_rel_conversation__dd_user__dd_user_id"
                                  referencedColumnNames="id"
                                  referencedTableName="dd_user"/>
     </changeSet>

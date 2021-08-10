@@ -18,10 +18,11 @@
       "relationshipName": "publicCardData"
     },
     {
-      "relationshipType": "many-to-one",
+      "relationshipType": "many-to-many",
       "otherEntityName": "ddUser",
       "otherEntityRelationshipName": "conversation",
-      "relationshipName": "ddUser"
+      "relationshipName": "ddUser",
+      "ownerSide": true
     }
   ],
   "entityTableName": "conversation",

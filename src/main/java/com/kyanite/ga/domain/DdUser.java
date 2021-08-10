@@ -115,9 +115,9 @@ public class DdUser implements Serializable {
     @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "creator", "publicCardData" }, allowSetters = true)
     private Set<WorkflowInstance> createdInstances = new HashSet<>();
 
-    @OneToMany(mappedBy = "ddUser")
+    @ManyToMany(mappedBy = "ddUsers")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "publicCardData", "ddUser" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "publicCardData", "ddUsers" }, allowSetters = true)
     private Set<Conversation> conversations = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -568,22 +568,22 @@ public class DdUser implements Serializable {
 
     public DdUser addConversation(Conversation conversation) {
         this.conversations.add(conversation);
-        conversation.setDdUser(this);
+        conversation.getDdUsers().add(this);
         return this;
     }
 
     public DdUser removeConversation(Conversation conversation) {
         this.conversations.remove(conversation);
-        conversation.setDdUser(null);
+        conversation.getDdUsers().remove(this);
         return this;
     }
 
     public void setConversations(Set<Conversation> conversations) {
         if (this.conversations != null) {
-            this.conversations.forEach(i -> i.setDdUser(null));
+            this.conversations.forEach(i -> i.removeDdUser(this));
         }
         if (conversations != null) {
-            conversations.forEach(i -> i.setDdUser(this));
+            conversations.forEach(i -> i.addDdUser(this));
         }
         this.conversations = conversations;
     }

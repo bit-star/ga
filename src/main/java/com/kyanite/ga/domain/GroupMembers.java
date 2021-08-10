@@ -26,7 +26,7 @@ public class GroupMembers implements Serializable {
     private GroupRole groupRole;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "publicCardData", "ddUser" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "publicCardData", "ddUsers" }, allowSetters = true)
     private Conversation conversation;
 
     @ManyToOne

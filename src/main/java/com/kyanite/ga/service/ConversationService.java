@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -66,7 +68,16 @@ public class ConversationService {
     @Transactional(readOnly = true)
     public List<Conversation> findAll() {
         log.debug("Request to get all Conversations");
-        return conversationRepository.findAll();
+        return conversationRepository.findAllWithEagerRelationships();
+    }
+
+    /**
+     * Get all the conversations with eager load of many-to-many relationships.
+     *
+     * @return the list of entities.
+     */
+    public Page<Conversation> findAllWithEagerRelationships(Pageable pageable) {
+        return conversationRepository.findAllWithEagerRelationships(pageable);
     }
 
     /**
@@ -78,7 +89,7 @@ public class ConversationService {
     @Transactional(readOnly = true)
     public Optional<Conversation> findOne(String id) {
         log.debug("Request to get Conversation : {}", id);
-        return conversationRepository.findById(id);
+        return conversationRepository.findOneWithEagerRelationships(id);
     }
 
     /**

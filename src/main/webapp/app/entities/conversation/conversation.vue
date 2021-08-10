@@ -43,11 +43,12 @@
             </td>
             <td>{{ conversation.name }}</td>
             <td>
-              <div v-if="conversation.ddUser">
-                <router-link :to="{ name: 'DdUserView', params: { ddUserId: conversation.ddUser.id } }">{{
-                  conversation.ddUser.id
+              <span v-for="(ddUser, i) in conversation.ddUsers" :key="ddUser.id"
+                >{{ i > 0 ? ', ' : '' }}
+                <router-link class="form-control-static" :to="{ name: 'DdUserView', params: { ddUserId: ddUser.id } }">{{
+                  ddUser.id
                 }}</router-link>
-              </div>
+              </span>
             </td>
             <td class="text-right">
               <div class="btn-group">

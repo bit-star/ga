@@ -29,12 +29,18 @@ public class Conversation implements Serializable {
     @JsonIgnoreProperties(value = { "privateCardData", "operationResults", "workflowInstance", "conversation" }, allowSetters = true)
     private Set<PublicCardData> publicCardData = new HashSet<>();
 
-    @ManyToOne
+    @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JoinTable(
+        name = "rel_conversation__dd_user",
+        joinColumns = @JoinColumn(name = "conversation_id"),
+        inverseJoinColumns = @JoinColumn(name = "dd_user_id")
+    )
     @JsonIgnoreProperties(
         value = { "privateCardData", "approvers", "operationResults", "createdInstances", "conversations" },
         allowSetters = true
     )
-    private DdUser ddUser;
+    private Set<DdUser> ddUsers = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public String getId() {
@@ -94,17 +100,29 @@ public class Conversation implements Serializable {
         this.publicCardData = publicCardData;
     }
 
-    public DdUser getDdUser() {
-        return this.ddUser;
+    public Set<DdUser> getDdUsers() {
+        return this.ddUsers;
     }
 
-    public Conversation ddUser(DdUser ddUser) {
-        this.setDdUser(ddUser);
+    public Conversation ddUsers(Set<DdUser> ddUsers) {
+        this.setDdUsers(ddUsers);
         return this;
     }
 
-    public void setDdUser(DdUser ddUser) {
-        this.ddUser = ddUser;
+    public Conversation addDdUser(DdUser ddUser) {
+        this.ddUsers.add(ddUser);
+        ddUser.getConversations().add(this);
+        return this;
+    }
+
+    public Conversation removeDdUser(DdUser ddUser) {
+        this.ddUsers.remove(ddUser);
+        ddUser.getConversations().remove(this);
+        return this;
+    }
+
+    public void setDdUsers(Set<DdUser> ddUsers) {
+        this.ddUsers = ddUsers;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
