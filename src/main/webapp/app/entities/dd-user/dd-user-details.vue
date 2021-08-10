@@ -145,12 +145,12 @@
             <span>{{ ddUser.roles }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.ddUser.workflowInstance')">Workflow Instance</span>
+            <span v-text="$t('gaApp.ddUser.conversation')">Conversation</span>
           </dt>
           <dd>
-            <div v-if="ddUser.workflowInstance">
-              <router-link :to="{ name: 'WorkflowInstanceView', params: { workflowInstanceId: ddUser.workflowInstance.id } }">{{
-                ddUser.workflowInstance.id
+            <div v-if="ddUser.conversation">
+              <router-link :to="{ name: 'ConversationView', params: { conversationId: ddUser.conversation.id } }">{{
+                ddUser.conversation.id
               }}</router-link>
             </div>
           </dd>

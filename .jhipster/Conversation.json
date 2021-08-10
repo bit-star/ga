@@ -19,9 +19,9 @@
     },
     {
       "relationshipType": "one-to-many",
-      "otherEntityName": "groupMembers",
+      "otherEntityName": "ddUser",
       "otherEntityRelationshipName": "conversation",
-      "relationshipName": "groupMembers"
+      "relationshipName": "ddUser"
     }
   ],
   "entityTableName": "conversation",

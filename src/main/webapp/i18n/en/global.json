@@ -17,6 +17,7 @@
         "workflowInstance": "Workflow Instance",
         "publicCardData": "Public Card Data",
         "privateCardData": "Private Card Data",
+        "approver": "Approver",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

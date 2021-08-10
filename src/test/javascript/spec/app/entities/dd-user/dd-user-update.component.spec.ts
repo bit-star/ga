@@ -8,11 +8,13 @@ import DdUserUpdateComponent from '@/entities/dd-user/dd-user-update.vue';
 import DdUserClass from '@/entities/dd-user/dd-user-update.component';
 import DdUserService from '@/entities/dd-user/dd-user.service';
 
-import GroupMembersService from '@/entities/group-members/group-members.service';
-
 import PrivateCardDataService from '@/entities/private-card-data/private-card-data.service';
 
+import ApproverService from '@/entities/approver/approver.service';
+
 import OperationResultsService from '@/entities/operation-results/operation-results.service';
+
+import ConversationService from '@/entities/conversation/conversation.service';
 
 import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
 
@@ -46,11 +48,13 @@ describe('Component Tests', () => {
         provide: {
           ddUserService: () => ddUserServiceStub,
 
-          groupMembersService: () => new GroupMembersService(),
-
           privateCardDataService: () => new PrivateCardDataService(),
 
+          approverService: () => new ApproverService(),
+
           operationResultsService: () => new OperationResultsService(),
+
+          conversationService: () => new ConversationService(),
 
           workflowInstanceService: () => new WorkflowInstanceService(),
         },

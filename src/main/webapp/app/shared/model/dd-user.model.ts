@@ -1,6 +1,7 @@
-import { IGroupMembers } from '@/shared/model/group-members.model';
 import { IPrivateCardData } from '@/shared/model/private-card-data.model';
+import { IApprover } from '@/shared/model/approver.model';
 import { IOperationResults } from '@/shared/model/operation-results.model';
+import { IConversation } from '@/shared/model/conversation.model';
 import { IWorkflowInstance } from '@/shared/model/workflow-instance.model';
 
 export interface IDdUser {
@@ -28,10 +29,10 @@ export interface IDdUser {
   stateCode?: string | null;
   position?: string | null;
   roles?: string | null;
-  groupMembers?: IGroupMembers[] | null;
   privateCardData?: IPrivateCardData[] | null;
+  approvers?: IApprover[] | null;
   operationResults?: IOperationResults[] | null;
-  workflowInstance?: IWorkflowInstance | null;
+  conversation?: IConversation | null;
   createdInstances?: IWorkflowInstance[] | null;
 }
 
@@ -61,10 +62,10 @@ export class DdUser implements IDdUser {
     public stateCode?: string | null,
     public position?: string | null,
     public roles?: string | null,
-    public groupMembers?: IGroupMembers[] | null,
     public privateCardData?: IPrivateCardData[] | null,
+    public approvers?: IApprover[] | null,
     public operationResults?: IOperationResults[] | null,
-    public workflowInstance?: IWorkflowInstance | null,
+    public conversation?: IConversation | null,
     public createdInstances?: IWorkflowInstance[] | null
   ) {
     this.isBoss = this.isBoss ?? false;

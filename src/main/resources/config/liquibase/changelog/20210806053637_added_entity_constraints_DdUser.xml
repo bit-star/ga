@@ -8,10 +8,10 @@
     -->
     <changeSet id="20210806053637-2" author="jhipster">
 
-        <addForeignKeyConstraint baseColumnNames="workflow_instance_id"
+        <addForeignKeyConstraint baseColumnNames="conversation_id"
                                  baseTableName="dd_user"
-                                 constraintName="fk_dd_user__workflow_instance_id"
+                                 constraintName="fk_dd_user__conversation_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="workflow_instance"/>
+                                 referencedTableName="conversation"/>
     </changeSet>
 </databaseChangeLog>

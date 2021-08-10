@@ -40,11 +40,8 @@ public class WorkflowInstance implements Serializable {
 
     @OneToMany(mappedBy = "workflowInstance")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(
-        value = { "groupMembers", "privateCardData", "operationResults", "workflowInstance", "createdInstances" },
-        allowSetters = true
-    )
-    private Set<DdUser> approvers = new HashSet<>();
+    @JsonIgnoreProperties(value = { "workflowInstance", "ddUser" }, allowSetters = true)
+    private Set<Approver> approvers = new HashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties(value = { "formFields", "linkSystem", "workflowInstances" }, allowSetters = true)
@@ -52,7 +49,7 @@ public class WorkflowInstance implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(
-        value = { "groupMembers", "privateCardData", "operationResults", "workflowInstance", "createdInstances" },
+        value = { "privateCardData", "approvers", "operationResults", "conversation", "createdInstances" },
         allowSetters = true
     )
     private DdUser creator;
@@ -141,35 +138,35 @@ public class WorkflowInstance implements Serializable {
         this.ddCardCallBackKey = ddCardCallBackKey;
     }
 
-    public Set<DdUser> getApprovers() {
+    public Set<Approver> getApprovers() {
         return this.approvers;
     }
 
-    public WorkflowInstance approvers(Set<DdUser> ddUsers) {
-        this.setApprovers(ddUsers);
+    public WorkflowInstance approvers(Set<Approver> approvers) {
+        this.setApprovers(approvers);
         return this;
     }
 
-    public WorkflowInstance addApprover(DdUser ddUser) {
-        this.approvers.add(ddUser);
-        ddUser.setWorkflowInstance(this);
+    public WorkflowInstance addApprover(Approver approver) {
+        this.approvers.add(approver);
+        approver.setWorkflowInstance(this);
         return this;
     }
 
-    public WorkflowInstance removeApprover(DdUser ddUser) {
-        this.approvers.remove(ddUser);
-        ddUser.setWorkflowInstance(null);
+    public WorkflowInstance removeApprover(Approver approver) {
+        this.approvers.remove(approver);
+        approver.setWorkflowInstance(null);
         return this;
     }
 
-    public void setApprovers(Set<DdUser> ddUsers) {
+    public void setApprovers(Set<Approver> approvers) {
         if (this.approvers != null) {
             this.approvers.forEach(i -> i.setWorkflowInstance(null));
         }
-        if (ddUsers != null) {
-            ddUsers.forEach(i -> i.setWorkflowInstance(this));
+        if (approvers != null) {
+            approvers.forEach(i -> i.setWorkflowInstance(this));
         }
-        this.approvers = ddUsers;
+        this.approvers = approvers;
     }
 
     public WorkflowTemplate getWorkflowTemplate() {

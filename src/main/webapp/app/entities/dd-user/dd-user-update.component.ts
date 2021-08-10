@@ -3,14 +3,17 @@ import { Component, Inject } from 'vue-property-decorator';
 import { mixins } from 'vue-class-component';
 import JhiDataUtils from '@/shared/data/data-utils.service';
 
-import GroupMembersService from '@/entities/group-members/group-members.service';
-import { IGroupMembers } from '@/shared/model/group-members.model';
-
 import PrivateCardDataService from '@/entities/private-card-data/private-card-data.service';
 import { IPrivateCardData } from '@/shared/model/private-card-data.model';
 
+import ApproverService from '@/entities/approver/approver.service';
+import { IApprover } from '@/shared/model/approver.model';
+
 import OperationResultsService from '@/entities/operation-results/operation-results.service';
 import { IOperationResults } from '@/shared/model/operation-results.model';
+
+import ConversationService from '@/entities/conversation/conversation.service';
+import { IConversation } from '@/shared/model/conversation.model';
 
 import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
 import { IWorkflowInstance } from '@/shared/model/workflow-instance.model';
@@ -53,17 +56,21 @@ export default class DdUserUpdate extends mixins(JhiDataUtils) {
   @Inject('ddUserService') private ddUserService: () => DdUserService;
   public ddUser: IDdUser = new DdUser();
 
-  @Inject('groupMembersService') private groupMembersService: () => GroupMembersService;
-
-  public groupMembers: IGroupMembers[] = [];
-
   @Inject('privateCardDataService') private privateCardDataService: () => PrivateCardDataService;
 
   public privateCardData: IPrivateCardData[] = [];
 
+  @Inject('approverService') private approverService: () => ApproverService;
+
+  public approvers: IApprover[] = [];
+
   @Inject('operationResultsService') private operationResultsService: () => OperationResultsService;
 
   public operationResults: IOperationResults[] = [];
+
+  @Inject('conversationService') private conversationService: () => ConversationService;
+
+  public conversations: IConversation[] = [];
 
   @Inject('workflowInstanceService') private workflowInstanceService: () => WorkflowInstanceService;
 
@@ -138,20 +145,25 @@ export default class DdUserUpdate extends mixins(JhiDataUtils) {
   }
 
   public initRelationships(): void {
-    this.groupMembersService()
-      .retrieve()
-      .then(res => {
-        this.groupMembers = res.data;
-      });
     this.privateCardDataService()
       .retrieve()
       .then(res => {
         this.privateCardData = res.data;
       });
+    this.approverService()
+      .retrieve()
+      .then(res => {
+        this.approvers = res.data;
+      });
     this.operationResultsService()
       .retrieve()
       .then(res => {
         this.operationResults = res.data;
+      });
+    this.conversationService()
+      .retrieve()
+      .then(res => {
+        this.conversations = res.data;
       });
     this.workflowInstanceService()
       .retrieve()

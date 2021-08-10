@@ -48,14 +48,23 @@ public class FormFieldService {
             .findById(formField.getId())
             .map(
                 existingFormField -> {
-                    if (formField.getName() != null) {
-                        existingFormField.setName(formField.getName());
+                    if (formField.getFieldname() != null) {
+                        existingFormField.setFieldname(formField.getFieldname());
                     }
                     if (formField.getValue() != null) {
                         existingFormField.setValue(formField.getValue());
                     }
-                    if (formField.getLable() != null) {
-                        existingFormField.setLable(formField.getLable());
+                    if (formField.getFielddbtype() != null) {
+                        existingFormField.setFielddbtype(formField.getFielddbtype());
+                    }
+                    if (formField.getLablename() != null) {
+                        existingFormField.setLablename(formField.getLablename());
+                    }
+                    if (formField.getShow() != null) {
+                        existingFormField.setShow(formField.getShow());
+                    }
+                    if (formField.getOrderNum() != null) {
+                        existingFormField.setOrderNum(formField.getOrderNum());
                     }
 
                     return existingFormField;

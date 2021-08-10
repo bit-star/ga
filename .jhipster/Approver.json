@@ -1,0 +1,34 @@
+{
+  "name": "Approver",
+  "fields": [
+    {
+      "fieldName": "approverRole",
+      "fieldType": "ApproverRole",
+      "fieldValues": "Approver,Proposer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "workflowInstance",
+      "otherEntityRelationshipName": "approver",
+      "relationshipName": "workflowInstance"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ddUser",
+      "otherEntityRelationshipName": "approver",
+      "relationshipName": "ddUser"
+    }
+  ],
+  "entityTableName": "approver",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210810081354"
+}

@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new FormFieldService();
-      elemDefault = new FormField(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new FormField(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false, 0);
     });
 
     describe('Service methods', () => {
@@ -81,9 +81,12 @@ describe('Service Tests', () => {
       it('should update a FormField', async () => {
         const returnedFromService = Object.assign(
           {
-            name: 'BBBBBB',
+            fieldname: 'BBBBBB',
             value: 'BBBBBB',
-            lable: 'BBBBBB',
+            fielddbtype: 'BBBBBB',
+            lablename: 'BBBBBB',
+            show: true,
+            orderNum: 1,
           },
           elemDefault
         );
@@ -110,7 +113,7 @@ describe('Service Tests', () => {
       it('should partial update a FormField', async () => {
         const patchObject = Object.assign(
           {
-            name: 'BBBBBB',
+            fieldname: 'BBBBBB',
             value: 'BBBBBB',
           },
           new FormField()
@@ -139,9 +142,12 @@ describe('Service Tests', () => {
       it('should return a list of FormField', async () => {
         const returnedFromService = Object.assign(
           {
-            name: 'BBBBBB',
+            fieldname: 'BBBBBB',
             value: 'BBBBBB',
-            lable: 'BBBBBB',
+            fielddbtype: 'BBBBBB',
+            lablename: 'BBBBBB',
+            show: true,
+            orderNum: 1,
           },
           elemDefault
         );

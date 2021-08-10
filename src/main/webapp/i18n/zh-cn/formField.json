@@ -18,9 +18,12 @@
         "title": "Form Field"
       },
       "id": "ID",
-      "name": "Name",
+      "fieldname": "Fieldname",
       "value": "Value",
-      "lable": "Lable",
+      "fielddbtype": "Fielddbtype",
+      "lablename": "Lablename",
+      "show": "Show",
+      "orderNum": "Order Num",
       "workflowTemplate": "Workflow Template"
     }
   }

@@ -3,11 +3,14 @@ import { Component, Inject } from 'vue-property-decorator';
 import { mixins } from 'vue-class-component';
 import JhiDataUtils from '@/shared/data/data-utils.service';
 
-import DdUserService from '@/entities/dd-user/dd-user.service';
-import { IDdUser } from '@/shared/model/dd-user.model';
+import ApproverService from '@/entities/approver/approver.service';
+import { IApprover } from '@/shared/model/approver.model';
 
 import WorkflowTemplateService from '@/entities/workflow-template/workflow-template.service';
 import { IWorkflowTemplate } from '@/shared/model/workflow-template.model';
+
+import DdUserService from '@/entities/dd-user/dd-user.service';
+import { IDdUser } from '@/shared/model/dd-user.model';
 
 import PublicCardDataService from '@/entities/public-card-data/public-card-data.service';
 import { IPublicCardData } from '@/shared/model/public-card-data.model';
@@ -32,13 +35,17 @@ export default class WorkflowInstanceUpdate extends mixins(JhiDataUtils) {
   @Inject('workflowInstanceService') private workflowInstanceService: () => WorkflowInstanceService;
   public workflowInstance: IWorkflowInstance = new WorkflowInstance();
 
-  @Inject('ddUserService') private ddUserService: () => DdUserService;
+  @Inject('approverService') private approverService: () => ApproverService;
 
-  public ddUsers: IDdUser[] = [];
+  public approvers: IApprover[] = [];
 
   @Inject('workflowTemplateService') private workflowTemplateService: () => WorkflowTemplateService;
 
   public workflowTemplates: IWorkflowTemplate[] = [];
+
+  @Inject('ddUserService') private ddUserService: () => DdUserService;
+
+  public ddUsers: IDdUser[] = [];
 
   @Inject('publicCardDataService') private publicCardDataService: () => PublicCardDataService;
 
@@ -113,15 +120,20 @@ export default class WorkflowInstanceUpdate extends mixins(JhiDataUtils) {
   }
 
   public initRelationships(): void {
-    this.ddUserService()
+    this.approverService()
       .retrieve()
       .then(res => {
-        this.ddUsers = res.data;
+        this.approvers = res.data;
       });
     this.workflowTemplateService()
       .retrieve()
       .then(res => {
         this.workflowTemplates = res.data;
+      });
+    this.ddUserService()
+      .retrieve()
+      .then(res => {
+        this.ddUsers = res.data;
       });
     this.publicCardDataService()
       .retrieve()

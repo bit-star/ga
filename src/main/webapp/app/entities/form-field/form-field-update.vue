@@ -15,15 +15,15 @@
             <input type="text" class="form-control" id="id" name="id" v-model="formField.id" readonly />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.formField.name')" for="form-field-name">Name</label>
+            <label class="form-control-label" v-text="$t('gaApp.formField.fieldname')" for="form-field-fieldname">Fieldname</label>
             <input
               type="text"
               class="form-control"
-              name="name"
-              id="form-field-name"
-              data-cy="name"
-              :class="{ valid: !$v.formField.name.$invalid, invalid: $v.formField.name.$invalid }"
-              v-model="$v.formField.name.$model"
+              name="fieldname"
+              id="form-field-fieldname"
+              data-cy="fieldname"
+              :class="{ valid: !$v.formField.fieldname.$invalid, invalid: $v.formField.fieldname.$invalid }"
+              v-model="$v.formField.fieldname.$model"
             />
           </div>
           <div class="form-group">
@@ -39,15 +39,51 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.formField.lable')" for="form-field-lable">Lable</label>
+            <label class="form-control-label" v-text="$t('gaApp.formField.fielddbtype')" for="form-field-fielddbtype">Fielddbtype</label>
             <input
               type="text"
               class="form-control"
-              name="lable"
-              id="form-field-lable"
-              data-cy="lable"
-              :class="{ valid: !$v.formField.lable.$invalid, invalid: $v.formField.lable.$invalid }"
-              v-model="$v.formField.lable.$model"
+              name="fielddbtype"
+              id="form-field-fielddbtype"
+              data-cy="fielddbtype"
+              :class="{ valid: !$v.formField.fielddbtype.$invalid, invalid: $v.formField.fielddbtype.$invalid }"
+              v-model="$v.formField.fielddbtype.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.formField.lablename')" for="form-field-lablename">Lablename</label>
+            <input
+              type="text"
+              class="form-control"
+              name="lablename"
+              id="form-field-lablename"
+              data-cy="lablename"
+              :class="{ valid: !$v.formField.lablename.$invalid, invalid: $v.formField.lablename.$invalid }"
+              v-model="$v.formField.lablename.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.formField.show')" for="form-field-show">Show</label>
+            <input
+              type="checkbox"
+              class="form-check"
+              name="show"
+              id="form-field-show"
+              data-cy="show"
+              :class="{ valid: !$v.formField.show.$invalid, invalid: $v.formField.show.$invalid }"
+              v-model="$v.formField.show.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.formField.orderNum')" for="form-field-orderNum">Order Num</label>
+            <input
+              type="number"
+              class="form-control"
+              name="orderNum"
+              id="form-field-orderNum"
+              data-cy="orderNum"
+              :class="{ valid: !$v.formField.orderNum.$invalid, invalid: $v.formField.orderNum.$invalid }"
+              v-model.number="$v.formField.orderNum.$model"
             />
           </div>
           <div class="form-group">

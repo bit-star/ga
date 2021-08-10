@@ -20,7 +20,7 @@
       "id": "Id",
       "name": "Name",
       "publicCardData": "Public Card Data",
-      "groupMembers": "Group Members"
+      "ddUser": "Dd User"
     }
   }
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Approver.
+    -->
+    <changeSet id="20210810081354-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="workflow_instance_id"
+                                 baseTableName="approver"
+                                 constraintName="fk_approver__workflow_instance_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="workflow_instance"/>
+
+        <addForeignKeyConstraint baseColumnNames="dd_user_id"
+                                 baseTableName="approver"
+                                 constraintName="fk_approver__dd_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dd_user"/>
+    </changeSet>
+</databaseChangeLog>

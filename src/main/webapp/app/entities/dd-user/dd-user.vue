@@ -52,7 +52,7 @@
             <th scope="row"><span v-text="$t('gaApp.ddUser.stateCode')">State Code</span></th>
             <th scope="row"><span v-text="$t('gaApp.ddUser.position')">Position</span></th>
             <th scope="row"><span v-text="$t('gaApp.ddUser.roles')">Roles</span></th>
-            <th scope="row"><span v-text="$t('gaApp.ddUser.workflowInstance')">Workflow Instance</span></th>
+            <th scope="row"><span v-text="$t('gaApp.ddUser.conversation')">Conversation</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -85,9 +85,9 @@
             <td>{{ ddUser.position }}</td>
             <td>{{ ddUser.roles }}</td>
             <td>
-              <div v-if="ddUser.workflowInstance">
-                <router-link :to="{ name: 'WorkflowInstanceView', params: { workflowInstanceId: ddUser.workflowInstance.id } }">{{
-                  ddUser.workflowInstance.id
+              <div v-if="ddUser.conversation">
+                <router-link :to="{ name: 'ConversationView', params: { conversationId: ddUser.conversation.id } }">{{
+                  ddUser.conversation.id
                 }}</router-link>
               </div>
             </td>

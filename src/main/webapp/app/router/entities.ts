@@ -62,6 +62,12 @@ const PrivateCardData = () => import('@/entities/private-card-data/private-card-
 const PrivateCardDataUpdate = () => import('@/entities/private-card-data/private-card-data-update.vue');
 // prettier-ignore
 const PrivateCardDataDetails = () => import('@/entities/private-card-data/private-card-data-details.vue');
+// prettier-ignore
+const Approver = () => import('@/entities/approver/approver.vue');
+// prettier-ignore
+const ApproverUpdate = () => import('@/entities/approver/approver-update.vue');
+// prettier-ignore
+const ApproverDetails = () => import('@/entities/approver/approver-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -303,6 +309,30 @@ export default [
     path: '/private-card-data/:privateCardDataId/view',
     name: 'PrivateCardDataView',
     component: PrivateCardDataDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/approver',
+    name: 'Approver',
+    component: Approver,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/approver/new',
+    name: 'ApproverCreate',
+    component: ApproverUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/approver/:approverId/edit',
+    name: 'ApproverEdit',
+    component: ApproverUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/approver/:approverId/view',
+    name: 'ApproverView',
+    component: ApproverDetails,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

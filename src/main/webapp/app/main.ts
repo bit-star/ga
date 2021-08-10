@@ -38,6 +38,7 @@ import DdUserService from '@/entities/dd-user/dd-user.service';
 import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
 import PublicCardDataService from '@/entities/public-card-data/public-card-data.service';
 import PrivateCardDataService from '@/entities/private-card-data/private-card-data.service';
+import ApproverService from '@/entities/approver/approver.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -108,6 +109,7 @@ new Vue({
     workflowInstanceService: () => new WorkflowInstanceService(),
     publicCardDataService: () => new PublicCardDataService(),
     privateCardDataService: () => new PrivateCardDataService(),
+    approverService: () => new ApproverService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },
