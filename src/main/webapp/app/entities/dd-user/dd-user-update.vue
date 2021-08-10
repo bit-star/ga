@@ -285,21 +285,6 @@
               v-model="$v.ddUser.roles.$model"
             />
           </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.ddUser.conversation')" for="dd-user-conversation">Conversation</label>
-            <select class="form-control" id="dd-user-conversation" data-cy="conversation" name="conversation" v-model="ddUser.conversation">
-              <option v-bind:value="null"></option>
-              <option
-                v-bind:value="
-                  ddUser.conversation && conversationOption.id === ddUser.conversation.id ? ddUser.conversation : conversationOption
-                "
-                v-for="conversationOption in conversations"
-                :key="conversationOption.id"
-              >
-                {{ conversationOption.id }}
-              </option>
-            </select>
-          </div>
         </div>
         <div>
           <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" v-on:click="previousState()">

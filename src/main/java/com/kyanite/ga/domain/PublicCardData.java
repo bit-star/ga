@@ -76,7 +76,7 @@ public class PublicCardData implements Serializable {
     private WorkflowInstance workflowInstance;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "publicCardData", "ddUsers" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "publicCardData", "ddUser" }, allowSetters = true)
     private Conversation conversation;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

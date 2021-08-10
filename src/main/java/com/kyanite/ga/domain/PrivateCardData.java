@@ -35,7 +35,7 @@ public class PrivateCardData implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(
-        value = { "privateCardData", "approvers", "operationResults", "conversation", "createdInstances" },
+        value = { "privateCardData", "approvers", "operationResults", "createdInstances", "conversations" },
         allowSetters = true
     )
     private DdUser ddUser;

@@ -117,16 +117,16 @@
       "relationshipName": "operationResults"
     },
     {
-      "relationshipType": "many-to-one",
-      "otherEntityName": "conversation",
-      "otherEntityRelationshipName": "ddUser",
-      "relationshipName": "conversation"
-    },
-    {
       "relationshipType": "one-to-many",
       "otherEntityName": "workflowInstance",
       "otherEntityRelationshipName": "creator",
       "relationshipName": "createdInstance"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "conversation",
+      "otherEntityRelationshipName": "ddUser",
+      "relationshipName": "conversation"
     }
   ],
   "entityTableName": "dd_user",

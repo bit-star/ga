@@ -29,13 +29,12 @@ public class Conversation implements Serializable {
     @JsonIgnoreProperties(value = { "privateCardData", "operationResults", "workflowInstance", "conversation" }, allowSetters = true)
     private Set<PublicCardData> publicCardData = new HashSet<>();
 
-    @OneToMany(mappedBy = "conversation")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @ManyToOne
     @JsonIgnoreProperties(
-        value = { "privateCardData", "approvers", "operationResults", "conversation", "createdInstances" },
+        value = { "privateCardData", "approvers", "operationResults", "createdInstances", "conversations" },
         allowSetters = true
     )
-    private Set<DdUser> ddUsers = new HashSet<>();
+    private DdUser ddUser;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public String getId() {
@@ -95,35 +94,17 @@ public class Conversation implements Serializable {
         this.publicCardData = publicCardData;
     }
 
-    public Set<DdUser> getDdUsers() {
-        return this.ddUsers;
+    public DdUser getDdUser() {
+        return this.ddUser;
     }
 
-    public Conversation ddUsers(Set<DdUser> ddUsers) {
-        this.setDdUsers(ddUsers);
+    public Conversation ddUser(DdUser ddUser) {
+        this.setDdUser(ddUser);
         return this;
     }
 
-    public Conversation addDdUser(DdUser ddUser) {
-        this.ddUsers.add(ddUser);
-        ddUser.setConversation(this);
-        return this;
-    }
-
-    public Conversation removeDdUser(DdUser ddUser) {
-        this.ddUsers.remove(ddUser);
-        ddUser.setConversation(null);
-        return this;
-    }
-
-    public void setDdUsers(Set<DdUser> ddUsers) {
-        if (this.ddUsers != null) {
-            this.ddUsers.forEach(i -> i.setConversation(null));
-        }
-        if (ddUsers != null) {
-            ddUsers.forEach(i -> i.setConversation(this));
-        }
-        this.ddUsers = ddUsers;
+    public void setDdUser(DdUser ddUser) {
+        this.ddUser = ddUser;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

@@ -12,6 +12,16 @@
           <dd>
             <span>{{ conversation.name }}</span>
           </dd>
+          <dt>
+            <span v-text="$t('gaApp.conversation.ddUser')">Dd User</span>
+          </dt>
+          <dd>
+            <div v-if="conversation.ddUser">
+              <router-link :to="{ name: 'DdUserView', params: { ddUserId: conversation.ddUser.id } }">{{
+                conversation.ddUser.id
+              }}</router-link>
+            </div>
+          </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
           <font-awesome-icon icon="arrow-left"></font-awesome-icon>&nbsp;<span v-text="$t('entity.action.back')"> Back</span>

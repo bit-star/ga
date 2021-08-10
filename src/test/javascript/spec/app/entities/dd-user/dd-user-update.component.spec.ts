@@ -14,9 +14,9 @@ import ApproverService from '@/entities/approver/approver.service';
 
 import OperationResultsService from '@/entities/operation-results/operation-results.service';
 
-import ConversationService from '@/entities/conversation/conversation.service';
-
 import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
+
+import ConversationService from '@/entities/conversation/conversation.service';
 
 const localVue = createLocalVue();
 
@@ -54,9 +54,9 @@ describe('Component Tests', () => {
 
           operationResultsService: () => new OperationResultsService(),
 
-          conversationService: () => new ConversationService(),
-
           workflowInstanceService: () => new WorkflowInstanceService(),
+
+          conversationService: () => new ConversationService(),
         },
       });
       comp = wrapper.vm;

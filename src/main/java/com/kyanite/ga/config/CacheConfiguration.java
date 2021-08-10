@@ -77,6 +77,7 @@ public class CacheConfiguration {
             createCache(cm, com.kyanite.ga.domain.Conversation.class.getName() + ".ddUsers");
             createCache(cm, com.kyanite.ga.domain.DdUser.class.getName() + ".approvers");
             createCache(cm, com.kyanite.ga.domain.Approver.class.getName());
+            createCache(cm, com.kyanite.ga.domain.DdUser.class.getName() + ".conversations");
             // jhipster-needle-ehcache-add-entry
         };
     }

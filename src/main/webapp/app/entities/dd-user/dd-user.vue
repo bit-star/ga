@@ -52,7 +52,6 @@
             <th scope="row"><span v-text="$t('gaApp.ddUser.stateCode')">State Code</span></th>
             <th scope="row"><span v-text="$t('gaApp.ddUser.position')">Position</span></th>
             <th scope="row"><span v-text="$t('gaApp.ddUser.roles')">Roles</span></th>
-            <th scope="row"><span v-text="$t('gaApp.ddUser.conversation')">Conversation</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -84,13 +83,6 @@
             <td>{{ ddUser.stateCode }}</td>
             <td>{{ ddUser.position }}</td>
             <td>{{ ddUser.roles }}</td>
-            <td>
-              <div v-if="ddUser.conversation">
-                <router-link :to="{ name: 'ConversationView', params: { conversationId: ddUser.conversation.id } }">{{
-                  ddUser.conversation.id
-                }}</router-link>
-              </div>
-            </td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link :to="{ name: 'DdUserView', params: { ddUserId: ddUser.id } }" custom v-slot="{ navigate }">

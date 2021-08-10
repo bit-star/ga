@@ -5,7 +5,7 @@ export interface IConversation {
   id?: string;
   name?: string | null;
   publicCardData?: IPublicCardData[] | null;
-  ddUsers?: IDdUser[] | null;
+  ddUser?: IDdUser | null;
 }
 
 export class Conversation implements IConversation {
@@ -13,6 +13,6 @@ export class Conversation implements IConversation {
     public id?: string,
     public name?: string | null,
     public publicCardData?: IPublicCardData[] | null,
-    public ddUsers?: IDdUser[] | null
+    public ddUser?: IDdUser | null
   ) {}
 }
