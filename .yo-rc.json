@@ -55,9 +55,10 @@
       "WorkflowInstance",
       "PublicCardData",
       "PrivateCardData",
-      "Approver"
+      "Approver",
+      "ConfirmCard"
     ],
-    "lastLiquibaseTimestamp": 1628583234000
+    "lastLiquibaseTimestamp": 1628665459000
   },
   "git-provider": "GitHub",
   "git-company": "bit-star",

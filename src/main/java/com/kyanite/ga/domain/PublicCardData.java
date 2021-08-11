@@ -71,6 +71,11 @@ public class PublicCardData implements Serializable {
     @JsonIgnoreProperties(value = { "ddUser", "publicCardData" }, allowSetters = true)
     private Set<OperationResults> operationResults = new HashSet<>();
 
+    @OneToMany(mappedBy = "publicCardData")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "publicCardData" }, allowSetters = true)
+    private Set<ConfirmCard> confirmCards = new HashSet<>();
+
     @ManyToOne
     @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "creator", "publicCardData" }, allowSetters = true)
     private WorkflowInstance workflowInstance;
@@ -322,6 +327,37 @@ public class PublicCardData implements Serializable {
             operationResults.forEach(i -> i.setPublicCardData(this));
         }
         this.operationResults = operationResults;
+    }
+
+    public Set<ConfirmCard> getConfirmCards() {
+        return this.confirmCards;
+    }
+
+    public PublicCardData confirmCards(Set<ConfirmCard> confirmCards) {
+        this.setConfirmCards(confirmCards);
+        return this;
+    }
+
+    public PublicCardData addConfirmCard(ConfirmCard confirmCard) {
+        this.confirmCards.add(confirmCard);
+        confirmCard.setPublicCardData(this);
+        return this;
+    }
+
+    public PublicCardData removeConfirmCard(ConfirmCard confirmCard) {
+        this.confirmCards.remove(confirmCard);
+        confirmCard.setPublicCardData(null);
+        return this;
+    }
+
+    public void setConfirmCards(Set<ConfirmCard> confirmCards) {
+        if (this.confirmCards != null) {
+            this.confirmCards.forEach(i -> i.setPublicCardData(null));
+        }
+        if (confirmCards != null) {
+            confirmCards.forEach(i -> i.setPublicCardData(this));
+        }
+        this.confirmCards = confirmCards;
     }
 
     public WorkflowInstance getWorkflowInstance() {

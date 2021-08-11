@@ -1,0 +1,27 @@
+{
+  "gaApp": {
+    "confirmCard": {
+      "home": {
+        "title": "Confirm Cards",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Confirm Card",
+        "createOrEditLabel": "创建或编辑 Confirm Card",
+        "notFound": "No Confirm Cards found"
+      },
+      "created": "Confirm Card {{ param }} 创建成功",
+      "updated": "Confirm Card {{ param }} 更新成功",
+      "deleted": "Confirm Card {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Confirm Card {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Confirm Card"
+      },
+      "id": "ID",
+      "text": "Text",
+      "finish": "Finish",
+      "userId": "User Id",
+      "publicCardData": "Public Card Data"
+    }
+  }
+}

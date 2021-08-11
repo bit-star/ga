@@ -68,6 +68,12 @@ const Approver = () => import('@/entities/approver/approver.vue');
 const ApproverUpdate = () => import('@/entities/approver/approver-update.vue');
 // prettier-ignore
 const ApproverDetails = () => import('@/entities/approver/approver-details.vue');
+// prettier-ignore
+const ConfirmCard = () => import('@/entities/confirm-card/confirm-card.vue');
+// prettier-ignore
+const ConfirmCardUpdate = () => import('@/entities/confirm-card/confirm-card-update.vue');
+// prettier-ignore
+const ConfirmCardDetails = () => import('@/entities/confirm-card/confirm-card-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -333,6 +339,30 @@ export default [
     path: '/approver/:approverId/view',
     name: 'ApproverView',
     component: ApproverDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/confirm-card',
+    name: 'ConfirmCard',
+    component: ConfirmCard,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/confirm-card/new',
+    name: 'ConfirmCardCreate',
+    component: ConfirmCardUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/confirm-card/:confirmCardId/edit',
+    name: 'ConfirmCardEdit',
+    component: ConfirmCardUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/confirm-card/:confirmCardId/view',
+    name: 'ConfirmCardView',
+    component: ConfirmCardDetails,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

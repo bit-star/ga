@@ -1,0 +1,27 @@
+{
+  "gaApp": {
+    "confirmCard": {
+      "home": {
+        "title": "Confirm Cards",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Confirm Card",
+        "createOrEditLabel": "Create or edit a Confirm Card",
+        "notFound": "No Confirm Cards found"
+      },
+      "created": "A new Confirm Card is created with identifier {{ param }}",
+      "updated": "A Confirm Card is updated with identifier {{ param }}",
+      "deleted": "A Confirm Card is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Confirm Card {{ id }}?"
+      },
+      "detail": {
+        "title": "Confirm Card"
+      },
+      "id": "ID",
+      "text": "Text",
+      "finish": "Finish",
+      "userId": "User Id",
+      "publicCardData": "Public Card Data"
+    }
+  }
+}
