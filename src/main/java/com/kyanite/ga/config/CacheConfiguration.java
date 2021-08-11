@@ -78,6 +78,8 @@ public class CacheConfiguration {
             createCache(cm, com.kyanite.ga.domain.DdUser.class.getName() + ".approvers");
             createCache(cm, com.kyanite.ga.domain.Approver.class.getName());
             createCache(cm, com.kyanite.ga.domain.DdUser.class.getName() + ".conversations");
+            createCache(cm, com.kyanite.ga.domain.PublicCardData.class.getName() + ".confirmCards");
+            createCache(cm, com.kyanite.ga.domain.ConfirmCard.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

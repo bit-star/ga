@@ -33,6 +33,7 @@
       "content": "Content",
       "privateCardData": "Private Card Data",
       "operationResults": "Operation Results",
+      "confirmCard": "Confirm Card",
       "workflowInstance": "Workflow Instance",
       "conversation": "Conversation"
     }

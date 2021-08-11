@@ -7,12 +7,12 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 /**
- * A PrivateCardData.
+ * A ConfirmCard.
  */
 @Entity
-@Table(name = "private_card_data")
+@Table(name = "confirm_card")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class PrivateCardData implements Serializable {
+public class ConfirmCard implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -20,14 +20,14 @@ public class PrivateCardData implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "agree")
-    private Boolean agree;
+    @Column(name = "text")
+    private String text;
 
     @Column(name = "finish")
     private String finish;
 
-    @Column(name = "authority")
-    private String authority;
+    @Column(name = "user_id")
+    private String userId;
 
     @ManyToOne
     @JsonIgnoreProperties(
@@ -35,13 +35,6 @@ public class PrivateCardData implements Serializable {
         allowSetters = true
     )
     private PublicCardData publicCardData;
-
-    @ManyToOne
-    @JsonIgnoreProperties(
-        value = { "privateCardData", "approvers", "operationResults", "createdInstances", "conversations" },
-        allowSetters = true
-    )
-    private DdUser ddUser;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -52,29 +45,29 @@ public class PrivateCardData implements Serializable {
         this.id = id;
     }
 
-    public PrivateCardData id(Long id) {
+    public ConfirmCard id(Long id) {
         this.id = id;
         return this;
     }
 
-    public Boolean getAgree() {
-        return this.agree;
+    public String getText() {
+        return this.text;
     }
 
-    public PrivateCardData agree(Boolean agree) {
-        this.agree = agree;
+    public ConfirmCard text(String text) {
+        this.text = text;
         return this;
     }
 
-    public void setAgree(Boolean agree) {
-        this.agree = agree;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public String getFinish() {
         return this.finish;
     }
 
-    public PrivateCardData finish(String finish) {
+    public ConfirmCard finish(String finish) {
         this.finish = finish;
         return this;
     }
@@ -83,43 +76,30 @@ public class PrivateCardData implements Serializable {
         this.finish = finish;
     }
 
-    public String getAuthority() {
-        return this.authority;
+    public String getUserId() {
+        return this.userId;
     }
 
-    public PrivateCardData authority(String authority) {
-        this.authority = authority;
+    public ConfirmCard userId(String userId) {
+        this.userId = userId;
         return this;
     }
 
-    public void setAuthority(String authority) {
-        this.authority = authority;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public PublicCardData getPublicCardData() {
         return this.publicCardData;
     }
 
-    public PrivateCardData publicCardData(PublicCardData publicCardData) {
+    public ConfirmCard publicCardData(PublicCardData publicCardData) {
         this.setPublicCardData(publicCardData);
         return this;
     }
 
     public void setPublicCardData(PublicCardData publicCardData) {
         this.publicCardData = publicCardData;
-    }
-
-    public DdUser getDdUser() {
-        return this.ddUser;
-    }
-
-    public PrivateCardData ddUser(DdUser ddUser) {
-        this.setDdUser(ddUser);
-        return this;
-    }
-
-    public void setDdUser(DdUser ddUser) {
-        this.ddUser = ddUser;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -129,10 +109,10 @@ public class PrivateCardData implements Serializable {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof PrivateCardData)) {
+        if (!(o instanceof ConfirmCard)) {
             return false;
         }
-        return id != null && id.equals(((PrivateCardData) o).id);
+        return id != null && id.equals(((ConfirmCard) o).id);
     }
 
     @Override
@@ -144,11 +124,11 @@ public class PrivateCardData implements Serializable {
     // prettier-ignore
     @Override
     public String toString() {
-        return "PrivateCardData{" +
+        return "ConfirmCard{" +
             "id=" + getId() +
-            ", agree='" + getAgree() + "'" +
+            ", text='" + getText() + "'" +
             ", finish='" + getFinish() + "'" +
-            ", authority='" + getAuthority() + "'" +
+            ", userId='" + getUserId() + "'" +
             "}";
     }
 }

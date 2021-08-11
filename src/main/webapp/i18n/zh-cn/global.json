@@ -18,6 +18,7 @@
         "publicCardData": "Public Card Data",
         "privateCardData": "Private Card Data",
         "approver": "Approver",
+        "confirmCard": "Confirm Card",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

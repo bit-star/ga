@@ -68,6 +68,12 @@
       "relationshipName": "operationResults"
     },
     {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "confirmCard",
+      "otherEntityRelationshipName": "publicCardData",
+      "relationshipName": "confirmCard"
+    },
+    {
       "relationshipType": "many-to-one",
       "otherEntityName": "workflowInstance",
       "otherEntityRelationshipName": "publicCardData",

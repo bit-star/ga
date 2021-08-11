@@ -12,6 +12,8 @@ import PrivateCardDataService from '@/entities/private-card-data/private-card-da
 
 import OperationResultsService from '@/entities/operation-results/operation-results.service';
 
+import ConfirmCardService from '@/entities/confirm-card/confirm-card.service';
+
 import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
 
 import ConversationService from '@/entities/conversation/conversation.service';
@@ -49,6 +51,8 @@ describe('Component Tests', () => {
           privateCardDataService: () => new PrivateCardDataService(),
 
           operationResultsService: () => new OperationResultsService(),
+
+          confirmCardService: () => new ConfirmCardService(),
 
           workflowInstanceService: () => new WorkflowInstanceService(),
 

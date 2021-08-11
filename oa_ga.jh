@@ -123,6 +123,12 @@ entity PrivateCardData {
     authority String
 }
 
+entity ConfirmCard{
+	text String
+    finish String
+    userId String
+}
+
 enum ItemType {
 	CostBudget,
     ContractAmount
@@ -146,6 +152,7 @@ relationship  OneToMany {
     DdUser to Approver
     DdUser to OperationResults
     PublicCardData to OperationResults
+    PublicCardData to ConfirmCard
 }
 
 

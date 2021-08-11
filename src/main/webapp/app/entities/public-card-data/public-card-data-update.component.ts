@@ -6,6 +6,9 @@ import { IPrivateCardData } from '@/shared/model/private-card-data.model';
 import OperationResultsService from '@/entities/operation-results/operation-results.service';
 import { IOperationResults } from '@/shared/model/operation-results.model';
 
+import ConfirmCardService from '@/entities/confirm-card/confirm-card.service';
+import { IConfirmCard } from '@/shared/model/confirm-card.model';
+
 import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
 import { IWorkflowInstance } from '@/shared/model/workflow-instance.model';
 
@@ -47,6 +50,10 @@ export default class PublicCardDataUpdate extends Vue {
   @Inject('operationResultsService') private operationResultsService: () => OperationResultsService;
 
   public operationResults: IOperationResults[] = [];
+
+  @Inject('confirmCardService') private confirmCardService: () => ConfirmCardService;
+
+  public confirmCards: IConfirmCard[] = [];
 
   @Inject('workflowInstanceService') private workflowInstanceService: () => WorkflowInstanceService;
 
@@ -134,6 +141,11 @@ export default class PublicCardDataUpdate extends Vue {
       .retrieve()
       .then(res => {
         this.operationResults = res.data;
+      });
+    this.confirmCardService()
+      .retrieve()
+      .then(res => {
+        this.confirmCards = res.data;
       });
     this.workflowInstanceService()
       .retrieve()
