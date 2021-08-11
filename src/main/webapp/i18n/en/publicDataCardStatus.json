@@ -1,0 +1,9 @@
+{
+  "gaApp": {
+    "PublicDataCardStatus": {
+      "null": "",
+      "Effect": "Effect",
+      "Invalid": "Invalid"
+    }
+  }
+}

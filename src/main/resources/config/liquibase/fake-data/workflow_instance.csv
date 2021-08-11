@@ -1,11 +1,11 @@
-id;form;dd_card_id;title;dd_card_template_id;dd_card_call_back_key
-1;../fake-data/blob/hipster.txt;Marshall Awesome 栋;tangible;Soft SSL;Berkshire Rustic 街
-2;../fake-data/blob/hipster.txt;Grocery Handmade;Outdoors Developer;programming;中心
-3;../fake-data/blob/hipster.txt;Persistent Frozen proactive;Chicken approach Automotive;Cuba;Small
-4;../fake-data/blob/hipster.txt;Analyst Concrete Persistent;solution-oriented;Cheese;edge
-5;../fake-data/blob/hipster.txt;桥;Dong Senior Future;Steel neural generate;system Investment Metal
-6;../fake-data/blob/hipster.txt;Taka scale;HDD;actuating Planner;International Director
-7;../fake-data/blob/hipster.txt;Uganda;dedicated Chair matrix;Bedfordshire markets;Soft
-8;../fake-data/blob/hipster.txt;山西省 Israel;Dollar;Global Syrian SAS;base Cambridgeshire Plastic
-9;../fake-data/blob/hipster.txt;envisioneer connecting Wooden;Officer invoice Pizza;initiative Sports Officer;Car Credit Japan
-10;../fake-data/blob/hipster.txt;moderator Incredible payment;attitude 侬 Concrete;Cotton USB;systemic Outdoors cross-platform
+id;form;dd_card_id;title;dd_card_template_id;dd_card_call_back_key;status
+1;../fake-data/blob/hipster.txt;Marshall Awesome 栋;tangible;Soft SSL;Berkshire Rustic 街;Refuse
+2;../fake-data/blob/hipster.txt;channels;EXE 北京市 mobile;solution-oriented;Multi-channelled system;Agree
+3;../fake-data/blob/hipster.txt;Frozen proactive;Chicken approach Automotive;Cuba;Small;Archive
+4;../fake-data/blob/hipster.txt;Berkshire tertiary 江西省;indexing;quantify;贵州省;Refuse
+5;../fake-data/blob/hipster.txt;Cambridgeshire PNG;Personal;Brazilian Forward;generate Legacy;Agree
+6;../fake-data/blob/hipster.txt;e-services Peso;Ergonomic firewall HDD;actuating Planner;International Director;Launch
+7;../fake-data/blob/hipster.txt;Communications dedicated;Tools;salmon toolset Tasty;online;Agree
+8;../fake-data/blob/hipster.txt;Borders Bedfordshire;synthesize;Dynamic strategy;virtual;Archive
+9;../fake-data/blob/hipster.txt;Security rich;complexity Kyrgyz;Cambridgeshire;Branding;Launch
+10;../fake-data/blob/hipster.txt;SAS;Cambridgeshire;Zambian Steel Handcrafted;initiatives moderator;Launch

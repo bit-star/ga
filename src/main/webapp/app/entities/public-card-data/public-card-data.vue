@@ -65,7 +65,7 @@
             <td>{{ publicCardData.typesOfFee }}</td>
             <td>{{ publicCardData.agree }}</td>
             <td>{{ publicCardData.finish }}</td>
-            <td>{{ publicCardData.status }}</td>
+            <td v-text="$t('gaApp.PublicDataCardStatus.' + publicCardData.status)">{{ publicCardData.status }}</td>
             <td>{{ publicCardData.content }}</td>
             <td>
               <div v-if="publicCardData.workflowInstance">

@@ -1,6 +1,7 @@
 package com.kyanite.ga.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.kyanite.ga.domain.enumeration.PublicDataCardStatus;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -55,8 +56,9 @@ public class PublicCardData implements Serializable {
     @Column(name = "finish")
     private String finish;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status")
-    private String status;
+    private PublicDataCardStatus status;
 
     @Column(name = "content")
     private String content;
@@ -241,16 +243,16 @@ public class PublicCardData implements Serializable {
         this.finish = finish;
     }
 
-    public String getStatus() {
+    public PublicDataCardStatus getStatus() {
         return this.status;
     }
 
-    public PublicCardData status(String status) {
+    public PublicCardData status(PublicDataCardStatus status) {
         this.status = status;
         return this;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(PublicDataCardStatus status) {
         this.status = status;
     }
 

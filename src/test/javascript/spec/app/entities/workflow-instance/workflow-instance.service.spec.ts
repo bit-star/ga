@@ -4,6 +4,7 @@ import sinon from 'sinon';
 
 import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
 import { WorkflowInstance } from '@/shared/model/workflow-instance.model';
+import { WorkflowInstanceStatus } from '@/shared/model/enumerations/workflow-instance-status.model';
 
 const error = {
   response: {
@@ -29,7 +30,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new WorkflowInstanceService();
-      elemDefault = new WorkflowInstance(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new WorkflowInstance(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', WorkflowInstanceStatus.Launch);
     });
 
     describe('Service methods', () => {
@@ -86,6 +87,7 @@ describe('Service Tests', () => {
             title: 'BBBBBB',
             ddCardTemplateId: 'BBBBBB',
             ddCardCallBackKey: 'BBBBBB',
+            status: 'BBBBBB',
           },
           elemDefault
         );
@@ -114,6 +116,7 @@ describe('Service Tests', () => {
           {
             form: 'BBBBBB',
             ddCardCallBackKey: 'BBBBBB',
+            status: 'BBBBBB',
           },
           new WorkflowInstance()
         );
@@ -146,6 +149,7 @@ describe('Service Tests', () => {
             title: 'BBBBBB',
             ddCardTemplateId: 'BBBBBB',
             ddCardCallBackKey: 'BBBBBB',
+            status: 'BBBBBB',
           },
           elemDefault
         );

@@ -1,6 +1,7 @@
 package com.kyanite.ga.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.kyanite.ga.domain.enumeration.WorkflowInstanceStatus;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -37,6 +38,10 @@ public class WorkflowInstance implements Serializable {
 
     @Column(name = "dd_card_call_back_key")
     private String ddCardCallBackKey;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private WorkflowInstanceStatus status;
 
     @OneToMany(mappedBy = "workflowInstance")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
@@ -139,6 +144,19 @@ public class WorkflowInstance implements Serializable {
 
     public void setDdCardCallBackKey(String ddCardCallBackKey) {
         this.ddCardCallBackKey = ddCardCallBackKey;
+    }
+
+    public WorkflowInstanceStatus getStatus() {
+        return this.status;
+    }
+
+    public WorkflowInstance status(WorkflowInstanceStatus status) {
+        this.status = status;
+        return this;
+    }
+
+    public void setStatus(WorkflowInstanceStatus status) {
+        this.status = status;
     }
 
     public Set<Approver> getApprovers() {
@@ -258,6 +276,7 @@ public class WorkflowInstance implements Serializable {
             ", title='" + getTitle() + "'" +
             ", ddCardTemplateId='" + getDdCardTemplateId() + "'" +
             ", ddCardCallBackKey='" + getDdCardCallBackKey() + "'" +
+            ", status='" + getStatus() + "'" +
             "}";
     }
 }

@@ -86,6 +86,22 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.workflowInstance.status')" for="workflow-instance-status">Status</label>
+            <select
+              class="form-control"
+              name="status"
+              :class="{ valid: !$v.workflowInstance.status.$invalid, invalid: $v.workflowInstance.status.$invalid }"
+              v-model="$v.workflowInstance.status.$model"
+              id="workflow-instance-status"
+              data-cy="status"
+            >
+              <option value="Launch" v-bind:label="$t('gaApp.WorkflowInstanceStatus.Launch')">Launch</option>
+              <option value="Refuse" v-bind:label="$t('gaApp.WorkflowInstanceStatus.Refuse')">Refuse</option>
+              <option value="Agree" v-bind:label="$t('gaApp.WorkflowInstanceStatus.Agree')">Agree</option>
+              <option value="Archive" v-bind:label="$t('gaApp.WorkflowInstanceStatus.Archive')">Archive</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label
               class="form-control-label"
               v-text="$t('gaApp.workflowInstance.workflowTemplate')"

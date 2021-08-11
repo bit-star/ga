@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.kyanite.ga.IntegrationTest;
 import com.kyanite.ga.domain.PublicCardData;
+import com.kyanite.ga.domain.enumeration.PublicDataCardStatus;
 import com.kyanite.ga.repository.PublicCardDataRepository;
 import java.util.List;
 import java.util.Random;
@@ -62,8 +63,8 @@ class PublicCardDataResourceIT {
     private static final String DEFAULT_FINISH = "AAAAAAAAAA";
     private static final String UPDATED_FINISH = "BBBBBBBBBB";
 
-    private static final String DEFAULT_STATUS = "AAAAAAAAAA";
-    private static final String UPDATED_STATUS = "BBBBBBBBBB";
+    private static final PublicDataCardStatus DEFAULT_STATUS = PublicDataCardStatus.Effect;
+    private static final PublicDataCardStatus UPDATED_STATUS = PublicDataCardStatus.Invalid;
 
     private static final String DEFAULT_CONTENT = "AAAAAAAAAA";
     private static final String UPDATED_CONTENT = "BBBBBBBBBB";
@@ -211,7 +212,7 @@ class PublicCardDataResourceIT {
             .andExpect(jsonPath("$.[*].typesOfFee").value(hasItem(DEFAULT_TYPES_OF_FEE)))
             .andExpect(jsonPath("$.[*].agree").value(hasItem(DEFAULT_AGREE.booleanValue())))
             .andExpect(jsonPath("$.[*].finish").value(hasItem(DEFAULT_FINISH)))
-            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS)))
+            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
             .andExpect(jsonPath("$.[*].content").value(hasItem(DEFAULT_CONTENT)));
     }
 
@@ -238,7 +239,7 @@ class PublicCardDataResourceIT {
             .andExpect(jsonPath("$.typesOfFee").value(DEFAULT_TYPES_OF_FEE))
             .andExpect(jsonPath("$.agree").value(DEFAULT_AGREE.booleanValue()))
             .andExpect(jsonPath("$.finish").value(DEFAULT_FINISH))
-            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS))
+            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
             .andExpect(jsonPath("$.content").value(DEFAULT_CONTENT));
     }
 

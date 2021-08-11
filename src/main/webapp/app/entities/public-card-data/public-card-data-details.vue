@@ -76,7 +76,7 @@
             <span v-text="$t('gaApp.publicCardData.status')">Status</span>
           </dt>
           <dd>
-            <span>{{ publicCardData.status }}</span>
+            <span v-text="$t('gaApp.PublicDataCardStatus.' + publicCardData.status)">{{ publicCardData.status }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.publicCardData.content')">Content</span>

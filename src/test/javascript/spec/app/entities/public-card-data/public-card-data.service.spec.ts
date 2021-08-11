@@ -4,6 +4,7 @@ import sinon from 'sinon';
 
 import PublicCardDataService from '@/entities/public-card-data/public-card-data.service';
 import { PublicCardData } from '@/shared/model/public-card-data.model';
+import { PublicDataCardStatus } from '@/shared/model/enumerations/public-data-card-status.model';
 
 const error = {
   response: {
@@ -42,7 +43,7 @@ describe('Service Tests', () => {
         'AAAAAAA',
         false,
         'AAAAAAA',
-        'AAAAAAA',
+        PublicDataCardStatus.Effect,
         'AAAAAAA'
       );
     });

@@ -4,6 +4,7 @@ import { IConfirmCard } from '@/shared/model/confirm-card.model';
 import { IWorkflowInstance } from '@/shared/model/workflow-instance.model';
 import { IConversation } from '@/shared/model/conversation.model';
 
+import { PublicDataCardStatus } from '@/shared/model/enumerations/public-data-card-status.model';
 export interface IPublicCardData {
   id?: number;
   requestid?: number | null;
@@ -17,7 +18,7 @@ export interface IPublicCardData {
   typesOfFee?: string | null;
   agree?: boolean | null;
   finish?: string | null;
-  status?: string | null;
+  status?: PublicDataCardStatus | null;
   content?: string | null;
   privateCardData?: IPrivateCardData[] | null;
   operationResults?: IOperationResults[] | null;
@@ -40,7 +41,7 @@ export class PublicCardData implements IPublicCardData {
     public typesOfFee?: string | null,
     public agree?: boolean | null,
     public finish?: string | null,
-    public status?: string | null,
+    public status?: PublicDataCardStatus | null,
     public content?: string | null,
     public privateCardData?: IPrivateCardData[] | null,
     public operationResults?: IOperationResults[] | null,
