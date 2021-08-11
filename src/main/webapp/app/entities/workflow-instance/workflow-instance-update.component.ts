@@ -25,6 +25,7 @@ const validations: any = {
     title: {},
     ddCardTemplateId: {},
     ddCardCallBackKey: {},
+    status: {},
   },
 };
 

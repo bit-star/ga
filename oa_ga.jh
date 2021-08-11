@@ -58,6 +58,14 @@ enum OperationType{
 	Agree , Refuse , Comment 
 }
 
+enum PublicDataCardStatus{
+	Effect , Invalid 
+}
+
+enum WorkflowInstanceStatus{
+	Launch , Refuse , Agree , Archive 
+}
+
 
 
 entity Conversation {
@@ -99,6 +107,7 @@ entity WorkflowInstance {
     title String
     ddCardTemplateId String //
     ddCardCallBackKey String //
+    status WorkflowInstanceStatus
 }
 
 entity PublicCardData {
@@ -115,6 +124,7 @@ entity PublicCardData {
     finish String
     status String
     content String
+    status PublicDataCardStatus
 }
 
 entity PrivateCardData {

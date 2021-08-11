@@ -154,15 +154,17 @@
           </div>
           <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.status')" for="public-card-data-status">Status</label>
-            <input
-              type="text"
+            <select
               class="form-control"
               name="status"
-              id="public-card-data-status"
-              data-cy="status"
               :class="{ valid: !$v.publicCardData.status.$invalid, invalid: $v.publicCardData.status.$invalid }"
               v-model="$v.publicCardData.status.$model"
-            />
+              id="public-card-data-status"
+              data-cy="status"
+            >
+              <option value="Effect" v-bind:label="$t('gaApp.PublicDataCardStatus.Effect')">Effect</option>
+              <option value="Invalid" v-bind:label="$t('gaApp.PublicDataCardStatus.Invalid')">Invalid</option>
+            </select>
           </div>
           <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.content')" for="public-card-data-content">Content</label>

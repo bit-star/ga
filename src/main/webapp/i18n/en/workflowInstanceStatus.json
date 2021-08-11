@@ -1,0 +1,11 @@
+{
+  "gaApp": {
+    "WorkflowInstanceStatus": {
+      "null": "",
+      "Launch": "Launch",
+      "Refuse": "Refuse",
+      "Agree": "Agree",
+      "Archive": "Archive"
+    }
+  }
+}

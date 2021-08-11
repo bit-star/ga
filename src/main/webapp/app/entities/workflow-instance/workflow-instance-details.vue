@@ -37,6 +37,12 @@
             <span>{{ workflowInstance.ddCardCallBackKey }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.workflowInstance.status')">Status</span>
+          </dt>
+          <dd>
+            <span v-text="$t('gaApp.WorkflowInstanceStatus.' + workflowInstance.status)">{{ workflowInstance.status }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.workflowInstance.workflowTemplate')">Workflow Template</span>
           </dt>
           <dd>

@@ -63,6 +63,9 @@ public class WorkflowInstanceService {
                     if (workflowInstance.getDdCardCallBackKey() != null) {
                         existingWorkflowInstance.setDdCardCallBackKey(workflowInstance.getDdCardCallBackKey());
                     }
+                    if (workflowInstance.getStatus() != null) {
+                        existingWorkflowInstance.setStatus(workflowInstance.getStatus());
+                    }
 
                     return existingWorkflowInstance;
                 }

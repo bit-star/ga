@@ -47,7 +47,8 @@
     },
     {
       "fieldName": "status",
-      "fieldType": "String"
+      "fieldType": "PublicDataCardStatus",
+      "fieldValues": "Effect,Invalid"
     },
     {
       "fieldName": "content",
