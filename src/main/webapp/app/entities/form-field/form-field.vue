@@ -32,7 +32,9 @@
             <th scope="row"><span v-text="$t('gaApp.formField.fieldname')">Fieldname</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.value')">Value</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.fielddbtype')">Fielddbtype</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.lablename')">Lablename</span></th>
+            <th scope="row"><span v-text="$t('gaApp.formField.labelname')">Labelname</span></th>
+            <th scope="row"><span v-text="$t('gaApp.formField.fieldlabel')">Fieldlabel</span></th>
+            <th scope="row"><span v-text="$t('gaApp.formField.detailtable')">Detailtable</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.show')">Show</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.orderNum')">Order Num</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.workflowTemplate')">Workflow Template</span></th>
@@ -47,7 +49,9 @@
             <td>{{ formField.fieldname }}</td>
             <td>{{ formField.value }}</td>
             <td>{{ formField.fielddbtype }}</td>
-            <td>{{ formField.lablename }}</td>
+            <td>{{ formField.labelname }}</td>
+            <td>{{ formField.fieldlabel }}</td>
+            <td>{{ formField.detailtable }}</td>
             <td>{{ formField.show }}</td>
             <td>{{ formField.orderNum }}</td>
             <td>

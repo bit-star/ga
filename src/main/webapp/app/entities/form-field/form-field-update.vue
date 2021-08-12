@@ -51,15 +51,39 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.formField.lablename')" for="form-field-lablename">Lablename</label>
+            <label class="form-control-label" v-text="$t('gaApp.formField.labelname')" for="form-field-labelname">Labelname</label>
             <input
               type="text"
               class="form-control"
-              name="lablename"
-              id="form-field-lablename"
-              data-cy="lablename"
-              :class="{ valid: !$v.formField.lablename.$invalid, invalid: $v.formField.lablename.$invalid }"
-              v-model="$v.formField.lablename.$model"
+              name="labelname"
+              id="form-field-labelname"
+              data-cy="labelname"
+              :class="{ valid: !$v.formField.labelname.$invalid, invalid: $v.formField.labelname.$invalid }"
+              v-model="$v.formField.labelname.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.formField.fieldlabel')" for="form-field-fieldlabel">Fieldlabel</label>
+            <input
+              type="text"
+              class="form-control"
+              name="fieldlabel"
+              id="form-field-fieldlabel"
+              data-cy="fieldlabel"
+              :class="{ valid: !$v.formField.fieldlabel.$invalid, invalid: $v.formField.fieldlabel.$invalid }"
+              v-model="$v.formField.fieldlabel.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.formField.detailtable')" for="form-field-detailtable">Detailtable</label>
+            <input
+              type="text"
+              class="form-control"
+              name="detailtable"
+              id="form-field-detailtable"
+              data-cy="detailtable"
+              :class="{ valid: !$v.formField.detailtable.$invalid, invalid: $v.formField.detailtable.$invalid }"
+              v-model="$v.formField.detailtable.$model"
             />
           </div>
           <div class="form-group">

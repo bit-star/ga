@@ -57,8 +57,14 @@ public class FormFieldService {
                     if (formField.getFielddbtype() != null) {
                         existingFormField.setFielddbtype(formField.getFielddbtype());
                     }
-                    if (formField.getLablename() != null) {
-                        existingFormField.setLablename(formField.getLablename());
+                    if (formField.getLabelname() != null) {
+                        existingFormField.setLabelname(formField.getLabelname());
+                    }
+                    if (formField.getFieldlabel() != null) {
+                        existingFormField.setFieldlabel(formField.getFieldlabel());
+                    }
+                    if (formField.getDetailtable() != null) {
+                        existingFormField.setDetailtable(formField.getDetailtable());
                     }
                     if (formField.getShow() != null) {
                         existingFormField.setShow(formField.getShow());

@@ -29,8 +29,14 @@ public class FormField implements Serializable {
     @Column(name = "fielddbtype")
     private String fielddbtype;
 
-    @Column(name = "lablename")
-    private String lablename;
+    @Column(name = "labelname")
+    private String labelname;
+
+    @Column(name = "fieldlabel")
+    private String fieldlabel;
+
+    @Column(name = "detailtable")
+    private String detailtable;
 
     @Column(name = "jhi_show")
     private Boolean show;
@@ -95,17 +101,43 @@ public class FormField implements Serializable {
         this.fielddbtype = fielddbtype;
     }
 
-    public String getLablename() {
-        return this.lablename;
+    public String getLabelname() {
+        return this.labelname;
     }
 
-    public FormField lablename(String lablename) {
-        this.lablename = lablename;
+    public FormField labelname(String labelname) {
+        this.labelname = labelname;
         return this;
     }
 
-    public void setLablename(String lablename) {
-        this.lablename = lablename;
+    public void setLabelname(String labelname) {
+        this.labelname = labelname;
+    }
+
+    public String getFieldlabel() {
+        return this.fieldlabel;
+    }
+
+    public FormField fieldlabel(String fieldlabel) {
+        this.fieldlabel = fieldlabel;
+        return this;
+    }
+
+    public void setFieldlabel(String fieldlabel) {
+        this.fieldlabel = fieldlabel;
+    }
+
+    public String getDetailtable() {
+        return this.detailtable;
+    }
+
+    public FormField detailtable(String detailtable) {
+        this.detailtable = detailtable;
+        return this;
+    }
+
+    public void setDetailtable(String detailtable) {
+        this.detailtable = detailtable;
     }
 
     public Boolean getShow() {
@@ -174,7 +206,9 @@ public class FormField implements Serializable {
             ", fieldname='" + getFieldname() + "'" +
             ", value='" + getValue() + "'" +
             ", fielddbtype='" + getFielddbtype() + "'" +
-            ", lablename='" + getLablename() + "'" +
+            ", labelname='" + getLabelname() + "'" +
+            ", fieldlabel='" + getFieldlabel() + "'" +
+            ", detailtable='" + getDetailtable() + "'" +
             ", show='" + getShow() + "'" +
             ", orderNum=" + getOrderNum() +
             "}";

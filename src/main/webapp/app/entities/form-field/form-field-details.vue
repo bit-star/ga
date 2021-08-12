@@ -25,10 +25,22 @@
             <span>{{ formField.fielddbtype }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.formField.lablename')">Lablename</span>
+            <span v-text="$t('gaApp.formField.labelname')">Labelname</span>
           </dt>
           <dd>
-            <span>{{ formField.lablename }}</span>
+            <span>{{ formField.labelname }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.formField.fieldlabel')">Fieldlabel</span>
+          </dt>
+          <dd>
+            <span>{{ formField.fieldlabel }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.formField.detailtable')">Detailtable</span>
+          </dt>
+          <dd>
+            <span>{{ formField.detailtable }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.formField.show')">Show</span>
