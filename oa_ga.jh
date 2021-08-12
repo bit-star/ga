@@ -29,7 +29,9 @@ entity FormField {
 	fieldname String
     value String
     fielddbtype String
-    lablename String
+    labelname String
+    fieldlabel String
+    detailtable String
     show Boolean
     orderNum Integer
 }
