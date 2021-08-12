@@ -21,7 +21,9 @@
       "fieldname": "Fieldname",
       "value": "Value",
       "fielddbtype": "Fielddbtype",
-      "lablename": "Lablename",
+      "labelname": "Labelname",
+      "fieldlabel": "Fieldlabel",
+      "detailtable": "Detailtable",
       "show": "Show",
       "orderNum": "Order Num",
       "workflowTemplate": "Workflow Template"

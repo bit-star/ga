@@ -5,7 +5,9 @@ export interface IFormField {
   fieldname?: string | null;
   value?: string | null;
   fielddbtype?: string | null;
-  lablename?: string | null;
+  labelname?: string | null;
+  fieldlabel?: string | null;
+  detailtable?: string | null;
   show?: boolean | null;
   orderNum?: number | null;
   workflowTemplate?: IWorkflowTemplate | null;
@@ -17,7 +19,9 @@ export class FormField implements IFormField {
     public fieldname?: string | null,
     public value?: string | null,
     public fielddbtype?: string | null,
-    public lablename?: string | null,
+    public labelname?: string | null,
+    public fieldlabel?: string | null,
+    public detailtable?: string | null,
     public show?: boolean | null,
     public orderNum?: number | null,
     public workflowTemplate?: IWorkflowTemplate | null

@@ -38,8 +38,14 @@ class FormFieldResourceIT {
     private static final String DEFAULT_FIELDDBTYPE = "AAAAAAAAAA";
     private static final String UPDATED_FIELDDBTYPE = "BBBBBBBBBB";
 
-    private static final String DEFAULT_LABLENAME = "AAAAAAAAAA";
-    private static final String UPDATED_LABLENAME = "BBBBBBBBBB";
+    private static final String DEFAULT_LABELNAME = "AAAAAAAAAA";
+    private static final String UPDATED_LABELNAME = "BBBBBBBBBB";
+
+    private static final String DEFAULT_FIELDLABEL = "AAAAAAAAAA";
+    private static final String UPDATED_FIELDLABEL = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DETAILTABLE = "AAAAAAAAAA";
+    private static final String UPDATED_DETAILTABLE = "BBBBBBBBBB";
 
     private static final Boolean DEFAULT_SHOW = false;
     private static final Boolean UPDATED_SHOW = true;
@@ -75,7 +81,9 @@ class FormFieldResourceIT {
             .fieldname(DEFAULT_FIELDNAME)
             .value(DEFAULT_VALUE)
             .fielddbtype(DEFAULT_FIELDDBTYPE)
-            .lablename(DEFAULT_LABLENAME)
+            .labelname(DEFAULT_LABELNAME)
+            .fieldlabel(DEFAULT_FIELDLABEL)
+            .detailtable(DEFAULT_DETAILTABLE)
             .show(DEFAULT_SHOW)
             .orderNum(DEFAULT_ORDER_NUM);
         return formField;
@@ -92,7 +100,9 @@ class FormFieldResourceIT {
             .fieldname(UPDATED_FIELDNAME)
             .value(UPDATED_VALUE)
             .fielddbtype(UPDATED_FIELDDBTYPE)
-            .lablename(UPDATED_LABLENAME)
+            .labelname(UPDATED_LABELNAME)
+            .fieldlabel(UPDATED_FIELDLABEL)
+            .detailtable(UPDATED_DETAILTABLE)
             .show(UPDATED_SHOW)
             .orderNum(UPDATED_ORDER_NUM);
         return formField;
@@ -119,7 +129,9 @@ class FormFieldResourceIT {
         assertThat(testFormField.getFieldname()).isEqualTo(DEFAULT_FIELDNAME);
         assertThat(testFormField.getValue()).isEqualTo(DEFAULT_VALUE);
         assertThat(testFormField.getFielddbtype()).isEqualTo(DEFAULT_FIELDDBTYPE);
-        assertThat(testFormField.getLablename()).isEqualTo(DEFAULT_LABLENAME);
+        assertThat(testFormField.getLabelname()).isEqualTo(DEFAULT_LABELNAME);
+        assertThat(testFormField.getFieldlabel()).isEqualTo(DEFAULT_FIELDLABEL);
+        assertThat(testFormField.getDetailtable()).isEqualTo(DEFAULT_DETAILTABLE);
         assertThat(testFormField.getShow()).isEqualTo(DEFAULT_SHOW);
         assertThat(testFormField.getOrderNum()).isEqualTo(DEFAULT_ORDER_NUM);
     }
@@ -157,7 +169,9 @@ class FormFieldResourceIT {
             .andExpect(jsonPath("$.[*].fieldname").value(hasItem(DEFAULT_FIELDNAME)))
             .andExpect(jsonPath("$.[*].value").value(hasItem(DEFAULT_VALUE)))
             .andExpect(jsonPath("$.[*].fielddbtype").value(hasItem(DEFAULT_FIELDDBTYPE)))
-            .andExpect(jsonPath("$.[*].lablename").value(hasItem(DEFAULT_LABLENAME)))
+            .andExpect(jsonPath("$.[*].labelname").value(hasItem(DEFAULT_LABELNAME)))
+            .andExpect(jsonPath("$.[*].fieldlabel").value(hasItem(DEFAULT_FIELDLABEL)))
+            .andExpect(jsonPath("$.[*].detailtable").value(hasItem(DEFAULT_DETAILTABLE)))
             .andExpect(jsonPath("$.[*].show").value(hasItem(DEFAULT_SHOW.booleanValue())))
             .andExpect(jsonPath("$.[*].orderNum").value(hasItem(DEFAULT_ORDER_NUM)));
     }
@@ -177,7 +191,9 @@ class FormFieldResourceIT {
             .andExpect(jsonPath("$.fieldname").value(DEFAULT_FIELDNAME))
             .andExpect(jsonPath("$.value").value(DEFAULT_VALUE))
             .andExpect(jsonPath("$.fielddbtype").value(DEFAULT_FIELDDBTYPE))
-            .andExpect(jsonPath("$.lablename").value(DEFAULT_LABLENAME))
+            .andExpect(jsonPath("$.labelname").value(DEFAULT_LABELNAME))
+            .andExpect(jsonPath("$.fieldlabel").value(DEFAULT_FIELDLABEL))
+            .andExpect(jsonPath("$.detailtable").value(DEFAULT_DETAILTABLE))
             .andExpect(jsonPath("$.show").value(DEFAULT_SHOW.booleanValue()))
             .andExpect(jsonPath("$.orderNum").value(DEFAULT_ORDER_NUM));
     }
@@ -205,7 +221,9 @@ class FormFieldResourceIT {
             .fieldname(UPDATED_FIELDNAME)
             .value(UPDATED_VALUE)
             .fielddbtype(UPDATED_FIELDDBTYPE)
-            .lablename(UPDATED_LABLENAME)
+            .labelname(UPDATED_LABELNAME)
+            .fieldlabel(UPDATED_FIELDLABEL)
+            .detailtable(UPDATED_DETAILTABLE)
             .show(UPDATED_SHOW)
             .orderNum(UPDATED_ORDER_NUM);
 
@@ -224,7 +242,9 @@ class FormFieldResourceIT {
         assertThat(testFormField.getFieldname()).isEqualTo(UPDATED_FIELDNAME);
         assertThat(testFormField.getValue()).isEqualTo(UPDATED_VALUE);
         assertThat(testFormField.getFielddbtype()).isEqualTo(UPDATED_FIELDDBTYPE);
-        assertThat(testFormField.getLablename()).isEqualTo(UPDATED_LABLENAME);
+        assertThat(testFormField.getLabelname()).isEqualTo(UPDATED_LABELNAME);
+        assertThat(testFormField.getFieldlabel()).isEqualTo(UPDATED_FIELDLABEL);
+        assertThat(testFormField.getDetailtable()).isEqualTo(UPDATED_DETAILTABLE);
         assertThat(testFormField.getShow()).isEqualTo(UPDATED_SHOW);
         assertThat(testFormField.getOrderNum()).isEqualTo(UPDATED_ORDER_NUM);
     }
@@ -297,7 +317,7 @@ class FormFieldResourceIT {
         FormField partialUpdatedFormField = new FormField();
         partialUpdatedFormField.setId(formField.getId());
 
-        partialUpdatedFormField.fieldname(UPDATED_FIELDNAME).value(UPDATED_VALUE).lablename(UPDATED_LABLENAME);
+        partialUpdatedFormField.fieldname(UPDATED_FIELDNAME).value(UPDATED_VALUE).labelname(UPDATED_LABELNAME).orderNum(UPDATED_ORDER_NUM);
 
         restFormFieldMockMvc
             .perform(
@@ -314,9 +334,11 @@ class FormFieldResourceIT {
         assertThat(testFormField.getFieldname()).isEqualTo(UPDATED_FIELDNAME);
         assertThat(testFormField.getValue()).isEqualTo(UPDATED_VALUE);
         assertThat(testFormField.getFielddbtype()).isEqualTo(DEFAULT_FIELDDBTYPE);
-        assertThat(testFormField.getLablename()).isEqualTo(UPDATED_LABLENAME);
+        assertThat(testFormField.getLabelname()).isEqualTo(UPDATED_LABELNAME);
+        assertThat(testFormField.getFieldlabel()).isEqualTo(DEFAULT_FIELDLABEL);
+        assertThat(testFormField.getDetailtable()).isEqualTo(DEFAULT_DETAILTABLE);
         assertThat(testFormField.getShow()).isEqualTo(DEFAULT_SHOW);
-        assertThat(testFormField.getOrderNum()).isEqualTo(DEFAULT_ORDER_NUM);
+        assertThat(testFormField.getOrderNum()).isEqualTo(UPDATED_ORDER_NUM);
     }
 
     @Test
@@ -335,7 +357,9 @@ class FormFieldResourceIT {
             .fieldname(UPDATED_FIELDNAME)
             .value(UPDATED_VALUE)
             .fielddbtype(UPDATED_FIELDDBTYPE)
-            .lablename(UPDATED_LABLENAME)
+            .labelname(UPDATED_LABELNAME)
+            .fieldlabel(UPDATED_FIELDLABEL)
+            .detailtable(UPDATED_DETAILTABLE)
             .show(UPDATED_SHOW)
             .orderNum(UPDATED_ORDER_NUM);
 
@@ -354,7 +378,9 @@ class FormFieldResourceIT {
         assertThat(testFormField.getFieldname()).isEqualTo(UPDATED_FIELDNAME);
         assertThat(testFormField.getValue()).isEqualTo(UPDATED_VALUE);
         assertThat(testFormField.getFielddbtype()).isEqualTo(UPDATED_FIELDDBTYPE);
-        assertThat(testFormField.getLablename()).isEqualTo(UPDATED_LABLENAME);
+        assertThat(testFormField.getLabelname()).isEqualTo(UPDATED_LABELNAME);
+        assertThat(testFormField.getFieldlabel()).isEqualTo(UPDATED_FIELDLABEL);
+        assertThat(testFormField.getDetailtable()).isEqualTo(UPDATED_DETAILTABLE);
         assertThat(testFormField.getShow()).isEqualTo(UPDATED_SHOW);
         assertThat(testFormField.getOrderNum()).isEqualTo(UPDATED_ORDER_NUM);
     }
