@@ -39,6 +39,9 @@ public class WorkflowInstance implements Serializable {
     @Column(name = "dd_card_call_back_key")
     private String ddCardCallBackKey;
 
+    @Column(name = "request_id")
+    private String requestId;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private WorkflowInstanceStatus status;
@@ -144,6 +147,19 @@ public class WorkflowInstance implements Serializable {
 
     public void setDdCardCallBackKey(String ddCardCallBackKey) {
         this.ddCardCallBackKey = ddCardCallBackKey;
+    }
+
+    public String getRequestId() {
+        return this.requestId;
+    }
+
+    public WorkflowInstance requestId(String requestId) {
+        this.requestId = requestId;
+        return this;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
     public WorkflowInstanceStatus getStatus() {
@@ -276,6 +292,7 @@ public class WorkflowInstance implements Serializable {
             ", title='" + getTitle() + "'" +
             ", ddCardTemplateId='" + getDdCardTemplateId() + "'" +
             ", ddCardCallBackKey='" + getDdCardCallBackKey() + "'" +
+            ", requestId='" + getRequestId() + "'" +
             ", status='" + getStatus() + "'" +
             "}";
     }

@@ -31,6 +31,7 @@
       "finish": "Finish",
       "status": "Status",
       "content": "Content",
+      "refuse": "Refuse",
       "privateCardData": "Private Card Data",
       "operationResults": "Operation Results",
       "confirmCard": "Confirm Card",

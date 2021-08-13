@@ -131,13 +131,13 @@
           <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.agree')" for="public-card-data-agree">Agree</label>
             <input
-              type="checkbox"
-              class="form-check"
+              type="number"
+              class="form-control"
               name="agree"
               id="public-card-data-agree"
               data-cy="agree"
               :class="{ valid: !$v.publicCardData.agree.$invalid, invalid: $v.publicCardData.agree.$invalid }"
-              v-model="$v.publicCardData.agree.$model"
+              v-model.number="$v.publicCardData.agree.$model"
             />
           </div>
           <div class="form-group">
@@ -176,6 +176,18 @@
               data-cy="content"
               :class="{ valid: !$v.publicCardData.content.$invalid, invalid: $v.publicCardData.content.$invalid }"
               v-model="$v.publicCardData.content.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.publicCardData.refuse')" for="public-card-data-refuse">Refuse</label>
+            <input
+              type="number"
+              class="form-control"
+              name="refuse"
+              id="public-card-data-refuse"
+              data-cy="refuse"
+              :class="{ valid: !$v.publicCardData.refuse.$invalid, invalid: $v.publicCardData.refuse.$invalid }"
+              v-model.number="$v.publicCardData.refuse.$model"
             />
           </div>
           <div class="form-group">

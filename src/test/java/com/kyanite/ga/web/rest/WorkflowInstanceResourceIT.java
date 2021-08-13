@@ -46,6 +46,9 @@ class WorkflowInstanceResourceIT {
     private static final String DEFAULT_DD_CARD_CALL_BACK_KEY = "AAAAAAAAAA";
     private static final String UPDATED_DD_CARD_CALL_BACK_KEY = "BBBBBBBBBB";
 
+    private static final String DEFAULT_REQUEST_ID = "AAAAAAAAAA";
+    private static final String UPDATED_REQUEST_ID = "BBBBBBBBBB";
+
     private static final WorkflowInstanceStatus DEFAULT_STATUS = WorkflowInstanceStatus.Launch;
     private static final WorkflowInstanceStatus UPDATED_STATUS = WorkflowInstanceStatus.Refuse;
 
@@ -79,6 +82,7 @@ class WorkflowInstanceResourceIT {
             .title(DEFAULT_TITLE)
             .ddCardTemplateId(DEFAULT_DD_CARD_TEMPLATE_ID)
             .ddCardCallBackKey(DEFAULT_DD_CARD_CALL_BACK_KEY)
+            .requestId(DEFAULT_REQUEST_ID)
             .status(DEFAULT_STATUS);
         return workflowInstance;
     }
@@ -96,6 +100,7 @@ class WorkflowInstanceResourceIT {
             .title(UPDATED_TITLE)
             .ddCardTemplateId(UPDATED_DD_CARD_TEMPLATE_ID)
             .ddCardCallBackKey(UPDATED_DD_CARD_CALL_BACK_KEY)
+            .requestId(UPDATED_REQUEST_ID)
             .status(UPDATED_STATUS);
         return workflowInstance;
     }
@@ -125,6 +130,7 @@ class WorkflowInstanceResourceIT {
         assertThat(testWorkflowInstance.getTitle()).isEqualTo(DEFAULT_TITLE);
         assertThat(testWorkflowInstance.getDdCardTemplateId()).isEqualTo(DEFAULT_DD_CARD_TEMPLATE_ID);
         assertThat(testWorkflowInstance.getDdCardCallBackKey()).isEqualTo(DEFAULT_DD_CARD_CALL_BACK_KEY);
+        assertThat(testWorkflowInstance.getRequestId()).isEqualTo(DEFAULT_REQUEST_ID);
         assertThat(testWorkflowInstance.getStatus()).isEqualTo(DEFAULT_STATUS);
     }
 
@@ -165,6 +171,7 @@ class WorkflowInstanceResourceIT {
             .andExpect(jsonPath("$.[*].title").value(hasItem(DEFAULT_TITLE)))
             .andExpect(jsonPath("$.[*].ddCardTemplateId").value(hasItem(DEFAULT_DD_CARD_TEMPLATE_ID)))
             .andExpect(jsonPath("$.[*].ddCardCallBackKey").value(hasItem(DEFAULT_DD_CARD_CALL_BACK_KEY)))
+            .andExpect(jsonPath("$.[*].requestId").value(hasItem(DEFAULT_REQUEST_ID)))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())));
     }
 
@@ -185,6 +192,7 @@ class WorkflowInstanceResourceIT {
             .andExpect(jsonPath("$.title").value(DEFAULT_TITLE))
             .andExpect(jsonPath("$.ddCardTemplateId").value(DEFAULT_DD_CARD_TEMPLATE_ID))
             .andExpect(jsonPath("$.ddCardCallBackKey").value(DEFAULT_DD_CARD_CALL_BACK_KEY))
+            .andExpect(jsonPath("$.requestId").value(DEFAULT_REQUEST_ID))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()));
     }
 
@@ -213,6 +221,7 @@ class WorkflowInstanceResourceIT {
             .title(UPDATED_TITLE)
             .ddCardTemplateId(UPDATED_DD_CARD_TEMPLATE_ID)
             .ddCardCallBackKey(UPDATED_DD_CARD_CALL_BACK_KEY)
+            .requestId(UPDATED_REQUEST_ID)
             .status(UPDATED_STATUS);
 
         restWorkflowInstanceMockMvc
@@ -232,6 +241,7 @@ class WorkflowInstanceResourceIT {
         assertThat(testWorkflowInstance.getTitle()).isEqualTo(UPDATED_TITLE);
         assertThat(testWorkflowInstance.getDdCardTemplateId()).isEqualTo(UPDATED_DD_CARD_TEMPLATE_ID);
         assertThat(testWorkflowInstance.getDdCardCallBackKey()).isEqualTo(UPDATED_DD_CARD_CALL_BACK_KEY);
+        assertThat(testWorkflowInstance.getRequestId()).isEqualTo(UPDATED_REQUEST_ID);
         assertThat(testWorkflowInstance.getStatus()).isEqualTo(UPDATED_STATUS);
     }
 
@@ -305,7 +315,7 @@ class WorkflowInstanceResourceIT {
         WorkflowInstance partialUpdatedWorkflowInstance = new WorkflowInstance();
         partialUpdatedWorkflowInstance.setId(workflowInstance.getId());
 
-        partialUpdatedWorkflowInstance.title(UPDATED_TITLE).ddCardCallBackKey(UPDATED_DD_CARD_CALL_BACK_KEY);
+        partialUpdatedWorkflowInstance.title(UPDATED_TITLE).ddCardCallBackKey(UPDATED_DD_CARD_CALL_BACK_KEY).status(UPDATED_STATUS);
 
         restWorkflowInstanceMockMvc
             .perform(
@@ -324,7 +334,8 @@ class WorkflowInstanceResourceIT {
         assertThat(testWorkflowInstance.getTitle()).isEqualTo(UPDATED_TITLE);
         assertThat(testWorkflowInstance.getDdCardTemplateId()).isEqualTo(DEFAULT_DD_CARD_TEMPLATE_ID);
         assertThat(testWorkflowInstance.getDdCardCallBackKey()).isEqualTo(UPDATED_DD_CARD_CALL_BACK_KEY);
-        assertThat(testWorkflowInstance.getStatus()).isEqualTo(DEFAULT_STATUS);
+        assertThat(testWorkflowInstance.getRequestId()).isEqualTo(DEFAULT_REQUEST_ID);
+        assertThat(testWorkflowInstance.getStatus()).isEqualTo(UPDATED_STATUS);
     }
 
     @Test
@@ -345,6 +356,7 @@ class WorkflowInstanceResourceIT {
             .title(UPDATED_TITLE)
             .ddCardTemplateId(UPDATED_DD_CARD_TEMPLATE_ID)
             .ddCardCallBackKey(UPDATED_DD_CARD_CALL_BACK_KEY)
+            .requestId(UPDATED_REQUEST_ID)
             .status(UPDATED_STATUS);
 
         restWorkflowInstanceMockMvc
@@ -364,6 +376,7 @@ class WorkflowInstanceResourceIT {
         assertThat(testWorkflowInstance.getTitle()).isEqualTo(UPDATED_TITLE);
         assertThat(testWorkflowInstance.getDdCardTemplateId()).isEqualTo(UPDATED_DD_CARD_TEMPLATE_ID);
         assertThat(testWorkflowInstance.getDdCardCallBackKey()).isEqualTo(UPDATED_DD_CARD_CALL_BACK_KEY);
+        assertThat(testWorkflowInstance.getRequestId()).isEqualTo(UPDATED_REQUEST_ID);
         assertThat(testWorkflowInstance.getStatus()).isEqualTo(UPDATED_STATUS);
     }
 
