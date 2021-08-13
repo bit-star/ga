@@ -127,8 +127,8 @@ entity PublicCardData {
     finish String
     status String
     content String
-    agree Long
-    refuse Long
+    agreeNum Long
+    refuseNum Long
     status PublicDataCardStatus
 
 }
