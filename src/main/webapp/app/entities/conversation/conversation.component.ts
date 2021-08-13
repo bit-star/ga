@@ -4,12 +4,14 @@ import { Component, Vue, Inject } from 'vue-property-decorator';
 import Vue2Filters from 'vue2-filters';
 import { IConversation } from '@/shared/model/conversation.model';
 
+import JhiDataUtils from '@/shared/data/data-utils.service';
+
 import ConversationService from './conversation.service';
 
 @Component({
   mixins: [Vue2Filters.mixin],
 })
-export default class Conversation extends Vue {
+export default class Conversation extends mixins(JhiDataUtils) {
   @Inject('conversationService') private conversationService: () => ConversationService;
   private removeId: string = null;
 

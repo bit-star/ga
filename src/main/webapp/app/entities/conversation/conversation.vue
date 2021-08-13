@@ -30,6 +30,26 @@
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
             <th scope="row"><span v-text="$t('gaApp.conversation.name')">Name</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.title')">Title</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.owner')">Owner</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.ownerUserId')">Owner User Id</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.chatid')">Chatid</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.openConversationId')">Open Conversation Id</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.conversationTag')">Conversation Tag</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.useridlist')">Useridlist</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.uuid')">Uuid</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.icon')">Icon</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.showHistoryType')">Show History Type</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.searchable')">Searchable</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.validationType')">Validation Type</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.chatBannedType')">Chat Banned Type</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.mentionAllAuthority')">Mention All Authority</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.managementType')">Management Type</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.templateId')">Template Id</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.officialGroup')">Official Group</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.enableScenegroup')">Enable Scenegroup</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.groupUrl')">Group Url</span></th>
+            <th scope="row"><span v-text="$t('gaApp.conversation.time')">Time</span></th>
             <th scope="row"><span v-text="$t('gaApp.conversation.ddUser')">Dd User</span></th>
             <th scope="row"></th>
           </tr>
@@ -42,6 +62,26 @@
               }}</router-link>
             </td>
             <td>{{ conversation.name }}</td>
+            <td>{{ conversation.title }}</td>
+            <td>{{ conversation.owner }}</td>
+            <td>{{ conversation.ownerUserId }}</td>
+            <td>{{ conversation.chatid }}</td>
+            <td>{{ conversation.openConversationId }}</td>
+            <td>{{ conversation.conversationTag }}</td>
+            <td>{{ conversation.useridlist }}</td>
+            <td>{{ conversation.uuid }}</td>
+            <td>{{ conversation.icon }}</td>
+            <td>{{ conversation.showHistoryType }}</td>
+            <td>{{ conversation.searchable }}</td>
+            <td>{{ conversation.validationType }}</td>
+            <td>{{ conversation.chatBannedType }}</td>
+            <td>{{ conversation.mentionAllAuthority }}</td>
+            <td>{{ conversation.managementType }}</td>
+            <td>{{ conversation.templateId }}</td>
+            <td>{{ conversation.officialGroup }}</td>
+            <td>{{ conversation.enableScenegroup }}</td>
+            <td>{{ conversation.groupUrl }}</td>
+            <td>{{ conversation.time ? $d(Date.parse(conversation.time), 'short') : '' }}</td>
             <td>
               <span v-for="(ddUser, i) in conversation.ddUsers" :key="ddUser.id"
                 >{{ i > 0 ? ', ' : '' }}

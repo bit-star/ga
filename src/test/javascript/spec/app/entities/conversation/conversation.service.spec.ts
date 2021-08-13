@@ -1,7 +1,9 @@
 /* tslint:disable max-line-length */
 import axios from 'axios';
 import sinon from 'sinon';
+import dayjs from 'dayjs';
 
+import { DATE_TIME_FORMAT } from '@/shared/date/filters';
 import ConversationService from '@/entities/conversation/conversation.service';
 import { Conversation } from '@/shared/model/conversation.model';
 
@@ -26,15 +28,45 @@ describe('Service Tests', () => {
   describe('Conversation Service', () => {
     let service: ConversationService;
     let elemDefault;
+    let currentDate: Date;
 
     beforeEach(() => {
       service = new ConversationService();
-      elemDefault = new Conversation('ABC', 'AAAAAAA');
+      currentDate = new Date();
+      elemDefault = new Conversation(
+        'ABC',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        0,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        false,
+        false,
+        'AAAAAAA',
+        currentDate
+      );
     });
 
     describe('Service methods', () => {
       it('should find an element', async () => {
-        const returnedFromService = Object.assign({}, elemDefault);
+        const returnedFromService = Object.assign(
+          {
+            time: dayjs(currentDate).format(DATE_TIME_FORMAT),
+          },
+          elemDefault
+        );
         axiosStub.get.resolves({ data: returnedFromService });
 
         return service.find('ABC').then(res => {
@@ -56,10 +88,16 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             id: 'ABC',
+            time: dayjs(currentDate).format(DATE_TIME_FORMAT),
           },
           elemDefault
         );
-        const expected = Object.assign({}, returnedFromService);
+        const expected = Object.assign(
+          {
+            time: currentDate,
+          },
+          returnedFromService
+        );
 
         axiosStub.post.resolves({ data: returnedFromService });
         return service.create({}).then(res => {
@@ -82,11 +120,36 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             name: 'BBBBBB',
+            title: 'BBBBBB',
+            owner: 'BBBBBB',
+            ownerUserId: 'BBBBBB',
+            chatid: 'BBBBBB',
+            openConversationId: 'BBBBBB',
+            conversationTag: 1,
+            useridlist: 'BBBBBB',
+            uuid: 'BBBBBB',
+            icon: 'BBBBBB',
+            showHistoryType: 'BBBBBB',
+            searchable: 'BBBBBB',
+            validationType: 'BBBBBB',
+            chatBannedType: 'BBBBBB',
+            mentionAllAuthority: 'BBBBBB',
+            managementType: 'BBBBBB',
+            templateId: 'BBBBBB',
+            officialGroup: true,
+            enableScenegroup: true,
+            groupUrl: 'BBBBBB',
+            time: dayjs(currentDate).format(DATE_TIME_FORMAT),
           },
           elemDefault
         );
 
-        const expected = Object.assign({}, returnedFromService);
+        const expected = Object.assign(
+          {
+            time: currentDate,
+          },
+          returnedFromService
+        );
         axiosStub.put.resolves({ data: returnedFromService });
 
         return service.update(expected).then(res => {
@@ -109,12 +172,30 @@ describe('Service Tests', () => {
         const patchObject = Object.assign(
           {
             name: 'BBBBBB',
+            title: 'BBBBBB',
+            ownerUserId: 'BBBBBB',
+            chatid: 'BBBBBB',
+            openConversationId: 'BBBBBB',
+            conversationTag: 1,
+            useridlist: 'BBBBBB',
+            searchable: 'BBBBBB',
+            validationType: 'BBBBBB',
+            managementType: 'BBBBBB',
+            templateId: 'BBBBBB',
+            officialGroup: true,
+            groupUrl: 'BBBBBB',
+            time: dayjs(currentDate).format(DATE_TIME_FORMAT),
           },
           new Conversation()
         );
         const returnedFromService = Object.assign(patchObject, elemDefault);
 
-        const expected = Object.assign({}, returnedFromService);
+        const expected = Object.assign(
+          {
+            time: currentDate,
+          },
+          returnedFromService
+        );
         axiosStub.patch.resolves({ data: returnedFromService });
 
         return service.partialUpdate(patchObject).then(res => {
@@ -137,10 +218,35 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             name: 'BBBBBB',
+            title: 'BBBBBB',
+            owner: 'BBBBBB',
+            ownerUserId: 'BBBBBB',
+            chatid: 'BBBBBB',
+            openConversationId: 'BBBBBB',
+            conversationTag: 1,
+            useridlist: 'BBBBBB',
+            uuid: 'BBBBBB',
+            icon: 'BBBBBB',
+            showHistoryType: 'BBBBBB',
+            searchable: 'BBBBBB',
+            validationType: 'BBBBBB',
+            chatBannedType: 'BBBBBB',
+            mentionAllAuthority: 'BBBBBB',
+            managementType: 'BBBBBB',
+            templateId: 'BBBBBB',
+            officialGroup: true,
+            enableScenegroup: true,
+            groupUrl: 'BBBBBB',
+            time: dayjs(currentDate).format(DATE_TIME_FORMAT),
           },
           elemDefault
         );
-        const expected = Object.assign({}, returnedFromService);
+        const expected = Object.assign(
+          {
+            time: currentDate,
+          },
+          returnedFromService
+        );
         axiosStub.get.resolves([returnedFromService]);
         return service.retrieve().then(res => {
           expect(res).toContainEqual(expected);
