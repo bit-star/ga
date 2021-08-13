@@ -39,7 +39,7 @@
     },
     {
       "fieldName": "agree",
-      "fieldType": "Boolean"
+      "fieldType": "Long"
     },
     {
       "fieldName": "finish",
@@ -53,6 +53,10 @@
     {
       "fieldName": "content",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "refuse",
+      "fieldType": "Long"
     }
   ],
   "relationships": [

@@ -85,6 +85,12 @@
             <span>{{ publicCardData.content }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.publicCardData.refuse')">Refuse</span>
+          </dt>
+          <dd>
+            <span>{{ publicCardData.refuse }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.publicCardData.workflowInstance')">Workflow Instance</span>
           </dt>
           <dd>

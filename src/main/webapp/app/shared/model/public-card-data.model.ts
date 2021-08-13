@@ -16,10 +16,11 @@ export interface IPublicCardData {
   reason?: string | null;
   itemType?: string | null;
   typesOfFee?: string | null;
-  agree?: boolean | null;
+  agree?: number | null;
   finish?: string | null;
   status?: PublicDataCardStatus | null;
   content?: string | null;
+  refuse?: number | null;
   privateCardData?: IPrivateCardData[] | null;
   operationResults?: IOperationResults[] | null;
   confirmCards?: IConfirmCard[] | null;
@@ -39,10 +40,11 @@ export class PublicCardData implements IPublicCardData {
     public reason?: string | null,
     public itemType?: string | null,
     public typesOfFee?: string | null,
-    public agree?: boolean | null,
+    public agree?: number | null,
     public finish?: string | null,
     public status?: PublicDataCardStatus | null,
     public content?: string | null,
+    public refuse?: number | null,
     public privateCardData?: IPrivateCardData[] | null,
     public operationResults?: IOperationResults[] | null,
     public confirmCards?: IConfirmCard[] | null,
@@ -50,6 +52,5 @@ export class PublicCardData implements IPublicCardData {
     public conversation?: IConversation | null
   ) {
     this.valid = this.valid ?? false;
-    this.agree = this.agree ?? false;
   }
 }

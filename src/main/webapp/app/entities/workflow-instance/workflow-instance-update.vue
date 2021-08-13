@@ -86,6 +86,20 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.workflowInstance.requestId')" for="workflow-instance-requestId"
+              >Request Id</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="requestId"
+              id="workflow-instance-requestId"
+              data-cy="requestId"
+              :class="{ valid: !$v.workflowInstance.requestId.$invalid, invalid: $v.workflowInstance.requestId.$invalid }"
+              v-model="$v.workflowInstance.requestId.$model"
+            />
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.workflowInstance.status')" for="workflow-instance-status">Status</label>
             <select
               class="form-control"

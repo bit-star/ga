@@ -11,6 +11,7 @@ export interface IWorkflowInstance {
   title?: string | null;
   ddCardTemplateId?: string | null;
   ddCardCallBackKey?: string | null;
+  requestId?: string | null;
   status?: WorkflowInstanceStatus | null;
   approvers?: IApprover[] | null;
   workflowTemplate?: IWorkflowTemplate | null;
@@ -26,6 +27,7 @@ export class WorkflowInstance implements IWorkflowInstance {
     public title?: string | null,
     public ddCardTemplateId?: string | null,
     public ddCardCallBackKey?: string | null,
+    public requestId?: string | null,
     public status?: WorkflowInstanceStatus | null,
     public approvers?: IApprover[] | null,
     public workflowTemplate?: IWorkflowTemplate | null,

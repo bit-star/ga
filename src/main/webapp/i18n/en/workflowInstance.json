@@ -23,6 +23,7 @@
       "title": "Title",
       "ddCardTemplateId": "Dd Card Template Id",
       "ddCardCallBackKey": "Dd Card Call Back Key",
+      "requestId": "Request Id",
       "status": "Status",
       "approver": "Approver",
       "workflowTemplate": "Workflow Template",

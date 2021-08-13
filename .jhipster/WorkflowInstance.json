@@ -23,6 +23,10 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "requestId",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "status",
       "fieldType": "WorkflowInstanceStatus",
       "fieldValues": "Launch,Refuse,Agree,Archive"

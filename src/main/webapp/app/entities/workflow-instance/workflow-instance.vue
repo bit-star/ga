@@ -34,6 +34,7 @@
             <th scope="row"><span v-text="$t('gaApp.workflowInstance.title')">Title</span></th>
             <th scope="row"><span v-text="$t('gaApp.workflowInstance.ddCardTemplateId')">Dd Card Template Id</span></th>
             <th scope="row"><span v-text="$t('gaApp.workflowInstance.ddCardCallBackKey')">Dd Card Call Back Key</span></th>
+            <th scope="row"><span v-text="$t('gaApp.workflowInstance.requestId')">Request Id</span></th>
             <th scope="row"><span v-text="$t('gaApp.workflowInstance.status')">Status</span></th>
             <th scope="row"><span v-text="$t('gaApp.workflowInstance.workflowTemplate')">Workflow Template</span></th>
             <th scope="row"><span v-text="$t('gaApp.workflowInstance.creator')">Creator</span></th>
@@ -52,6 +53,7 @@
             <td>{{ workflowInstance.title }}</td>
             <td>{{ workflowInstance.ddCardTemplateId }}</td>
             <td>{{ workflowInstance.ddCardCallBackKey }}</td>
+            <td>{{ workflowInstance.requestId }}</td>
             <td v-text="$t('gaApp.WorkflowInstanceStatus.' + workflowInstance.status)">{{ workflowInstance.status }}</td>
             <td>
               <div v-if="workflowInstance.workflowTemplate">

@@ -30,7 +30,16 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new WorkflowInstanceService();
-      elemDefault = new WorkflowInstance(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', WorkflowInstanceStatus.Launch);
+      elemDefault = new WorkflowInstance(
+        123,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        WorkflowInstanceStatus.Launch
+      );
     });
 
     describe('Service methods', () => {
@@ -87,6 +96,7 @@ describe('Service Tests', () => {
             title: 'BBBBBB',
             ddCardTemplateId: 'BBBBBB',
             ddCardCallBackKey: 'BBBBBB',
+            requestId: 'BBBBBB',
             status: 'BBBBBB',
           },
           elemDefault
@@ -116,7 +126,7 @@ describe('Service Tests', () => {
           {
             form: 'BBBBBB',
             ddCardCallBackKey: 'BBBBBB',
-            status: 'BBBBBB',
+            requestId: 'BBBBBB',
           },
           new WorkflowInstance()
         );
@@ -149,6 +159,7 @@ describe('Service Tests', () => {
             title: 'BBBBBB',
             ddCardTemplateId: 'BBBBBB',
             ddCardCallBackKey: 'BBBBBB',
+            requestId: 'BBBBBB',
             status: 'BBBBBB',
           },
           elemDefault

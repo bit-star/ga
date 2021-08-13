@@ -51,7 +51,7 @@ public class PublicCardData implements Serializable {
     private String typesOfFee;
 
     @Column(name = "agree")
-    private Boolean agree;
+    private Long agree;
 
     @Column(name = "finish")
     private String finish;
@@ -62,6 +62,9 @@ public class PublicCardData implements Serializable {
 
     @Column(name = "content")
     private String content;
+
+    @Column(name = "refuse")
+    private Long refuse;
 
     @OneToMany(mappedBy = "publicCardData")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
@@ -217,16 +220,16 @@ public class PublicCardData implements Serializable {
         this.typesOfFee = typesOfFee;
     }
 
-    public Boolean getAgree() {
+    public Long getAgree() {
         return this.agree;
     }
 
-    public PublicCardData agree(Boolean agree) {
+    public PublicCardData agree(Long agree) {
         this.agree = agree;
         return this;
     }
 
-    public void setAgree(Boolean agree) {
+    public void setAgree(Long agree) {
         this.agree = agree;
     }
 
@@ -267,6 +270,19 @@ public class PublicCardData implements Serializable {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Long getRefuse() {
+        return this.refuse;
+    }
+
+    public PublicCardData refuse(Long refuse) {
+        this.refuse = refuse;
+        return this;
+    }
+
+    public void setRefuse(Long refuse) {
+        this.refuse = refuse;
     }
 
     public Set<PrivateCardData> getPrivateCardData() {
@@ -421,10 +437,11 @@ public class PublicCardData implements Serializable {
             ", reason='" + getReason() + "'" +
             ", itemType='" + getItemType() + "'" +
             ", typesOfFee='" + getTypesOfFee() + "'" +
-            ", agree='" + getAgree() + "'" +
+            ", agree=" + getAgree() +
             ", finish='" + getFinish() + "'" +
             ", status='" + getStatus() + "'" +
             ", content='" + getContent() + "'" +
+            ", refuse=" + getRefuse() +
             "}";
     }
 }
