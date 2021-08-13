@@ -57,8 +57,8 @@ class PublicCardDataResourceIT {
     private static final String DEFAULT_TYPES_OF_FEE = "AAAAAAAAAA";
     private static final String UPDATED_TYPES_OF_FEE = "BBBBBBBBBB";
 
-    private static final Long DEFAULT_AGREE = 1L;
-    private static final Long UPDATED_AGREE = 2L;
+    private static final Boolean DEFAULT_AGREE = false;
+    private static final Boolean UPDATED_AGREE = true;
 
     private static final String DEFAULT_FINISH = "AAAAAAAAAA";
     private static final String UPDATED_FINISH = "BBBBBBBBBB";
@@ -69,8 +69,11 @@ class PublicCardDataResourceIT {
     private static final String DEFAULT_CONTENT = "AAAAAAAAAA";
     private static final String UPDATED_CONTENT = "BBBBBBBBBB";
 
-    private static final Long DEFAULT_REFUSE = 1L;
-    private static final Long UPDATED_REFUSE = 2L;
+    private static final Long DEFAULT_AGREE_NUM = 1L;
+    private static final Long UPDATED_AGREE_NUM = 2L;
+
+    private static final Long DEFAULT_REFUSE_NUM = 1L;
+    private static final Long UPDATED_REFUSE_NUM = 2L;
 
     private static final String ENTITY_API_URL = "/api/public-card-data";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -110,7 +113,8 @@ class PublicCardDataResourceIT {
             .finish(DEFAULT_FINISH)
             .status(DEFAULT_STATUS)
             .content(DEFAULT_CONTENT)
-            .refuse(DEFAULT_REFUSE);
+            .agreeNum(DEFAULT_AGREE_NUM)
+            .refuseNum(DEFAULT_REFUSE_NUM);
         return publicCardData;
     }
 
@@ -135,7 +139,8 @@ class PublicCardDataResourceIT {
             .finish(UPDATED_FINISH)
             .status(UPDATED_STATUS)
             .content(UPDATED_CONTENT)
-            .refuse(UPDATED_REFUSE);
+            .agreeNum(UPDATED_AGREE_NUM)
+            .refuseNum(UPDATED_REFUSE_NUM);
         return publicCardData;
     }
 
@@ -172,7 +177,8 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getFinish()).isEqualTo(DEFAULT_FINISH);
         assertThat(testPublicCardData.getStatus()).isEqualTo(DEFAULT_STATUS);
         assertThat(testPublicCardData.getContent()).isEqualTo(DEFAULT_CONTENT);
-        assertThat(testPublicCardData.getRefuse()).isEqualTo(DEFAULT_REFUSE);
+        assertThat(testPublicCardData.getAgreeNum()).isEqualTo(DEFAULT_AGREE_NUM);
+        assertThat(testPublicCardData.getRefuseNum()).isEqualTo(DEFAULT_REFUSE_NUM);
     }
 
     @Test
@@ -216,11 +222,12 @@ class PublicCardDataResourceIT {
             .andExpect(jsonPath("$.[*].reason").value(hasItem(DEFAULT_REASON)))
             .andExpect(jsonPath("$.[*].itemType").value(hasItem(DEFAULT_ITEM_TYPE)))
             .andExpect(jsonPath("$.[*].typesOfFee").value(hasItem(DEFAULT_TYPES_OF_FEE)))
-            .andExpect(jsonPath("$.[*].agree").value(hasItem(DEFAULT_AGREE.intValue())))
+            .andExpect(jsonPath("$.[*].agree").value(hasItem(DEFAULT_AGREE.booleanValue())))
             .andExpect(jsonPath("$.[*].finish").value(hasItem(DEFAULT_FINISH)))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
             .andExpect(jsonPath("$.[*].content").value(hasItem(DEFAULT_CONTENT)))
-            .andExpect(jsonPath("$.[*].refuse").value(hasItem(DEFAULT_REFUSE.intValue())));
+            .andExpect(jsonPath("$.[*].agreeNum").value(hasItem(DEFAULT_AGREE_NUM.intValue())))
+            .andExpect(jsonPath("$.[*].refuseNum").value(hasItem(DEFAULT_REFUSE_NUM.intValue())));
     }
 
     @Test
@@ -244,11 +251,12 @@ class PublicCardDataResourceIT {
             .andExpect(jsonPath("$.reason").value(DEFAULT_REASON))
             .andExpect(jsonPath("$.itemType").value(DEFAULT_ITEM_TYPE))
             .andExpect(jsonPath("$.typesOfFee").value(DEFAULT_TYPES_OF_FEE))
-            .andExpect(jsonPath("$.agree").value(DEFAULT_AGREE.intValue()))
+            .andExpect(jsonPath("$.agree").value(DEFAULT_AGREE.booleanValue()))
             .andExpect(jsonPath("$.finish").value(DEFAULT_FINISH))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
             .andExpect(jsonPath("$.content").value(DEFAULT_CONTENT))
-            .andExpect(jsonPath("$.refuse").value(DEFAULT_REFUSE.intValue()));
+            .andExpect(jsonPath("$.agreeNum").value(DEFAULT_AGREE_NUM.intValue()))
+            .andExpect(jsonPath("$.refuseNum").value(DEFAULT_REFUSE_NUM.intValue()));
     }
 
     @Test
@@ -284,7 +292,8 @@ class PublicCardDataResourceIT {
             .finish(UPDATED_FINISH)
             .status(UPDATED_STATUS)
             .content(UPDATED_CONTENT)
-            .refuse(UPDATED_REFUSE);
+            .agreeNum(UPDATED_AGREE_NUM)
+            .refuseNum(UPDATED_REFUSE_NUM);
 
         restPublicCardDataMockMvc
             .perform(
@@ -311,7 +320,8 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getFinish()).isEqualTo(UPDATED_FINISH);
         assertThat(testPublicCardData.getStatus()).isEqualTo(UPDATED_STATUS);
         assertThat(testPublicCardData.getContent()).isEqualTo(UPDATED_CONTENT);
-        assertThat(testPublicCardData.getRefuse()).isEqualTo(UPDATED_REFUSE);
+        assertThat(testPublicCardData.getAgreeNum()).isEqualTo(UPDATED_AGREE_NUM);
+        assertThat(testPublicCardData.getRefuseNum()).isEqualTo(UPDATED_REFUSE_NUM);
     }
 
     @Test
@@ -391,7 +401,8 @@ class PublicCardDataResourceIT {
             .reason(UPDATED_REASON)
             .finish(UPDATED_FINISH)
             .content(UPDATED_CONTENT)
-            .refuse(UPDATED_REFUSE);
+            .agreeNum(UPDATED_AGREE_NUM)
+            .refuseNum(UPDATED_REFUSE_NUM);
 
         restPublicCardDataMockMvc
             .perform(
@@ -418,7 +429,8 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getFinish()).isEqualTo(UPDATED_FINISH);
         assertThat(testPublicCardData.getStatus()).isEqualTo(DEFAULT_STATUS);
         assertThat(testPublicCardData.getContent()).isEqualTo(UPDATED_CONTENT);
-        assertThat(testPublicCardData.getRefuse()).isEqualTo(UPDATED_REFUSE);
+        assertThat(testPublicCardData.getAgreeNum()).isEqualTo(UPDATED_AGREE_NUM);
+        assertThat(testPublicCardData.getRefuseNum()).isEqualTo(UPDATED_REFUSE_NUM);
     }
 
     @Test
@@ -447,7 +459,8 @@ class PublicCardDataResourceIT {
             .finish(UPDATED_FINISH)
             .status(UPDATED_STATUS)
             .content(UPDATED_CONTENT)
-            .refuse(UPDATED_REFUSE);
+            .agreeNum(UPDATED_AGREE_NUM)
+            .refuseNum(UPDATED_REFUSE_NUM);
 
         restPublicCardDataMockMvc
             .perform(
@@ -474,7 +487,8 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getFinish()).isEqualTo(UPDATED_FINISH);
         assertThat(testPublicCardData.getStatus()).isEqualTo(UPDATED_STATUS);
         assertThat(testPublicCardData.getContent()).isEqualTo(UPDATED_CONTENT);
-        assertThat(testPublicCardData.getRefuse()).isEqualTo(UPDATED_REFUSE);
+        assertThat(testPublicCardData.getAgreeNum()).isEqualTo(UPDATED_AGREE_NUM);
+        assertThat(testPublicCardData.getRefuseNum()).isEqualTo(UPDATED_REFUSE_NUM);
     }
 
     @Test

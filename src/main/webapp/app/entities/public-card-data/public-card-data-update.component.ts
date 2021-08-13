@@ -33,7 +33,8 @@ const validations: any = {
     finish: {},
     status: {},
     content: {},
-    refuse: {},
+    agreeNum: {},
+    refuseNum: {},
   },
 };
 

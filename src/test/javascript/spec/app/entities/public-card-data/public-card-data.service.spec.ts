@@ -41,10 +41,11 @@ describe('Service Tests', () => {
         'AAAAAAA',
         'AAAAAAA',
         'AAAAAAA',
-        0,
+        false,
         'AAAAAAA',
         PublicDataCardStatus.Effect,
         'AAAAAAA',
+        0,
         0
       );
     });
@@ -107,11 +108,12 @@ describe('Service Tests', () => {
             reason: 'BBBBBB',
             itemType: 'BBBBBB',
             typesOfFee: 'BBBBBB',
-            agree: 1,
+            agree: true,
             finish: 'BBBBBB',
             status: 'BBBBBB',
             content: 'BBBBBB',
-            refuse: 1,
+            agreeNum: 1,
+            refuseNum: 1,
           },
           elemDefault
         );
@@ -142,7 +144,7 @@ describe('Service Tests', () => {
             link: 'BBBBBB',
             name: 'BBBBBB',
             typesOfFee: 'BBBBBB',
-            agree: 1,
+            agree: true,
           },
           new PublicCardData()
         );
@@ -179,11 +181,12 @@ describe('Service Tests', () => {
             reason: 'BBBBBB',
             itemType: 'BBBBBB',
             typesOfFee: 'BBBBBB',
-            agree: 1,
+            agree: true,
             finish: 'BBBBBB',
             status: 'BBBBBB',
             content: 'BBBBBB',
-            refuse: 1,
+            agreeNum: 1,
+            refuseNum: 1,
           },
           elemDefault
         );

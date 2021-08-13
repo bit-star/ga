@@ -41,7 +41,7 @@
             <column name="types_of_fee" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="agree" type="bigint">
+            <column name="agree" type="boolean">
                 <constraints nullable="true" />
             </column>
             <column name="finish" type="varchar(255)">
@@ -53,7 +53,10 @@
             <column name="content" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="refuse" type="bigint">
+            <column name="agree_num" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="refuse_num" type="bigint">
                 <constraints nullable="true" />
             </column>
             <column name="workflow_instance_id" type="bigint">
@@ -91,11 +94,12 @@
             <column name="reason" type="string"/>
             <column name="item_type" type="string"/>
             <column name="types_of_fee" type="string"/>
-            <column name="agree" type="numeric"/>
+            <column name="agree" type="boolean"/>
             <column name="finish" type="string"/>
             <column name="status" type="string"/>
             <column name="content" type="string"/>
-            <column name="refuse" type="numeric"/>
+            <column name="agree_num" type="numeric"/>
+            <column name="refuse_num" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>
