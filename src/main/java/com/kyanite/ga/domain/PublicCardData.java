@@ -51,7 +51,7 @@ public class PublicCardData implements Serializable {
     private String typesOfFee;
 
     @Column(name = "agree")
-    private Long agree;
+    private Boolean agree;
 
     @Column(name = "finish")
     private String finish;
@@ -63,8 +63,11 @@ public class PublicCardData implements Serializable {
     @Column(name = "content")
     private String content;
 
-    @Column(name = "refuse")
-    private Long refuse;
+    @Column(name = "agree_num")
+    private Long agreeNum;
+
+    @Column(name = "refuse_num")
+    private Long refuseNum;
 
     @OneToMany(mappedBy = "publicCardData")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
@@ -220,16 +223,16 @@ public class PublicCardData implements Serializable {
         this.typesOfFee = typesOfFee;
     }
 
-    public Long getAgree() {
+    public Boolean getAgree() {
         return this.agree;
     }
 
-    public PublicCardData agree(Long agree) {
+    public PublicCardData agree(Boolean agree) {
         this.agree = agree;
         return this;
     }
 
-    public void setAgree(Long agree) {
+    public void setAgree(Boolean agree) {
         this.agree = agree;
     }
 
@@ -272,17 +275,30 @@ public class PublicCardData implements Serializable {
         this.content = content;
     }
 
-    public Long getRefuse() {
-        return this.refuse;
+    public Long getAgreeNum() {
+        return this.agreeNum;
     }
 
-    public PublicCardData refuse(Long refuse) {
-        this.refuse = refuse;
+    public PublicCardData agreeNum(Long agreeNum) {
+        this.agreeNum = agreeNum;
         return this;
     }
 
-    public void setRefuse(Long refuse) {
-        this.refuse = refuse;
+    public void setAgreeNum(Long agreeNum) {
+        this.agreeNum = agreeNum;
+    }
+
+    public Long getRefuseNum() {
+        return this.refuseNum;
+    }
+
+    public PublicCardData refuseNum(Long refuseNum) {
+        this.refuseNum = refuseNum;
+        return this;
+    }
+
+    public void setRefuseNum(Long refuseNum) {
+        this.refuseNum = refuseNum;
     }
 
     public Set<PrivateCardData> getPrivateCardData() {
@@ -437,11 +453,12 @@ public class PublicCardData implements Serializable {
             ", reason='" + getReason() + "'" +
             ", itemType='" + getItemType() + "'" +
             ", typesOfFee='" + getTypesOfFee() + "'" +
-            ", agree=" + getAgree() +
+            ", agree='" + getAgree() + "'" +
             ", finish='" + getFinish() + "'" +
             ", status='" + getStatus() + "'" +
             ", content='" + getContent() + "'" +
-            ", refuse=" + getRefuse() +
+            ", agreeNum=" + getAgreeNum() +
+            ", refuseNum=" + getRefuseNum() +
             "}";
     }
 }

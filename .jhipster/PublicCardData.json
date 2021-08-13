@@ -39,7 +39,7 @@
     },
     {
       "fieldName": "agree",
-      "fieldType": "Long"
+      "fieldType": "Boolean"
     },
     {
       "fieldName": "finish",
@@ -55,7 +55,11 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "refuse",
+      "fieldName": "agreeNum",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "refuseNum",
       "fieldType": "Long"
     }
   ],

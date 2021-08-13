@@ -42,7 +42,8 @@
             <th scope="row"><span v-text="$t('gaApp.publicCardData.finish')">Finish</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.status')">Status</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.content')">Content</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.refuse')">Refuse</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.agreeNum')">Agree Num</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.refuseNum')">Refuse Num</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowInstance')">Workflow Instance</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.conversation')">Conversation</span></th>
             <th scope="row"></th>
@@ -68,7 +69,8 @@
             <td>{{ publicCardData.finish }}</td>
             <td v-text="$t('gaApp.PublicDataCardStatus.' + publicCardData.status)">{{ publicCardData.status }}</td>
             <td>{{ publicCardData.content }}</td>
-            <td>{{ publicCardData.refuse }}</td>
+            <td>{{ publicCardData.agreeNum }}</td>
+            <td>{{ publicCardData.refuseNum }}</td>
             <td>
               <div v-if="publicCardData.workflowInstance">
                 <router-link :to="{ name: 'WorkflowInstanceView', params: { workflowInstanceId: publicCardData.workflowInstance.id } }">{{

@@ -85,10 +85,16 @@
             <span>{{ publicCardData.content }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.publicCardData.refuse')">Refuse</span>
+            <span v-text="$t('gaApp.publicCardData.agreeNum')">Agree Num</span>
           </dt>
           <dd>
-            <span>{{ publicCardData.refuse }}</span>
+            <span>{{ publicCardData.agreeNum }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.publicCardData.refuseNum')">Refuse Num</span>
+          </dt>
+          <dd>
+            <span>{{ publicCardData.refuseNum }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.publicCardData.workflowInstance')">Workflow Instance</span>

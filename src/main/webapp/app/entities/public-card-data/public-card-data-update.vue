@@ -131,13 +131,13 @@
           <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.agree')" for="public-card-data-agree">Agree</label>
             <input
-              type="number"
-              class="form-control"
+              type="checkbox"
+              class="form-check"
               name="agree"
               id="public-card-data-agree"
               data-cy="agree"
               :class="{ valid: !$v.publicCardData.agree.$invalid, invalid: $v.publicCardData.agree.$invalid }"
-              v-model.number="$v.publicCardData.agree.$model"
+              v-model="$v.publicCardData.agree.$model"
             />
           </div>
           <div class="form-group">
@@ -179,15 +179,29 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.publicCardData.refuse')" for="public-card-data-refuse">Refuse</label>
+            <label class="form-control-label" v-text="$t('gaApp.publicCardData.agreeNum')" for="public-card-data-agreeNum">Agree Num</label>
             <input
               type="number"
               class="form-control"
-              name="refuse"
-              id="public-card-data-refuse"
-              data-cy="refuse"
-              :class="{ valid: !$v.publicCardData.refuse.$invalid, invalid: $v.publicCardData.refuse.$invalid }"
-              v-model.number="$v.publicCardData.refuse.$model"
+              name="agreeNum"
+              id="public-card-data-agreeNum"
+              data-cy="agreeNum"
+              :class="{ valid: !$v.publicCardData.agreeNum.$invalid, invalid: $v.publicCardData.agreeNum.$invalid }"
+              v-model.number="$v.publicCardData.agreeNum.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.publicCardData.refuseNum')" for="public-card-data-refuseNum"
+              >Refuse Num</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              name="refuseNum"
+              id="public-card-data-refuseNum"
+              data-cy="refuseNum"
+              :class="{ valid: !$v.publicCardData.refuseNum.$invalid, invalid: $v.publicCardData.refuseNum.$invalid }"
+              v-model.number="$v.publicCardData.refuseNum.$model"
             />
           </div>
           <div class="form-group">

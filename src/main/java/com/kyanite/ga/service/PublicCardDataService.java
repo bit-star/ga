@@ -87,8 +87,11 @@ public class PublicCardDataService {
                     if (publicCardData.getContent() != null) {
                         existingPublicCardData.setContent(publicCardData.getContent());
                     }
-                    if (publicCardData.getRefuse() != null) {
-                        existingPublicCardData.setRefuse(publicCardData.getRefuse());
+                    if (publicCardData.getAgreeNum() != null) {
+                        existingPublicCardData.setAgreeNum(publicCardData.getAgreeNum());
+                    }
+                    if (publicCardData.getRefuseNum() != null) {
+                        existingPublicCardData.setRefuseNum(publicCardData.getRefuseNum());
                     }
 
                     return existingPublicCardData;
