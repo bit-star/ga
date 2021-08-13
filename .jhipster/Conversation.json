@@ -8,6 +8,87 @@
     {
       "fieldName": "name",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "owner",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ownerUserId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "chatid",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "openConversationId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "conversationTag",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "useridlist",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "uuid",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "icon",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "showHistoryType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "searchable",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "validationType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "chatBannedType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mentionAllAuthority",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "managementType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "templateId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "officialGroup",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "enableScenegroup",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "groupUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "time",
+      "fieldType": "Instant"
     }
   ],
   "relationships": [

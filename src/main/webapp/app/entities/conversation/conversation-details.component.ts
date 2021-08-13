@@ -1,10 +1,13 @@
-import { Component, Vue, Inject } from 'vue-property-decorator';
+import { Component, Inject } from 'vue-property-decorator';
+
+import { mixins } from 'vue-class-component';
+import JhiDataUtils from '@/shared/data/data-utils.service';
 
 import { IConversation } from '@/shared/model/conversation.model';
 import ConversationService from './conversation.service';
 
 @Component
-export default class ConversationDetails extends Vue {
+export default class ConversationDetails extends mixins(JhiDataUtils) {
   @Inject('conversationService') private conversationService: () => ConversationService;
   public conversation: IConversation = {};
 

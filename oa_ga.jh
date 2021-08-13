@@ -73,6 +73,27 @@ enum WorkflowInstanceStatus{
 entity Conversation {
   id String
   name String
+  title String,
+  owner String,
+  ownerUserId String,
+  chatid String,
+  openConversationId String,
+  conversationTag Integer,
+  useridlist TextBlob,
+  uuid String,
+  icon String, 
+  showHistoryType String,
+  searchable String,
+  validationType String,
+  chatBannedType String,
+  mentionAllAuthority String,
+  managementType String,
+  templateId String,
+  officialGroup Boolean,
+  enableScenegroup Boolean,
+  groupUrl String
+  time Instant
+
 }
 
 

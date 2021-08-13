@@ -1,4 +1,10 @@
-import { Component, Vue, Inject } from 'vue-property-decorator';
+import { Component, Inject } from 'vue-property-decorator';
+
+import { mixins } from 'vue-class-component';
+import JhiDataUtils from '@/shared/data/data-utils.service';
+
+import dayjs from 'dayjs';
+import { DATE_TIME_LONG_FORMAT } from '@/shared/date/filters';
 
 import PublicCardDataService from '@/entities/public-card-data/public-card-data.service';
 import { IPublicCardData } from '@/shared/model/public-card-data.model';
@@ -12,13 +18,33 @@ import ConversationService from './conversation.service';
 const validations: any = {
   conversation: {
     name: {},
+    title: {},
+    owner: {},
+    ownerUserId: {},
+    chatid: {},
+    openConversationId: {},
+    conversationTag: {},
+    useridlist: {},
+    uuid: {},
+    icon: {},
+    showHistoryType: {},
+    searchable: {},
+    validationType: {},
+    chatBannedType: {},
+    mentionAllAuthority: {},
+    managementType: {},
+    templateId: {},
+    officialGroup: {},
+    enableScenegroup: {},
+    groupUrl: {},
+    time: {},
   },
 };
 
 @Component({
   validations,
 })
-export default class ConversationUpdate extends Vue {
+export default class ConversationUpdate extends mixins(JhiDataUtils) {
   @Inject('conversationService') private conversationService: () => ConversationService;
   public conversation: IConversation = new Conversation();
 
@@ -87,10 +113,34 @@ export default class ConversationUpdate extends Vue {
     }
   }
 
+  public convertDateTimeFromServer(date: Date): string {
+    if (date && dayjs(date).isValid()) {
+      return dayjs(date).format(DATE_TIME_LONG_FORMAT);
+    }
+    return null;
+  }
+
+  public updateInstantField(field, event) {
+    if (event.target.value) {
+      this.conversation[field] = dayjs(event.target.value, DATE_TIME_LONG_FORMAT);
+    } else {
+      this.conversation[field] = null;
+    }
+  }
+
+  public updateZonedDateTimeField(field, event) {
+    if (event.target.value) {
+      this.conversation[field] = dayjs(event.target.value, DATE_TIME_LONG_FORMAT);
+    } else {
+      this.conversation[field] = null;
+    }
+  }
+
   public retrieveConversation(conversationId): void {
     this.conversationService()
       .find(conversationId)
       .then(res => {
+        res.time = new Date(res.time);
         this.conversation = res;
       });
   }
