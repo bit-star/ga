@@ -109,6 +109,7 @@ entity WorkflowInstance {
     title String
     ddCardTemplateId String //
     ddCardCallBackKey String //
+    requestId String
     status WorkflowInstanceStatus
 }
 
@@ -126,7 +127,10 @@ entity PublicCardData {
     finish String
     status String
     content String
+    agree Long
+    refuse Long
     status PublicDataCardStatus
+
 }
 
 entity PrivateCardData {
