@@ -151,6 +151,7 @@ entity PublicCardData {
     agreeNum Long
     refuseNum Long
     status PublicDataCardStatus
+    oaStatus WorkflowInstanceStatus
 
 }
 
