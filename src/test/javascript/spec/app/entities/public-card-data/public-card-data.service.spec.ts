@@ -5,6 +5,7 @@ import sinon from 'sinon';
 import PublicCardDataService from '@/entities/public-card-data/public-card-data.service';
 import { PublicCardData } from '@/shared/model/public-card-data.model';
 import { PublicDataCardStatus } from '@/shared/model/enumerations/public-data-card-status.model';
+import { WorkflowInstanceStatus } from '@/shared/model/enumerations/workflow-instance-status.model';
 
 const error = {
   response: {
@@ -46,7 +47,8 @@ describe('Service Tests', () => {
         PublicDataCardStatus.Effect,
         'AAAAAAA',
         0,
-        0
+        0,
+        WorkflowInstanceStatus.Launch
       );
     });
 
@@ -114,6 +116,7 @@ describe('Service Tests', () => {
             content: 'BBBBBB',
             agreeNum: 1,
             refuseNum: 1,
+            oaStatus: 'BBBBBB',
           },
           elemDefault
         );
@@ -145,6 +148,7 @@ describe('Service Tests', () => {
             name: 'BBBBBB',
             typesOfFee: 'BBBBBB',
             agree: true,
+            oaStatus: 'BBBBBB',
           },
           new PublicCardData()
         );
@@ -187,6 +191,7 @@ describe('Service Tests', () => {
             content: 'BBBBBB',
             agreeNum: 1,
             refuseNum: 1,
+            oaStatus: 'BBBBBB',
           },
           elemDefault
         );

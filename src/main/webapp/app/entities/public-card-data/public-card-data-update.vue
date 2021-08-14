@@ -205,6 +205,22 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.publicCardData.oaStatus')" for="public-card-data-oaStatus">Oa Status</label>
+            <select
+              class="form-control"
+              name="oaStatus"
+              :class="{ valid: !$v.publicCardData.oaStatus.$invalid, invalid: $v.publicCardData.oaStatus.$invalid }"
+              v-model="$v.publicCardData.oaStatus.$model"
+              id="public-card-data-oaStatus"
+              data-cy="oaStatus"
+            >
+              <option value="Launch" v-bind:label="$t('gaApp.WorkflowInstanceStatus.Launch')">Launch</option>
+              <option value="Refuse" v-bind:label="$t('gaApp.WorkflowInstanceStatus.Refuse')">Refuse</option>
+              <option value="Agree" v-bind:label="$t('gaApp.WorkflowInstanceStatus.Agree')">Agree</option>
+              <option value="Archive" v-bind:label="$t('gaApp.WorkflowInstanceStatus.Archive')">Archive</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.workflowInstance')" for="public-card-data-workflowInstance"
               >Workflow Instance</label
             >

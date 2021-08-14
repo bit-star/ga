@@ -35,6 +35,7 @@ const validations: any = {
     content: {},
     agreeNum: {},
     refuseNum: {},
+    oaStatus: {},
   },
 };
 

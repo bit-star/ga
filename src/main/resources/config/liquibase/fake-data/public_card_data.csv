@@ -1,11 +1,11 @@
-id;requestid;workflowid;valid;link;name;fee_value;reason;item_type;types_of_fee;agree;finish;status;content;agree_num;refuse_num
-1;24043;46334;true;Officer XSS Handmade;Liaison Steel Producer;甘肃省 Kenya;Soft 旁 orchestrate;payment Gorgeous;Fantastic 新疆 中心;true;Account;Invalid;dynamic haptic Outdoors;42324;7722
-2;80575;40644;true;Shoes;incubate;transmitter;moderator client-driven protocol;Pizza 路 programming;Handcrafted;true;Pizza;Invalid;Awesome;26904;95610
-3;25847;95724;true;Savings microchip;program homogeneous;deposit Coordinator face;context-sensitive;Consultant evolve;bleeding-edge cross-media;true;Optional Ouguiya Chief;Invalid;Iranian Personal payment;69803;28834
-4;3173;91835;true;Metal Gourde;complexity;Granite;Jewelery Small;green;Supervisor Tools customer;true;Metal Buckinghamshire;Invalid;XSS Gloves;78367;70480
-5;75373;57924;false;revolutionize Bahrain;Bacon applications 街;Steel Mobility payment;utilize 巷 Principal;Ergonomic Granite;AI;false;Borders;Effect;indigo Automated protocol;3700;95992
-6;33412;35100;true;Sausages Engineer Suriname;core Kuwait Associate;neural Mouse;Plastic white;deposit withdrawal sexy;quantifying 街 index;false;Checking Future Loan;Invalid;empowering Movies;23354;21105
-7;77576;61220;true;Steel 旁;Beauty systematic supply-chains;e-markets digital generating;orange;Gloves morph;up facilitate Plastic;true;Dynamic;Effect;hack;10517;48662
-8;32102;44357;false;target programming Consultant;浙江省;Sleek Baby Gloves;路;interface;distributed Generic;true;transmitting Refined Belgium;Invalid;Usability;24323;390
-9;37208;23424;false;microchip redefine;channels transmit FTP;Loan 桥 Account;Automated Licensed brand;maroon Mayotte Gorgeous;旁 Mobility;true;广东省 Cotton Chips;Invalid;Sausages mindshare Fantastic;53112;6236
-10;38852;17633;true;TCP;Shirt 西藏 Islands;Gloves Mauritius;online;Account Dynamic content;Cambridgeshire 中心 copying;false;hack;Effect;Computer;32179;29789
+id;requestid;workflowid;valid;link;name;fee_value;reason;item_type;types_of_fee;agree;finish;status;content;agree_num;refuse_num;oa_status
+1;24043;46334;true;Officer XSS Handmade;Liaison Steel Producer;甘肃省 Kenya;Soft 旁 orchestrate;payment Gorgeous;Fantastic 新疆 中心;true;Account;Invalid;dynamic haptic Outdoors;42324;7722;Archive
+2;40644;59452;false;program;四川省 transmitter;moderator client-driven protocol;Pizza 路 programming;Handcrafted;Mouse Soft Awesome;false;User-friendly 江苏省 parallelism;Invalid;program homogeneous;86895;66284;Launch
+3;12029;96467;false;face emulation;redefine Cotton PCI;National front-end;四川省;Cambridgeshire application;transform Liaison withdrawal;false;Principal;Effect;cross-media one-to-one red;12560;46099;Archive
+4;46028;552;true;Small;green;Supervisor Tools customer;Burundi Lebanon product;Tactics Legacy application;吉林省 revolutionize Bahrain;true;mobile;Invalid;街 panel Upgradable;38914;63189;Agree
+5;7236;83330;false;Shoes;Principal transform platforms;Fresh Plastic Borders;overriding;Automated protocol;Tactics;true;Sausages Engineer Suriname;Invalid;Synergized;47381;91636;Archive
+6;7534;32897;false;connecting Chicken Plastic;Universal;Cotton 桥;Account Loan;real-time;cyan Books;false;Loan sensor;Effect;Movies;23354;21105;Archive
+7;61220;64253;false;bypass;旁 up;systematic;栋 e-markets;ivory Personal orange;Gloves morph;true;Beauty vertical empower;Invalid;Sausages Division hack;10517;48662;Refuse
+8;44357;3985;true;Bedfordshire Corporate;back-end connect Sleek;payment;e-services;Account transition;广西省 澳门;true;backing TCP Rustic;Effect;Metrics Tools pink;16946;17383;Refuse
+9;97223;92173;true;Pants parsing;open-source Global;quantify Forward;重庆市;brand Manager;Mayotte;false;National;Invalid;deposit reboot;69969;58429;Archive
+10;67980;13315;false;Chips;hack maroon bypass;Bahamas;Solutions;Palladium;pixel Buckinghamshire;true;Gloves Mauritius;Effect;中心 Account Dynamic;42860;44022;Launch
