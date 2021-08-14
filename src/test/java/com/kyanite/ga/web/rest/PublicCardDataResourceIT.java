@@ -8,6 +8,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.kyanite.ga.IntegrationTest;
 import com.kyanite.ga.domain.PublicCardData;
 import com.kyanite.ga.domain.enumeration.PublicDataCardStatus;
+import com.kyanite.ga.domain.enumeration.WorkflowInstanceStatus;
 import com.kyanite.ga.repository.PublicCardDataRepository;
 import java.util.List;
 import java.util.Random;
@@ -75,6 +76,9 @@ class PublicCardDataResourceIT {
     private static final Long DEFAULT_REFUSE_NUM = 1L;
     private static final Long UPDATED_REFUSE_NUM = 2L;
 
+    private static final WorkflowInstanceStatus DEFAULT_OA_STATUS = WorkflowInstanceStatus.Launch;
+    private static final WorkflowInstanceStatus UPDATED_OA_STATUS = WorkflowInstanceStatus.Refuse;
+
     private static final String ENTITY_API_URL = "/api/public-card-data";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -114,7 +118,8 @@ class PublicCardDataResourceIT {
             .status(DEFAULT_STATUS)
             .content(DEFAULT_CONTENT)
             .agreeNum(DEFAULT_AGREE_NUM)
-            .refuseNum(DEFAULT_REFUSE_NUM);
+            .refuseNum(DEFAULT_REFUSE_NUM)
+            .oaStatus(DEFAULT_OA_STATUS);
         return publicCardData;
     }
 
@@ -140,7 +145,8 @@ class PublicCardDataResourceIT {
             .status(UPDATED_STATUS)
             .content(UPDATED_CONTENT)
             .agreeNum(UPDATED_AGREE_NUM)
-            .refuseNum(UPDATED_REFUSE_NUM);
+            .refuseNum(UPDATED_REFUSE_NUM)
+            .oaStatus(UPDATED_OA_STATUS);
         return publicCardData;
     }
 
@@ -179,6 +185,7 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getContent()).isEqualTo(DEFAULT_CONTENT);
         assertThat(testPublicCardData.getAgreeNum()).isEqualTo(DEFAULT_AGREE_NUM);
         assertThat(testPublicCardData.getRefuseNum()).isEqualTo(DEFAULT_REFUSE_NUM);
+        assertThat(testPublicCardData.getOaStatus()).isEqualTo(DEFAULT_OA_STATUS);
     }
 
     @Test
@@ -227,7 +234,8 @@ class PublicCardDataResourceIT {
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
             .andExpect(jsonPath("$.[*].content").value(hasItem(DEFAULT_CONTENT)))
             .andExpect(jsonPath("$.[*].agreeNum").value(hasItem(DEFAULT_AGREE_NUM.intValue())))
-            .andExpect(jsonPath("$.[*].refuseNum").value(hasItem(DEFAULT_REFUSE_NUM.intValue())));
+            .andExpect(jsonPath("$.[*].refuseNum").value(hasItem(DEFAULT_REFUSE_NUM.intValue())))
+            .andExpect(jsonPath("$.[*].oaStatus").value(hasItem(DEFAULT_OA_STATUS.toString())));
     }
 
     @Test
@@ -256,7 +264,8 @@ class PublicCardDataResourceIT {
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
             .andExpect(jsonPath("$.content").value(DEFAULT_CONTENT))
             .andExpect(jsonPath("$.agreeNum").value(DEFAULT_AGREE_NUM.intValue()))
-            .andExpect(jsonPath("$.refuseNum").value(DEFAULT_REFUSE_NUM.intValue()));
+            .andExpect(jsonPath("$.refuseNum").value(DEFAULT_REFUSE_NUM.intValue()))
+            .andExpect(jsonPath("$.oaStatus").value(DEFAULT_OA_STATUS.toString()));
     }
 
     @Test
@@ -293,7 +302,8 @@ class PublicCardDataResourceIT {
             .status(UPDATED_STATUS)
             .content(UPDATED_CONTENT)
             .agreeNum(UPDATED_AGREE_NUM)
-            .refuseNum(UPDATED_REFUSE_NUM);
+            .refuseNum(UPDATED_REFUSE_NUM)
+            .oaStatus(UPDATED_OA_STATUS);
 
         restPublicCardDataMockMvc
             .perform(
@@ -322,6 +332,7 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getContent()).isEqualTo(UPDATED_CONTENT);
         assertThat(testPublicCardData.getAgreeNum()).isEqualTo(UPDATED_AGREE_NUM);
         assertThat(testPublicCardData.getRefuseNum()).isEqualTo(UPDATED_REFUSE_NUM);
+        assertThat(testPublicCardData.getOaStatus()).isEqualTo(UPDATED_OA_STATUS);
     }
 
     @Test
@@ -431,6 +442,7 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getContent()).isEqualTo(UPDATED_CONTENT);
         assertThat(testPublicCardData.getAgreeNum()).isEqualTo(UPDATED_AGREE_NUM);
         assertThat(testPublicCardData.getRefuseNum()).isEqualTo(UPDATED_REFUSE_NUM);
+        assertThat(testPublicCardData.getOaStatus()).isEqualTo(DEFAULT_OA_STATUS);
     }
 
     @Test
@@ -460,7 +472,8 @@ class PublicCardDataResourceIT {
             .status(UPDATED_STATUS)
             .content(UPDATED_CONTENT)
             .agreeNum(UPDATED_AGREE_NUM)
-            .refuseNum(UPDATED_REFUSE_NUM);
+            .refuseNum(UPDATED_REFUSE_NUM)
+            .oaStatus(UPDATED_OA_STATUS);
 
         restPublicCardDataMockMvc
             .perform(
@@ -489,6 +502,7 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getContent()).isEqualTo(UPDATED_CONTENT);
         assertThat(testPublicCardData.getAgreeNum()).isEqualTo(UPDATED_AGREE_NUM);
         assertThat(testPublicCardData.getRefuseNum()).isEqualTo(UPDATED_REFUSE_NUM);
+        assertThat(testPublicCardData.getOaStatus()).isEqualTo(UPDATED_OA_STATUS);
     }
 
     @Test

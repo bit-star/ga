@@ -33,6 +33,7 @@
       "content": "Content",
       "agreeNum": "Agree Num",
       "refuseNum": "Refuse Num",
+      "oaStatus": "Oa Status",
       "privateCardData": "Private Card Data",
       "operationResults": "Operation Results",
       "confirmCard": "Confirm Card",

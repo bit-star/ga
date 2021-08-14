@@ -5,6 +5,7 @@ import { IWorkflowInstance } from '@/shared/model/workflow-instance.model';
 import { IConversation } from '@/shared/model/conversation.model';
 
 import { PublicDataCardStatus } from '@/shared/model/enumerations/public-data-card-status.model';
+import { WorkflowInstanceStatus } from '@/shared/model/enumerations/workflow-instance-status.model';
 export interface IPublicCardData {
   id?: number;
   requestid?: number | null;
@@ -22,6 +23,7 @@ export interface IPublicCardData {
   content?: string | null;
   agreeNum?: number | null;
   refuseNum?: number | null;
+  oaStatus?: WorkflowInstanceStatus | null;
   privateCardData?: IPrivateCardData[] | null;
   operationResults?: IOperationResults[] | null;
   confirmCards?: IConfirmCard[] | null;
@@ -47,6 +49,7 @@ export class PublicCardData implements IPublicCardData {
     public content?: string | null,
     public agreeNum?: number | null,
     public refuseNum?: number | null,
+    public oaStatus?: WorkflowInstanceStatus | null,
     public privateCardData?: IPrivateCardData[] | null,
     public operationResults?: IOperationResults[] | null,
     public confirmCards?: IConfirmCard[] | null,

@@ -59,6 +59,9 @@
             <column name="refuse_num" type="bigint">
                 <constraints nullable="true" />
             </column>
+            <column name="oa_status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="workflow_instance_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -100,6 +103,7 @@
             <column name="content" type="string"/>
             <column name="agree_num" type="numeric"/>
             <column name="refuse_num" type="numeric"/>
+            <column name="oa_status" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

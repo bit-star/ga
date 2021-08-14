@@ -61,6 +61,11 @@
     {
       "fieldName": "refuseNum",
       "fieldType": "Long"
+    },
+    {
+      "fieldName": "oaStatus",
+      "fieldType": "WorkflowInstanceStatus",
+      "fieldValues": "Launch,Refuse,Agree,Archive"
     }
   ],
   "relationships": [

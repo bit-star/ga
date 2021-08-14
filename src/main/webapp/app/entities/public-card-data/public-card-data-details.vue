@@ -97,6 +97,12 @@
             <span>{{ publicCardData.refuseNum }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.publicCardData.oaStatus')">Oa Status</span>
+          </dt>
+          <dd>
+            <span v-text="$t('gaApp.WorkflowInstanceStatus.' + publicCardData.oaStatus)">{{ publicCardData.oaStatus }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.publicCardData.workflowInstance')">Workflow Instance</span>
           </dt>
           <dd>
