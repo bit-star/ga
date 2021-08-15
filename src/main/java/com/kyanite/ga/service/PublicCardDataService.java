@@ -93,6 +93,9 @@ public class PublicCardDataService {
                     if (publicCardData.getRefuseNum() != null) {
                         existingPublicCardData.setRefuseNum(publicCardData.getRefuseNum());
                     }
+                    if (publicCardData.getTime() != null) {
+                        existingPublicCardData.setTime(publicCardData.getTime());
+                    }
                     if (publicCardData.getOaStatus() != null) {
                         existingPublicCardData.setOaStatus(publicCardData.getOaStatus());
                     }

@@ -1,7 +1,9 @@
 /* tslint:disable max-line-length */
 import axios from 'axios';
 import sinon from 'sinon';
+import dayjs from 'dayjs';
 
+import { DATE_TIME_FORMAT } from '@/shared/date/filters';
 import PublicCardDataService from '@/entities/public-card-data/public-card-data.service';
 import { PublicCardData } from '@/shared/model/public-card-data.model';
 import { PublicDataCardStatus } from '@/shared/model/enumerations/public-data-card-status.model';
@@ -28,9 +30,11 @@ describe('Service Tests', () => {
   describe('PublicCardData Service', () => {
     let service: PublicCardDataService;
     let elemDefault;
+    let currentDate: Date;
 
     beforeEach(() => {
       service = new PublicCardDataService();
+      currentDate = new Date();
       elemDefault = new PublicCardData(
         123,
         0,
@@ -48,13 +52,19 @@ describe('Service Tests', () => {
         'AAAAAAA',
         0,
         0,
+        currentDate,
         WorkflowInstanceStatus.Launch
       );
     });
 
     describe('Service methods', () => {
       it('should find an element', async () => {
-        const returnedFromService = Object.assign({}, elemDefault);
+        const returnedFromService = Object.assign(
+          {
+            time: dayjs(currentDate).format(DATE_TIME_FORMAT),
+          },
+          elemDefault
+        );
         axiosStub.get.resolves({ data: returnedFromService });
 
         return service.find(123).then(res => {
@@ -76,10 +86,16 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             id: 123,
+            time: dayjs(currentDate).format(DATE_TIME_FORMAT),
           },
           elemDefault
         );
-        const expected = Object.assign({}, returnedFromService);
+        const expected = Object.assign(
+          {
+            time: currentDate,
+          },
+          returnedFromService
+        );
 
         axiosStub.post.resolves({ data: returnedFromService });
         return service.create({}).then(res => {
@@ -116,12 +132,18 @@ describe('Service Tests', () => {
             content: 'BBBBBB',
             agreeNum: 1,
             refuseNum: 1,
+            time: dayjs(currentDate).format(DATE_TIME_FORMAT),
             oaStatus: 'BBBBBB',
           },
           elemDefault
         );
 
-        const expected = Object.assign({}, returnedFromService);
+        const expected = Object.assign(
+          {
+            time: currentDate,
+          },
+          returnedFromService
+        );
         axiosStub.put.resolves({ data: returnedFromService });
 
         return service.update(expected).then(res => {
@@ -148,13 +170,19 @@ describe('Service Tests', () => {
             name: 'BBBBBB',
             typesOfFee: 'BBBBBB',
             agree: true,
+            time: dayjs(currentDate).format(DATE_TIME_FORMAT),
             oaStatus: 'BBBBBB',
           },
           new PublicCardData()
         );
         const returnedFromService = Object.assign(patchObject, elemDefault);
 
-        const expected = Object.assign({}, returnedFromService);
+        const expected = Object.assign(
+          {
+            time: currentDate,
+          },
+          returnedFromService
+        );
         axiosStub.patch.resolves({ data: returnedFromService });
 
         return service.partialUpdate(patchObject).then(res => {
@@ -191,11 +219,17 @@ describe('Service Tests', () => {
             content: 'BBBBBB',
             agreeNum: 1,
             refuseNum: 1,
+            time: dayjs(currentDate).format(DATE_TIME_FORMAT),
             oaStatus: 'BBBBBB',
           },
           elemDefault
         );
-        const expected = Object.assign({}, returnedFromService);
+        const expected = Object.assign(
+          {
+            time: currentDate,
+          },
+          returnedFromService
+        );
         axiosStub.get.resolves([returnedFromService]);
         return service.retrieve().then(res => {
           expect(res).toContainEqual(expected);

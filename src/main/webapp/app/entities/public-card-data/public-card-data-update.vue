@@ -164,6 +164,7 @@
             >
               <option value="Effect" v-bind:label="$t('gaApp.PublicDataCardStatus.Effect')">Effect</option>
               <option value="Invalid" v-bind:label="$t('gaApp.PublicDataCardStatus.Invalid')">Invalid</option>
+              <option value="Archive" v-bind:label="$t('gaApp.PublicDataCardStatus.Archive')">Archive</option>
             </select>
           </div>
           <div class="form-group">
@@ -203,6 +204,21 @@
               :class="{ valid: !$v.publicCardData.refuseNum.$invalid, invalid: $v.publicCardData.refuseNum.$invalid }"
               v-model.number="$v.publicCardData.refuseNum.$model"
             />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.publicCardData.time')" for="public-card-data-time">Time</label>
+            <div class="d-flex">
+              <input
+                id="public-card-data-time"
+                data-cy="time"
+                type="datetime-local"
+                class="form-control"
+                name="time"
+                :class="{ valid: !$v.publicCardData.time.$invalid, invalid: $v.publicCardData.time.$invalid }"
+                :value="convertDateTimeFromServer($v.publicCardData.time.$model)"
+                @change="updateInstantField('time', $event)"
+              />
+            </div>
           </div>
           <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.oaStatus')" for="public-card-data-oaStatus">Oa Status</label>

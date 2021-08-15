@@ -1,5 +1,8 @@
 import { Component, Vue, Inject } from 'vue-property-decorator';
 
+import dayjs from 'dayjs';
+import { DATE_TIME_LONG_FORMAT } from '@/shared/date/filters';
+
 import PrivateCardDataService from '@/entities/private-card-data/private-card-data.service';
 import { IPrivateCardData } from '@/shared/model/private-card-data.model';
 
@@ -35,6 +38,7 @@ const validations: any = {
     content: {},
     agreeNum: {},
     refuseNum: {},
+    time: {},
     oaStatus: {},
   },
 };
@@ -122,10 +126,34 @@ export default class PublicCardDataUpdate extends Vue {
     }
   }
 
+  public convertDateTimeFromServer(date: Date): string {
+    if (date && dayjs(date).isValid()) {
+      return dayjs(date).format(DATE_TIME_LONG_FORMAT);
+    }
+    return null;
+  }
+
+  public updateInstantField(field, event) {
+    if (event.target.value) {
+      this.publicCardData[field] = dayjs(event.target.value, DATE_TIME_LONG_FORMAT);
+    } else {
+      this.publicCardData[field] = null;
+    }
+  }
+
+  public updateZonedDateTimeField(field, event) {
+    if (event.target.value) {
+      this.publicCardData[field] = dayjs(event.target.value, DATE_TIME_LONG_FORMAT);
+    } else {
+      this.publicCardData[field] = null;
+    }
+  }
+
   public retrievePublicCardData(publicCardDataId): void {
     this.publicCardDataService()
       .find(publicCardDataId)
       .then(res => {
+        res.time = new Date(res.time);
         this.publicCardData = res;
       });
   }
