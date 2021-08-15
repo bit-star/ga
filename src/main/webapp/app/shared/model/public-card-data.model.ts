@@ -23,6 +23,7 @@ export interface IPublicCardData {
   content?: string | null;
   agreeNum?: number | null;
   refuseNum?: number | null;
+  time?: Date | null;
   oaStatus?: WorkflowInstanceStatus | null;
   privateCardData?: IPrivateCardData[] | null;
   operationResults?: IOperationResults[] | null;
@@ -49,6 +50,7 @@ export class PublicCardData implements IPublicCardData {
     public content?: string | null,
     public agreeNum?: number | null,
     public refuseNum?: number | null,
+    public time?: Date | null,
     public oaStatus?: WorkflowInstanceStatus | null,
     public privateCardData?: IPrivateCardData[] | null,
     public operationResults?: IOperationResults[] | null,

@@ -44,6 +44,7 @@
             <th scope="row"><span v-text="$t('gaApp.publicCardData.content')">Content</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.agreeNum')">Agree Num</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.refuseNum')">Refuse Num</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.time')">Time</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.oaStatus')">Oa Status</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowInstance')">Workflow Instance</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.conversation')">Conversation</span></th>
@@ -72,6 +73,7 @@
             <td>{{ publicCardData.content }}</td>
             <td>{{ publicCardData.agreeNum }}</td>
             <td>{{ publicCardData.refuseNum }}</td>
+            <td>{{ publicCardData.time ? $d(Date.parse(publicCardData.time), 'short') : '' }}</td>
             <td v-text="$t('gaApp.WorkflowInstanceStatus.' + publicCardData.oaStatus)">{{ publicCardData.oaStatus }}</td>
             <td>
               <div v-if="publicCardData.workflowInstance">

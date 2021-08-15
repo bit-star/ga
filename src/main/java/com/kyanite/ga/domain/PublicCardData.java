@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.kyanite.ga.domain.enumeration.PublicDataCardStatus;
 import com.kyanite.ga.domain.enumeration.WorkflowInstanceStatus;
 import java.io.Serializable;
+import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
@@ -69,6 +70,9 @@ public class PublicCardData implements Serializable {
 
     @Column(name = "refuse_num")
     private Long refuseNum;
+
+    @Column(name = "time")
+    private Instant time;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "oa_status")
@@ -306,6 +310,19 @@ public class PublicCardData implements Serializable {
         this.refuseNum = refuseNum;
     }
 
+    public Instant getTime() {
+        return this.time;
+    }
+
+    public PublicCardData time(Instant time) {
+        this.time = time;
+        return this;
+    }
+
+    public void setTime(Instant time) {
+        this.time = time;
+    }
+
     public WorkflowInstanceStatus getOaStatus() {
         return this.oaStatus;
     }
@@ -477,6 +494,7 @@ public class PublicCardData implements Serializable {
             ", content='" + getContent() + "'" +
             ", agreeNum=" + getAgreeNum() +
             ", refuseNum=" + getRefuseNum() +
+            ", time='" + getTime() + "'" +
             ", oaStatus='" + getOaStatus() + "'" +
             "}";
     }

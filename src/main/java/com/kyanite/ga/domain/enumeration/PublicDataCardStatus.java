@@ -6,4 +6,5 @@ package com.kyanite.ga.domain.enumeration;
 public enum PublicDataCardStatus {
     Effect,
     Invalid,
+    Archive,
 }

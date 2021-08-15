@@ -97,6 +97,12 @@
             <span>{{ publicCardData.refuseNum }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.publicCardData.time')">Time</span>
+          </dt>
+          <dd>
+            <span v-if="publicCardData.time">{{ $d(Date.parse(publicCardData.time), 'long') }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.publicCardData.oaStatus')">Oa Status</span>
           </dt>
           <dd>

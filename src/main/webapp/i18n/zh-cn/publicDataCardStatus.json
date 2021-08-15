@@ -3,7 +3,8 @@
     "PublicDataCardStatus": {
       "null": "",
       "Effect": "Effect",
-      "Invalid": "Invalid"
+      "Invalid": "Invalid",
+      "Archive": "Archive"
     }
   }
 }
