@@ -61,7 +61,7 @@ enum OperationType{
 }
 
 enum PublicDataCardStatus{
-	Effect , Invalid 
+	Effect , Invalid , Archive
 }
 
 enum WorkflowInstanceStatus{
@@ -150,6 +150,7 @@ entity PublicCardData {
     content String
     agreeNum Long
     refuseNum Long
+    time Instant
     status PublicDataCardStatus
     oaStatus WorkflowInstanceStatus
 
