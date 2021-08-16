@@ -139,6 +139,7 @@ entity PublicCardData {
     workflowid Long,
     valid Boolean
     link String
+    updateLink String
 	name String,
     feeValue String,
     reason String,
