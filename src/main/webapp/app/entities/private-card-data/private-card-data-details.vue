@@ -25,6 +25,12 @@
             <span>{{ privateCardData.authority }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.privateCardData.createdByMe')">Created By Me</span>
+          </dt>
+          <dd>
+            <span>{{ privateCardData.createdByMe }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.privateCardData.publicCardData')">Public Card Data</span>
           </dt>
           <dd>

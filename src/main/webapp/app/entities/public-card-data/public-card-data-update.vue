@@ -81,18 +81,6 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.publicCardData.yourself')" for="public-card-data-yourself">Yourself</label>
-            <input
-              type="text"
-              class="form-control"
-              name="yourself"
-              id="public-card-data-yourself"
-              data-cy="yourself"
-              :class="{ valid: !$v.publicCardData.yourself.$invalid, invalid: $v.publicCardData.yourself.$invalid }"
-              v-model="$v.publicCardData.yourself.$model"
-            />
-          </div>
-          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.name')" for="public-card-data-name">Name</label>
             <input
               type="text"

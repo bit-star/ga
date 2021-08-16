@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new PrivateCardDataService();
-      elemDefault = new PrivateCardData(123, false, 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new PrivateCardData(123, false, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -84,6 +84,7 @@ describe('Service Tests', () => {
             agree: true,
             finish: 'BBBBBB',
             authority: 'BBBBBB',
+            createdByMe: 'BBBBBB',
           },
           elemDefault
         );
@@ -108,7 +109,12 @@ describe('Service Tests', () => {
       });
 
       it('should partial update a PrivateCardData', async () => {
-        const patchObject = Object.assign({}, new PrivateCardData());
+        const patchObject = Object.assign(
+          {
+            createdByMe: 'BBBBBB',
+          },
+          new PrivateCardData()
+        );
         const returnedFromService = Object.assign(patchObject, elemDefault);
 
         const expected = Object.assign({}, returnedFromService);
@@ -136,6 +142,7 @@ describe('Service Tests', () => {
             agree: true,
             finish: 'BBBBBB',
             authority: 'BBBBBB',
+            createdByMe: 'BBBBBB',
           },
           elemDefault
         );

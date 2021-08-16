@@ -29,6 +29,9 @@ public class PrivateCardData implements Serializable {
     @Column(name = "authority")
     private String authority;
 
+    @Column(name = "created_by_me")
+    private String createdByMe;
+
     @ManyToOne
     @JsonIgnoreProperties(
         value = { "privateCardData", "operationResults", "confirmCards", "workflowInstance", "conversation" },
@@ -96,6 +99,19 @@ public class PrivateCardData implements Serializable {
         this.authority = authority;
     }
 
+    public String getCreatedByMe() {
+        return this.createdByMe;
+    }
+
+    public PrivateCardData createdByMe(String createdByMe) {
+        this.createdByMe = createdByMe;
+        return this;
+    }
+
+    public void setCreatedByMe(String createdByMe) {
+        this.createdByMe = createdByMe;
+    }
+
     public PublicCardData getPublicCardData() {
         return this.publicCardData;
     }
@@ -149,6 +165,7 @@ public class PrivateCardData implements Serializable {
             ", agree='" + getAgree() + "'" +
             ", finish='" + getFinish() + "'" +
             ", authority='" + getAuthority() + "'" +
+            ", createdByMe='" + getCreatedByMe() + "'" +
             "}";
     }
 }

@@ -38,6 +38,9 @@ class PrivateCardDataResourceIT {
     private static final String DEFAULT_AUTHORITY = "AAAAAAAAAA";
     private static final String UPDATED_AUTHORITY = "BBBBBBBBBB";
 
+    private static final String DEFAULT_CREATED_BY_ME = "AAAAAAAAAA";
+    private static final String UPDATED_CREATED_BY_ME = "BBBBBBBBBB";
+
     private static final String ENTITY_API_URL = "/api/private-card-data";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -62,7 +65,11 @@ class PrivateCardDataResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static PrivateCardData createEntity(EntityManager em) {
-        PrivateCardData privateCardData = new PrivateCardData().agree(DEFAULT_AGREE).finish(DEFAULT_FINISH).authority(DEFAULT_AUTHORITY);
+        PrivateCardData privateCardData = new PrivateCardData()
+            .agree(DEFAULT_AGREE)
+            .finish(DEFAULT_FINISH)
+            .authority(DEFAULT_AUTHORITY)
+            .createdByMe(DEFAULT_CREATED_BY_ME);
         return privateCardData;
     }
 
@@ -73,7 +80,11 @@ class PrivateCardDataResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static PrivateCardData createUpdatedEntity(EntityManager em) {
-        PrivateCardData privateCardData = new PrivateCardData().agree(UPDATED_AGREE).finish(UPDATED_FINISH).authority(UPDATED_AUTHORITY);
+        PrivateCardData privateCardData = new PrivateCardData()
+            .agree(UPDATED_AGREE)
+            .finish(UPDATED_FINISH)
+            .authority(UPDATED_AUTHORITY)
+            .createdByMe(UPDATED_CREATED_BY_ME);
         return privateCardData;
     }
 
@@ -100,6 +111,7 @@ class PrivateCardDataResourceIT {
         assertThat(testPrivateCardData.getAgree()).isEqualTo(DEFAULT_AGREE);
         assertThat(testPrivateCardData.getFinish()).isEqualTo(DEFAULT_FINISH);
         assertThat(testPrivateCardData.getAuthority()).isEqualTo(DEFAULT_AUTHORITY);
+        assertThat(testPrivateCardData.getCreatedByMe()).isEqualTo(DEFAULT_CREATED_BY_ME);
     }
 
     @Test
@@ -136,7 +148,8 @@ class PrivateCardDataResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(privateCardData.getId().intValue())))
             .andExpect(jsonPath("$.[*].agree").value(hasItem(DEFAULT_AGREE.booleanValue())))
             .andExpect(jsonPath("$.[*].finish").value(hasItem(DEFAULT_FINISH)))
-            .andExpect(jsonPath("$.[*].authority").value(hasItem(DEFAULT_AUTHORITY)));
+            .andExpect(jsonPath("$.[*].authority").value(hasItem(DEFAULT_AUTHORITY)))
+            .andExpect(jsonPath("$.[*].createdByMe").value(hasItem(DEFAULT_CREATED_BY_ME)));
     }
 
     @Test
@@ -153,7 +166,8 @@ class PrivateCardDataResourceIT {
             .andExpect(jsonPath("$.id").value(privateCardData.getId().intValue()))
             .andExpect(jsonPath("$.agree").value(DEFAULT_AGREE.booleanValue()))
             .andExpect(jsonPath("$.finish").value(DEFAULT_FINISH))
-            .andExpect(jsonPath("$.authority").value(DEFAULT_AUTHORITY));
+            .andExpect(jsonPath("$.authority").value(DEFAULT_AUTHORITY))
+            .andExpect(jsonPath("$.createdByMe").value(DEFAULT_CREATED_BY_ME));
     }
 
     @Test
@@ -175,7 +189,7 @@ class PrivateCardDataResourceIT {
         PrivateCardData updatedPrivateCardData = privateCardDataRepository.findById(privateCardData.getId()).get();
         // Disconnect from session so that the updates on updatedPrivateCardData are not directly saved in db
         em.detach(updatedPrivateCardData);
-        updatedPrivateCardData.agree(UPDATED_AGREE).finish(UPDATED_FINISH).authority(UPDATED_AUTHORITY);
+        updatedPrivateCardData.agree(UPDATED_AGREE).finish(UPDATED_FINISH).authority(UPDATED_AUTHORITY).createdByMe(UPDATED_CREATED_BY_ME);
 
         restPrivateCardDataMockMvc
             .perform(
@@ -192,6 +206,7 @@ class PrivateCardDataResourceIT {
         assertThat(testPrivateCardData.getAgree()).isEqualTo(UPDATED_AGREE);
         assertThat(testPrivateCardData.getFinish()).isEqualTo(UPDATED_FINISH);
         assertThat(testPrivateCardData.getAuthority()).isEqualTo(UPDATED_AUTHORITY);
+        assertThat(testPrivateCardData.getCreatedByMe()).isEqualTo(UPDATED_CREATED_BY_ME);
     }
 
     @Test
@@ -264,7 +279,7 @@ class PrivateCardDataResourceIT {
         PrivateCardData partialUpdatedPrivateCardData = new PrivateCardData();
         partialUpdatedPrivateCardData.setId(privateCardData.getId());
 
-        partialUpdatedPrivateCardData.finish(UPDATED_FINISH);
+        partialUpdatedPrivateCardData.finish(UPDATED_FINISH).createdByMe(UPDATED_CREATED_BY_ME);
 
         restPrivateCardDataMockMvc
             .perform(
@@ -281,6 +296,7 @@ class PrivateCardDataResourceIT {
         assertThat(testPrivateCardData.getAgree()).isEqualTo(DEFAULT_AGREE);
         assertThat(testPrivateCardData.getFinish()).isEqualTo(UPDATED_FINISH);
         assertThat(testPrivateCardData.getAuthority()).isEqualTo(DEFAULT_AUTHORITY);
+        assertThat(testPrivateCardData.getCreatedByMe()).isEqualTo(UPDATED_CREATED_BY_ME);
     }
 
     @Test
@@ -295,7 +311,11 @@ class PrivateCardDataResourceIT {
         PrivateCardData partialUpdatedPrivateCardData = new PrivateCardData();
         partialUpdatedPrivateCardData.setId(privateCardData.getId());
 
-        partialUpdatedPrivateCardData.agree(UPDATED_AGREE).finish(UPDATED_FINISH).authority(UPDATED_AUTHORITY);
+        partialUpdatedPrivateCardData
+            .agree(UPDATED_AGREE)
+            .finish(UPDATED_FINISH)
+            .authority(UPDATED_AUTHORITY)
+            .createdByMe(UPDATED_CREATED_BY_ME);
 
         restPrivateCardDataMockMvc
             .perform(
@@ -312,6 +332,7 @@ class PrivateCardDataResourceIT {
         assertThat(testPrivateCardData.getAgree()).isEqualTo(UPDATED_AGREE);
         assertThat(testPrivateCardData.getFinish()).isEqualTo(UPDATED_FINISH);
         assertThat(testPrivateCardData.getAuthority()).isEqualTo(UPDATED_AUTHORITY);
+        assertThat(testPrivateCardData.getCreatedByMe()).isEqualTo(UPDATED_CREATED_BY_ME);
     }
 
     @Test

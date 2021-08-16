@@ -57,6 +57,9 @@ public class PrivateCardDataService {
                     if (privateCardData.getAuthority() != null) {
                         existingPrivateCardData.setAuthority(privateCardData.getAuthority());
                     }
+                    if (privateCardData.getCreatedByMe() != null) {
+                        existingPrivateCardData.setCreatedByMe(privateCardData.getCreatedByMe());
+                    }
 
                     return existingPrivateCardData;
                 }
