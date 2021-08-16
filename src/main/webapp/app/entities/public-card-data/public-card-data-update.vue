@@ -67,6 +67,20 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.publicCardData.updateLink')" for="public-card-data-updateLink"
+              >Update Link</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="updateLink"
+              id="public-card-data-updateLink"
+              data-cy="updateLink"
+              :class="{ valid: !$v.publicCardData.updateLink.$invalid, invalid: $v.publicCardData.updateLink.$invalid }"
+              v-model="$v.publicCardData.updateLink.$model"
+            />
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.name')" for="public-card-data-name">Name</label>
             <input
               type="text"

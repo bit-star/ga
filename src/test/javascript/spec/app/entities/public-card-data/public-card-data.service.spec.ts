@@ -46,6 +46,7 @@ describe('Service Tests', () => {
         'AAAAAAA',
         'AAAAAAA',
         'AAAAAAA',
+        'AAAAAAA',
         false,
         'AAAAAAA',
         PublicDataCardStatus.Effect,
@@ -121,6 +122,7 @@ describe('Service Tests', () => {
             workflowid: 1,
             valid: true,
             link: 'BBBBBB',
+            updateLink: 'BBBBBB',
             name: 'BBBBBB',
             feeValue: 'BBBBBB',
             reason: 'BBBBBB',
@@ -167,11 +169,11 @@ describe('Service Tests', () => {
           {
             workflowid: 1,
             link: 'BBBBBB',
-            name: 'BBBBBB',
+            updateLink: 'BBBBBB',
+            itemType: 'BBBBBB',
             typesOfFee: 'BBBBBB',
-            agree: true,
+            refuseNum: 1,
             time: dayjs(currentDate).format(DATE_TIME_FORMAT),
-            oaStatus: 'BBBBBB',
           },
           new PublicCardData()
         );
@@ -208,6 +210,7 @@ describe('Service Tests', () => {
             workflowid: 1,
             valid: true,
             link: 'BBBBBB',
+            updateLink: 'BBBBBB',
             name: 'BBBBBB',
             feeValue: 'BBBBBB',
             reason: 'BBBBBB',

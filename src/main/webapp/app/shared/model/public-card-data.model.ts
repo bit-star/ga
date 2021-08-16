@@ -12,6 +12,7 @@ export interface IPublicCardData {
   workflowid?: number | null;
   valid?: boolean | null;
   link?: string | null;
+  updateLink?: string | null;
   name?: string | null;
   feeValue?: string | null;
   reason?: string | null;
@@ -39,6 +40,7 @@ export class PublicCardData implements IPublicCardData {
     public workflowid?: number | null,
     public valid?: boolean | null,
     public link?: string | null,
+    public updateLink?: string | null,
     public name?: string | null,
     public feeValue?: string | null,
     public reason?: string | null,

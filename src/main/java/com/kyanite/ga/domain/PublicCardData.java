@@ -37,6 +37,9 @@ public class PublicCardData implements Serializable {
     @Column(name = "link")
     private String link;
 
+    @Column(name = "update_link")
+    private String updateLink;
+
     @Column(name = "name")
     private String name;
 
@@ -165,6 +168,19 @@ public class PublicCardData implements Serializable {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    public String getUpdateLink() {
+        return this.updateLink;
+    }
+
+    public PublicCardData updateLink(String updateLink) {
+        this.updateLink = updateLink;
+        return this;
+    }
+
+    public void setUpdateLink(String updateLink) {
+        this.updateLink = updateLink;
     }
 
     public String getName() {
@@ -483,6 +499,7 @@ public class PublicCardData implements Serializable {
             ", workflowid=" + getWorkflowid() +
             ", valid='" + getValid() + "'" +
             ", link='" + getLink() + "'" +
+            ", updateLink='" + getUpdateLink() + "'" +
             ", name='" + getName() + "'" +
             ", feeValue='" + getFeeValue() + "'" +
             ", reason='" + getReason() + "'" +
