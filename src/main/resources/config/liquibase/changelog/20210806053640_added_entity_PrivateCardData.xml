@@ -23,6 +23,9 @@
             <column name="authority" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="created_by_me" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="public_card_data_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -52,6 +55,7 @@
             <column name="agree" type="boolean"/>
             <column name="finish" type="string"/>
             <column name="authority" type="string"/>
+            <column name="created_by_me" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

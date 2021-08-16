@@ -12,6 +12,10 @@
     {
       "fieldName": "authority",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "createdByMe",
+      "fieldType": "String"
     }
   ],
   "relationships": [

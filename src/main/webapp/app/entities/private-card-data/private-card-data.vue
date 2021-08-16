@@ -32,6 +32,7 @@
             <th scope="row"><span v-text="$t('gaApp.privateCardData.agree')">Agree</span></th>
             <th scope="row"><span v-text="$t('gaApp.privateCardData.finish')">Finish</span></th>
             <th scope="row"><span v-text="$t('gaApp.privateCardData.authority')">Authority</span></th>
+            <th scope="row"><span v-text="$t('gaApp.privateCardData.createdByMe')">Created By Me</span></th>
             <th scope="row"><span v-text="$t('gaApp.privateCardData.publicCardData')">Public Card Data</span></th>
             <th scope="row"><span v-text="$t('gaApp.privateCardData.ddUser')">Dd User</span></th>
             <th scope="row"></th>
@@ -47,6 +48,7 @@
             <td>{{ privateCardData.agree }}</td>
             <td>{{ privateCardData.finish }}</td>
             <td>{{ privateCardData.authority }}</td>
+            <td>{{ privateCardData.createdByMe }}</td>
             <td>
               <div v-if="privateCardData.publicCardData">
                 <router-link :to="{ name: 'PublicCardDataView', params: { publicCardDataId: privateCardData.publicCardData.id } }">{{

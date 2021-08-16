@@ -53,6 +53,20 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.privateCardData.createdByMe')" for="private-card-data-createdByMe"
+              >Created By Me</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="createdByMe"
+              id="private-card-data-createdByMe"
+              data-cy="createdByMe"
+              :class="{ valid: !$v.privateCardData.createdByMe.$invalid, invalid: $v.privateCardData.createdByMe.$invalid }"
+              v-model="$v.privateCardData.createdByMe.$model"
+            />
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.privateCardData.publicCardData')" for="private-card-data-publicCardData"
               >Public Card Data</label
             >

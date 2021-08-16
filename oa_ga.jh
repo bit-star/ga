@@ -140,7 +140,6 @@ entity PublicCardData {
     valid Boolean
     link String
     updateLink String
-    yourself String
 	name String,
     feeValue String,
     reason String,
@@ -162,6 +161,7 @@ entity PrivateCardData {
     agree Boolean
     finish String
     authority String
+    createdByMe String
 }
 
 entity ConfirmCard{

@@ -37,12 +37,6 @@
             <span>{{ publicCardData.updateLink }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.publicCardData.yourself')">Yourself</span>
-          </dt>
-          <dd>
-            <span>{{ publicCardData.yourself }}</span>
-          </dd>
-          <dt>
             <span v-text="$t('gaApp.publicCardData.name')">Name</span>
           </dt>
           <dd>
