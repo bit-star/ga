@@ -63,6 +63,9 @@ public class PublicCardDataService {
                     if (publicCardData.getUpdateLink() != null) {
                         existingPublicCardData.setUpdateLink(publicCardData.getUpdateLink());
                     }
+                    if (publicCardData.getYourself() != null) {
+                        existingPublicCardData.setYourself(publicCardData.getYourself());
+                    }
                     if (publicCardData.getName() != null) {
                         existingPublicCardData.setName(publicCardData.getName());
                     }

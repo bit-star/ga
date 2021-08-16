@@ -28,6 +28,7 @@ const validations: any = {
     valid: {},
     link: {},
     updateLink: {},
+    yourself: {},
     name: {},
     feeValue: {},
     reason: {},
