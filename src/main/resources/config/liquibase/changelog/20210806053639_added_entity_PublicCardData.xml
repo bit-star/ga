@@ -26,6 +26,9 @@
             <column name="link" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="update_link" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -96,6 +99,7 @@
             <column name="workflowid" type="numeric"/>
             <column name="valid" type="boolean"/>
             <column name="link" type="string"/>
+            <column name="update_link" type="string"/>
             <column name="name" type="string"/>
             <column name="fee_value" type="string"/>
             <column name="reason" type="string"/>

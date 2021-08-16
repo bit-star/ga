@@ -27,6 +27,7 @@ const validations: any = {
     workflowid: {},
     valid: {},
     link: {},
+    updateLink: {},
     name: {},
     feeValue: {},
     reason: {},

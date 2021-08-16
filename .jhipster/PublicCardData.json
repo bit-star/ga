@@ -18,6 +18,10 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "updateLink",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "name",
       "fieldType": "String"
     },

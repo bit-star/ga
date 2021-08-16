@@ -22,6 +22,7 @@
       "workflowid": "Workflowid",
       "valid": "Valid",
       "link": "Link",
+      "updateLink": "Update Link",
       "name": "Name",
       "feeValue": "Fee Value",
       "reason": "Reason",
