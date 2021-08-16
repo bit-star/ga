@@ -140,6 +140,7 @@ entity PublicCardData {
     valid Boolean
     link String
     updateLink String
+    yourself String
 	name String,
     feeValue String,
     reason String,
