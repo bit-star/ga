@@ -31,11 +31,9 @@ entity FormField {
     fielddbtype String
     labelName String
     detailtable String
-    defaultValue String
     show Boolean
     isCardField Boolean
     isOaField Boolean
-    isPrivate Boolean
     orderNum Integer
 }
 
@@ -168,7 +166,6 @@ entity PrivateCardData {
     finish String
     authority String
     createdByMe String
-    variables String
     updateTime Instant
 }
 
@@ -221,5 +218,5 @@ relationship  ManyToMany {
 
 service all with serviceClass
 
-
+paginate FormField with pagination
 

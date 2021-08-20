@@ -22,10 +22,6 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "defaultValue",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "show",
       "fieldType": "Boolean"
     },
@@ -35,10 +31,6 @@
     },
     {
       "fieldName": "isOaField",
-      "fieldType": "Boolean"
-    },
-    {
-      "fieldName": "isPrivate",
       "fieldType": "Boolean"
     },
     {
@@ -56,7 +48,7 @@
   ],
   "entityTableName": "form_field",
   "dto": "no",
-  "pagination": "no",
+  "pagination": "pagination",
   "service": "serviceClass",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

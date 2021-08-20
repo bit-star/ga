@@ -23,11 +23,9 @@
       "fielddbtype": "Fielddbtype",
       "labelName": "Label Name",
       "detailtable": "Detailtable",
-      "defaultValue": "Default Value",
       "show": "Show",
       "isCardField": "Is Card Field",
       "isOaField": "Is Oa Field",
-      "isPrivate": "Is Private",
       "orderNum": "Order Num",
       "workflowTemplate": "Workflow Template"
     }

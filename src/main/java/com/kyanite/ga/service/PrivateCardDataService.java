@@ -60,9 +60,6 @@ public class PrivateCardDataService {
                     if (privateCardData.getCreatedByMe() != null) {
                         existingPrivateCardData.setCreatedByMe(privateCardData.getCreatedByMe());
                     }
-                    if (privateCardData.getVariables() != null) {
-                        existingPrivateCardData.setVariables(privateCardData.getVariables());
-                    }
                     if (privateCardData.getUpdateTime() != null) {
                         existingPrivateCardData.setUpdateTime(privateCardData.getUpdateTime());
                     }

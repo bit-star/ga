@@ -67,20 +67,6 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.privateCardData.variables')" for="private-card-data-variables"
-              >Variables</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              name="variables"
-              id="private-card-data-variables"
-              data-cy="variables"
-              :class="{ valid: !$v.privateCardData.variables.$invalid, invalid: $v.privateCardData.variables.$invalid }"
-              v-model="$v.privateCardData.variables.$model"
-            />
-          </div>
-          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.privateCardData.updateTime')" for="private-card-data-updateTime"
               >Update Time</label
             >

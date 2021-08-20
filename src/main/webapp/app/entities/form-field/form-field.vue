@@ -28,19 +28,50 @@
       <table class="table table-striped" aria-describedby="formFields">
         <thead>
           <tr>
-            <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.fieldName')">Field Name</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.oaId')">Oa Id</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.fielddbtype')">Fielddbtype</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.labelName')">Label Name</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.detailtable')">Detailtable</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.defaultValue')">Default Value</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.show')">Show</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.isCardField')">Is Card Field</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.isOaField')">Is Oa Field</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.isPrivate')">Is Private</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.orderNum')">Order Num</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.workflowTemplate')">Workflow Template</span></th>
+            <th scope="row" v-on:click="changeOrder('id')">
+              <span v-text="$t('global.field.id')">ID</span>
+              <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'id'"></jhi-sort-indicator>
+            </th>
+            <th scope="row" v-on:click="changeOrder('fieldName')">
+              <span v-text="$t('gaApp.formField.fieldName')">Field Name</span>
+              <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'fieldName'"></jhi-sort-indicator>
+            </th>
+            <th scope="row" v-on:click="changeOrder('oaId')">
+              <span v-text="$t('gaApp.formField.oaId')">Oa Id</span>
+              <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'oaId'"></jhi-sort-indicator>
+            </th>
+            <th scope="row" v-on:click="changeOrder('fielddbtype')">
+              <span v-text="$t('gaApp.formField.fielddbtype')">Fielddbtype</span>
+              <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'fielddbtype'"></jhi-sort-indicator>
+            </th>
+            <th scope="row" v-on:click="changeOrder('labelName')">
+              <span v-text="$t('gaApp.formField.labelName')">Label Name</span>
+              <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'labelName'"></jhi-sort-indicator>
+            </th>
+            <th scope="row" v-on:click="changeOrder('detailtable')">
+              <span v-text="$t('gaApp.formField.detailtable')">Detailtable</span>
+              <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'detailtable'"></jhi-sort-indicator>
+            </th>
+            <th scope="row" v-on:click="changeOrder('show')">
+              <span v-text="$t('gaApp.formField.show')">Show</span>
+              <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'show'"></jhi-sort-indicator>
+            </th>
+            <th scope="row" v-on:click="changeOrder('isCardField')">
+              <span v-text="$t('gaApp.formField.isCardField')">Is Card Field</span>
+              <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'isCardField'"></jhi-sort-indicator>
+            </th>
+            <th scope="row" v-on:click="changeOrder('isOaField')">
+              <span v-text="$t('gaApp.formField.isOaField')">Is Oa Field</span>
+              <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'isOaField'"></jhi-sort-indicator>
+            </th>
+            <th scope="row" v-on:click="changeOrder('orderNum')">
+              <span v-text="$t('gaApp.formField.orderNum')">Order Num</span>
+              <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'orderNum'"></jhi-sort-indicator>
+            </th>
+            <th scope="row" v-on:click="changeOrder('workflowTemplate.id')">
+              <span v-text="$t('gaApp.formField.workflowTemplate')">Workflow Template</span>
+              <jhi-sort-indicator :current-order="propOrder" :reverse="reverse" :field-name="'workflowTemplate.id'"></jhi-sort-indicator>
+            </th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -54,11 +85,9 @@
             <td>{{ formField.fielddbtype }}</td>
             <td>{{ formField.labelName }}</td>
             <td>{{ formField.detailtable }}</td>
-            <td>{{ formField.defaultValue }}</td>
             <td>{{ formField.show }}</td>
             <td>{{ formField.isCardField }}</td>
             <td>{{ formField.isOaField }}</td>
-            <td>{{ formField.isPrivate }}</td>
             <td>{{ formField.orderNum }}</td>
             <td>
               <div v-if="formField.workflowTemplate">
@@ -122,6 +151,14 @@
         </button>
       </div>
     </b-modal>
+    <div v-show="formFields && formFields.length > 0">
+      <div class="row justify-content-center">
+        <jhi-item-count :page="page" :total="queryCount" :itemsPerPage="itemsPerPage"></jhi-item-count>
+      </div>
+      <div class="row justify-content-center">
+        <b-pagination size="md" :total-rows="totalItems" v-model="page" :per-page="itemsPerPage" :change="loadPage(page)"></b-pagination>
+      </div>
+    </div>
   </div>
 </template>
 

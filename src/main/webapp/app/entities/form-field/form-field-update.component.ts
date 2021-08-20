@@ -13,11 +13,9 @@ const validations: any = {
     fielddbtype: {},
     labelName: {},
     detailtable: {},
-    defaultValue: {},
     show: {},
     isCardField: {},
     isOaField: {},
-    isPrivate: {},
     orderNum: {},
   },
 };

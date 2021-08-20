@@ -2,10 +2,11 @@ package com.kyanite.ga.service;
 
 import com.kyanite.ga.domain.FormField;
 import com.kyanite.ga.repository.FormFieldRepository;
-import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -63,9 +64,6 @@ public class FormFieldService {
                     if (formField.getDetailtable() != null) {
                         existingFormField.setDetailtable(formField.getDetailtable());
                     }
-                    if (formField.getDefaultValue() != null) {
-                        existingFormField.setDefaultValue(formField.getDefaultValue());
-                    }
                     if (formField.getShow() != null) {
                         existingFormField.setShow(formField.getShow());
                     }
@@ -74,9 +72,6 @@ public class FormFieldService {
                     }
                     if (formField.getIsOaField() != null) {
                         existingFormField.setIsOaField(formField.getIsOaField());
-                    }
-                    if (formField.getIsPrivate() != null) {
-                        existingFormField.setIsPrivate(formField.getIsPrivate());
                     }
                     if (formField.getOrderNum() != null) {
                         existingFormField.setOrderNum(formField.getOrderNum());
@@ -91,12 +86,13 @@ public class FormFieldService {
     /**
      * Get all the formFields.
      *
+     * @param pageable the pagination information.
      * @return the list of entities.
      */
     @Transactional(readOnly = true)
-    public List<FormField> findAll() {
+    public Page<FormField> findAll(Pageable pageable) {
         log.debug("Request to get all FormFields");
-        return formFieldRepository.findAll();
+        return formFieldRepository.findAll(pageable);
     }
 
     /**

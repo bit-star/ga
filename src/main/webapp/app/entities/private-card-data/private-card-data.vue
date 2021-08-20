@@ -33,7 +33,6 @@
             <th scope="row"><span v-text="$t('gaApp.privateCardData.finish')">Finish</span></th>
             <th scope="row"><span v-text="$t('gaApp.privateCardData.authority')">Authority</span></th>
             <th scope="row"><span v-text="$t('gaApp.privateCardData.createdByMe')">Created By Me</span></th>
-            <th scope="row"><span v-text="$t('gaApp.privateCardData.variables')">Variables</span></th>
             <th scope="row"><span v-text="$t('gaApp.privateCardData.updateTime')">Update Time</span></th>
             <th scope="row"><span v-text="$t('gaApp.privateCardData.publicCardData')">Public Card Data</span></th>
             <th scope="row"><span v-text="$t('gaApp.privateCardData.ddUser')">Dd User</span></th>
@@ -51,7 +50,6 @@
             <td>{{ privateCardData.finish }}</td>
             <td>{{ privateCardData.authority }}</td>
             <td>{{ privateCardData.createdByMe }}</td>
-            <td>{{ privateCardData.variables }}</td>
             <td>{{ privateCardData.updateTime ? $d(Date.parse(privateCardData.updateTime), 'short') : '' }}</td>
             <td>
               <div v-if="privateCardData.publicCardData">

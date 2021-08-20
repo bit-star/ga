@@ -43,9 +43,6 @@ class PrivateCardDataResourceIT {
     private static final String DEFAULT_CREATED_BY_ME = "AAAAAAAAAA";
     private static final String UPDATED_CREATED_BY_ME = "BBBBBBBBBB";
 
-    private static final String DEFAULT_VARIABLES = "AAAAAAAAAA";
-    private static final String UPDATED_VARIABLES = "BBBBBBBBBB";
-
     private static final Instant DEFAULT_UPDATE_TIME = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_UPDATE_TIME = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
@@ -78,7 +75,6 @@ class PrivateCardDataResourceIT {
             .finish(DEFAULT_FINISH)
             .authority(DEFAULT_AUTHORITY)
             .createdByMe(DEFAULT_CREATED_BY_ME)
-            .variables(DEFAULT_VARIABLES)
             .updateTime(DEFAULT_UPDATE_TIME);
         return privateCardData;
     }
@@ -95,7 +91,6 @@ class PrivateCardDataResourceIT {
             .finish(UPDATED_FINISH)
             .authority(UPDATED_AUTHORITY)
             .createdByMe(UPDATED_CREATED_BY_ME)
-            .variables(UPDATED_VARIABLES)
             .updateTime(UPDATED_UPDATE_TIME);
         return privateCardData;
     }
@@ -124,7 +119,6 @@ class PrivateCardDataResourceIT {
         assertThat(testPrivateCardData.getFinish()).isEqualTo(DEFAULT_FINISH);
         assertThat(testPrivateCardData.getAuthority()).isEqualTo(DEFAULT_AUTHORITY);
         assertThat(testPrivateCardData.getCreatedByMe()).isEqualTo(DEFAULT_CREATED_BY_ME);
-        assertThat(testPrivateCardData.getVariables()).isEqualTo(DEFAULT_VARIABLES);
         assertThat(testPrivateCardData.getUpdateTime()).isEqualTo(DEFAULT_UPDATE_TIME);
     }
 
@@ -164,7 +158,6 @@ class PrivateCardDataResourceIT {
             .andExpect(jsonPath("$.[*].finish").value(hasItem(DEFAULT_FINISH)))
             .andExpect(jsonPath("$.[*].authority").value(hasItem(DEFAULT_AUTHORITY)))
             .andExpect(jsonPath("$.[*].createdByMe").value(hasItem(DEFAULT_CREATED_BY_ME)))
-            .andExpect(jsonPath("$.[*].variables").value(hasItem(DEFAULT_VARIABLES)))
             .andExpect(jsonPath("$.[*].updateTime").value(hasItem(DEFAULT_UPDATE_TIME.toString())));
     }
 
@@ -184,7 +177,6 @@ class PrivateCardDataResourceIT {
             .andExpect(jsonPath("$.finish").value(DEFAULT_FINISH))
             .andExpect(jsonPath("$.authority").value(DEFAULT_AUTHORITY))
             .andExpect(jsonPath("$.createdByMe").value(DEFAULT_CREATED_BY_ME))
-            .andExpect(jsonPath("$.variables").value(DEFAULT_VARIABLES))
             .andExpect(jsonPath("$.updateTime").value(DEFAULT_UPDATE_TIME.toString()));
     }
 
@@ -212,7 +204,6 @@ class PrivateCardDataResourceIT {
             .finish(UPDATED_FINISH)
             .authority(UPDATED_AUTHORITY)
             .createdByMe(UPDATED_CREATED_BY_ME)
-            .variables(UPDATED_VARIABLES)
             .updateTime(UPDATED_UPDATE_TIME);
 
         restPrivateCardDataMockMvc
@@ -231,7 +222,6 @@ class PrivateCardDataResourceIT {
         assertThat(testPrivateCardData.getFinish()).isEqualTo(UPDATED_FINISH);
         assertThat(testPrivateCardData.getAuthority()).isEqualTo(UPDATED_AUTHORITY);
         assertThat(testPrivateCardData.getCreatedByMe()).isEqualTo(UPDATED_CREATED_BY_ME);
-        assertThat(testPrivateCardData.getVariables()).isEqualTo(UPDATED_VARIABLES);
         assertThat(testPrivateCardData.getUpdateTime()).isEqualTo(UPDATED_UPDATE_TIME);
     }
 
@@ -305,7 +295,7 @@ class PrivateCardDataResourceIT {
         PrivateCardData partialUpdatedPrivateCardData = new PrivateCardData();
         partialUpdatedPrivateCardData.setId(privateCardData.getId());
 
-        partialUpdatedPrivateCardData.finish(UPDATED_FINISH).createdByMe(UPDATED_CREATED_BY_ME).variables(UPDATED_VARIABLES);
+        partialUpdatedPrivateCardData.finish(UPDATED_FINISH).createdByMe(UPDATED_CREATED_BY_ME).updateTime(UPDATED_UPDATE_TIME);
 
         restPrivateCardDataMockMvc
             .perform(
@@ -323,8 +313,7 @@ class PrivateCardDataResourceIT {
         assertThat(testPrivateCardData.getFinish()).isEqualTo(UPDATED_FINISH);
         assertThat(testPrivateCardData.getAuthority()).isEqualTo(DEFAULT_AUTHORITY);
         assertThat(testPrivateCardData.getCreatedByMe()).isEqualTo(UPDATED_CREATED_BY_ME);
-        assertThat(testPrivateCardData.getVariables()).isEqualTo(UPDATED_VARIABLES);
-        assertThat(testPrivateCardData.getUpdateTime()).isEqualTo(DEFAULT_UPDATE_TIME);
+        assertThat(testPrivateCardData.getUpdateTime()).isEqualTo(UPDATED_UPDATE_TIME);
     }
 
     @Test
@@ -344,7 +333,6 @@ class PrivateCardDataResourceIT {
             .finish(UPDATED_FINISH)
             .authority(UPDATED_AUTHORITY)
             .createdByMe(UPDATED_CREATED_BY_ME)
-            .variables(UPDATED_VARIABLES)
             .updateTime(UPDATED_UPDATE_TIME);
 
         restPrivateCardDataMockMvc
@@ -363,7 +351,6 @@ class PrivateCardDataResourceIT {
         assertThat(testPrivateCardData.getFinish()).isEqualTo(UPDATED_FINISH);
         assertThat(testPrivateCardData.getAuthority()).isEqualTo(UPDATED_AUTHORITY);
         assertThat(testPrivateCardData.getCreatedByMe()).isEqualTo(UPDATED_CREATED_BY_ME);
-        assertThat(testPrivateCardData.getVariables()).isEqualTo(UPDATED_VARIABLES);
         assertThat(testPrivateCardData.getUpdateTime()).isEqualTo(UPDATED_UPDATE_TIME);
     }
 

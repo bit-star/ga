@@ -18,10 +18,6 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "variables",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "updateTime",
       "fieldType": "Instant"
     }
