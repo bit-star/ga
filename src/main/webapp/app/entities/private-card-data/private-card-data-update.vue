@@ -67,6 +67,37 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.privateCardData.variables')" for="private-card-data-variables"
+              >Variables</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="variables"
+              id="private-card-data-variables"
+              data-cy="variables"
+              :class="{ valid: !$v.privateCardData.variables.$invalid, invalid: $v.privateCardData.variables.$invalid }"
+              v-model="$v.privateCardData.variables.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.privateCardData.updateTime')" for="private-card-data-updateTime"
+              >Update Time</label
+            >
+            <div class="d-flex">
+              <input
+                id="private-card-data-updateTime"
+                data-cy="updateTime"
+                type="datetime-local"
+                class="form-control"
+                name="updateTime"
+                :class="{ valid: !$v.privateCardData.updateTime.$invalid, invalid: $v.privateCardData.updateTime.$invalid }"
+                :value="convertDateTimeFromServer($v.privateCardData.updateTime.$model)"
+                @change="updateInstantField('updateTime', $event)"
+              />
+            </div>
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.privateCardData.publicCardData')" for="private-card-data-publicCardData"
               >Public Card Data</label
             >

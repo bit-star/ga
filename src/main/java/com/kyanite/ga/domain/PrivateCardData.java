@@ -2,6 +2,7 @@ package com.kyanite.ga.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.time.Instant;
 import javax.persistence.*;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -31,6 +32,12 @@ public class PrivateCardData implements Serializable {
 
     @Column(name = "created_by_me")
     private String createdByMe;
+
+    @Column(name = "variables")
+    private String variables;
+
+    @Column(name = "update_time")
+    private Instant updateTime;
 
     @ManyToOne
     @JsonIgnoreProperties(
@@ -112,6 +119,32 @@ public class PrivateCardData implements Serializable {
         this.createdByMe = createdByMe;
     }
 
+    public String getVariables() {
+        return this.variables;
+    }
+
+    public PrivateCardData variables(String variables) {
+        this.variables = variables;
+        return this;
+    }
+
+    public void setVariables(String variables) {
+        this.variables = variables;
+    }
+
+    public Instant getUpdateTime() {
+        return this.updateTime;
+    }
+
+    public PrivateCardData updateTime(Instant updateTime) {
+        this.updateTime = updateTime;
+        return this;
+    }
+
+    public void setUpdateTime(Instant updateTime) {
+        this.updateTime = updateTime;
+    }
+
     public PublicCardData getPublicCardData() {
         return this.publicCardData;
     }
@@ -166,6 +199,8 @@ public class PrivateCardData implements Serializable {
             ", finish='" + getFinish() + "'" +
             ", authority='" + getAuthority() + "'" +
             ", createdByMe='" + getCreatedByMe() + "'" +
+            ", variables='" + getVariables() + "'" +
+            ", updateTime='" + getUpdateTime() + "'" +
             "}";
     }
 }
