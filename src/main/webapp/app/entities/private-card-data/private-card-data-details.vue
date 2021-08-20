@@ -31,6 +31,18 @@
             <span>{{ privateCardData.createdByMe }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.privateCardData.variables')">Variables</span>
+          </dt>
+          <dd>
+            <span>{{ privateCardData.variables }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.privateCardData.updateTime')">Update Time</span>
+          </dt>
+          <dd>
+            <span v-if="privateCardData.updateTime">{{ $d(Date.parse(privateCardData.updateTime), 'long') }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.privateCardData.publicCardData')">Public Card Data</span>
           </dt>
           <dd>

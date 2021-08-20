@@ -48,20 +48,17 @@ public class FormFieldService {
             .findById(formField.getId())
             .map(
                 existingFormField -> {
-                    if (formField.getFieldname() != null) {
-                        existingFormField.setFieldname(formField.getFieldname());
+                    if (formField.getFieldName() != null) {
+                        existingFormField.setFieldName(formField.getFieldName());
                     }
-                    if (formField.getValue() != null) {
-                        existingFormField.setValue(formField.getValue());
+                    if (formField.getOaId() != null) {
+                        existingFormField.setOaId(formField.getOaId());
                     }
                     if (formField.getFielddbtype() != null) {
                         existingFormField.setFielddbtype(formField.getFielddbtype());
                     }
-                    if (formField.getLabelname() != null) {
-                        existingFormField.setLabelname(formField.getLabelname());
-                    }
-                    if (formField.getFieldlabel() != null) {
-                        existingFormField.setFieldlabel(formField.getFieldlabel());
+                    if (formField.getLabelName() != null) {
+                        existingFormField.setLabelName(formField.getLabelName());
                     }
                     if (formField.getDetailtable() != null) {
                         existingFormField.setDetailtable(formField.getDetailtable());
@@ -71,6 +68,12 @@ public class FormFieldService {
                     }
                     if (formField.getIsCardField() != null) {
                         existingFormField.setIsCardField(formField.getIsCardField());
+                    }
+                    if (formField.getIsOaField() != null) {
+                        existingFormField.setIsOaField(formField.getIsOaField());
+                    }
+                    if (formField.getIsPrivate() != null) {
+                        existingFormField.setIsPrivate(formField.getIsPrivate());
                     }
                     if (formField.getOrderNum() != null) {
                         existingFormField.setOrderNum(formField.getOrderNum());

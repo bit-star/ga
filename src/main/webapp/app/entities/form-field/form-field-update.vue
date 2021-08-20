@@ -15,27 +15,27 @@
             <input type="text" class="form-control" id="id" name="id" v-model="formField.id" readonly />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.formField.fieldname')" for="form-field-fieldname">Fieldname</label>
+            <label class="form-control-label" v-text="$t('gaApp.formField.fieldName')" for="form-field-fieldName">Field Name</label>
             <input
               type="text"
               class="form-control"
-              name="fieldname"
-              id="form-field-fieldname"
-              data-cy="fieldname"
-              :class="{ valid: !$v.formField.fieldname.$invalid, invalid: $v.formField.fieldname.$invalid }"
-              v-model="$v.formField.fieldname.$model"
+              name="fieldName"
+              id="form-field-fieldName"
+              data-cy="fieldName"
+              :class="{ valid: !$v.formField.fieldName.$invalid, invalid: $v.formField.fieldName.$invalid }"
+              v-model="$v.formField.fieldName.$model"
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.formField.value')" for="form-field-value">Value</label>
+            <label class="form-control-label" v-text="$t('gaApp.formField.oaId')" for="form-field-oaId">Oa Id</label>
             <input
               type="text"
               class="form-control"
-              name="value"
-              id="form-field-value"
-              data-cy="value"
-              :class="{ valid: !$v.formField.value.$invalid, invalid: $v.formField.value.$invalid }"
-              v-model="$v.formField.value.$model"
+              name="oaId"
+              id="form-field-oaId"
+              data-cy="oaId"
+              :class="{ valid: !$v.formField.oaId.$invalid, invalid: $v.formField.oaId.$invalid }"
+              v-model="$v.formField.oaId.$model"
             />
           </div>
           <div class="form-group">
@@ -51,27 +51,15 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.formField.labelname')" for="form-field-labelname">Labelname</label>
+            <label class="form-control-label" v-text="$t('gaApp.formField.labelName')" for="form-field-labelName">Label Name</label>
             <input
               type="text"
               class="form-control"
-              name="labelname"
-              id="form-field-labelname"
-              data-cy="labelname"
-              :class="{ valid: !$v.formField.labelname.$invalid, invalid: $v.formField.labelname.$invalid }"
-              v-model="$v.formField.labelname.$model"
-            />
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.formField.fieldlabel')" for="form-field-fieldlabel">Fieldlabel</label>
-            <input
-              type="text"
-              class="form-control"
-              name="fieldlabel"
-              id="form-field-fieldlabel"
-              data-cy="fieldlabel"
-              :class="{ valid: !$v.formField.fieldlabel.$invalid, invalid: $v.formField.fieldlabel.$invalid }"
-              v-model="$v.formField.fieldlabel.$model"
+              name="labelName"
+              id="form-field-labelName"
+              data-cy="labelName"
+              :class="{ valid: !$v.formField.labelName.$invalid, invalid: $v.formField.labelName.$invalid }"
+              v-model="$v.formField.labelName.$model"
             />
           </div>
           <div class="form-group">
@@ -108,6 +96,30 @@
               data-cy="isCardField"
               :class="{ valid: !$v.formField.isCardField.$invalid, invalid: $v.formField.isCardField.$invalid }"
               v-model="$v.formField.isCardField.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.formField.isOaField')" for="form-field-isOaField">Is Oa Field</label>
+            <input
+              type="checkbox"
+              class="form-check"
+              name="isOaField"
+              id="form-field-isOaField"
+              data-cy="isOaField"
+              :class="{ valid: !$v.formField.isOaField.$invalid, invalid: $v.formField.isOaField.$invalid }"
+              v-model="$v.formField.isOaField.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.formField.isPrivate')" for="form-field-isPrivate">Is Private</label>
+            <input
+              type="checkbox"
+              class="form-check"
+              name="isPrivate"
+              id="form-field-isPrivate"
+              data-cy="isPrivate"
+              :class="{ valid: !$v.formField.isPrivate.$invalid, invalid: $v.formField.isPrivate.$invalid }"
+              v-model="$v.formField.isPrivate.$model"
             />
           </div>
           <div class="form-group">

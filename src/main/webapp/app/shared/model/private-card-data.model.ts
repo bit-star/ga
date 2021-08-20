@@ -7,6 +7,8 @@ export interface IPrivateCardData {
   finish?: string | null;
   authority?: string | null;
   createdByMe?: string | null;
+  variables?: string | null;
+  updateTime?: Date | null;
   publicCardData?: IPublicCardData | null;
   ddUser?: IDdUser | null;
 }
@@ -18,6 +20,8 @@ export class PrivateCardData implements IPrivateCardData {
     public finish?: string | null,
     public authority?: string | null,
     public createdByMe?: string | null,
+    public variables?: string | null,
+    public updateTime?: Date | null,
     public publicCardData?: IPublicCardData | null,
     public ddUser?: IDdUser | null
   ) {
