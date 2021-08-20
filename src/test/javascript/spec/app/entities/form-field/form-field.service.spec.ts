@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new FormFieldService();
-      elemDefault = new FormField(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false, false, false, false, 0);
+      elemDefault = new FormField(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false, false, false, false, 0);
     });
 
     describe('Service methods', () => {
@@ -86,6 +86,7 @@ describe('Service Tests', () => {
             fielddbtype: 'BBBBBB',
             labelName: 'BBBBBB',
             detailtable: 'BBBBBB',
+            defaultValue: 'BBBBBB',
             show: true,
             isCardField: true,
             isOaField: true,
@@ -119,8 +120,8 @@ describe('Service Tests', () => {
           {
             fieldName: 'BBBBBB',
             oaId: 'BBBBBB',
+            isOaField: true,
             isPrivate: true,
-            orderNum: 1,
           },
           new FormField()
         );
@@ -153,6 +154,7 @@ describe('Service Tests', () => {
             fielddbtype: 'BBBBBB',
             labelName: 'BBBBBB',
             detailtable: 'BBBBBB',
+            defaultValue: 'BBBBBB',
             show: true,
             isCardField: true,
             isOaField: true,

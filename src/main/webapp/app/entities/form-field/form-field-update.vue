@@ -75,6 +75,20 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.formField.defaultValue')" for="form-field-defaultValue"
+              >Default Value</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              name="defaultValue"
+              id="form-field-defaultValue"
+              data-cy="defaultValue"
+              :class="{ valid: !$v.formField.defaultValue.$invalid, invalid: $v.formField.defaultValue.$invalid }"
+              v-model="$v.formField.defaultValue.$model"
+            />
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.formField.show')" for="form-field-show">Show</label>
             <input
               type="checkbox"

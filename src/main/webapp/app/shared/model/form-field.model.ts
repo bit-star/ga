@@ -7,6 +7,7 @@ export interface IFormField {
   fielddbtype?: string | null;
   labelName?: string | null;
   detailtable?: string | null;
+  defaultValue?: string | null;
   show?: boolean | null;
   isCardField?: boolean | null;
   isOaField?: boolean | null;
@@ -23,6 +24,7 @@ export class FormField implements IFormField {
     public fielddbtype?: string | null,
     public labelName?: string | null,
     public detailtable?: string | null,
+    public defaultValue?: string | null,
     public show?: boolean | null,
     public isCardField?: boolean | null,
     public isOaField?: boolean | null,

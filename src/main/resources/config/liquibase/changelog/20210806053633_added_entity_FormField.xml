@@ -29,6 +29,9 @@
             <column name="detailtable" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="default_value" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="jhi_show" type="boolean">
                 <constraints nullable="true" />
             </column>
@@ -72,6 +75,7 @@
             <column name="fielddbtype" type="string"/>
             <column name="label_name" type="string"/>
             <column name="detailtable" type="string"/>
+            <column name="default_value" type="string"/>
             <column name="jhi_show" type="boolean"/>
             <column name="is_card_field" type="boolean"/>
             <column name="is_oa_field" type="boolean"/>

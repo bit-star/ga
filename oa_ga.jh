@@ -31,6 +31,7 @@ entity FormField {
     fielddbtype String
     labelName String
     detailtable String
+    defaultValue String
     show Boolean
     isCardField Boolean
     isOaField Boolean
