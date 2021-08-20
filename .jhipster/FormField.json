@@ -22,6 +22,10 @@
       "fieldType": "String"
     },
     {
+      "fieldName": "defaultValue",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "show",
       "fieldType": "Boolean"
     },

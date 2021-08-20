@@ -37,6 +37,12 @@
             <span>{{ formField.detailtable }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.formField.defaultValue')">Default Value</span>
+          </dt>
+          <dd>
+            <span>{{ formField.defaultValue }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.formField.show')">Show</span>
           </dt>
           <dd>

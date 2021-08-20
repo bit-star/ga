@@ -35,6 +35,9 @@ public class FormField implements Serializable {
     @Column(name = "detailtable")
     private String detailtable;
 
+    @Column(name = "default_value")
+    private String defaultValue;
+
     @Column(name = "jhi_show")
     private Boolean show;
 
@@ -131,6 +134,19 @@ public class FormField implements Serializable {
 
     public void setDetailtable(String detailtable) {
         this.detailtable = detailtable;
+    }
+
+    public String getDefaultValue() {
+        return this.defaultValue;
+    }
+
+    public FormField defaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
+        return this;
+    }
+
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
     }
 
     public Boolean getShow() {
@@ -240,6 +256,7 @@ public class FormField implements Serializable {
             ", fielddbtype='" + getFielddbtype() + "'" +
             ", labelName='" + getLabelName() + "'" +
             ", detailtable='" + getDetailtable() + "'" +
+            ", defaultValue='" + getDefaultValue() + "'" +
             ", show='" + getShow() + "'" +
             ", isCardField='" + getIsCardField() + "'" +
             ", isOaField='" + getIsOaField() + "'" +

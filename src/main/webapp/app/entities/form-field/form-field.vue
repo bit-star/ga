@@ -34,6 +34,7 @@
             <th scope="row"><span v-text="$t('gaApp.formField.fielddbtype')">Fielddbtype</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.labelName')">Label Name</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.detailtable')">Detailtable</span></th>
+            <th scope="row"><span v-text="$t('gaApp.formField.defaultValue')">Default Value</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.show')">Show</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.isCardField')">Is Card Field</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.isOaField')">Is Oa Field</span></th>
@@ -53,6 +54,7 @@
             <td>{{ formField.fielddbtype }}</td>
             <td>{{ formField.labelName }}</td>
             <td>{{ formField.detailtable }}</td>
+            <td>{{ formField.defaultValue }}</td>
             <td>{{ formField.show }}</td>
             <td>{{ formField.isCardField }}</td>
             <td>{{ formField.isOaField }}</td>

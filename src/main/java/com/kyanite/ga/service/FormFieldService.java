@@ -63,6 +63,9 @@ public class FormFieldService {
                     if (formField.getDetailtable() != null) {
                         existingFormField.setDetailtable(formField.getDetailtable());
                     }
+                    if (formField.getDefaultValue() != null) {
+                        existingFormField.setDefaultValue(formField.getDefaultValue());
+                    }
                     if (formField.getShow() != null) {
                         existingFormField.setShow(formField.getShow());
                     }
