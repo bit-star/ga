@@ -26,14 +26,15 @@ entity WorkflowTemplate {
 
 
 entity FormField {
-	fieldname String
-    value String
+	fieldName String
+    oaId String
     fielddbtype String
-    labelname String
-    fieldlabel String
+    labelName String
     detailtable String
     show Boolean
     isCardField Boolean
+    isOaField Boolean
+    isPrivate Boolean
     orderNum Integer
 }
 
@@ -166,6 +167,8 @@ entity PrivateCardData {
     finish String
     authority String
     createdByMe String
+    variables String
+    updateTime Instant
 }
 
 entity ConfirmCard{
