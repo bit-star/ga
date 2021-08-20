@@ -33,9 +33,6 @@ public class PrivateCardData implements Serializable {
     @Column(name = "created_by_me")
     private String createdByMe;
 
-    @Column(name = "variables")
-    private String variables;
-
     @Column(name = "update_time")
     private Instant updateTime;
 
@@ -119,19 +116,6 @@ public class PrivateCardData implements Serializable {
         this.createdByMe = createdByMe;
     }
 
-    public String getVariables() {
-        return this.variables;
-    }
-
-    public PrivateCardData variables(String variables) {
-        this.variables = variables;
-        return this;
-    }
-
-    public void setVariables(String variables) {
-        this.variables = variables;
-    }
-
     public Instant getUpdateTime() {
         return this.updateTime;
     }
@@ -199,7 +183,6 @@ public class PrivateCardData implements Serializable {
             ", finish='" + getFinish() + "'" +
             ", authority='" + getAuthority() + "'" +
             ", createdByMe='" + getCreatedByMe() + "'" +
-            ", variables='" + getVariables() + "'" +
             ", updateTime='" + getUpdateTime() + "'" +
             "}";
     }

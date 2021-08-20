@@ -75,20 +75,6 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.formField.defaultValue')" for="form-field-defaultValue"
-              >Default Value</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              name="defaultValue"
-              id="form-field-defaultValue"
-              data-cy="defaultValue"
-              :class="{ valid: !$v.formField.defaultValue.$invalid, invalid: $v.formField.defaultValue.$invalid }"
-              v-model="$v.formField.defaultValue.$model"
-            />
-          </div>
-          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.formField.show')" for="form-field-show">Show</label>
             <input
               type="checkbox"
@@ -122,18 +108,6 @@
               data-cy="isOaField"
               :class="{ valid: !$v.formField.isOaField.$invalid, invalid: $v.formField.isOaField.$invalid }"
               v-model="$v.formField.isOaField.$model"
-            />
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.formField.isPrivate')" for="form-field-isPrivate">Is Private</label>
-            <input
-              type="checkbox"
-              class="form-check"
-              name="isPrivate"
-              id="form-field-isPrivate"
-              data-cy="isPrivate"
-              :class="{ valid: !$v.formField.isPrivate.$invalid, invalid: $v.formField.isPrivate.$invalid }"
-              v-model="$v.formField.isPrivate.$model"
             />
           </div>
           <div class="form-group">

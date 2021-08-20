@@ -26,9 +26,6 @@
             <column name="created_by_me" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="variables" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
             <column name="update_time" type="${datetimeType}">
                 <constraints nullable="true" />
             </column>
@@ -63,7 +60,6 @@
             <column name="finish" type="string"/>
             <column name="authority" type="string"/>
             <column name="created_by_me" type="string"/>
-            <column name="variables" type="string"/>
             <column name="update_time" type="${datetimeType}"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>

@@ -18,7 +18,6 @@ const validations: any = {
     finish: {},
     authority: {},
     createdByMe: {},
-    variables: {},
     updateTime: {},
   },
 };

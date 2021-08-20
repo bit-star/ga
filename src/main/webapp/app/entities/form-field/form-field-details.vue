@@ -37,12 +37,6 @@
             <span>{{ formField.detailtable }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.formField.defaultValue')">Default Value</span>
-          </dt>
-          <dd>
-            <span>{{ formField.defaultValue }}</span>
-          </dd>
-          <dt>
             <span v-text="$t('gaApp.formField.show')">Show</span>
           </dt>
           <dd>
@@ -59,12 +53,6 @@
           </dt>
           <dd>
             <span>{{ formField.isOaField }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.formField.isPrivate')">Is Private</span>
-          </dt>
-          <dd>
-            <span>{{ formField.isPrivate }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.formField.orderNum')">Order Num</span>

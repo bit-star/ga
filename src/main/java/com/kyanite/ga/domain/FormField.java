@@ -35,9 +35,6 @@ public class FormField implements Serializable {
     @Column(name = "detailtable")
     private String detailtable;
 
-    @Column(name = "default_value")
-    private String defaultValue;
-
     @Column(name = "jhi_show")
     private Boolean show;
 
@@ -46,9 +43,6 @@ public class FormField implements Serializable {
 
     @Column(name = "is_oa_field")
     private Boolean isOaField;
-
-    @Column(name = "is_private")
-    private Boolean isPrivate;
 
     @Column(name = "order_num")
     private Integer orderNum;
@@ -136,19 +130,6 @@ public class FormField implements Serializable {
         this.detailtable = detailtable;
     }
 
-    public String getDefaultValue() {
-        return this.defaultValue;
-    }
-
-    public FormField defaultValue(String defaultValue) {
-        this.defaultValue = defaultValue;
-        return this;
-    }
-
-    public void setDefaultValue(String defaultValue) {
-        this.defaultValue = defaultValue;
-    }
-
     public Boolean getShow() {
         return this.show;
     }
@@ -186,19 +167,6 @@ public class FormField implements Serializable {
 
     public void setIsOaField(Boolean isOaField) {
         this.isOaField = isOaField;
-    }
-
-    public Boolean getIsPrivate() {
-        return this.isPrivate;
-    }
-
-    public FormField isPrivate(Boolean isPrivate) {
-        this.isPrivate = isPrivate;
-        return this;
-    }
-
-    public void setIsPrivate(Boolean isPrivate) {
-        this.isPrivate = isPrivate;
     }
 
     public Integer getOrderNum() {
@@ -256,11 +224,9 @@ public class FormField implements Serializable {
             ", fielddbtype='" + getFielddbtype() + "'" +
             ", labelName='" + getLabelName() + "'" +
             ", detailtable='" + getDetailtable() + "'" +
-            ", defaultValue='" + getDefaultValue() + "'" +
             ", show='" + getShow() + "'" +
             ", isCardField='" + getIsCardField() + "'" +
             ", isOaField='" + getIsOaField() + "'" +
-            ", isPrivate='" + getIsPrivate() + "'" +
             ", orderNum=" + getOrderNum() +
             "}";
     }

@@ -33,7 +33,7 @@ describe('Service Tests', () => {
     beforeEach(() => {
       service = new PrivateCardDataService();
       currentDate = new Date();
-      elemDefault = new PrivateCardData(123, false, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', currentDate);
+      elemDefault = new PrivateCardData(123, false, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', currentDate);
     });
 
     describe('Service methods', () => {
@@ -100,7 +100,6 @@ describe('Service Tests', () => {
             finish: 'BBBBBB',
             authority: 'BBBBBB',
             createdByMe: 'BBBBBB',
-            variables: 'BBBBBB',
             updateTime: dayjs(currentDate).format(DATE_TIME_FORMAT),
           },
           elemDefault
@@ -134,7 +133,6 @@ describe('Service Tests', () => {
         const patchObject = Object.assign(
           {
             createdByMe: 'BBBBBB',
-            updateTime: dayjs(currentDate).format(DATE_TIME_FORMAT),
           },
           new PrivateCardData()
         );
@@ -171,7 +169,6 @@ describe('Service Tests', () => {
             finish: 'BBBBBB',
             authority: 'BBBBBB',
             createdByMe: 'BBBBBB',
-            variables: 'BBBBBB',
             updateTime: dayjs(currentDate).format(DATE_TIME_FORMAT),
           },
           elemDefault
