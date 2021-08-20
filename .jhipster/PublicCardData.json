@@ -28,6 +28,10 @@
       "fieldTypeBlobContent": "text"
     },
     {
+      "fieldName": "createdTime",
+      "fieldType": "Instant"
+    },
+    {
       "fieldName": "link",
       "fieldType": "String"
     },

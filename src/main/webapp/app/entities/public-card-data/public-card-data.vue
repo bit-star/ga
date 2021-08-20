@@ -35,6 +35,7 @@
             <th scope="row"><span v-text="$t('gaApp.publicCardData.finish')">Finish</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.status')">Status</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.variables')">Variables</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.createdTime')">Created Time</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.link')">Link</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.updateLink')">Update Link</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.name')">Name</span></th>
@@ -66,6 +67,7 @@
             <td>{{ publicCardData.finish }}</td>
             <td v-text="$t('gaApp.PublicDataCardStatus.' + publicCardData.status)">{{ publicCardData.status }}</td>
             <td>{{ publicCardData.variables }}</td>
+            <td>{{ publicCardData.createdTime ? $d(Date.parse(publicCardData.createdTime), 'short') : '' }}</td>
             <td>{{ publicCardData.link }}</td>
             <td>{{ publicCardData.updateLink }}</td>
             <td>{{ publicCardData.name }}</td>

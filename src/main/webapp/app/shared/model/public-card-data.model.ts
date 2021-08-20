@@ -14,6 +14,7 @@ export interface IPublicCardData {
   finish?: string | null;
   status?: PublicDataCardStatus | null;
   variables?: string | null;
+  createdTime?: Date | null;
   link?: string | null;
   updateLink?: string | null;
   name?: string | null;
@@ -43,6 +44,7 @@ export class PublicCardData implements IPublicCardData {
     public finish?: string | null,
     public status?: PublicDataCardStatus | null,
     public variables?: string | null,
+    public createdTime?: Date | null,
     public link?: string | null,
     public updateLink?: string | null,
     public name?: string | null,

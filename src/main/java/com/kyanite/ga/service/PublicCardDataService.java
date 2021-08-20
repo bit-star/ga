@@ -66,6 +66,9 @@ public class PublicCardDataService {
                     if (publicCardData.getVariables() != null) {
                         existingPublicCardData.setVariables(publicCardData.getVariables());
                     }
+                    if (publicCardData.getCreatedTime() != null) {
+                        existingPublicCardData.setCreatedTime(publicCardData.getCreatedTime());
+                    }
                     if (publicCardData.getLink() != null) {
                         existingPublicCardData.setLink(publicCardData.getLink());
                     }

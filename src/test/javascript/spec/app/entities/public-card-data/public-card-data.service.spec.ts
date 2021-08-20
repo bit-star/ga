@@ -43,6 +43,7 @@ describe('Service Tests', () => {
         'AAAAAAA',
         PublicDataCardStatus.Effect,
         'AAAAAAA',
+        currentDate,
         'AAAAAAA',
         'AAAAAAA',
         'AAAAAAA',
@@ -63,6 +64,7 @@ describe('Service Tests', () => {
       it('should find an element', async () => {
         const returnedFromService = Object.assign(
           {
+            createdTime: dayjs(currentDate).format(DATE_TIME_FORMAT),
             time: dayjs(currentDate).format(DATE_TIME_FORMAT),
           },
           elemDefault
@@ -88,12 +90,14 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             id: 123,
+            createdTime: dayjs(currentDate).format(DATE_TIME_FORMAT),
             time: dayjs(currentDate).format(DATE_TIME_FORMAT),
           },
           elemDefault
         );
         const expected = Object.assign(
           {
+            createdTime: currentDate,
             time: currentDate,
           },
           returnedFromService
@@ -125,6 +129,7 @@ describe('Service Tests', () => {
             finish: 'BBBBBB',
             status: 'BBBBBB',
             variables: 'BBBBBB',
+            createdTime: dayjs(currentDate).format(DATE_TIME_FORMAT),
             link: 'BBBBBB',
             updateLink: 'BBBBBB',
             name: 'BBBBBB',
@@ -144,6 +149,7 @@ describe('Service Tests', () => {
 
         const expected = Object.assign(
           {
+            createdTime: currentDate,
             time: currentDate,
           },
           returnedFromService
@@ -172,10 +178,10 @@ describe('Service Tests', () => {
             workflowid: 1,
             finish: 'BBBBBB',
             status: 'BBBBBB',
+            updateLink: 'BBBBBB',
             name: 'BBBBBB',
-            feeValue: 'BBBBBB',
+            content: 'BBBBBB',
             agreeNum: 1,
-            refuseNum: 1,
           },
           new PublicCardData()
         );
@@ -183,6 +189,7 @@ describe('Service Tests', () => {
 
         const expected = Object.assign(
           {
+            createdTime: currentDate,
             time: currentDate,
           },
           returnedFromService
@@ -214,6 +221,7 @@ describe('Service Tests', () => {
             finish: 'BBBBBB',
             status: 'BBBBBB',
             variables: 'BBBBBB',
+            createdTime: dayjs(currentDate).format(DATE_TIME_FORMAT),
             link: 'BBBBBB',
             updateLink: 'BBBBBB',
             name: 'BBBBBB',
@@ -232,6 +240,7 @@ describe('Service Tests', () => {
         );
         const expected = Object.assign(
           {
+            createdTime: currentDate,
             time: currentDate,
           },
           returnedFromService
