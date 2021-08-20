@@ -61,48 +61,6 @@
             <span>{{ publicCardData.updateLink }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.publicCardData.name')">Name</span>
-          </dt>
-          <dd>
-            <span>{{ publicCardData.name }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.publicCardData.feeValue')">Fee Value</span>
-          </dt>
-          <dd>
-            <span>{{ publicCardData.feeValue }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.publicCardData.reason')">Reason</span>
-          </dt>
-          <dd>
-            <span>{{ publicCardData.reason }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.publicCardData.itemType')">Item Type</span>
-          </dt>
-          <dd>
-            <span>{{ publicCardData.itemType }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.publicCardData.typesOfFee')">Types Of Fee</span>
-          </dt>
-          <dd>
-            <span>{{ publicCardData.typesOfFee }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.publicCardData.agree')">Agree</span>
-          </dt>
-          <dd>
-            <span>{{ publicCardData.agree }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.publicCardData.content')">Content</span>
-          </dt>
-          <dd>
-            <span>{{ publicCardData.content }}</span>
-          </dd>
-          <dt>
             <span v-text="$t('gaApp.publicCardData.agreeNum')">Agree Num</span>
           </dt>
           <dd>
@@ -113,12 +71,6 @@
           </dt>
           <dd>
             <span>{{ publicCardData.refuseNum }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.publicCardData.time')">Time</span>
-          </dt>
-          <dd>
-            <span v-if="publicCardData.time">{{ $d(Date.parse(publicCardData.time), 'long') }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.publicCardData.oaStatus')">Oa Status</span>

@@ -40,44 +40,12 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "name",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "feeValue",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "reason",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "itemType",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "typesOfFee",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "agree",
-      "fieldType": "Boolean"
-    },
-    {
-      "fieldName": "content",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "agreeNum",
       "fieldType": "Long"
     },
     {
       "fieldName": "refuseNum",
       "fieldType": "Long"
-    },
-    {
-      "fieldName": "time",
-      "fieldType": "Instant"
     },
     {
       "fieldName": "oaStatus",

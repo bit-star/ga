@@ -138,92 +138,6 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.publicCardData.name')" for="public-card-data-name">Name</label>
-            <input
-              type="text"
-              class="form-control"
-              name="name"
-              id="public-card-data-name"
-              data-cy="name"
-              :class="{ valid: !$v.publicCardData.name.$invalid, invalid: $v.publicCardData.name.$invalid }"
-              v-model="$v.publicCardData.name.$model"
-            />
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.publicCardData.feeValue')" for="public-card-data-feeValue">Fee Value</label>
-            <input
-              type="text"
-              class="form-control"
-              name="feeValue"
-              id="public-card-data-feeValue"
-              data-cy="feeValue"
-              :class="{ valid: !$v.publicCardData.feeValue.$invalid, invalid: $v.publicCardData.feeValue.$invalid }"
-              v-model="$v.publicCardData.feeValue.$model"
-            />
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.publicCardData.reason')" for="public-card-data-reason">Reason</label>
-            <input
-              type="text"
-              class="form-control"
-              name="reason"
-              id="public-card-data-reason"
-              data-cy="reason"
-              :class="{ valid: !$v.publicCardData.reason.$invalid, invalid: $v.publicCardData.reason.$invalid }"
-              v-model="$v.publicCardData.reason.$model"
-            />
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.publicCardData.itemType')" for="public-card-data-itemType">Item Type</label>
-            <input
-              type="text"
-              class="form-control"
-              name="itemType"
-              id="public-card-data-itemType"
-              data-cy="itemType"
-              :class="{ valid: !$v.publicCardData.itemType.$invalid, invalid: $v.publicCardData.itemType.$invalid }"
-              v-model="$v.publicCardData.itemType.$model"
-            />
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.publicCardData.typesOfFee')" for="public-card-data-typesOfFee"
-              >Types Of Fee</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              name="typesOfFee"
-              id="public-card-data-typesOfFee"
-              data-cy="typesOfFee"
-              :class="{ valid: !$v.publicCardData.typesOfFee.$invalid, invalid: $v.publicCardData.typesOfFee.$invalid }"
-              v-model="$v.publicCardData.typesOfFee.$model"
-            />
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.publicCardData.agree')" for="public-card-data-agree">Agree</label>
-            <input
-              type="checkbox"
-              class="form-check"
-              name="agree"
-              id="public-card-data-agree"
-              data-cy="agree"
-              :class="{ valid: !$v.publicCardData.agree.$invalid, invalid: $v.publicCardData.agree.$invalid }"
-              v-model="$v.publicCardData.agree.$model"
-            />
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.publicCardData.content')" for="public-card-data-content">Content</label>
-            <input
-              type="text"
-              class="form-control"
-              name="content"
-              id="public-card-data-content"
-              data-cy="content"
-              :class="{ valid: !$v.publicCardData.content.$invalid, invalid: $v.publicCardData.content.$invalid }"
-              v-model="$v.publicCardData.content.$model"
-            />
-          </div>
-          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.agreeNum')" for="public-card-data-agreeNum">Agree Num</label>
             <input
               type="number"
@@ -248,21 +162,6 @@
               :class="{ valid: !$v.publicCardData.refuseNum.$invalid, invalid: $v.publicCardData.refuseNum.$invalid }"
               v-model.number="$v.publicCardData.refuseNum.$model"
             />
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.publicCardData.time')" for="public-card-data-time">Time</label>
-            <div class="d-flex">
-              <input
-                id="public-card-data-time"
-                data-cy="time"
-                type="datetime-local"
-                class="form-control"
-                name="time"
-                :class="{ valid: !$v.publicCardData.time.$invalid, invalid: $v.publicCardData.time.$invalid }"
-                :value="convertDateTimeFromServer($v.publicCardData.time.$model)"
-                @change="updateInstantField('time', $event)"
-              />
-            </div>
           </div>
           <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.oaStatus')" for="public-card-data-oaStatus">Oa Status</label>

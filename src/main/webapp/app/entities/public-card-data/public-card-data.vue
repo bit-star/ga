@@ -38,16 +38,8 @@
             <th scope="row"><span v-text="$t('gaApp.publicCardData.createdTime')">Created Time</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.link')">Link</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.updateLink')">Update Link</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.name')">Name</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.feeValue')">Fee Value</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.reason')">Reason</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.itemType')">Item Type</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.typesOfFee')">Types Of Fee</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.agree')">Agree</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.content')">Content</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.agreeNum')">Agree Num</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.refuseNum')">Refuse Num</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.time')">Time</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.oaStatus')">Oa Status</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowInstance')">Workflow Instance</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.conversation')">Conversation</span></th>
@@ -70,16 +62,8 @@
             <td>{{ publicCardData.createdTime ? $d(Date.parse(publicCardData.createdTime), 'short') : '' }}</td>
             <td>{{ publicCardData.link }}</td>
             <td>{{ publicCardData.updateLink }}</td>
-            <td>{{ publicCardData.name }}</td>
-            <td>{{ publicCardData.feeValue }}</td>
-            <td>{{ publicCardData.reason }}</td>
-            <td>{{ publicCardData.itemType }}</td>
-            <td>{{ publicCardData.typesOfFee }}</td>
-            <td>{{ publicCardData.agree }}</td>
-            <td>{{ publicCardData.content }}</td>
             <td>{{ publicCardData.agreeNum }}</td>
             <td>{{ publicCardData.refuseNum }}</td>
-            <td>{{ publicCardData.time ? $d(Date.parse(publicCardData.time), 'short') : '' }}</td>
             <td v-text="$t('gaApp.WorkflowInstanceStatus.' + publicCardData.oaStatus)">{{ publicCardData.oaStatus }}</td>
             <td>
               <div v-if="publicCardData.workflowInstance">

@@ -54,35 +54,11 @@ public class PublicCardData implements Serializable {
     @Column(name = "update_link")
     private String updateLink;
 
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "fee_value")
-    private String feeValue;
-
-    @Column(name = "reason")
-    private String reason;
-
-    @Column(name = "item_type")
-    private String itemType;
-
-    @Column(name = "types_of_fee")
-    private String typesOfFee;
-
-    @Column(name = "agree")
-    private Boolean agree;
-
-    @Column(name = "content")
-    private String content;
-
     @Column(name = "agree_num")
     private Long agreeNum;
 
     @Column(name = "refuse_num")
     private Long refuseNum;
-
-    @Column(name = "time")
-    private Instant time;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "oa_status")
@@ -242,97 +218,6 @@ public class PublicCardData implements Serializable {
         this.updateLink = updateLink;
     }
 
-    public String getName() {
-        return this.name;
-    }
-
-    public PublicCardData name(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getFeeValue() {
-        return this.feeValue;
-    }
-
-    public PublicCardData feeValue(String feeValue) {
-        this.feeValue = feeValue;
-        return this;
-    }
-
-    public void setFeeValue(String feeValue) {
-        this.feeValue = feeValue;
-    }
-
-    public String getReason() {
-        return this.reason;
-    }
-
-    public PublicCardData reason(String reason) {
-        this.reason = reason;
-        return this;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
-
-    public String getItemType() {
-        return this.itemType;
-    }
-
-    public PublicCardData itemType(String itemType) {
-        this.itemType = itemType;
-        return this;
-    }
-
-    public void setItemType(String itemType) {
-        this.itemType = itemType;
-    }
-
-    public String getTypesOfFee() {
-        return this.typesOfFee;
-    }
-
-    public PublicCardData typesOfFee(String typesOfFee) {
-        this.typesOfFee = typesOfFee;
-        return this;
-    }
-
-    public void setTypesOfFee(String typesOfFee) {
-        this.typesOfFee = typesOfFee;
-    }
-
-    public Boolean getAgree() {
-        return this.agree;
-    }
-
-    public PublicCardData agree(Boolean agree) {
-        this.agree = agree;
-        return this;
-    }
-
-    public void setAgree(Boolean agree) {
-        this.agree = agree;
-    }
-
-    public String getContent() {
-        return this.content;
-    }
-
-    public PublicCardData content(String content) {
-        this.content = content;
-        return this;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
     public Long getAgreeNum() {
         return this.agreeNum;
     }
@@ -357,19 +242,6 @@ public class PublicCardData implements Serializable {
 
     public void setRefuseNum(Long refuseNum) {
         this.refuseNum = refuseNum;
-    }
-
-    public Instant getTime() {
-        return this.time;
-    }
-
-    public PublicCardData time(Instant time) {
-        this.time = time;
-        return this;
-    }
-
-    public void setTime(Instant time) {
-        this.time = time;
     }
 
     public WorkflowInstanceStatus getOaStatus() {
@@ -537,16 +409,8 @@ public class PublicCardData implements Serializable {
             ", createdTime='" + getCreatedTime() + "'" +
             ", link='" + getLink() + "'" +
             ", updateLink='" + getUpdateLink() + "'" +
-            ", name='" + getName() + "'" +
-            ", feeValue='" + getFeeValue() + "'" +
-            ", reason='" + getReason() + "'" +
-            ", itemType='" + getItemType() + "'" +
-            ", typesOfFee='" + getTypesOfFee() + "'" +
-            ", agree='" + getAgree() + "'" +
-            ", content='" + getContent() + "'" +
             ", agreeNum=" + getAgreeNum() +
             ", refuseNum=" + getRefuseNum() +
-            ", time='" + getTime() + "'" +
             ", oaStatus='" + getOaStatus() + "'" +
             "}";
     }
