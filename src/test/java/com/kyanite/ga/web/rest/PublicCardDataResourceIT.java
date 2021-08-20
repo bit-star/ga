@@ -61,35 +61,11 @@ class PublicCardDataResourceIT {
     private static final String DEFAULT_UPDATE_LINK = "AAAAAAAAAA";
     private static final String UPDATED_UPDATE_LINK = "BBBBBBBBBB";
 
-    private static final String DEFAULT_NAME = "AAAAAAAAAA";
-    private static final String UPDATED_NAME = "BBBBBBBBBB";
-
-    private static final String DEFAULT_FEE_VALUE = "AAAAAAAAAA";
-    private static final String UPDATED_FEE_VALUE = "BBBBBBBBBB";
-
-    private static final String DEFAULT_REASON = "AAAAAAAAAA";
-    private static final String UPDATED_REASON = "BBBBBBBBBB";
-
-    private static final String DEFAULT_ITEM_TYPE = "AAAAAAAAAA";
-    private static final String UPDATED_ITEM_TYPE = "BBBBBBBBBB";
-
-    private static final String DEFAULT_TYPES_OF_FEE = "AAAAAAAAAA";
-    private static final String UPDATED_TYPES_OF_FEE = "BBBBBBBBBB";
-
-    private static final Boolean DEFAULT_AGREE = false;
-    private static final Boolean UPDATED_AGREE = true;
-
-    private static final String DEFAULT_CONTENT = "AAAAAAAAAA";
-    private static final String UPDATED_CONTENT = "BBBBBBBBBB";
-
     private static final Long DEFAULT_AGREE_NUM = 1L;
     private static final Long UPDATED_AGREE_NUM = 2L;
 
     private static final Long DEFAULT_REFUSE_NUM = 1L;
     private static final Long UPDATED_REFUSE_NUM = 2L;
-
-    private static final Instant DEFAULT_TIME = Instant.ofEpochMilli(0L);
-    private static final Instant UPDATED_TIME = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
     private static final WorkflowInstanceStatus DEFAULT_OA_STATUS = WorkflowInstanceStatus.Launch;
     private static final WorkflowInstanceStatus UPDATED_OA_STATUS = WorkflowInstanceStatus.Refuse;
@@ -128,16 +104,8 @@ class PublicCardDataResourceIT {
             .createdTime(DEFAULT_CREATED_TIME)
             .link(DEFAULT_LINK)
             .updateLink(DEFAULT_UPDATE_LINK)
-            .name(DEFAULT_NAME)
-            .feeValue(DEFAULT_FEE_VALUE)
-            .reason(DEFAULT_REASON)
-            .itemType(DEFAULT_ITEM_TYPE)
-            .typesOfFee(DEFAULT_TYPES_OF_FEE)
-            .agree(DEFAULT_AGREE)
-            .content(DEFAULT_CONTENT)
             .agreeNum(DEFAULT_AGREE_NUM)
             .refuseNum(DEFAULT_REFUSE_NUM)
-            .time(DEFAULT_TIME)
             .oaStatus(DEFAULT_OA_STATUS);
         return publicCardData;
     }
@@ -159,16 +127,8 @@ class PublicCardDataResourceIT {
             .createdTime(UPDATED_CREATED_TIME)
             .link(UPDATED_LINK)
             .updateLink(UPDATED_UPDATE_LINK)
-            .name(UPDATED_NAME)
-            .feeValue(UPDATED_FEE_VALUE)
-            .reason(UPDATED_REASON)
-            .itemType(UPDATED_ITEM_TYPE)
-            .typesOfFee(UPDATED_TYPES_OF_FEE)
-            .agree(UPDATED_AGREE)
-            .content(UPDATED_CONTENT)
             .agreeNum(UPDATED_AGREE_NUM)
             .refuseNum(UPDATED_REFUSE_NUM)
-            .time(UPDATED_TIME)
             .oaStatus(UPDATED_OA_STATUS);
         return publicCardData;
     }
@@ -202,16 +162,8 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getCreatedTime()).isEqualTo(DEFAULT_CREATED_TIME);
         assertThat(testPublicCardData.getLink()).isEqualTo(DEFAULT_LINK);
         assertThat(testPublicCardData.getUpdateLink()).isEqualTo(DEFAULT_UPDATE_LINK);
-        assertThat(testPublicCardData.getName()).isEqualTo(DEFAULT_NAME);
-        assertThat(testPublicCardData.getFeeValue()).isEqualTo(DEFAULT_FEE_VALUE);
-        assertThat(testPublicCardData.getReason()).isEqualTo(DEFAULT_REASON);
-        assertThat(testPublicCardData.getItemType()).isEqualTo(DEFAULT_ITEM_TYPE);
-        assertThat(testPublicCardData.getTypesOfFee()).isEqualTo(DEFAULT_TYPES_OF_FEE);
-        assertThat(testPublicCardData.getAgree()).isEqualTo(DEFAULT_AGREE);
-        assertThat(testPublicCardData.getContent()).isEqualTo(DEFAULT_CONTENT);
         assertThat(testPublicCardData.getAgreeNum()).isEqualTo(DEFAULT_AGREE_NUM);
         assertThat(testPublicCardData.getRefuseNum()).isEqualTo(DEFAULT_REFUSE_NUM);
-        assertThat(testPublicCardData.getTime()).isEqualTo(DEFAULT_TIME);
         assertThat(testPublicCardData.getOaStatus()).isEqualTo(DEFAULT_OA_STATUS);
     }
 
@@ -256,16 +208,8 @@ class PublicCardDataResourceIT {
             .andExpect(jsonPath("$.[*].createdTime").value(hasItem(DEFAULT_CREATED_TIME.toString())))
             .andExpect(jsonPath("$.[*].link").value(hasItem(DEFAULT_LINK)))
             .andExpect(jsonPath("$.[*].updateLink").value(hasItem(DEFAULT_UPDATE_LINK)))
-            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
-            .andExpect(jsonPath("$.[*].feeValue").value(hasItem(DEFAULT_FEE_VALUE)))
-            .andExpect(jsonPath("$.[*].reason").value(hasItem(DEFAULT_REASON)))
-            .andExpect(jsonPath("$.[*].itemType").value(hasItem(DEFAULT_ITEM_TYPE)))
-            .andExpect(jsonPath("$.[*].typesOfFee").value(hasItem(DEFAULT_TYPES_OF_FEE)))
-            .andExpect(jsonPath("$.[*].agree").value(hasItem(DEFAULT_AGREE.booleanValue())))
-            .andExpect(jsonPath("$.[*].content").value(hasItem(DEFAULT_CONTENT)))
             .andExpect(jsonPath("$.[*].agreeNum").value(hasItem(DEFAULT_AGREE_NUM.intValue())))
             .andExpect(jsonPath("$.[*].refuseNum").value(hasItem(DEFAULT_REFUSE_NUM.intValue())))
-            .andExpect(jsonPath("$.[*].time").value(hasItem(DEFAULT_TIME.toString())))
             .andExpect(jsonPath("$.[*].oaStatus").value(hasItem(DEFAULT_OA_STATUS.toString())));
     }
 
@@ -290,16 +234,8 @@ class PublicCardDataResourceIT {
             .andExpect(jsonPath("$.createdTime").value(DEFAULT_CREATED_TIME.toString()))
             .andExpect(jsonPath("$.link").value(DEFAULT_LINK))
             .andExpect(jsonPath("$.updateLink").value(DEFAULT_UPDATE_LINK))
-            .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
-            .andExpect(jsonPath("$.feeValue").value(DEFAULT_FEE_VALUE))
-            .andExpect(jsonPath("$.reason").value(DEFAULT_REASON))
-            .andExpect(jsonPath("$.itemType").value(DEFAULT_ITEM_TYPE))
-            .andExpect(jsonPath("$.typesOfFee").value(DEFAULT_TYPES_OF_FEE))
-            .andExpect(jsonPath("$.agree").value(DEFAULT_AGREE.booleanValue()))
-            .andExpect(jsonPath("$.content").value(DEFAULT_CONTENT))
             .andExpect(jsonPath("$.agreeNum").value(DEFAULT_AGREE_NUM.intValue()))
             .andExpect(jsonPath("$.refuseNum").value(DEFAULT_REFUSE_NUM.intValue()))
-            .andExpect(jsonPath("$.time").value(DEFAULT_TIME.toString()))
             .andExpect(jsonPath("$.oaStatus").value(DEFAULT_OA_STATUS.toString()));
     }
 
@@ -332,16 +268,8 @@ class PublicCardDataResourceIT {
             .createdTime(UPDATED_CREATED_TIME)
             .link(UPDATED_LINK)
             .updateLink(UPDATED_UPDATE_LINK)
-            .name(UPDATED_NAME)
-            .feeValue(UPDATED_FEE_VALUE)
-            .reason(UPDATED_REASON)
-            .itemType(UPDATED_ITEM_TYPE)
-            .typesOfFee(UPDATED_TYPES_OF_FEE)
-            .agree(UPDATED_AGREE)
-            .content(UPDATED_CONTENT)
             .agreeNum(UPDATED_AGREE_NUM)
             .refuseNum(UPDATED_REFUSE_NUM)
-            .time(UPDATED_TIME)
             .oaStatus(UPDATED_OA_STATUS);
 
         restPublicCardDataMockMvc
@@ -365,16 +293,8 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getCreatedTime()).isEqualTo(UPDATED_CREATED_TIME);
         assertThat(testPublicCardData.getLink()).isEqualTo(UPDATED_LINK);
         assertThat(testPublicCardData.getUpdateLink()).isEqualTo(UPDATED_UPDATE_LINK);
-        assertThat(testPublicCardData.getName()).isEqualTo(UPDATED_NAME);
-        assertThat(testPublicCardData.getFeeValue()).isEqualTo(UPDATED_FEE_VALUE);
-        assertThat(testPublicCardData.getReason()).isEqualTo(UPDATED_REASON);
-        assertThat(testPublicCardData.getItemType()).isEqualTo(UPDATED_ITEM_TYPE);
-        assertThat(testPublicCardData.getTypesOfFee()).isEqualTo(UPDATED_TYPES_OF_FEE);
-        assertThat(testPublicCardData.getAgree()).isEqualTo(UPDATED_AGREE);
-        assertThat(testPublicCardData.getContent()).isEqualTo(UPDATED_CONTENT);
         assertThat(testPublicCardData.getAgreeNum()).isEqualTo(UPDATED_AGREE_NUM);
         assertThat(testPublicCardData.getRefuseNum()).isEqualTo(UPDATED_REFUSE_NUM);
-        assertThat(testPublicCardData.getTime()).isEqualTo(UPDATED_TIME);
         assertThat(testPublicCardData.getOaStatus()).isEqualTo(UPDATED_OA_STATUS);
     }
 
@@ -453,13 +373,7 @@ class PublicCardDataResourceIT {
             .status(UPDATED_STATUS)
             .variables(UPDATED_VARIABLES)
             .createdTime(UPDATED_CREATED_TIME)
-            .feeValue(UPDATED_FEE_VALUE)
-            .itemType(UPDATED_ITEM_TYPE)
-            .typesOfFee(UPDATED_TYPES_OF_FEE)
-            .agree(UPDATED_AGREE)
-            .agreeNum(UPDATED_AGREE_NUM)
-            .refuseNum(UPDATED_REFUSE_NUM)
-            .oaStatus(UPDATED_OA_STATUS);
+            .refuseNum(UPDATED_REFUSE_NUM);
 
         restPublicCardDataMockMvc
             .perform(
@@ -482,17 +396,9 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getCreatedTime()).isEqualTo(UPDATED_CREATED_TIME);
         assertThat(testPublicCardData.getLink()).isEqualTo(DEFAULT_LINK);
         assertThat(testPublicCardData.getUpdateLink()).isEqualTo(DEFAULT_UPDATE_LINK);
-        assertThat(testPublicCardData.getName()).isEqualTo(DEFAULT_NAME);
-        assertThat(testPublicCardData.getFeeValue()).isEqualTo(UPDATED_FEE_VALUE);
-        assertThat(testPublicCardData.getReason()).isEqualTo(DEFAULT_REASON);
-        assertThat(testPublicCardData.getItemType()).isEqualTo(UPDATED_ITEM_TYPE);
-        assertThat(testPublicCardData.getTypesOfFee()).isEqualTo(UPDATED_TYPES_OF_FEE);
-        assertThat(testPublicCardData.getAgree()).isEqualTo(UPDATED_AGREE);
-        assertThat(testPublicCardData.getContent()).isEqualTo(DEFAULT_CONTENT);
-        assertThat(testPublicCardData.getAgreeNum()).isEqualTo(UPDATED_AGREE_NUM);
+        assertThat(testPublicCardData.getAgreeNum()).isEqualTo(DEFAULT_AGREE_NUM);
         assertThat(testPublicCardData.getRefuseNum()).isEqualTo(UPDATED_REFUSE_NUM);
-        assertThat(testPublicCardData.getTime()).isEqualTo(DEFAULT_TIME);
-        assertThat(testPublicCardData.getOaStatus()).isEqualTo(UPDATED_OA_STATUS);
+        assertThat(testPublicCardData.getOaStatus()).isEqualTo(DEFAULT_OA_STATUS);
     }
 
     @Test
@@ -517,16 +423,8 @@ class PublicCardDataResourceIT {
             .createdTime(UPDATED_CREATED_TIME)
             .link(UPDATED_LINK)
             .updateLink(UPDATED_UPDATE_LINK)
-            .name(UPDATED_NAME)
-            .feeValue(UPDATED_FEE_VALUE)
-            .reason(UPDATED_REASON)
-            .itemType(UPDATED_ITEM_TYPE)
-            .typesOfFee(UPDATED_TYPES_OF_FEE)
-            .agree(UPDATED_AGREE)
-            .content(UPDATED_CONTENT)
             .agreeNum(UPDATED_AGREE_NUM)
             .refuseNum(UPDATED_REFUSE_NUM)
-            .time(UPDATED_TIME)
             .oaStatus(UPDATED_OA_STATUS);
 
         restPublicCardDataMockMvc
@@ -550,16 +448,8 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getCreatedTime()).isEqualTo(UPDATED_CREATED_TIME);
         assertThat(testPublicCardData.getLink()).isEqualTo(UPDATED_LINK);
         assertThat(testPublicCardData.getUpdateLink()).isEqualTo(UPDATED_UPDATE_LINK);
-        assertThat(testPublicCardData.getName()).isEqualTo(UPDATED_NAME);
-        assertThat(testPublicCardData.getFeeValue()).isEqualTo(UPDATED_FEE_VALUE);
-        assertThat(testPublicCardData.getReason()).isEqualTo(UPDATED_REASON);
-        assertThat(testPublicCardData.getItemType()).isEqualTo(UPDATED_ITEM_TYPE);
-        assertThat(testPublicCardData.getTypesOfFee()).isEqualTo(UPDATED_TYPES_OF_FEE);
-        assertThat(testPublicCardData.getAgree()).isEqualTo(UPDATED_AGREE);
-        assertThat(testPublicCardData.getContent()).isEqualTo(UPDATED_CONTENT);
         assertThat(testPublicCardData.getAgreeNum()).isEqualTo(UPDATED_AGREE_NUM);
         assertThat(testPublicCardData.getRefuseNum()).isEqualTo(UPDATED_REFUSE_NUM);
-        assertThat(testPublicCardData.getTime()).isEqualTo(UPDATED_TIME);
         assertThat(testPublicCardData.getOaStatus()).isEqualTo(UPDATED_OA_STATUS);
     }
 

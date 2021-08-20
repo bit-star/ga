@@ -75,35 +75,11 @@ public class PublicCardDataService {
                     if (publicCardData.getUpdateLink() != null) {
                         existingPublicCardData.setUpdateLink(publicCardData.getUpdateLink());
                     }
-                    if (publicCardData.getName() != null) {
-                        existingPublicCardData.setName(publicCardData.getName());
-                    }
-                    if (publicCardData.getFeeValue() != null) {
-                        existingPublicCardData.setFeeValue(publicCardData.getFeeValue());
-                    }
-                    if (publicCardData.getReason() != null) {
-                        existingPublicCardData.setReason(publicCardData.getReason());
-                    }
-                    if (publicCardData.getItemType() != null) {
-                        existingPublicCardData.setItemType(publicCardData.getItemType());
-                    }
-                    if (publicCardData.getTypesOfFee() != null) {
-                        existingPublicCardData.setTypesOfFee(publicCardData.getTypesOfFee());
-                    }
-                    if (publicCardData.getAgree() != null) {
-                        existingPublicCardData.setAgree(publicCardData.getAgree());
-                    }
-                    if (publicCardData.getContent() != null) {
-                        existingPublicCardData.setContent(publicCardData.getContent());
-                    }
                     if (publicCardData.getAgreeNum() != null) {
                         existingPublicCardData.setAgreeNum(publicCardData.getAgreeNum());
                     }
                     if (publicCardData.getRefuseNum() != null) {
                         existingPublicCardData.setRefuseNum(publicCardData.getRefuseNum());
-                    }
-                    if (publicCardData.getTime() != null) {
-                        existingPublicCardData.setTime(publicCardData.getTime());
                     }
                     if (publicCardData.getOaStatus() != null) {
                         existingPublicCardData.setOaStatus(publicCardData.getOaStatus());

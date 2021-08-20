@@ -35,16 +35,8 @@ const validations: any = {
     createdTime: {},
     link: {},
     updateLink: {},
-    name: {},
-    feeValue: {},
-    reason: {},
-    itemType: {},
-    typesOfFee: {},
-    agree: {},
-    content: {},
     agreeNum: {},
     refuseNum: {},
-    time: {},
     oaStatus: {},
   },
 };
@@ -160,7 +152,6 @@ export default class PublicCardDataUpdate extends mixins(JhiDataUtils) {
       .find(publicCardDataId)
       .then(res => {
         res.createdTime = new Date(res.createdTime);
-        res.time = new Date(res.time);
         this.publicCardData = res;
       });
   }

@@ -46,16 +46,8 @@ describe('Service Tests', () => {
         currentDate,
         'AAAAAAA',
         'AAAAAAA',
-        'AAAAAAA',
-        'AAAAAAA',
-        'AAAAAAA',
-        'AAAAAAA',
-        'AAAAAAA',
-        false,
-        'AAAAAAA',
         0,
         0,
-        currentDate,
         WorkflowInstanceStatus.Launch
       );
     });
@@ -65,7 +57,6 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             createdTime: dayjs(currentDate).format(DATE_TIME_FORMAT),
-            time: dayjs(currentDate).format(DATE_TIME_FORMAT),
           },
           elemDefault
         );
@@ -91,14 +82,12 @@ describe('Service Tests', () => {
           {
             id: 123,
             createdTime: dayjs(currentDate).format(DATE_TIME_FORMAT),
-            time: dayjs(currentDate).format(DATE_TIME_FORMAT),
           },
           elemDefault
         );
         const expected = Object.assign(
           {
             createdTime: currentDate,
-            time: currentDate,
           },
           returnedFromService
         );
@@ -132,16 +121,8 @@ describe('Service Tests', () => {
             createdTime: dayjs(currentDate).format(DATE_TIME_FORMAT),
             link: 'BBBBBB',
             updateLink: 'BBBBBB',
-            name: 'BBBBBB',
-            feeValue: 'BBBBBB',
-            reason: 'BBBBBB',
-            itemType: 'BBBBBB',
-            typesOfFee: 'BBBBBB',
-            agree: true,
-            content: 'BBBBBB',
             agreeNum: 1,
             refuseNum: 1,
-            time: dayjs(currentDate).format(DATE_TIME_FORMAT),
             oaStatus: 'BBBBBB',
           },
           elemDefault
@@ -150,7 +131,6 @@ describe('Service Tests', () => {
         const expected = Object.assign(
           {
             createdTime: currentDate,
-            time: currentDate,
           },
           returnedFromService
         );
@@ -179,8 +159,6 @@ describe('Service Tests', () => {
             finish: 'BBBBBB',
             status: 'BBBBBB',
             updateLink: 'BBBBBB',
-            name: 'BBBBBB',
-            content: 'BBBBBB',
             agreeNum: 1,
           },
           new PublicCardData()
@@ -190,7 +168,6 @@ describe('Service Tests', () => {
         const expected = Object.assign(
           {
             createdTime: currentDate,
-            time: currentDate,
           },
           returnedFromService
         );
@@ -224,16 +201,8 @@ describe('Service Tests', () => {
             createdTime: dayjs(currentDate).format(DATE_TIME_FORMAT),
             link: 'BBBBBB',
             updateLink: 'BBBBBB',
-            name: 'BBBBBB',
-            feeValue: 'BBBBBB',
-            reason: 'BBBBBB',
-            itemType: 'BBBBBB',
-            typesOfFee: 'BBBBBB',
-            agree: true,
-            content: 'BBBBBB',
             agreeNum: 1,
             refuseNum: 1,
-            time: dayjs(currentDate).format(DATE_TIME_FORMAT),
             oaStatus: 'BBBBBB',
           },
           elemDefault
@@ -241,7 +210,6 @@ describe('Service Tests', () => {
         const expected = Object.assign(
           {
             createdTime: currentDate,
-            time: currentDate,
           },
           returnedFromService
         );
