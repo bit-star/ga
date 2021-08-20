@@ -32,6 +32,9 @@
             <column name="variables" type="${clobType}">
                 <constraints nullable="true" />
             </column>
+            <column name="created_time" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
             <column name="link" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -79,6 +82,7 @@
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
+        <dropDefaultValue tableName="public_card_data" columnName="created_time" columnDataType="${datetimeType}"/>
         <dropDefaultValue tableName="public_card_data" columnName="time" columnDataType="${datetimeType}"/>
     </changeSet>
 
@@ -104,6 +108,7 @@
             <column name="finish" type="string"/>
             <column name="status" type="string"/>
             <column name="variables" type="clob"/>
+            <column name="created_time" type="${datetimeType}"/>
             <column name="link" type="string"/>
             <column name="update_link" type="string"/>
             <column name="name" type="string"/>

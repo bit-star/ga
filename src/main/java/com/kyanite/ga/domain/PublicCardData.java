@@ -45,6 +45,9 @@ public class PublicCardData implements Serializable {
     @Column(name = "variables")
     private String variables;
 
+    @Column(name = "created_time")
+    private Instant createdTime;
+
     @Column(name = "link")
     private String link;
 
@@ -198,6 +201,19 @@ public class PublicCardData implements Serializable {
 
     public void setVariables(String variables) {
         this.variables = variables;
+    }
+
+    public Instant getCreatedTime() {
+        return this.createdTime;
+    }
+
+    public PublicCardData createdTime(Instant createdTime) {
+        this.createdTime = createdTime;
+        return this;
+    }
+
+    public void setCreatedTime(Instant createdTime) {
+        this.createdTime = createdTime;
     }
 
     public String getLink() {
@@ -518,6 +534,7 @@ public class PublicCardData implements Serializable {
             ", finish='" + getFinish() + "'" +
             ", status='" + getStatus() + "'" +
             ", variables='" + getVariables() + "'" +
+            ", createdTime='" + getCreatedTime() + "'" +
             ", link='" + getLink() + "'" +
             ", updateLink='" + getUpdateLink() + "'" +
             ", name='" + getName() + "'" +

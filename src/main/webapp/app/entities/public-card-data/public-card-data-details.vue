@@ -43,6 +43,12 @@
             <span>{{ publicCardData.variables }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.publicCardData.createdTime')">Created Time</span>
+          </dt>
+          <dd>
+            <span v-if="publicCardData.createdTime">{{ $d(Date.parse(publicCardData.createdTime), 'long') }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.publicCardData.link')">Link</span>
           </dt>
           <dd>

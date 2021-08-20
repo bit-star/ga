@@ -32,6 +32,7 @@ const validations: any = {
     finish: {},
     status: {},
     variables: {},
+    createdTime: {},
     link: {},
     updateLink: {},
     name: {},
@@ -158,6 +159,7 @@ export default class PublicCardDataUpdate extends mixins(JhiDataUtils) {
     this.publicCardDataService()
       .find(publicCardDataId)
       .then(res => {
+        res.createdTime = new Date(res.createdTime);
         res.time = new Date(res.time);
         this.publicCardData = res;
       });

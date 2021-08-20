@@ -95,6 +95,23 @@
             ></textarea>
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.publicCardData.createdTime')" for="public-card-data-createdTime"
+              >Created Time</label
+            >
+            <div class="d-flex">
+              <input
+                id="public-card-data-createdTime"
+                data-cy="createdTime"
+                type="datetime-local"
+                class="form-control"
+                name="createdTime"
+                :class="{ valid: !$v.publicCardData.createdTime.$invalid, invalid: $v.publicCardData.createdTime.$invalid }"
+                :value="convertDateTimeFromServer($v.publicCardData.createdTime.$model)"
+                @change="updateInstantField('createdTime', $event)"
+              />
+            </div>
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.link')" for="public-card-data-link">Link</label>
             <input
               type="text"
