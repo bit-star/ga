@@ -143,6 +143,7 @@ entity PublicCardData {
     finish String
     status PublicDataCardStatus
     variables TextBlob
+    createdTime Instant
     //OA的业务属性
     link String
     updateLink String
