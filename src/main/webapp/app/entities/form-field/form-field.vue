@@ -36,6 +36,7 @@
             <th scope="row"><span v-text="$t('gaApp.formField.fieldlabel')">Fieldlabel</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.detailtable')">Detailtable</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.show')">Show</span></th>
+            <th scope="row"><span v-text="$t('gaApp.formField.isCardField')">Is Card Field</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.orderNum')">Order Num</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.workflowTemplate')">Workflow Template</span></th>
             <th scope="row"></th>
@@ -53,6 +54,7 @@
             <td>{{ formField.fieldlabel }}</td>
             <td>{{ formField.detailtable }}</td>
             <td>{{ formField.show }}</td>
+            <td>{{ formField.isCardField }}</td>
             <td>{{ formField.orderNum }}</td>
             <td>
               <div v-if="formField.workflowTemplate">

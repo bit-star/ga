@@ -34,6 +34,17 @@ public class PublicCardData implements Serializable {
     @Column(name = "valid")
     private Boolean valid;
 
+    @Column(name = "finish")
+    private String finish;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private PublicDataCardStatus status;
+
+    @Lob
+    @Column(name = "variables")
+    private String variables;
+
     @Column(name = "link")
     private String link;
 
@@ -57,13 +68,6 @@ public class PublicCardData implements Serializable {
 
     @Column(name = "agree")
     private Boolean agree;
-
-    @Column(name = "finish")
-    private String finish;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "status")
-    private PublicDataCardStatus status;
 
     @Column(name = "content")
     private String content;
@@ -155,6 +159,45 @@ public class PublicCardData implements Serializable {
 
     public void setValid(Boolean valid) {
         this.valid = valid;
+    }
+
+    public String getFinish() {
+        return this.finish;
+    }
+
+    public PublicCardData finish(String finish) {
+        this.finish = finish;
+        return this;
+    }
+
+    public void setFinish(String finish) {
+        this.finish = finish;
+    }
+
+    public PublicDataCardStatus getStatus() {
+        return this.status;
+    }
+
+    public PublicCardData status(PublicDataCardStatus status) {
+        this.status = status;
+        return this;
+    }
+
+    public void setStatus(PublicDataCardStatus status) {
+        this.status = status;
+    }
+
+    public String getVariables() {
+        return this.variables;
+    }
+
+    public PublicCardData variables(String variables) {
+        this.variables = variables;
+        return this;
+    }
+
+    public void setVariables(String variables) {
+        this.variables = variables;
     }
 
     public String getLink() {
@@ -259,32 +302,6 @@ public class PublicCardData implements Serializable {
 
     public void setAgree(Boolean agree) {
         this.agree = agree;
-    }
-
-    public String getFinish() {
-        return this.finish;
-    }
-
-    public PublicCardData finish(String finish) {
-        this.finish = finish;
-        return this;
-    }
-
-    public void setFinish(String finish) {
-        this.finish = finish;
-    }
-
-    public PublicDataCardStatus getStatus() {
-        return this.status;
-    }
-
-    public PublicCardData status(PublicDataCardStatus status) {
-        this.status = status;
-        return this;
-    }
-
-    public void setStatus(PublicDataCardStatus status) {
-        this.status = status;
     }
 
     public String getContent() {
@@ -498,6 +515,9 @@ public class PublicCardData implements Serializable {
             ", requestid=" + getRequestid() +
             ", workflowid=" + getWorkflowid() +
             ", valid='" + getValid() + "'" +
+            ", finish='" + getFinish() + "'" +
+            ", status='" + getStatus() + "'" +
+            ", variables='" + getVariables() + "'" +
             ", link='" + getLink() + "'" +
             ", updateLink='" + getUpdateLink() + "'" +
             ", name='" + getName() + "'" +
@@ -506,8 +526,6 @@ public class PublicCardData implements Serializable {
             ", itemType='" + getItemType() + "'" +
             ", typesOfFee='" + getTypesOfFee() + "'" +
             ", agree='" + getAgree() + "'" +
-            ", finish='" + getFinish() + "'" +
-            ", status='" + getStatus() + "'" +
             ", content='" + getContent() + "'" +
             ", agreeNum=" + getAgreeNum() +
             ", refuseNum=" + getRefuseNum() +

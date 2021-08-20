@@ -14,6 +14,20 @@
       "fieldType": "Boolean"
     },
     {
+      "fieldName": "finish",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "PublicDataCardStatus",
+      "fieldValues": "Effect,Invalid,Archive"
+    },
+    {
+      "fieldName": "variables",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
       "fieldName": "link",
       "fieldType": "String"
     },
@@ -44,15 +58,6 @@
     {
       "fieldName": "agree",
       "fieldType": "Boolean"
-    },
-    {
-      "fieldName": "finish",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "status",
-      "fieldType": "PublicDataCardStatus",
-      "fieldValues": "Effect,Invalid,Archive"
     },
     {
       "fieldName": "content",

@@ -25,6 +25,7 @@
       "fieldlabel": "Fieldlabel",
       "detailtable": "Detailtable",
       "show": "Show",
+      "isCardField": "Is Card Field",
       "orderNum": "Order Num",
       "workflowTemplate": "Workflow Template"
     }

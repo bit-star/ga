@@ -55,6 +55,46 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.publicCardData.finish')" for="public-card-data-finish">Finish</label>
+            <input
+              type="text"
+              class="form-control"
+              name="finish"
+              id="public-card-data-finish"
+              data-cy="finish"
+              :class="{ valid: !$v.publicCardData.finish.$invalid, invalid: $v.publicCardData.finish.$invalid }"
+              v-model="$v.publicCardData.finish.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.publicCardData.status')" for="public-card-data-status">Status</label>
+            <select
+              class="form-control"
+              name="status"
+              :class="{ valid: !$v.publicCardData.status.$invalid, invalid: $v.publicCardData.status.$invalid }"
+              v-model="$v.publicCardData.status.$model"
+              id="public-card-data-status"
+              data-cy="status"
+            >
+              <option value="Effect" v-bind:label="$t('gaApp.PublicDataCardStatus.Effect')">Effect</option>
+              <option value="Invalid" v-bind:label="$t('gaApp.PublicDataCardStatus.Invalid')">Invalid</option>
+              <option value="Archive" v-bind:label="$t('gaApp.PublicDataCardStatus.Archive')">Archive</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.publicCardData.variables')" for="public-card-data-variables"
+              >Variables</label
+            >
+            <textarea
+              class="form-control"
+              name="variables"
+              id="public-card-data-variables"
+              data-cy="variables"
+              :class="{ valid: !$v.publicCardData.variables.$invalid, invalid: $v.publicCardData.variables.$invalid }"
+              v-model="$v.publicCardData.variables.$model"
+            ></textarea>
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.link')" for="public-card-data-link">Link</label>
             <input
               type="text"
@@ -153,33 +193,6 @@
               :class="{ valid: !$v.publicCardData.agree.$invalid, invalid: $v.publicCardData.agree.$invalid }"
               v-model="$v.publicCardData.agree.$model"
             />
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.publicCardData.finish')" for="public-card-data-finish">Finish</label>
-            <input
-              type="text"
-              class="form-control"
-              name="finish"
-              id="public-card-data-finish"
-              data-cy="finish"
-              :class="{ valid: !$v.publicCardData.finish.$invalid, invalid: $v.publicCardData.finish.$invalid }"
-              v-model="$v.publicCardData.finish.$model"
-            />
-          </div>
-          <div class="form-group">
-            <label class="form-control-label" v-text="$t('gaApp.publicCardData.status')" for="public-card-data-status">Status</label>
-            <select
-              class="form-control"
-              name="status"
-              :class="{ valid: !$v.publicCardData.status.$invalid, invalid: $v.publicCardData.status.$invalid }"
-              v-model="$v.publicCardData.status.$model"
-              id="public-card-data-status"
-              data-cy="status"
-            >
-              <option value="Effect" v-bind:label="$t('gaApp.PublicDataCardStatus.Effect')">Effect</option>
-              <option value="Invalid" v-bind:label="$t('gaApp.PublicDataCardStatus.Invalid')">Invalid</option>
-              <option value="Archive" v-bind:label="$t('gaApp.PublicDataCardStatus.Archive')">Archive</option>
-            </select>
           </div>
           <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.content')" for="public-card-data-content">Content</label>

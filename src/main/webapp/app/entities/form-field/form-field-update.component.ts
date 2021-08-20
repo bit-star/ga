@@ -15,6 +15,7 @@ const validations: any = {
     fieldlabel: {},
     detailtable: {},
     show: {},
+    isCardField: {},
     orderNum: {},
   },
 };

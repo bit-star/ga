@@ -1,10 +1,13 @@
-import { Component, Vue, Inject } from 'vue-property-decorator';
+import { Component, Inject } from 'vue-property-decorator';
+
+import { mixins } from 'vue-class-component';
+import JhiDataUtils from '@/shared/data/data-utils.service';
 
 import { IPublicCardData } from '@/shared/model/public-card-data.model';
 import PublicCardDataService from './public-card-data.service';
 
 @Component
-export default class PublicCardDataDetails extends Vue {
+export default class PublicCardDataDetails extends mixins(JhiDataUtils) {
   @Inject('publicCardDataService') private publicCardDataService: () => PublicCardDataService;
   public publicCardData: IPublicCardData = {};
 

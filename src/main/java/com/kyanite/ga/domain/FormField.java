@@ -41,6 +41,9 @@ public class FormField implements Serializable {
     @Column(name = "jhi_show")
     private Boolean show;
 
+    @Column(name = "is_card_field")
+    private Boolean isCardField;
+
     @Column(name = "order_num")
     private Integer orderNum;
 
@@ -153,6 +156,19 @@ public class FormField implements Serializable {
         this.show = show;
     }
 
+    public Boolean getIsCardField() {
+        return this.isCardField;
+    }
+
+    public FormField isCardField(Boolean isCardField) {
+        this.isCardField = isCardField;
+        return this;
+    }
+
+    public void setIsCardField(Boolean isCardField) {
+        this.isCardField = isCardField;
+    }
+
     public Integer getOrderNum() {
         return this.orderNum;
     }
@@ -210,6 +226,7 @@ public class FormField implements Serializable {
             ", fieldlabel='" + getFieldlabel() + "'" +
             ", detailtable='" + getDetailtable() + "'" +
             ", show='" + getShow() + "'" +
+            ", isCardField='" + getIsCardField() + "'" +
             ", orderNum=" + getOrderNum() +
             "}";
     }

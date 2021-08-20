@@ -35,6 +35,9 @@
             <column name="jhi_show" type="boolean">
                 <constraints nullable="true" />
             </column>
+            <column name="is_card_field" type="boolean">
+                <constraints nullable="true" />
+            </column>
             <column name="order_num" type="integer">
                 <constraints nullable="true" />
             </column>
@@ -68,6 +71,7 @@
             <column name="fieldlabel" type="string"/>
             <column name="detailtable" type="string"/>
             <column name="jhi_show" type="boolean"/>
+            <column name="is_card_field" type="boolean"/>
             <column name="order_num" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>

@@ -23,6 +23,15 @@
             <column name="valid" type="boolean">
                 <constraints nullable="true" />
             </column>
+            <column name="finish" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="status" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="variables" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
             <column name="link" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -45,12 +54,6 @@
                 <constraints nullable="true" />
             </column>
             <column name="agree" type="boolean">
-                <constraints nullable="true" />
-            </column>
-            <column name="finish" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-            <column name="status" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="content" type="varchar(255)">
@@ -98,6 +101,9 @@
             <column name="requestid" type="numeric"/>
             <column name="workflowid" type="numeric"/>
             <column name="valid" type="boolean"/>
+            <column name="finish" type="string"/>
+            <column name="status" type="string"/>
+            <column name="variables" type="clob"/>
             <column name="link" type="string"/>
             <column name="update_link" type="string"/>
             <column name="name" type="string"/>
@@ -106,8 +112,6 @@
             <column name="item_type" type="string"/>
             <column name="types_of_fee" type="string"/>
             <column name="agree" type="boolean"/>
-            <column name="finish" type="string"/>
-            <column name="status" type="string"/>
             <column name="content" type="string"/>
             <column name="agree_num" type="numeric"/>
             <column name="refuse_num" type="numeric"/>

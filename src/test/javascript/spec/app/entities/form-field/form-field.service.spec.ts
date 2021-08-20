@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new FormFieldService();
-      elemDefault = new FormField(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false, 0);
+      elemDefault = new FormField(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false, false, 0);
     });
 
     describe('Service methods', () => {
@@ -88,6 +88,7 @@ describe('Service Tests', () => {
             fieldlabel: 'BBBBBB',
             detailtable: 'BBBBBB',
             show: true,
+            isCardField: true,
             orderNum: 1,
           },
           elemDefault
@@ -117,6 +118,7 @@ describe('Service Tests', () => {
           {
             fieldname: 'BBBBBB',
             value: 'BBBBBB',
+            orderNum: 1,
           },
           new FormField()
         );
@@ -151,6 +153,7 @@ describe('Service Tests', () => {
             fieldlabel: 'BBBBBB',
             detailtable: 'BBBBBB',
             show: true,
+            isCardField: true,
             orderNum: 1,
           },
           elemDefault
