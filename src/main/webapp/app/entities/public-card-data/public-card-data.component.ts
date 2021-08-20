@@ -4,12 +4,14 @@ import { Component, Vue, Inject } from 'vue-property-decorator';
 import Vue2Filters from 'vue2-filters';
 import { IPublicCardData } from '@/shared/model/public-card-data.model';
 
+import JhiDataUtils from '@/shared/data/data-utils.service';
+
 import PublicCardDataService from './public-card-data.service';
 
 @Component({
   mixins: [Vue2Filters.mixin],
 })
-export default class PublicCardData extends Vue {
+export default class PublicCardData extends mixins(JhiDataUtils) {
   @Inject('publicCardDataService') private publicCardDataService: () => PublicCardDataService;
   private removeId: number = null;
 

@@ -30,6 +30,10 @@
       "fieldType": "Boolean"
     },
     {
+      "fieldName": "isCardField",
+      "fieldType": "Boolean"
+    },
+    {
       "fieldName": "orderNum",
       "fieldType": "Integer"
     }

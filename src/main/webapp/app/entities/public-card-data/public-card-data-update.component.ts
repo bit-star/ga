@@ -1,4 +1,7 @@
-import { Component, Vue, Inject } from 'vue-property-decorator';
+import { Component, Inject } from 'vue-property-decorator';
+
+import { mixins } from 'vue-class-component';
+import JhiDataUtils from '@/shared/data/data-utils.service';
 
 import dayjs from 'dayjs';
 import { DATE_TIME_LONG_FORMAT } from '@/shared/date/filters';
@@ -26,6 +29,9 @@ const validations: any = {
     requestid: {},
     workflowid: {},
     valid: {},
+    finish: {},
+    status: {},
+    variables: {},
     link: {},
     updateLink: {},
     name: {},
@@ -34,8 +40,6 @@ const validations: any = {
     itemType: {},
     typesOfFee: {},
     agree: {},
-    finish: {},
-    status: {},
     content: {},
     agreeNum: {},
     refuseNum: {},
@@ -47,7 +51,7 @@ const validations: any = {
 @Component({
   validations,
 })
-export default class PublicCardDataUpdate extends Vue {
+export default class PublicCardDataUpdate extends mixins(JhiDataUtils) {
   @Inject('publicCardDataService') private publicCardDataService: () => PublicCardDataService;
   public publicCardData: IPublicCardData = new PublicCardData();
 

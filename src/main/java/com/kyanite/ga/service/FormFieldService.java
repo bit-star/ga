@@ -69,6 +69,9 @@ public class FormFieldService {
                     if (formField.getShow() != null) {
                         existingFormField.setShow(formField.getShow());
                     }
+                    if (formField.getIsCardField() != null) {
+                        existingFormField.setIsCardField(formField.getIsCardField());
+                    }
                     if (formField.getOrderNum() != null) {
                         existingFormField.setOrderNum(formField.getOrderNum());
                     }

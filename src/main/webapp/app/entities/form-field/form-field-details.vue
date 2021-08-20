@@ -49,6 +49,12 @@
             <span>{{ formField.show }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.formField.isCardField')">Is Card Field</span>
+          </dt>
+          <dd>
+            <span>{{ formField.isCardField }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.formField.orderNum')">Order Num</span>
           </dt>
           <dd>

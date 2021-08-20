@@ -57,6 +57,15 @@ public class PublicCardDataService {
                     if (publicCardData.getValid() != null) {
                         existingPublicCardData.setValid(publicCardData.getValid());
                     }
+                    if (publicCardData.getFinish() != null) {
+                        existingPublicCardData.setFinish(publicCardData.getFinish());
+                    }
+                    if (publicCardData.getStatus() != null) {
+                        existingPublicCardData.setStatus(publicCardData.getStatus());
+                    }
+                    if (publicCardData.getVariables() != null) {
+                        existingPublicCardData.setVariables(publicCardData.getVariables());
+                    }
                     if (publicCardData.getLink() != null) {
                         existingPublicCardData.setLink(publicCardData.getLink());
                     }
@@ -80,12 +89,6 @@ public class PublicCardDataService {
                     }
                     if (publicCardData.getAgree() != null) {
                         existingPublicCardData.setAgree(publicCardData.getAgree());
-                    }
-                    if (publicCardData.getFinish() != null) {
-                        existingPublicCardData.setFinish(publicCardData.getFinish());
-                    }
-                    if (publicCardData.getStatus() != null) {
-                        existingPublicCardData.setStatus(publicCardData.getStatus());
                     }
                     if (publicCardData.getContent() != null) {
                         existingPublicCardData.setContent(publicCardData.getContent());

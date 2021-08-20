@@ -11,6 +11,9 @@ export interface IPublicCardData {
   requestid?: number | null;
   workflowid?: number | null;
   valid?: boolean | null;
+  finish?: string | null;
+  status?: PublicDataCardStatus | null;
+  variables?: string | null;
   link?: string | null;
   updateLink?: string | null;
   name?: string | null;
@@ -19,8 +22,6 @@ export interface IPublicCardData {
   itemType?: string | null;
   typesOfFee?: string | null;
   agree?: boolean | null;
-  finish?: string | null;
-  status?: PublicDataCardStatus | null;
   content?: string | null;
   agreeNum?: number | null;
   refuseNum?: number | null;
@@ -39,6 +40,9 @@ export class PublicCardData implements IPublicCardData {
     public requestid?: number | null,
     public workflowid?: number | null,
     public valid?: boolean | null,
+    public finish?: string | null,
+    public status?: PublicDataCardStatus | null,
+    public variables?: string | null,
     public link?: string | null,
     public updateLink?: string | null,
     public name?: string | null,
@@ -47,8 +51,6 @@ export class PublicCardData implements IPublicCardData {
     public itemType?: string | null,
     public typesOfFee?: string | null,
     public agree?: boolean | null,
-    public finish?: string | null,
-    public status?: PublicDataCardStatus | null,
     public content?: string | null,
     public agreeNum?: number | null,
     public refuseNum?: number | null,

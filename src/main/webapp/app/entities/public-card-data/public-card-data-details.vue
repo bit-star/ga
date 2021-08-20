@@ -25,6 +25,24 @@
             <span>{{ publicCardData.valid }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.publicCardData.finish')">Finish</span>
+          </dt>
+          <dd>
+            <span>{{ publicCardData.finish }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.publicCardData.status')">Status</span>
+          </dt>
+          <dd>
+            <span v-text="$t('gaApp.PublicDataCardStatus.' + publicCardData.status)">{{ publicCardData.status }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.publicCardData.variables')">Variables</span>
+          </dt>
+          <dd>
+            <span>{{ publicCardData.variables }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.publicCardData.link')">Link</span>
           </dt>
           <dd>
@@ -71,18 +89,6 @@
           </dt>
           <dd>
             <span>{{ publicCardData.agree }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.publicCardData.finish')">Finish</span>
-          </dt>
-          <dd>
-            <span>{{ publicCardData.finish }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.publicCardData.status')">Status</span>
-          </dt>
-          <dd>
-            <span v-text="$t('gaApp.PublicDataCardStatus.' + publicCardData.status)">{{ publicCardData.status }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.publicCardData.content')">Content</span>

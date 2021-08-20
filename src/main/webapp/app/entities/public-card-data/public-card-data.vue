@@ -32,6 +32,9 @@
             <th scope="row"><span v-text="$t('gaApp.publicCardData.requestid')">Requestid</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowid')">Workflowid</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.valid')">Valid</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.finish')">Finish</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.status')">Status</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.variables')">Variables</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.link')">Link</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.updateLink')">Update Link</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.name')">Name</span></th>
@@ -40,8 +43,6 @@
             <th scope="row"><span v-text="$t('gaApp.publicCardData.itemType')">Item Type</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.typesOfFee')">Types Of Fee</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.agree')">Agree</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.finish')">Finish</span></th>
-            <th scope="row"><span v-text="$t('gaApp.publicCardData.status')">Status</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.content')">Content</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.agreeNum')">Agree Num</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.refuseNum')">Refuse Num</span></th>
@@ -62,6 +63,9 @@
             <td>{{ publicCardData.requestid }}</td>
             <td>{{ publicCardData.workflowid }}</td>
             <td>{{ publicCardData.valid }}</td>
+            <td>{{ publicCardData.finish }}</td>
+            <td v-text="$t('gaApp.PublicDataCardStatus.' + publicCardData.status)">{{ publicCardData.status }}</td>
+            <td>{{ publicCardData.variables }}</td>
             <td>{{ publicCardData.link }}</td>
             <td>{{ publicCardData.updateLink }}</td>
             <td>{{ publicCardData.name }}</td>
@@ -70,8 +74,6 @@
             <td>{{ publicCardData.itemType }}</td>
             <td>{{ publicCardData.typesOfFee }}</td>
             <td>{{ publicCardData.agree }}</td>
-            <td>{{ publicCardData.finish }}</td>
-            <td v-text="$t('gaApp.PublicDataCardStatus.' + publicCardData.status)">{{ publicCardData.status }}</td>
             <td>{{ publicCardData.content }}</td>
             <td>{{ publicCardData.agreeNum }}</td>
             <td>{{ publicCardData.refuseNum }}</td>

@@ -99,6 +99,18 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.formField.isCardField')" for="form-field-isCardField">Is Card Field</label>
+            <input
+              type="checkbox"
+              class="form-check"
+              name="isCardField"
+              id="form-field-isCardField"
+              data-cy="isCardField"
+              :class="{ valid: !$v.formField.isCardField.$invalid, invalid: $v.formField.isCardField.$invalid }"
+              v-model="$v.formField.isCardField.$model"
+            />
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.formField.orderNum')" for="form-field-orderNum">Order Num</label>
             <input
               type="number"

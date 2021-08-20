@@ -50,6 +50,9 @@ class FormFieldResourceIT {
     private static final Boolean DEFAULT_SHOW = false;
     private static final Boolean UPDATED_SHOW = true;
 
+    private static final Boolean DEFAULT_IS_CARD_FIELD = false;
+    private static final Boolean UPDATED_IS_CARD_FIELD = true;
+
     private static final Integer DEFAULT_ORDER_NUM = 1;
     private static final Integer UPDATED_ORDER_NUM = 2;
 
@@ -85,6 +88,7 @@ class FormFieldResourceIT {
             .fieldlabel(DEFAULT_FIELDLABEL)
             .detailtable(DEFAULT_DETAILTABLE)
             .show(DEFAULT_SHOW)
+            .isCardField(DEFAULT_IS_CARD_FIELD)
             .orderNum(DEFAULT_ORDER_NUM);
         return formField;
     }
@@ -104,6 +108,7 @@ class FormFieldResourceIT {
             .fieldlabel(UPDATED_FIELDLABEL)
             .detailtable(UPDATED_DETAILTABLE)
             .show(UPDATED_SHOW)
+            .isCardField(UPDATED_IS_CARD_FIELD)
             .orderNum(UPDATED_ORDER_NUM);
         return formField;
     }
@@ -133,6 +138,7 @@ class FormFieldResourceIT {
         assertThat(testFormField.getFieldlabel()).isEqualTo(DEFAULT_FIELDLABEL);
         assertThat(testFormField.getDetailtable()).isEqualTo(DEFAULT_DETAILTABLE);
         assertThat(testFormField.getShow()).isEqualTo(DEFAULT_SHOW);
+        assertThat(testFormField.getIsCardField()).isEqualTo(DEFAULT_IS_CARD_FIELD);
         assertThat(testFormField.getOrderNum()).isEqualTo(DEFAULT_ORDER_NUM);
     }
 
@@ -173,6 +179,7 @@ class FormFieldResourceIT {
             .andExpect(jsonPath("$.[*].fieldlabel").value(hasItem(DEFAULT_FIELDLABEL)))
             .andExpect(jsonPath("$.[*].detailtable").value(hasItem(DEFAULT_DETAILTABLE)))
             .andExpect(jsonPath("$.[*].show").value(hasItem(DEFAULT_SHOW.booleanValue())))
+            .andExpect(jsonPath("$.[*].isCardField").value(hasItem(DEFAULT_IS_CARD_FIELD.booleanValue())))
             .andExpect(jsonPath("$.[*].orderNum").value(hasItem(DEFAULT_ORDER_NUM)));
     }
 
@@ -195,6 +202,7 @@ class FormFieldResourceIT {
             .andExpect(jsonPath("$.fieldlabel").value(DEFAULT_FIELDLABEL))
             .andExpect(jsonPath("$.detailtable").value(DEFAULT_DETAILTABLE))
             .andExpect(jsonPath("$.show").value(DEFAULT_SHOW.booleanValue()))
+            .andExpect(jsonPath("$.isCardField").value(DEFAULT_IS_CARD_FIELD.booleanValue()))
             .andExpect(jsonPath("$.orderNum").value(DEFAULT_ORDER_NUM));
     }
 
@@ -225,6 +233,7 @@ class FormFieldResourceIT {
             .fieldlabel(UPDATED_FIELDLABEL)
             .detailtable(UPDATED_DETAILTABLE)
             .show(UPDATED_SHOW)
+            .isCardField(UPDATED_IS_CARD_FIELD)
             .orderNum(UPDATED_ORDER_NUM);
 
         restFormFieldMockMvc
@@ -246,6 +255,7 @@ class FormFieldResourceIT {
         assertThat(testFormField.getFieldlabel()).isEqualTo(UPDATED_FIELDLABEL);
         assertThat(testFormField.getDetailtable()).isEqualTo(UPDATED_DETAILTABLE);
         assertThat(testFormField.getShow()).isEqualTo(UPDATED_SHOW);
+        assertThat(testFormField.getIsCardField()).isEqualTo(UPDATED_IS_CARD_FIELD);
         assertThat(testFormField.getOrderNum()).isEqualTo(UPDATED_ORDER_NUM);
     }
 
@@ -317,7 +327,11 @@ class FormFieldResourceIT {
         FormField partialUpdatedFormField = new FormField();
         partialUpdatedFormField.setId(formField.getId());
 
-        partialUpdatedFormField.fieldname(UPDATED_FIELDNAME).value(UPDATED_VALUE).labelname(UPDATED_LABELNAME).orderNum(UPDATED_ORDER_NUM);
+        partialUpdatedFormField
+            .fieldname(UPDATED_FIELDNAME)
+            .value(UPDATED_VALUE)
+            .labelname(UPDATED_LABELNAME)
+            .isCardField(UPDATED_IS_CARD_FIELD);
 
         restFormFieldMockMvc
             .perform(
@@ -338,7 +352,8 @@ class FormFieldResourceIT {
         assertThat(testFormField.getFieldlabel()).isEqualTo(DEFAULT_FIELDLABEL);
         assertThat(testFormField.getDetailtable()).isEqualTo(DEFAULT_DETAILTABLE);
         assertThat(testFormField.getShow()).isEqualTo(DEFAULT_SHOW);
-        assertThat(testFormField.getOrderNum()).isEqualTo(UPDATED_ORDER_NUM);
+        assertThat(testFormField.getIsCardField()).isEqualTo(UPDATED_IS_CARD_FIELD);
+        assertThat(testFormField.getOrderNum()).isEqualTo(DEFAULT_ORDER_NUM);
     }
 
     @Test
@@ -361,6 +376,7 @@ class FormFieldResourceIT {
             .fieldlabel(UPDATED_FIELDLABEL)
             .detailtable(UPDATED_DETAILTABLE)
             .show(UPDATED_SHOW)
+            .isCardField(UPDATED_IS_CARD_FIELD)
             .orderNum(UPDATED_ORDER_NUM);
 
         restFormFieldMockMvc
@@ -382,6 +398,7 @@ class FormFieldResourceIT {
         assertThat(testFormField.getFieldlabel()).isEqualTo(UPDATED_FIELDLABEL);
         assertThat(testFormField.getDetailtable()).isEqualTo(UPDATED_DETAILTABLE);
         assertThat(testFormField.getShow()).isEqualTo(UPDATED_SHOW);
+        assertThat(testFormField.getIsCardField()).isEqualTo(UPDATED_IS_CARD_FIELD);
         assertThat(testFormField.getOrderNum()).isEqualTo(UPDATED_ORDER_NUM);
     }
 

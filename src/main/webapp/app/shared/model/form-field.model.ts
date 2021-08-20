@@ -9,6 +9,7 @@ export interface IFormField {
   fieldlabel?: string | null;
   detailtable?: string | null;
   show?: boolean | null;
+  isCardField?: boolean | null;
   orderNum?: number | null;
   workflowTemplate?: IWorkflowTemplate | null;
 }
@@ -23,9 +24,11 @@ export class FormField implements IFormField {
     public fieldlabel?: string | null,
     public detailtable?: string | null,
     public show?: boolean | null,
+    public isCardField?: boolean | null,
     public orderNum?: number | null,
     public workflowTemplate?: IWorkflowTemplate | null
   ) {
     this.show = this.show ?? false;
+    this.isCardField = this.isCardField ?? false;
   }
 }
