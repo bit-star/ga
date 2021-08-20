@@ -33,6 +33,7 @@ entity FormField {
     fieldlabel String
     detailtable String
     show Boolean
+    isCardField Boolean
     orderNum Integer
 }
 
@@ -135,9 +136,14 @@ entity WorkflowInstance {
 }
 
 entity PublicCardData {
+	//卡片自身的属性
 	requestid Long,
     workflowid Long,
     valid Boolean
+    finish String
+    status PublicDataCardStatus
+    variables TextBlob
+    //OA的业务属性
     link String
     updateLink String
 	name String,
@@ -146,13 +152,10 @@ entity PublicCardData {
     itemType String,
     typesOfFee String,
     agree Boolean,
-    finish String
-    status String
     content String
     agreeNum Long
     refuseNum Long
     time Instant
-    status PublicDataCardStatus
     oaStatus WorkflowInstanceStatus
 
 }
