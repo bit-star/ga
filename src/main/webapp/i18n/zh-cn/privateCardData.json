@@ -22,6 +22,8 @@
       "finish": "Finish",
       "authority": "Authority",
       "createdByMe": "Created By Me",
+      "variables": "Variables",
+      "updateTime": "Update Time",
       "publicCardData": "Public Card Data",
       "ddUser": "Dd User"
     }

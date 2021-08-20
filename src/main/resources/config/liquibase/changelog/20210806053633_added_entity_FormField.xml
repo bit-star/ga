@@ -14,19 +14,16 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="fieldname" type="varchar(255)">
+            <column name="field_name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="value" type="varchar(255)">
+            <column name="oa_id" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="fielddbtype" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="labelname" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-            <column name="fieldlabel" type="varchar(255)">
+            <column name="label_name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="detailtable" type="varchar(255)">
@@ -36,6 +33,12 @@
                 <constraints nullable="true" />
             </column>
             <column name="is_card_field" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_oa_field" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_private" type="boolean">
                 <constraints nullable="true" />
             </column>
             <column name="order_num" type="integer">
@@ -64,14 +67,15 @@
                   separator=";"
                   tableName="form_field">
             <column name="id" type="numeric"/>
-            <column name="fieldname" type="string"/>
-            <column name="value" type="string"/>
+            <column name="field_name" type="string"/>
+            <column name="oa_id" type="string"/>
             <column name="fielddbtype" type="string"/>
-            <column name="labelname" type="string"/>
-            <column name="fieldlabel" type="string"/>
+            <column name="label_name" type="string"/>
             <column name="detailtable" type="string"/>
             <column name="jhi_show" type="boolean"/>
             <column name="is_card_field" type="boolean"/>
+            <column name="is_oa_field" type="boolean"/>
+            <column name="is_private" type="boolean"/>
             <column name="order_num" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>

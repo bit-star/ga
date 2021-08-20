@@ -29,14 +29,15 @@
         <thead>
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.fieldname')">Fieldname</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.value')">Value</span></th>
+            <th scope="row"><span v-text="$t('gaApp.formField.fieldName')">Field Name</span></th>
+            <th scope="row"><span v-text="$t('gaApp.formField.oaId')">Oa Id</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.fielddbtype')">Fielddbtype</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.labelname')">Labelname</span></th>
-            <th scope="row"><span v-text="$t('gaApp.formField.fieldlabel')">Fieldlabel</span></th>
+            <th scope="row"><span v-text="$t('gaApp.formField.labelName')">Label Name</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.detailtable')">Detailtable</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.show')">Show</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.isCardField')">Is Card Field</span></th>
+            <th scope="row"><span v-text="$t('gaApp.formField.isOaField')">Is Oa Field</span></th>
+            <th scope="row"><span v-text="$t('gaApp.formField.isPrivate')">Is Private</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.orderNum')">Order Num</span></th>
             <th scope="row"><span v-text="$t('gaApp.formField.workflowTemplate')">Workflow Template</span></th>
             <th scope="row"></th>
@@ -47,14 +48,15 @@
             <td>
               <router-link :to="{ name: 'FormFieldView', params: { formFieldId: formField.id } }">{{ formField.id }}</router-link>
             </td>
-            <td>{{ formField.fieldname }}</td>
-            <td>{{ formField.value }}</td>
+            <td>{{ formField.fieldName }}</td>
+            <td>{{ formField.oaId }}</td>
             <td>{{ formField.fielddbtype }}</td>
-            <td>{{ formField.labelname }}</td>
-            <td>{{ formField.fieldlabel }}</td>
+            <td>{{ formField.labelName }}</td>
             <td>{{ formField.detailtable }}</td>
             <td>{{ formField.show }}</td>
             <td>{{ formField.isCardField }}</td>
+            <td>{{ formField.isOaField }}</td>
+            <td>{{ formField.isPrivate }}</td>
             <td>{{ formField.orderNum }}</td>
             <td>
               <div v-if="formField.workflowTemplate">

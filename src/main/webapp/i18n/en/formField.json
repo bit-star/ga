@@ -18,14 +18,15 @@
         "title": "Form Field"
       },
       "id": "ID",
-      "fieldname": "Fieldname",
-      "value": "Value",
+      "fieldName": "Field Name",
+      "oaId": "Oa Id",
       "fielddbtype": "Fielddbtype",
-      "labelname": "Labelname",
-      "fieldlabel": "Fieldlabel",
+      "labelName": "Label Name",
       "detailtable": "Detailtable",
       "show": "Show",
       "isCardField": "Is Card Field",
+      "isOaField": "Is Oa Field",
+      "isPrivate": "Is Private",
       "orderNum": "Order Num",
       "workflowTemplate": "Workflow Template"
     }

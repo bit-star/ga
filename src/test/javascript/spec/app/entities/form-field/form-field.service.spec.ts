@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new FormFieldService();
-      elemDefault = new FormField(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false, false, 0);
+      elemDefault = new FormField(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false, false, false, false, 0);
     });
 
     describe('Service methods', () => {
@@ -81,14 +81,15 @@ describe('Service Tests', () => {
       it('should update a FormField', async () => {
         const returnedFromService = Object.assign(
           {
-            fieldname: 'BBBBBB',
-            value: 'BBBBBB',
+            fieldName: 'BBBBBB',
+            oaId: 'BBBBBB',
             fielddbtype: 'BBBBBB',
-            labelname: 'BBBBBB',
-            fieldlabel: 'BBBBBB',
+            labelName: 'BBBBBB',
             detailtable: 'BBBBBB',
             show: true,
             isCardField: true,
+            isOaField: true,
+            isPrivate: true,
             orderNum: 1,
           },
           elemDefault
@@ -116,8 +117,9 @@ describe('Service Tests', () => {
       it('should partial update a FormField', async () => {
         const patchObject = Object.assign(
           {
-            fieldname: 'BBBBBB',
-            value: 'BBBBBB',
+            fieldName: 'BBBBBB',
+            oaId: 'BBBBBB',
+            isPrivate: true,
             orderNum: 1,
           },
           new FormField()
@@ -146,14 +148,15 @@ describe('Service Tests', () => {
       it('should return a list of FormField', async () => {
         const returnedFromService = Object.assign(
           {
-            fieldname: 'BBBBBB',
-            value: 'BBBBBB',
+            fieldName: 'BBBBBB',
+            oaId: 'BBBBBB',
             fielddbtype: 'BBBBBB',
-            labelname: 'BBBBBB',
-            fieldlabel: 'BBBBBB',
+            labelName: 'BBBBBB',
             detailtable: 'BBBBBB',
             show: true,
             isCardField: true,
+            isOaField: true,
+            isPrivate: true,
             orderNum: 1,
           },
           elemDefault

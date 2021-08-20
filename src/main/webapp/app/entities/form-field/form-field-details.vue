@@ -7,16 +7,16 @@
         </h2>
         <dl class="row jh-entity-details">
           <dt>
-            <span v-text="$t('gaApp.formField.fieldname')">Fieldname</span>
+            <span v-text="$t('gaApp.formField.fieldName')">Field Name</span>
           </dt>
           <dd>
-            <span>{{ formField.fieldname }}</span>
+            <span>{{ formField.fieldName }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.formField.value')">Value</span>
+            <span v-text="$t('gaApp.formField.oaId')">Oa Id</span>
           </dt>
           <dd>
-            <span>{{ formField.value }}</span>
+            <span>{{ formField.oaId }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.formField.fielddbtype')">Fielddbtype</span>
@@ -25,16 +25,10 @@
             <span>{{ formField.fielddbtype }}</span>
           </dd>
           <dt>
-            <span v-text="$t('gaApp.formField.labelname')">Labelname</span>
+            <span v-text="$t('gaApp.formField.labelName')">Label Name</span>
           </dt>
           <dd>
-            <span>{{ formField.labelname }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('gaApp.formField.fieldlabel')">Fieldlabel</span>
-          </dt>
-          <dd>
-            <span>{{ formField.fieldlabel }}</span>
+            <span>{{ formField.labelName }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.formField.detailtable')">Detailtable</span>
@@ -53,6 +47,18 @@
           </dt>
           <dd>
             <span>{{ formField.isCardField }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.formField.isOaField')">Is Oa Field</span>
+          </dt>
+          <dd>
+            <span>{{ formField.isOaField }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.formField.isPrivate')">Is Private</span>
+          </dt>
+          <dd>
+            <span>{{ formField.isPrivate }}</span>
           </dd>
           <dt>
             <span v-text="$t('gaApp.formField.orderNum')">Order Num</span>

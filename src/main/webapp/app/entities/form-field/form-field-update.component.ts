@@ -8,14 +8,15 @@ import FormFieldService from './form-field.service';
 
 const validations: any = {
   formField: {
-    fieldname: {},
-    value: {},
+    fieldName: {},
+    oaId: {},
     fielddbtype: {},
-    labelname: {},
-    fieldlabel: {},
+    labelName: {},
     detailtable: {},
     show: {},
     isCardField: {},
+    isOaField: {},
+    isPrivate: {},
     orderNum: {},
   },
 };

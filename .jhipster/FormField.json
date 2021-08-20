@@ -2,11 +2,11 @@
   "name": "FormField",
   "fields": [
     {
-      "fieldName": "fieldname",
+      "fieldName": "fieldName",
       "fieldType": "String"
     },
     {
-      "fieldName": "value",
+      "fieldName": "oaId",
       "fieldType": "String"
     },
     {
@@ -14,11 +14,7 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "labelname",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "fieldlabel",
+      "fieldName": "labelName",
       "fieldType": "String"
     },
     {
@@ -31,6 +27,14 @@
     },
     {
       "fieldName": "isCardField",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isOaField",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isPrivate",
       "fieldType": "Boolean"
     },
     {

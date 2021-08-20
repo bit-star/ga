@@ -20,20 +20,17 @@ public class FormField implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "fieldname")
-    private String fieldname;
+    @Column(name = "field_name")
+    private String fieldName;
 
-    @Column(name = "value")
-    private String value;
+    @Column(name = "oa_id")
+    private String oaId;
 
     @Column(name = "fielddbtype")
     private String fielddbtype;
 
-    @Column(name = "labelname")
-    private String labelname;
-
-    @Column(name = "fieldlabel")
-    private String fieldlabel;
+    @Column(name = "label_name")
+    private String labelName;
 
     @Column(name = "detailtable")
     private String detailtable;
@@ -43,6 +40,12 @@ public class FormField implements Serializable {
 
     @Column(name = "is_card_field")
     private Boolean isCardField;
+
+    @Column(name = "is_oa_field")
+    private Boolean isOaField;
+
+    @Column(name = "is_private")
+    private Boolean isPrivate;
 
     @Column(name = "order_num")
     private Integer orderNum;
@@ -65,30 +68,30 @@ public class FormField implements Serializable {
         return this;
     }
 
-    public String getFieldname() {
-        return this.fieldname;
+    public String getFieldName() {
+        return this.fieldName;
     }
 
-    public FormField fieldname(String fieldname) {
-        this.fieldname = fieldname;
+    public FormField fieldName(String fieldName) {
+        this.fieldName = fieldName;
         return this;
     }
 
-    public void setFieldname(String fieldname) {
-        this.fieldname = fieldname;
+    public void setFieldName(String fieldName) {
+        this.fieldName = fieldName;
     }
 
-    public String getValue() {
-        return this.value;
+    public String getOaId() {
+        return this.oaId;
     }
 
-    public FormField value(String value) {
-        this.value = value;
+    public FormField oaId(String oaId) {
+        this.oaId = oaId;
         return this;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setOaId(String oaId) {
+        this.oaId = oaId;
     }
 
     public String getFielddbtype() {
@@ -104,30 +107,17 @@ public class FormField implements Serializable {
         this.fielddbtype = fielddbtype;
     }
 
-    public String getLabelname() {
-        return this.labelname;
+    public String getLabelName() {
+        return this.labelName;
     }
 
-    public FormField labelname(String labelname) {
-        this.labelname = labelname;
+    public FormField labelName(String labelName) {
+        this.labelName = labelName;
         return this;
     }
 
-    public void setLabelname(String labelname) {
-        this.labelname = labelname;
-    }
-
-    public String getFieldlabel() {
-        return this.fieldlabel;
-    }
-
-    public FormField fieldlabel(String fieldlabel) {
-        this.fieldlabel = fieldlabel;
-        return this;
-    }
-
-    public void setFieldlabel(String fieldlabel) {
-        this.fieldlabel = fieldlabel;
+    public void setLabelName(String labelName) {
+        this.labelName = labelName;
     }
 
     public String getDetailtable() {
@@ -167,6 +157,32 @@ public class FormField implements Serializable {
 
     public void setIsCardField(Boolean isCardField) {
         this.isCardField = isCardField;
+    }
+
+    public Boolean getIsOaField() {
+        return this.isOaField;
+    }
+
+    public FormField isOaField(Boolean isOaField) {
+        this.isOaField = isOaField;
+        return this;
+    }
+
+    public void setIsOaField(Boolean isOaField) {
+        this.isOaField = isOaField;
+    }
+
+    public Boolean getIsPrivate() {
+        return this.isPrivate;
+    }
+
+    public FormField isPrivate(Boolean isPrivate) {
+        this.isPrivate = isPrivate;
+        return this;
+    }
+
+    public void setIsPrivate(Boolean isPrivate) {
+        this.isPrivate = isPrivate;
     }
 
     public Integer getOrderNum() {
@@ -219,14 +235,15 @@ public class FormField implements Serializable {
     public String toString() {
         return "FormField{" +
             "id=" + getId() +
-            ", fieldname='" + getFieldname() + "'" +
-            ", value='" + getValue() + "'" +
+            ", fieldName='" + getFieldName() + "'" +
+            ", oaId='" + getOaId() + "'" +
             ", fielddbtype='" + getFielddbtype() + "'" +
-            ", labelname='" + getLabelname() + "'" +
-            ", fieldlabel='" + getFieldlabel() + "'" +
+            ", labelName='" + getLabelName() + "'" +
             ", detailtable='" + getDetailtable() + "'" +
             ", show='" + getShow() + "'" +
             ", isCardField='" + getIsCardField() + "'" +
+            ", isOaField='" + getIsOaField() + "'" +
+            ", isPrivate='" + getIsPrivate() + "'" +
             ", orderNum=" + getOrderNum() +
             "}";
     }

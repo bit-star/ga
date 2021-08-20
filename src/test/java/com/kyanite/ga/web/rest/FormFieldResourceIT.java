@@ -29,20 +29,17 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class FormFieldResourceIT {
 
-    private static final String DEFAULT_FIELDNAME = "AAAAAAAAAA";
-    private static final String UPDATED_FIELDNAME = "BBBBBBBBBB";
+    private static final String DEFAULT_FIELD_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_FIELD_NAME = "BBBBBBBBBB";
 
-    private static final String DEFAULT_VALUE = "AAAAAAAAAA";
-    private static final String UPDATED_VALUE = "BBBBBBBBBB";
+    private static final String DEFAULT_OA_ID = "AAAAAAAAAA";
+    private static final String UPDATED_OA_ID = "BBBBBBBBBB";
 
     private static final String DEFAULT_FIELDDBTYPE = "AAAAAAAAAA";
     private static final String UPDATED_FIELDDBTYPE = "BBBBBBBBBB";
 
-    private static final String DEFAULT_LABELNAME = "AAAAAAAAAA";
-    private static final String UPDATED_LABELNAME = "BBBBBBBBBB";
-
-    private static final String DEFAULT_FIELDLABEL = "AAAAAAAAAA";
-    private static final String UPDATED_FIELDLABEL = "BBBBBBBBBB";
+    private static final String DEFAULT_LABEL_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_LABEL_NAME = "BBBBBBBBBB";
 
     private static final String DEFAULT_DETAILTABLE = "AAAAAAAAAA";
     private static final String UPDATED_DETAILTABLE = "BBBBBBBBBB";
@@ -52,6 +49,12 @@ class FormFieldResourceIT {
 
     private static final Boolean DEFAULT_IS_CARD_FIELD = false;
     private static final Boolean UPDATED_IS_CARD_FIELD = true;
+
+    private static final Boolean DEFAULT_IS_OA_FIELD = false;
+    private static final Boolean UPDATED_IS_OA_FIELD = true;
+
+    private static final Boolean DEFAULT_IS_PRIVATE = false;
+    private static final Boolean UPDATED_IS_PRIVATE = true;
 
     private static final Integer DEFAULT_ORDER_NUM = 1;
     private static final Integer UPDATED_ORDER_NUM = 2;
@@ -81,14 +84,15 @@ class FormFieldResourceIT {
      */
     public static FormField createEntity(EntityManager em) {
         FormField formField = new FormField()
-            .fieldname(DEFAULT_FIELDNAME)
-            .value(DEFAULT_VALUE)
+            .fieldName(DEFAULT_FIELD_NAME)
+            .oaId(DEFAULT_OA_ID)
             .fielddbtype(DEFAULT_FIELDDBTYPE)
-            .labelname(DEFAULT_LABELNAME)
-            .fieldlabel(DEFAULT_FIELDLABEL)
+            .labelName(DEFAULT_LABEL_NAME)
             .detailtable(DEFAULT_DETAILTABLE)
             .show(DEFAULT_SHOW)
             .isCardField(DEFAULT_IS_CARD_FIELD)
+            .isOaField(DEFAULT_IS_OA_FIELD)
+            .isPrivate(DEFAULT_IS_PRIVATE)
             .orderNum(DEFAULT_ORDER_NUM);
         return formField;
     }
@@ -101,14 +105,15 @@ class FormFieldResourceIT {
      */
     public static FormField createUpdatedEntity(EntityManager em) {
         FormField formField = new FormField()
-            .fieldname(UPDATED_FIELDNAME)
-            .value(UPDATED_VALUE)
+            .fieldName(UPDATED_FIELD_NAME)
+            .oaId(UPDATED_OA_ID)
             .fielddbtype(UPDATED_FIELDDBTYPE)
-            .labelname(UPDATED_LABELNAME)
-            .fieldlabel(UPDATED_FIELDLABEL)
+            .labelName(UPDATED_LABEL_NAME)
             .detailtable(UPDATED_DETAILTABLE)
             .show(UPDATED_SHOW)
             .isCardField(UPDATED_IS_CARD_FIELD)
+            .isOaField(UPDATED_IS_OA_FIELD)
+            .isPrivate(UPDATED_IS_PRIVATE)
             .orderNum(UPDATED_ORDER_NUM);
         return formField;
     }
@@ -131,14 +136,15 @@ class FormFieldResourceIT {
         List<FormField> formFieldList = formFieldRepository.findAll();
         assertThat(formFieldList).hasSize(databaseSizeBeforeCreate + 1);
         FormField testFormField = formFieldList.get(formFieldList.size() - 1);
-        assertThat(testFormField.getFieldname()).isEqualTo(DEFAULT_FIELDNAME);
-        assertThat(testFormField.getValue()).isEqualTo(DEFAULT_VALUE);
+        assertThat(testFormField.getFieldName()).isEqualTo(DEFAULT_FIELD_NAME);
+        assertThat(testFormField.getOaId()).isEqualTo(DEFAULT_OA_ID);
         assertThat(testFormField.getFielddbtype()).isEqualTo(DEFAULT_FIELDDBTYPE);
-        assertThat(testFormField.getLabelname()).isEqualTo(DEFAULT_LABELNAME);
-        assertThat(testFormField.getFieldlabel()).isEqualTo(DEFAULT_FIELDLABEL);
+        assertThat(testFormField.getLabelName()).isEqualTo(DEFAULT_LABEL_NAME);
         assertThat(testFormField.getDetailtable()).isEqualTo(DEFAULT_DETAILTABLE);
         assertThat(testFormField.getShow()).isEqualTo(DEFAULT_SHOW);
         assertThat(testFormField.getIsCardField()).isEqualTo(DEFAULT_IS_CARD_FIELD);
+        assertThat(testFormField.getIsOaField()).isEqualTo(DEFAULT_IS_OA_FIELD);
+        assertThat(testFormField.getIsPrivate()).isEqualTo(DEFAULT_IS_PRIVATE);
         assertThat(testFormField.getOrderNum()).isEqualTo(DEFAULT_ORDER_NUM);
     }
 
@@ -172,14 +178,15 @@ class FormFieldResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(formField.getId().intValue())))
-            .andExpect(jsonPath("$.[*].fieldname").value(hasItem(DEFAULT_FIELDNAME)))
-            .andExpect(jsonPath("$.[*].value").value(hasItem(DEFAULT_VALUE)))
+            .andExpect(jsonPath("$.[*].fieldName").value(hasItem(DEFAULT_FIELD_NAME)))
+            .andExpect(jsonPath("$.[*].oaId").value(hasItem(DEFAULT_OA_ID)))
             .andExpect(jsonPath("$.[*].fielddbtype").value(hasItem(DEFAULT_FIELDDBTYPE)))
-            .andExpect(jsonPath("$.[*].labelname").value(hasItem(DEFAULT_LABELNAME)))
-            .andExpect(jsonPath("$.[*].fieldlabel").value(hasItem(DEFAULT_FIELDLABEL)))
+            .andExpect(jsonPath("$.[*].labelName").value(hasItem(DEFAULT_LABEL_NAME)))
             .andExpect(jsonPath("$.[*].detailtable").value(hasItem(DEFAULT_DETAILTABLE)))
             .andExpect(jsonPath("$.[*].show").value(hasItem(DEFAULT_SHOW.booleanValue())))
             .andExpect(jsonPath("$.[*].isCardField").value(hasItem(DEFAULT_IS_CARD_FIELD.booleanValue())))
+            .andExpect(jsonPath("$.[*].isOaField").value(hasItem(DEFAULT_IS_OA_FIELD.booleanValue())))
+            .andExpect(jsonPath("$.[*].isPrivate").value(hasItem(DEFAULT_IS_PRIVATE.booleanValue())))
             .andExpect(jsonPath("$.[*].orderNum").value(hasItem(DEFAULT_ORDER_NUM)));
     }
 
@@ -195,14 +202,15 @@ class FormFieldResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(formField.getId().intValue()))
-            .andExpect(jsonPath("$.fieldname").value(DEFAULT_FIELDNAME))
-            .andExpect(jsonPath("$.value").value(DEFAULT_VALUE))
+            .andExpect(jsonPath("$.fieldName").value(DEFAULT_FIELD_NAME))
+            .andExpect(jsonPath("$.oaId").value(DEFAULT_OA_ID))
             .andExpect(jsonPath("$.fielddbtype").value(DEFAULT_FIELDDBTYPE))
-            .andExpect(jsonPath("$.labelname").value(DEFAULT_LABELNAME))
-            .andExpect(jsonPath("$.fieldlabel").value(DEFAULT_FIELDLABEL))
+            .andExpect(jsonPath("$.labelName").value(DEFAULT_LABEL_NAME))
             .andExpect(jsonPath("$.detailtable").value(DEFAULT_DETAILTABLE))
             .andExpect(jsonPath("$.show").value(DEFAULT_SHOW.booleanValue()))
             .andExpect(jsonPath("$.isCardField").value(DEFAULT_IS_CARD_FIELD.booleanValue()))
+            .andExpect(jsonPath("$.isOaField").value(DEFAULT_IS_OA_FIELD.booleanValue()))
+            .andExpect(jsonPath("$.isPrivate").value(DEFAULT_IS_PRIVATE.booleanValue()))
             .andExpect(jsonPath("$.orderNum").value(DEFAULT_ORDER_NUM));
     }
 
@@ -226,14 +234,15 @@ class FormFieldResourceIT {
         // Disconnect from session so that the updates on updatedFormField are not directly saved in db
         em.detach(updatedFormField);
         updatedFormField
-            .fieldname(UPDATED_FIELDNAME)
-            .value(UPDATED_VALUE)
+            .fieldName(UPDATED_FIELD_NAME)
+            .oaId(UPDATED_OA_ID)
             .fielddbtype(UPDATED_FIELDDBTYPE)
-            .labelname(UPDATED_LABELNAME)
-            .fieldlabel(UPDATED_FIELDLABEL)
+            .labelName(UPDATED_LABEL_NAME)
             .detailtable(UPDATED_DETAILTABLE)
             .show(UPDATED_SHOW)
             .isCardField(UPDATED_IS_CARD_FIELD)
+            .isOaField(UPDATED_IS_OA_FIELD)
+            .isPrivate(UPDATED_IS_PRIVATE)
             .orderNum(UPDATED_ORDER_NUM);
 
         restFormFieldMockMvc
@@ -248,14 +257,15 @@ class FormFieldResourceIT {
         List<FormField> formFieldList = formFieldRepository.findAll();
         assertThat(formFieldList).hasSize(databaseSizeBeforeUpdate);
         FormField testFormField = formFieldList.get(formFieldList.size() - 1);
-        assertThat(testFormField.getFieldname()).isEqualTo(UPDATED_FIELDNAME);
-        assertThat(testFormField.getValue()).isEqualTo(UPDATED_VALUE);
+        assertThat(testFormField.getFieldName()).isEqualTo(UPDATED_FIELD_NAME);
+        assertThat(testFormField.getOaId()).isEqualTo(UPDATED_OA_ID);
         assertThat(testFormField.getFielddbtype()).isEqualTo(UPDATED_FIELDDBTYPE);
-        assertThat(testFormField.getLabelname()).isEqualTo(UPDATED_LABELNAME);
-        assertThat(testFormField.getFieldlabel()).isEqualTo(UPDATED_FIELDLABEL);
+        assertThat(testFormField.getLabelName()).isEqualTo(UPDATED_LABEL_NAME);
         assertThat(testFormField.getDetailtable()).isEqualTo(UPDATED_DETAILTABLE);
         assertThat(testFormField.getShow()).isEqualTo(UPDATED_SHOW);
         assertThat(testFormField.getIsCardField()).isEqualTo(UPDATED_IS_CARD_FIELD);
+        assertThat(testFormField.getIsOaField()).isEqualTo(UPDATED_IS_OA_FIELD);
+        assertThat(testFormField.getIsPrivate()).isEqualTo(UPDATED_IS_PRIVATE);
         assertThat(testFormField.getOrderNum()).isEqualTo(UPDATED_ORDER_NUM);
     }
 
@@ -328,10 +338,11 @@ class FormFieldResourceIT {
         partialUpdatedFormField.setId(formField.getId());
 
         partialUpdatedFormField
-            .fieldname(UPDATED_FIELDNAME)
-            .value(UPDATED_VALUE)
-            .labelname(UPDATED_LABELNAME)
-            .isCardField(UPDATED_IS_CARD_FIELD);
+            .fieldName(UPDATED_FIELD_NAME)
+            .oaId(UPDATED_OA_ID)
+            .labelName(UPDATED_LABEL_NAME)
+            .isOaField(UPDATED_IS_OA_FIELD)
+            .orderNum(UPDATED_ORDER_NUM);
 
         restFormFieldMockMvc
             .perform(
@@ -345,15 +356,16 @@ class FormFieldResourceIT {
         List<FormField> formFieldList = formFieldRepository.findAll();
         assertThat(formFieldList).hasSize(databaseSizeBeforeUpdate);
         FormField testFormField = formFieldList.get(formFieldList.size() - 1);
-        assertThat(testFormField.getFieldname()).isEqualTo(UPDATED_FIELDNAME);
-        assertThat(testFormField.getValue()).isEqualTo(UPDATED_VALUE);
+        assertThat(testFormField.getFieldName()).isEqualTo(UPDATED_FIELD_NAME);
+        assertThat(testFormField.getOaId()).isEqualTo(UPDATED_OA_ID);
         assertThat(testFormField.getFielddbtype()).isEqualTo(DEFAULT_FIELDDBTYPE);
-        assertThat(testFormField.getLabelname()).isEqualTo(UPDATED_LABELNAME);
-        assertThat(testFormField.getFieldlabel()).isEqualTo(DEFAULT_FIELDLABEL);
+        assertThat(testFormField.getLabelName()).isEqualTo(UPDATED_LABEL_NAME);
         assertThat(testFormField.getDetailtable()).isEqualTo(DEFAULT_DETAILTABLE);
         assertThat(testFormField.getShow()).isEqualTo(DEFAULT_SHOW);
-        assertThat(testFormField.getIsCardField()).isEqualTo(UPDATED_IS_CARD_FIELD);
-        assertThat(testFormField.getOrderNum()).isEqualTo(DEFAULT_ORDER_NUM);
+        assertThat(testFormField.getIsCardField()).isEqualTo(DEFAULT_IS_CARD_FIELD);
+        assertThat(testFormField.getIsOaField()).isEqualTo(UPDATED_IS_OA_FIELD);
+        assertThat(testFormField.getIsPrivate()).isEqualTo(DEFAULT_IS_PRIVATE);
+        assertThat(testFormField.getOrderNum()).isEqualTo(UPDATED_ORDER_NUM);
     }
 
     @Test
@@ -369,14 +381,15 @@ class FormFieldResourceIT {
         partialUpdatedFormField.setId(formField.getId());
 
         partialUpdatedFormField
-            .fieldname(UPDATED_FIELDNAME)
-            .value(UPDATED_VALUE)
+            .fieldName(UPDATED_FIELD_NAME)
+            .oaId(UPDATED_OA_ID)
             .fielddbtype(UPDATED_FIELDDBTYPE)
-            .labelname(UPDATED_LABELNAME)
-            .fieldlabel(UPDATED_FIELDLABEL)
+            .labelName(UPDATED_LABEL_NAME)
             .detailtable(UPDATED_DETAILTABLE)
             .show(UPDATED_SHOW)
             .isCardField(UPDATED_IS_CARD_FIELD)
+            .isOaField(UPDATED_IS_OA_FIELD)
+            .isPrivate(UPDATED_IS_PRIVATE)
             .orderNum(UPDATED_ORDER_NUM);
 
         restFormFieldMockMvc
@@ -391,14 +404,15 @@ class FormFieldResourceIT {
         List<FormField> formFieldList = formFieldRepository.findAll();
         assertThat(formFieldList).hasSize(databaseSizeBeforeUpdate);
         FormField testFormField = formFieldList.get(formFieldList.size() - 1);
-        assertThat(testFormField.getFieldname()).isEqualTo(UPDATED_FIELDNAME);
-        assertThat(testFormField.getValue()).isEqualTo(UPDATED_VALUE);
+        assertThat(testFormField.getFieldName()).isEqualTo(UPDATED_FIELD_NAME);
+        assertThat(testFormField.getOaId()).isEqualTo(UPDATED_OA_ID);
         assertThat(testFormField.getFielddbtype()).isEqualTo(UPDATED_FIELDDBTYPE);
-        assertThat(testFormField.getLabelname()).isEqualTo(UPDATED_LABELNAME);
-        assertThat(testFormField.getFieldlabel()).isEqualTo(UPDATED_FIELDLABEL);
+        assertThat(testFormField.getLabelName()).isEqualTo(UPDATED_LABEL_NAME);
         assertThat(testFormField.getDetailtable()).isEqualTo(UPDATED_DETAILTABLE);
         assertThat(testFormField.getShow()).isEqualTo(UPDATED_SHOW);
         assertThat(testFormField.getIsCardField()).isEqualTo(UPDATED_IS_CARD_FIELD);
+        assertThat(testFormField.getIsOaField()).isEqualTo(UPDATED_IS_OA_FIELD);
+        assertThat(testFormField.getIsPrivate()).isEqualTo(UPDATED_IS_PRIVATE);
         assertThat(testFormField.getOrderNum()).isEqualTo(UPDATED_ORDER_NUM);
     }
 
