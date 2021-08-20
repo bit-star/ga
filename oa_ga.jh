@@ -144,19 +144,11 @@ entity PublicCardData {
     status PublicDataCardStatus
     variables TextBlob
     createdTime Instant
-    //OA的业务属性
     link String
     updateLink String
-	name String,
-    feeValue String,
-    reason String,
-    itemType String,
-    typesOfFee String,
-    agree Boolean,
-    content String
+    //OA的业务属性
     agreeNum Long
     refuseNum Long
-    time Instant
     oaStatus WorkflowInstanceStatus
 
 }
