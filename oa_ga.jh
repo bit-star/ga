@@ -166,6 +166,8 @@ entity PrivateCardData {
     finish String
     authority String
     createdByMe String
+    variables String
+    updateTime Instant
 }
 
 entity ConfirmCard{
