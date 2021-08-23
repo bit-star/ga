@@ -72,6 +72,9 @@ public class ApiInvokeLogService {
                     if (apiInvokeLog.getResponseData() != null) {
                         existingApiInvokeLog.setResponseData(apiInvokeLog.getResponseData());
                     }
+                    if (apiInvokeLog.getOk() != null) {
+                        existingApiInvokeLog.setOk(apiInvokeLog.getOk());
+                    }
 
                     return existingApiInvokeLog;
                 }

@@ -25,7 +25,8 @@
       "httpStatusCode": "Http Status Code",
       "time": "Time",
       "reqeustData": "Reqeust Data",
-      "responseData": "Response Data"
+      "responseData": "Response Data",
+      "ok": "Ok"
     }
   }
 }

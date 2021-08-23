@@ -19,6 +19,7 @@ const validations: any = {
     time: {},
     reqeustData: {},
     responseData: {},
+    ok: {},
   },
 };
 

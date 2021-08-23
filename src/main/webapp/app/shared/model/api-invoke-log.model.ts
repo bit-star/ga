@@ -10,6 +10,7 @@ export interface IApiInvokeLog {
   time?: Date | null;
   reqeustData?: string | null;
   responseData?: string | null;
+  ok?: boolean | null;
 }
 
 export class ApiInvokeLog implements IApiInvokeLog {
@@ -22,6 +23,9 @@ export class ApiInvokeLog implements IApiInvokeLog {
     public httpStatusCode?: number | null,
     public time?: Date | null,
     public reqeustData?: string | null,
-    public responseData?: string | null
-  ) {}
+    public responseData?: string | null,
+    public ok?: boolean | null
+  ) {
+    this.ok = this.ok ?? false;
+  }
 }
