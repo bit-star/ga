@@ -17,6 +17,8 @@ import OperationResultsService from '@/entities/operation-results/operation-resu
 
 import ConfirmCardService from '@/entities/confirm-card/confirm-card.service';
 
+import AlertCardService from '@/entities/alert-card/alert-card.service';
+
 import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
 
 import ConversationService from '@/entities/conversation/conversation.service';
@@ -56,6 +58,8 @@ describe('Component Tests', () => {
           operationResultsService: () => new OperationResultsService(),
 
           confirmCardService: () => new ConfirmCardService(),
+
+          alertCardService: () => new AlertCardService(),
 
           workflowInstanceService: () => new WorkflowInstanceService(),
 

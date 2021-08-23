@@ -80,6 +80,9 @@ public class CacheConfiguration {
             createCache(cm, com.kyanite.ga.domain.DdUser.class.getName() + ".conversations");
             createCache(cm, com.kyanite.ga.domain.PublicCardData.class.getName() + ".confirmCards");
             createCache(cm, com.kyanite.ga.domain.ConfirmCard.class.getName());
+            createCache(cm, com.kyanite.ga.domain.PublicCardData.class.getName() + ".alertCards");
+            createCache(cm, com.kyanite.ga.domain.AlertCard.class.getName());
+            createCache(cm, com.kyanite.ga.domain.ApiInvokeLog.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

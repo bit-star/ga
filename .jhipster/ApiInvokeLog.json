@@ -1,0 +1,52 @@
+{
+  "name": "ApiInvokeLog",
+  "fields": [
+    {
+      "fieldName": "login",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "apiName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "method",
+      "fieldType": "HttpMethod",
+      "fieldValues": "GET,HEAD,POST,PUT,PATCH,DELETE,OPTIONS,TRACE"
+    },
+    {
+      "fieldName": "direction",
+      "fieldType": "ApiDirection",
+      "fieldValues": "Enter,Out"
+    },
+    {
+      "fieldName": "httpStatusCode",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "time",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "reqeustData",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "responseData",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "api_invoke_log",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210823110723"
+}

@@ -73,6 +73,12 @@
       "relationshipName": "confirmCard"
     },
     {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "alertCard",
+      "otherEntityRelationshipName": "publicCardData",
+      "relationshipName": "alertCard"
+    },
+    {
       "relationshipType": "many-to-one",
       "otherEntityName": "workflowInstance",
       "otherEntityRelationshipName": "publicCardData",

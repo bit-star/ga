@@ -1,0 +1,26 @@
+{
+  "gaApp": {
+    "alertCard": {
+      "home": {
+        "title": "Alert Cards",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Alert Card",
+        "createOrEditLabel": "Create or edit a Alert Card",
+        "notFound": "No Alert Cards found"
+      },
+      "created": "A new Alert Card is created with identifier {{ param }}",
+      "updated": "A Alert Card is updated with identifier {{ param }}",
+      "deleted": "A Alert Card is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Alert Card {{ id }}?"
+      },
+      "detail": {
+        "title": "Alert Card"
+      },
+      "id": "ID",
+      "text": "Text",
+      "userId": "User Id",
+      "publicCardData": "Public Card Data"
+    }
+  }
+}

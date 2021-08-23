@@ -15,6 +15,9 @@ import { IOperationResults } from '@/shared/model/operation-results.model';
 import ConfirmCardService from '@/entities/confirm-card/confirm-card.service';
 import { IConfirmCard } from '@/shared/model/confirm-card.model';
 
+import AlertCardService from '@/entities/alert-card/alert-card.service';
+import { IAlertCard } from '@/shared/model/alert-card.model';
+
 import WorkflowInstanceService from '@/entities/workflow-instance/workflow-instance.service';
 import { IWorkflowInstance } from '@/shared/model/workflow-instance.model';
 
@@ -59,6 +62,10 @@ export default class PublicCardDataUpdate extends mixins(JhiDataUtils) {
   @Inject('confirmCardService') private confirmCardService: () => ConfirmCardService;
 
   public confirmCards: IConfirmCard[] = [];
+
+  @Inject('alertCardService') private alertCardService: () => AlertCardService;
+
+  public alertCards: IAlertCard[] = [];
 
   @Inject('workflowInstanceService') private workflowInstanceService: () => WorkflowInstanceService;
 
@@ -175,6 +182,11 @@ export default class PublicCardDataUpdate extends mixins(JhiDataUtils) {
       .retrieve()
       .then(res => {
         this.confirmCards = res.data;
+      });
+    this.alertCardService()
+      .retrieve()
+      .then(res => {
+        this.alertCards = res.data;
       });
     this.workflowInstanceService()
       .retrieve()

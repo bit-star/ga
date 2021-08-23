@@ -19,6 +19,8 @@
         "privateCardData": "Private Card Data",
         "approver": "Approver",
         "confirmCard": "Confirm Card",
+        "alertCard": "Alert Card",
+        "apiInvokeLog": "Api Invoke Log",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

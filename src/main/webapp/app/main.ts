@@ -40,6 +40,8 @@ import PublicCardDataService from '@/entities/public-card-data/public-card-data.
 import PrivateCardDataService from '@/entities/private-card-data/private-card-data.service';
 import ApproverService from '@/entities/approver/approver.service';
 import ConfirmCardService from '@/entities/confirm-card/confirm-card.service';
+import AlertCardService from '@/entities/alert-card/alert-card.service';
+import ApiInvokeLogService from '@/entities/api-invoke-log/api-invoke-log.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -112,6 +114,8 @@ new Vue({
     privateCardDataService: () => new PrivateCardDataService(),
     approverService: () => new ApproverService(),
     confirmCardService: () => new ConfirmCardService(),
+    alertCardService: () => new AlertCardService(),
+    apiInvokeLogService: () => new ApiInvokeLogService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

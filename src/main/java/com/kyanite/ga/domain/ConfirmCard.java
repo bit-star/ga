@@ -31,7 +31,7 @@ public class ConfirmCard implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(
-        value = { "privateCardData", "operationResults", "confirmCards", "workflowInstance", "conversation" },
+        value = { "privateCardData", "operationResults", "confirmCards", "alertCards", "workflowInstance", "conversation" },
         allowSetters = true
     )
     private PublicCardData publicCardData;
