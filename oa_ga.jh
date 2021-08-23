@@ -167,6 +167,32 @@ entity ConfirmCard{
     userId String
 }
 
+entity AlertCard{
+	text String
+    userId String
+}
+
+entity ApiInvokeLog{
+	login String,
+	apiName String,
+    method HttpMethod,
+    direction ApiDirection,
+    httpStatusCode Integer,
+    time Instant,
+    reqeustData TextBlob,
+    responseData TextBlob
+}
+
+
+enum ApiDirection{
+	Enter , Out
+}
+
+enum HttpMethod{
+	GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS, TRACE
+}
+
+
 enum ItemType {
 	CostBudget,
     ContractAmount
@@ -191,6 +217,7 @@ relationship  OneToMany {
     DdUser to OperationResults
     PublicCardData to OperationResults
     PublicCardData to ConfirmCard
+    PublicCardData to AlertCard
 }
 
 
