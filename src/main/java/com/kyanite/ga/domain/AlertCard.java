@@ -1,0 +1,117 @@
+package com.kyanite.ga.domain;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
+import javax.persistence.*;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+/**
+ * A AlertCard.
+ */
+@Entity
+@Table(name = "alert_card")
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+public class AlertCard implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "text")
+    private String text;
+
+    @Column(name = "user_id")
+    private String userId;
+
+    @ManyToOne
+    @JsonIgnoreProperties(
+        value = { "privateCardData", "operationResults", "confirmCards", "alertCards", "workflowInstance", "conversation" },
+        allowSetters = true
+    )
+    private PublicCardData publicCardData;
+
+    // jhipster-needle-entity-add-field - JHipster will add fields here
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public AlertCard id(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    public String getText() {
+        return this.text;
+    }
+
+    public AlertCard text(String text) {
+        this.text = text;
+        return this;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getUserId() {
+        return this.userId;
+    }
+
+    public AlertCard userId(String userId) {
+        this.userId = userId;
+        return this;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public PublicCardData getPublicCardData() {
+        return this.publicCardData;
+    }
+
+    public AlertCard publicCardData(PublicCardData publicCardData) {
+        this.setPublicCardData(publicCardData);
+        return this;
+    }
+
+    public void setPublicCardData(PublicCardData publicCardData) {
+        this.publicCardData = publicCardData;
+    }
+
+    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof AlertCard)) {
+            return false;
+        }
+        return id != null && id.equals(((AlertCard) o).id);
+    }
+
+    @Override
+    public int hashCode() {
+        // see https://vladmihalcea.com/how-to-implement-equals-and-hashcode-using-the-jpa-entity-identifier/
+        return getClass().hashCode();
+    }
+
+    // prettier-ignore
+    @Override
+    public String toString() {
+        return "AlertCard{" +
+            "id=" + getId() +
+            ", text='" + getText() + "'" +
+            ", userId='" + getUserId() + "'" +
+            "}";
+    }
+}

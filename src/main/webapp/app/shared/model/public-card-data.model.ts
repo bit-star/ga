@@ -1,6 +1,7 @@
 import { IPrivateCardData } from '@/shared/model/private-card-data.model';
 import { IOperationResults } from '@/shared/model/operation-results.model';
 import { IConfirmCard } from '@/shared/model/confirm-card.model';
+import { IAlertCard } from '@/shared/model/alert-card.model';
 import { IWorkflowInstance } from '@/shared/model/workflow-instance.model';
 import { IConversation } from '@/shared/model/conversation.model';
 
@@ -23,6 +24,7 @@ export interface IPublicCardData {
   privateCardData?: IPrivateCardData[] | null;
   operationResults?: IOperationResults[] | null;
   confirmCards?: IConfirmCard[] | null;
+  alertCards?: IAlertCard[] | null;
   workflowInstance?: IWorkflowInstance | null;
   conversation?: IConversation | null;
 }
@@ -45,6 +47,7 @@ export class PublicCardData implements IPublicCardData {
     public privateCardData?: IPrivateCardData[] | null,
     public operationResults?: IOperationResults[] | null,
     public confirmCards?: IConfirmCard[] | null,
+    public alertCards?: IAlertCard[] | null,
     public workflowInstance?: IWorkflowInstance | null,
     public conversation?: IConversation | null
   ) {

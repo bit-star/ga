@@ -79,6 +79,11 @@ public class PublicCardData implements Serializable {
     @JsonIgnoreProperties(value = { "publicCardData" }, allowSetters = true)
     private Set<ConfirmCard> confirmCards = new HashSet<>();
 
+    @OneToMany(mappedBy = "publicCardData")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "publicCardData" }, allowSetters = true)
+    private Set<AlertCard> alertCards = new HashSet<>();
+
     @ManyToOne
     @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "creator", "publicCardData" }, allowSetters = true)
     private WorkflowInstance workflowInstance;
@@ -348,6 +353,37 @@ public class PublicCardData implements Serializable {
             confirmCards.forEach(i -> i.setPublicCardData(this));
         }
         this.confirmCards = confirmCards;
+    }
+
+    public Set<AlertCard> getAlertCards() {
+        return this.alertCards;
+    }
+
+    public PublicCardData alertCards(Set<AlertCard> alertCards) {
+        this.setAlertCards(alertCards);
+        return this;
+    }
+
+    public PublicCardData addAlertCard(AlertCard alertCard) {
+        this.alertCards.add(alertCard);
+        alertCard.setPublicCardData(this);
+        return this;
+    }
+
+    public PublicCardData removeAlertCard(AlertCard alertCard) {
+        this.alertCards.remove(alertCard);
+        alertCard.setPublicCardData(null);
+        return this;
+    }
+
+    public void setAlertCards(Set<AlertCard> alertCards) {
+        if (this.alertCards != null) {
+            this.alertCards.forEach(i -> i.setPublicCardData(null));
+        }
+        if (alertCards != null) {
+            alertCards.forEach(i -> i.setPublicCardData(this));
+        }
+        this.alertCards = alertCards;
     }
 
     public WorkflowInstance getWorkflowInstance() {

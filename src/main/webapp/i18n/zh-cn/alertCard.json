@@ -1,0 +1,26 @@
+{
+  "gaApp": {
+    "alertCard": {
+      "home": {
+        "title": "Alert Cards",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Alert Card",
+        "createOrEditLabel": "创建或编辑 Alert Card",
+        "notFound": "No Alert Cards found"
+      },
+      "created": "Alert Card {{ param }} 创建成功",
+      "updated": "Alert Card {{ param }} 更新成功",
+      "deleted": "Alert Card {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Alert Card {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Alert Card"
+      },
+      "id": "ID",
+      "text": "Text",
+      "userId": "User Id",
+      "publicCardData": "Public Card Data"
+    }
+  }
+}

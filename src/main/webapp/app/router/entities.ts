@@ -74,6 +74,18 @@ const ConfirmCard = () => import('@/entities/confirm-card/confirm-card.vue');
 const ConfirmCardUpdate = () => import('@/entities/confirm-card/confirm-card-update.vue');
 // prettier-ignore
 const ConfirmCardDetails = () => import('@/entities/confirm-card/confirm-card-details.vue');
+// prettier-ignore
+const AlertCard = () => import('@/entities/alert-card/alert-card.vue');
+// prettier-ignore
+const AlertCardUpdate = () => import('@/entities/alert-card/alert-card-update.vue');
+// prettier-ignore
+const AlertCardDetails = () => import('@/entities/alert-card/alert-card-details.vue');
+// prettier-ignore
+const ApiInvokeLog = () => import('@/entities/api-invoke-log/api-invoke-log.vue');
+// prettier-ignore
+const ApiInvokeLogUpdate = () => import('@/entities/api-invoke-log/api-invoke-log-update.vue');
+// prettier-ignore
+const ApiInvokeLogDetails = () => import('@/entities/api-invoke-log/api-invoke-log-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -363,6 +375,54 @@ export default [
     path: '/confirm-card/:confirmCardId/view',
     name: 'ConfirmCardView',
     component: ConfirmCardDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/alert-card',
+    name: 'AlertCard',
+    component: AlertCard,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/alert-card/new',
+    name: 'AlertCardCreate',
+    component: AlertCardUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/alert-card/:alertCardId/edit',
+    name: 'AlertCardEdit',
+    component: AlertCardUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/alert-card/:alertCardId/view',
+    name: 'AlertCardView',
+    component: AlertCardDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/api-invoke-log',
+    name: 'ApiInvokeLog',
+    component: ApiInvokeLog,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/api-invoke-log/new',
+    name: 'ApiInvokeLogCreate',
+    component: ApiInvokeLogUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/api-invoke-log/:apiInvokeLogId/edit',
+    name: 'ApiInvokeLogEdit',
+    component: ApiInvokeLogUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/api-invoke-log/:apiInvokeLogId/view',
+    name: 'ApiInvokeLogView',
+    component: ApiInvokeLogDetails,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

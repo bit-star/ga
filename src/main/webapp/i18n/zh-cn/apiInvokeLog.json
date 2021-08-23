@@ -1,0 +1,31 @@
+{
+  "gaApp": {
+    "apiInvokeLog": {
+      "home": {
+        "title": "Api Invoke Logs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Api Invoke Log",
+        "createOrEditLabel": "创建或编辑 Api Invoke Log",
+        "notFound": "No Api Invoke Logs found"
+      },
+      "created": "Api Invoke Log {{ param }} 创建成功",
+      "updated": "Api Invoke Log {{ param }} 更新成功",
+      "deleted": "Api Invoke Log {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Api Invoke Log {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Api Invoke Log"
+      },
+      "id": "ID",
+      "login": "Login",
+      "apiName": "Api Name",
+      "method": "Method",
+      "direction": "Direction",
+      "httpStatusCode": "Http Status Code",
+      "time": "Time",
+      "reqeustData": "Reqeust Data",
+      "responseData": "Response Data"
+    }
+  }
+}

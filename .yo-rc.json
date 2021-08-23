@@ -56,9 +56,11 @@
       "PublicCardData",
       "PrivateCardData",
       "Approver",
-      "ConfirmCard"
+      "ConfirmCard",
+      "AlertCard",
+      "ApiInvokeLog"
     ],
-    "lastLiquibaseTimestamp": 1628665459000
+    "lastLiquibaseTimestamp": 1629716843000
   },
   "git-provider": "GitHub",
   "git-company": "bit-star",
