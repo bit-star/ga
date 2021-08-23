@@ -127,6 +127,18 @@
               v-model="$v.apiInvokeLog.responseData.$model"
             ></textarea>
           </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.apiInvokeLog.ok')" for="api-invoke-log-ok">Ok</label>
+            <input
+              type="checkbox"
+              class="form-check"
+              name="ok"
+              id="api-invoke-log-ok"
+              data-cy="ok"
+              :class="{ valid: !$v.apiInvokeLog.ok.$invalid, invalid: $v.apiInvokeLog.ok.$invalid }"
+              v-model="$v.apiInvokeLog.ok.$model"
+            />
+          </div>
         </div>
         <div>
           <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" v-on:click="previousState()">

@@ -37,6 +37,7 @@
             <th scope="row"><span v-text="$t('gaApp.apiInvokeLog.time')">Time</span></th>
             <th scope="row"><span v-text="$t('gaApp.apiInvokeLog.reqeustData')">Reqeust Data</span></th>
             <th scope="row"><span v-text="$t('gaApp.apiInvokeLog.responseData')">Response Data</span></th>
+            <th scope="row"><span v-text="$t('gaApp.apiInvokeLog.ok')">Ok</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -55,6 +56,7 @@
             <td>{{ apiInvokeLog.time ? $d(Date.parse(apiInvokeLog.time), 'short') : '' }}</td>
             <td>{{ apiInvokeLog.reqeustData }}</td>
             <td>{{ apiInvokeLog.responseData }}</td>
+            <td>{{ apiInvokeLog.ok }}</td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link :to="{ name: 'ApiInvokeLogView', params: { apiInvokeLogId: apiInvokeLog.id } }" custom v-slot="{ navigate }">

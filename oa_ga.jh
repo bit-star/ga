@@ -180,7 +180,8 @@ entity ApiInvokeLog{
     httpStatusCode Integer,
     time Instant,
     reqeustData TextBlob,
-    responseData TextBlob
+    responseData TextBlob,
+    ok Boolean
 }
 
 

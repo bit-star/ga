@@ -50,6 +50,9 @@ public class ApiInvokeLog implements Serializable {
     @Column(name = "response_data")
     private String responseData;
 
+    @Column(name = "ok")
+    private Boolean ok;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
         return id;
@@ -168,6 +171,19 @@ public class ApiInvokeLog implements Serializable {
         this.responseData = responseData;
     }
 
+    public Boolean getOk() {
+        return this.ok;
+    }
+
+    public ApiInvokeLog ok(Boolean ok) {
+        this.ok = ok;
+        return this;
+    }
+
+    public void setOk(Boolean ok) {
+        this.ok = ok;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -200,6 +216,7 @@ public class ApiInvokeLog implements Serializable {
             ", time='" + getTime() + "'" +
             ", reqeustData='" + getReqeustData() + "'" +
             ", responseData='" + getResponseData() + "'" +
+            ", ok='" + getOk() + "'" +
             "}";
     }
 }

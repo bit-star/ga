@@ -58,6 +58,9 @@ class ApiInvokeLogResourceIT {
     private static final String DEFAULT_RESPONSE_DATA = "AAAAAAAAAA";
     private static final String UPDATED_RESPONSE_DATA = "BBBBBBBBBB";
 
+    private static final Boolean DEFAULT_OK = false;
+    private static final Boolean UPDATED_OK = true;
+
     private static final String ENTITY_API_URL = "/api/api-invoke-logs";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -90,7 +93,8 @@ class ApiInvokeLogResourceIT {
             .httpStatusCode(DEFAULT_HTTP_STATUS_CODE)
             .time(DEFAULT_TIME)
             .reqeustData(DEFAULT_REQEUST_DATA)
-            .responseData(DEFAULT_RESPONSE_DATA);
+            .responseData(DEFAULT_RESPONSE_DATA)
+            .ok(DEFAULT_OK);
         return apiInvokeLog;
     }
 
@@ -109,7 +113,8 @@ class ApiInvokeLogResourceIT {
             .httpStatusCode(UPDATED_HTTP_STATUS_CODE)
             .time(UPDATED_TIME)
             .reqeustData(UPDATED_REQEUST_DATA)
-            .responseData(UPDATED_RESPONSE_DATA);
+            .responseData(UPDATED_RESPONSE_DATA)
+            .ok(UPDATED_OK);
         return apiInvokeLog;
     }
 
@@ -139,6 +144,7 @@ class ApiInvokeLogResourceIT {
         assertThat(testApiInvokeLog.getTime()).isEqualTo(DEFAULT_TIME);
         assertThat(testApiInvokeLog.getReqeustData()).isEqualTo(DEFAULT_REQEUST_DATA);
         assertThat(testApiInvokeLog.getResponseData()).isEqualTo(DEFAULT_RESPONSE_DATA);
+        assertThat(testApiInvokeLog.getOk()).isEqualTo(DEFAULT_OK);
     }
 
     @Test
@@ -178,7 +184,8 @@ class ApiInvokeLogResourceIT {
             .andExpect(jsonPath("$.[*].httpStatusCode").value(hasItem(DEFAULT_HTTP_STATUS_CODE)))
             .andExpect(jsonPath("$.[*].time").value(hasItem(DEFAULT_TIME.toString())))
             .andExpect(jsonPath("$.[*].reqeustData").value(hasItem(DEFAULT_REQEUST_DATA.toString())))
-            .andExpect(jsonPath("$.[*].responseData").value(hasItem(DEFAULT_RESPONSE_DATA.toString())));
+            .andExpect(jsonPath("$.[*].responseData").value(hasItem(DEFAULT_RESPONSE_DATA.toString())))
+            .andExpect(jsonPath("$.[*].ok").value(hasItem(DEFAULT_OK.booleanValue())));
     }
 
     @Test
@@ -200,7 +207,8 @@ class ApiInvokeLogResourceIT {
             .andExpect(jsonPath("$.httpStatusCode").value(DEFAULT_HTTP_STATUS_CODE))
             .andExpect(jsonPath("$.time").value(DEFAULT_TIME.toString()))
             .andExpect(jsonPath("$.reqeustData").value(DEFAULT_REQEUST_DATA.toString()))
-            .andExpect(jsonPath("$.responseData").value(DEFAULT_RESPONSE_DATA.toString()));
+            .andExpect(jsonPath("$.responseData").value(DEFAULT_RESPONSE_DATA.toString()))
+            .andExpect(jsonPath("$.ok").value(DEFAULT_OK.booleanValue()));
     }
 
     @Test
@@ -230,7 +238,8 @@ class ApiInvokeLogResourceIT {
             .httpStatusCode(UPDATED_HTTP_STATUS_CODE)
             .time(UPDATED_TIME)
             .reqeustData(UPDATED_REQEUST_DATA)
-            .responseData(UPDATED_RESPONSE_DATA);
+            .responseData(UPDATED_RESPONSE_DATA)
+            .ok(UPDATED_OK);
 
         restApiInvokeLogMockMvc
             .perform(
@@ -252,6 +261,7 @@ class ApiInvokeLogResourceIT {
         assertThat(testApiInvokeLog.getTime()).isEqualTo(UPDATED_TIME);
         assertThat(testApiInvokeLog.getReqeustData()).isEqualTo(UPDATED_REQEUST_DATA);
         assertThat(testApiInvokeLog.getResponseData()).isEqualTo(UPDATED_RESPONSE_DATA);
+        assertThat(testApiInvokeLog.getOk()).isEqualTo(UPDATED_OK);
     }
 
     @Test
@@ -348,6 +358,7 @@ class ApiInvokeLogResourceIT {
         assertThat(testApiInvokeLog.getTime()).isEqualTo(UPDATED_TIME);
         assertThat(testApiInvokeLog.getReqeustData()).isEqualTo(DEFAULT_REQEUST_DATA);
         assertThat(testApiInvokeLog.getResponseData()).isEqualTo(UPDATED_RESPONSE_DATA);
+        assertThat(testApiInvokeLog.getOk()).isEqualTo(DEFAULT_OK);
     }
 
     @Test
@@ -370,7 +381,8 @@ class ApiInvokeLogResourceIT {
             .httpStatusCode(UPDATED_HTTP_STATUS_CODE)
             .time(UPDATED_TIME)
             .reqeustData(UPDATED_REQEUST_DATA)
-            .responseData(UPDATED_RESPONSE_DATA);
+            .responseData(UPDATED_RESPONSE_DATA)
+            .ok(UPDATED_OK);
 
         restApiInvokeLogMockMvc
             .perform(
@@ -392,6 +404,7 @@ class ApiInvokeLogResourceIT {
         assertThat(testApiInvokeLog.getTime()).isEqualTo(UPDATED_TIME);
         assertThat(testApiInvokeLog.getReqeustData()).isEqualTo(UPDATED_REQEUST_DATA);
         assertThat(testApiInvokeLog.getResponseData()).isEqualTo(UPDATED_RESPONSE_DATA);
+        assertThat(testApiInvokeLog.getOk()).isEqualTo(UPDATED_OK);
     }
 
     @Test

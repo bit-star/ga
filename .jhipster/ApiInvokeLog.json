@@ -36,6 +36,10 @@
       "fieldName": "responseData",
       "fieldType": "byte[]",
       "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "ok",
+      "fieldType": "Boolean"
     }
   ],
   "relationships": [],

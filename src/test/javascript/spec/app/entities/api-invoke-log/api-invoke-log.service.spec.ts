@@ -35,7 +35,18 @@ describe('Service Tests', () => {
     beforeEach(() => {
       service = new ApiInvokeLogService();
       currentDate = new Date();
-      elemDefault = new ApiInvokeLog(123, 'AAAAAAA', 'AAAAAAA', HttpMethod.GET, ApiDirection.Enter, 0, currentDate, 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new ApiInvokeLog(
+        123,
+        'AAAAAAA',
+        'AAAAAAA',
+        HttpMethod.GET,
+        ApiDirection.Enter,
+        0,
+        currentDate,
+        'AAAAAAA',
+        'AAAAAAA',
+        false
+      );
     });
 
     describe('Service methods', () => {
@@ -106,6 +117,7 @@ describe('Service Tests', () => {
             time: dayjs(currentDate).format(DATE_TIME_FORMAT),
             reqeustData: 'BBBBBB',
             responseData: 'BBBBBB',
+            ok: true,
           },
           elemDefault
         );
@@ -141,6 +153,7 @@ describe('Service Tests', () => {
             direction: 'BBBBBB',
             time: dayjs(currentDate).format(DATE_TIME_FORMAT),
             responseData: 'BBBBBB',
+            ok: true,
           },
           new ApiInvokeLog()
         );
@@ -181,6 +194,7 @@ describe('Service Tests', () => {
             time: dayjs(currentDate).format(DATE_TIME_FORMAT),
             reqeustData: 'BBBBBB',
             responseData: 'BBBBBB',
+            ok: true,
           },
           elemDefault
         );
