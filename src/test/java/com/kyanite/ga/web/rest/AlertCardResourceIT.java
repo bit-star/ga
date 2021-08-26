@@ -35,6 +35,12 @@ class AlertCardResourceIT {
     private static final String DEFAULT_USER_ID = "AAAAAAAAAA";
     private static final String UPDATED_USER_ID = "BBBBBBBBBB";
 
+    private static final String DEFAULT_LINK = "AAAAAAAAAA";
+    private static final String UPDATED_LINK = "BBBBBBBBBB";
+
+    private static final String DEFAULT_MD_1 = "AAAAAAAAAA";
+    private static final String UPDATED_MD_1 = "BBBBBBBBBB";
+
     private static final String ENTITY_API_URL = "/api/alert-cards";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -59,7 +65,7 @@ class AlertCardResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static AlertCard createEntity(EntityManager em) {
-        AlertCard alertCard = new AlertCard().text(DEFAULT_TEXT).userId(DEFAULT_USER_ID);
+        AlertCard alertCard = new AlertCard().text(DEFAULT_TEXT).userId(DEFAULT_USER_ID).link(DEFAULT_LINK).md1(DEFAULT_MD_1);
         return alertCard;
     }
 
@@ -70,7 +76,7 @@ class AlertCardResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static AlertCard createUpdatedEntity(EntityManager em) {
-        AlertCard alertCard = new AlertCard().text(UPDATED_TEXT).userId(UPDATED_USER_ID);
+        AlertCard alertCard = new AlertCard().text(UPDATED_TEXT).userId(UPDATED_USER_ID).link(UPDATED_LINK).md1(UPDATED_MD_1);
         return alertCard;
     }
 
@@ -94,6 +100,8 @@ class AlertCardResourceIT {
         AlertCard testAlertCard = alertCardList.get(alertCardList.size() - 1);
         assertThat(testAlertCard.getText()).isEqualTo(DEFAULT_TEXT);
         assertThat(testAlertCard.getUserId()).isEqualTo(DEFAULT_USER_ID);
+        assertThat(testAlertCard.getLink()).isEqualTo(DEFAULT_LINK);
+        assertThat(testAlertCard.getMd1()).isEqualTo(DEFAULT_MD_1);
     }
 
     @Test
@@ -127,7 +135,9 @@ class AlertCardResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(alertCard.getId().intValue())))
             .andExpect(jsonPath("$.[*].text").value(hasItem(DEFAULT_TEXT)))
-            .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID)));
+            .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID)))
+            .andExpect(jsonPath("$.[*].link").value(hasItem(DEFAULT_LINK)))
+            .andExpect(jsonPath("$.[*].md1").value(hasItem(DEFAULT_MD_1)));
     }
 
     @Test
@@ -143,7 +153,9 @@ class AlertCardResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(alertCard.getId().intValue()))
             .andExpect(jsonPath("$.text").value(DEFAULT_TEXT))
-            .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID));
+            .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID))
+            .andExpect(jsonPath("$.link").value(DEFAULT_LINK))
+            .andExpect(jsonPath("$.md1").value(DEFAULT_MD_1));
     }
 
     @Test
@@ -165,7 +177,7 @@ class AlertCardResourceIT {
         AlertCard updatedAlertCard = alertCardRepository.findById(alertCard.getId()).get();
         // Disconnect from session so that the updates on updatedAlertCard are not directly saved in db
         em.detach(updatedAlertCard);
-        updatedAlertCard.text(UPDATED_TEXT).userId(UPDATED_USER_ID);
+        updatedAlertCard.text(UPDATED_TEXT).userId(UPDATED_USER_ID).link(UPDATED_LINK).md1(UPDATED_MD_1);
 
         restAlertCardMockMvc
             .perform(
@@ -181,6 +193,8 @@ class AlertCardResourceIT {
         AlertCard testAlertCard = alertCardList.get(alertCardList.size() - 1);
         assertThat(testAlertCard.getText()).isEqualTo(UPDATED_TEXT);
         assertThat(testAlertCard.getUserId()).isEqualTo(UPDATED_USER_ID);
+        assertThat(testAlertCard.getLink()).isEqualTo(UPDATED_LINK);
+        assertThat(testAlertCard.getMd1()).isEqualTo(UPDATED_MD_1);
     }
 
     @Test
@@ -267,6 +281,8 @@ class AlertCardResourceIT {
         AlertCard testAlertCard = alertCardList.get(alertCardList.size() - 1);
         assertThat(testAlertCard.getText()).isEqualTo(UPDATED_TEXT);
         assertThat(testAlertCard.getUserId()).isEqualTo(DEFAULT_USER_ID);
+        assertThat(testAlertCard.getLink()).isEqualTo(DEFAULT_LINK);
+        assertThat(testAlertCard.getMd1()).isEqualTo(DEFAULT_MD_1);
     }
 
     @Test
@@ -281,7 +297,7 @@ class AlertCardResourceIT {
         AlertCard partialUpdatedAlertCard = new AlertCard();
         partialUpdatedAlertCard.setId(alertCard.getId());
 
-        partialUpdatedAlertCard.text(UPDATED_TEXT).userId(UPDATED_USER_ID);
+        partialUpdatedAlertCard.text(UPDATED_TEXT).userId(UPDATED_USER_ID).link(UPDATED_LINK).md1(UPDATED_MD_1);
 
         restAlertCardMockMvc
             .perform(
@@ -297,6 +313,8 @@ class AlertCardResourceIT {
         AlertCard testAlertCard = alertCardList.get(alertCardList.size() - 1);
         assertThat(testAlertCard.getText()).isEqualTo(UPDATED_TEXT);
         assertThat(testAlertCard.getUserId()).isEqualTo(UPDATED_USER_ID);
+        assertThat(testAlertCard.getLink()).isEqualTo(UPDATED_LINK);
+        assertThat(testAlertCard.getMd1()).isEqualTo(UPDATED_MD_1);
     }
 
     @Test

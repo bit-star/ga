@@ -25,6 +25,18 @@
             <span>{{ confirmCard.userId }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.confirmCard.link')">Link</span>
+          </dt>
+          <dd>
+            <span>{{ confirmCard.link }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.confirmCard.md1')">Md 1</span>
+          </dt>
+          <dd>
+            <span>{{ confirmCard.md1 }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.confirmCard.publicCardData')">Public Card Data</span>
           </dt>
           <dd>

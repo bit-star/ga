@@ -19,6 +19,18 @@
             <span>{{ alertCard.userId }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.alertCard.link')">Link</span>
+          </dt>
+          <dd>
+            <span>{{ alertCard.link }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('gaApp.alertCard.md1')">Md 1</span>
+          </dt>
+          <dd>
+            <span>{{ alertCard.md1 }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.alertCard.publicCardData')">Public Card Data</span>
           </dt>
           <dd>

@@ -20,6 +20,8 @@
       "id": "ID",
       "text": "Text",
       "userId": "User Id",
+      "link": "Link",
+      "md1": "Md 1",
       "publicCardData": "Public Card Data"
     }
   }

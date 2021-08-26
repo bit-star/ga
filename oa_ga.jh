@@ -165,11 +165,15 @@ entity ConfirmCard{
 	text String
     finish String
     userId String
+    link String
+    md1 String
 }
 
 entity AlertCard{
 	text String
     userId String
+    link String
+    md1 String
 }
 
 entity ApiInvokeLog{

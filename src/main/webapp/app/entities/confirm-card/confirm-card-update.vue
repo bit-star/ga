@@ -51,6 +51,30 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.confirmCard.link')" for="confirm-card-link">Link</label>
+            <input
+              type="text"
+              class="form-control"
+              name="link"
+              id="confirm-card-link"
+              data-cy="link"
+              :class="{ valid: !$v.confirmCard.link.$invalid, invalid: $v.confirmCard.link.$invalid }"
+              v-model="$v.confirmCard.link.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.confirmCard.md1')" for="confirm-card-md1">Md 1</label>
+            <input
+              type="text"
+              class="form-control"
+              name="md1"
+              id="confirm-card-md1"
+              data-cy="md1"
+              :class="{ valid: !$v.confirmCard.md1.$invalid, invalid: $v.confirmCard.md1.$invalid }"
+              v-model="$v.confirmCard.md1.$model"
+            />
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.confirmCard.publicCardData')" for="confirm-card-publicCardData"
               >Public Card Data</label
             >

@@ -29,6 +29,12 @@ public class ConfirmCard implements Serializable {
     @Column(name = "user_id")
     private String userId;
 
+    @Column(name = "link")
+    private String link;
+
+    @Column(name = "md_1")
+    private String md1;
+
     @ManyToOne
     @JsonIgnoreProperties(
         value = { "privateCardData", "operationResults", "confirmCards", "alertCards", "workflowInstance", "conversation" },
@@ -89,6 +95,32 @@ public class ConfirmCard implements Serializable {
         this.userId = userId;
     }
 
+    public String getLink() {
+        return this.link;
+    }
+
+    public ConfirmCard link(String link) {
+        this.link = link;
+        return this;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public String getMd1() {
+        return this.md1;
+    }
+
+    public ConfirmCard md1(String md1) {
+        this.md1 = md1;
+        return this;
+    }
+
+    public void setMd1(String md1) {
+        this.md1 = md1;
+    }
+
     public PublicCardData getPublicCardData() {
         return this.publicCardData;
     }
@@ -129,6 +161,8 @@ public class ConfirmCard implements Serializable {
             ", text='" + getText() + "'" +
             ", finish='" + getFinish() + "'" +
             ", userId='" + getUserId() + "'" +
+            ", link='" + getLink() + "'" +
+            ", md1='" + getMd1() + "'" +
             "}";
     }
 }

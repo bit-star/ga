@@ -39,6 +39,30 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.alertCard.link')" for="alert-card-link">Link</label>
+            <input
+              type="text"
+              class="form-control"
+              name="link"
+              id="alert-card-link"
+              data-cy="link"
+              :class="{ valid: !$v.alertCard.link.$invalid, invalid: $v.alertCard.link.$invalid }"
+              v-model="$v.alertCard.link.$model"
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.alertCard.md1')" for="alert-card-md1">Md 1</label>
+            <input
+              type="text"
+              class="form-control"
+              name="md1"
+              id="alert-card-md1"
+              data-cy="md1"
+              :class="{ valid: !$v.alertCard.md1.$invalid, invalid: $v.alertCard.md1.$invalid }"
+              v-model="$v.alertCard.md1.$model"
+            />
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.alertCard.publicCardData')" for="alert-card-publicCardData"
               >Public Card Data</label
             >

@@ -38,6 +38,12 @@ class ConfirmCardResourceIT {
     private static final String DEFAULT_USER_ID = "AAAAAAAAAA";
     private static final String UPDATED_USER_ID = "BBBBBBBBBB";
 
+    private static final String DEFAULT_LINK = "AAAAAAAAAA";
+    private static final String UPDATED_LINK = "BBBBBBBBBB";
+
+    private static final String DEFAULT_MD_1 = "AAAAAAAAAA";
+    private static final String UPDATED_MD_1 = "BBBBBBBBBB";
+
     private static final String ENTITY_API_URL = "/api/confirm-cards";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -62,7 +68,12 @@ class ConfirmCardResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static ConfirmCard createEntity(EntityManager em) {
-        ConfirmCard confirmCard = new ConfirmCard().text(DEFAULT_TEXT).finish(DEFAULT_FINISH).userId(DEFAULT_USER_ID);
+        ConfirmCard confirmCard = new ConfirmCard()
+            .text(DEFAULT_TEXT)
+            .finish(DEFAULT_FINISH)
+            .userId(DEFAULT_USER_ID)
+            .link(DEFAULT_LINK)
+            .md1(DEFAULT_MD_1);
         return confirmCard;
     }
 
@@ -73,7 +84,12 @@ class ConfirmCardResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static ConfirmCard createUpdatedEntity(EntityManager em) {
-        ConfirmCard confirmCard = new ConfirmCard().text(UPDATED_TEXT).finish(UPDATED_FINISH).userId(UPDATED_USER_ID);
+        ConfirmCard confirmCard = new ConfirmCard()
+            .text(UPDATED_TEXT)
+            .finish(UPDATED_FINISH)
+            .userId(UPDATED_USER_ID)
+            .link(UPDATED_LINK)
+            .md1(UPDATED_MD_1);
         return confirmCard;
     }
 
@@ -98,6 +114,8 @@ class ConfirmCardResourceIT {
         assertThat(testConfirmCard.getText()).isEqualTo(DEFAULT_TEXT);
         assertThat(testConfirmCard.getFinish()).isEqualTo(DEFAULT_FINISH);
         assertThat(testConfirmCard.getUserId()).isEqualTo(DEFAULT_USER_ID);
+        assertThat(testConfirmCard.getLink()).isEqualTo(DEFAULT_LINK);
+        assertThat(testConfirmCard.getMd1()).isEqualTo(DEFAULT_MD_1);
     }
 
     @Test
@@ -132,7 +150,9 @@ class ConfirmCardResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(confirmCard.getId().intValue())))
             .andExpect(jsonPath("$.[*].text").value(hasItem(DEFAULT_TEXT)))
             .andExpect(jsonPath("$.[*].finish").value(hasItem(DEFAULT_FINISH)))
-            .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID)));
+            .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID)))
+            .andExpect(jsonPath("$.[*].link").value(hasItem(DEFAULT_LINK)))
+            .andExpect(jsonPath("$.[*].md1").value(hasItem(DEFAULT_MD_1)));
     }
 
     @Test
@@ -149,7 +169,9 @@ class ConfirmCardResourceIT {
             .andExpect(jsonPath("$.id").value(confirmCard.getId().intValue()))
             .andExpect(jsonPath("$.text").value(DEFAULT_TEXT))
             .andExpect(jsonPath("$.finish").value(DEFAULT_FINISH))
-            .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID));
+            .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID))
+            .andExpect(jsonPath("$.link").value(DEFAULT_LINK))
+            .andExpect(jsonPath("$.md1").value(DEFAULT_MD_1));
     }
 
     @Test
@@ -171,7 +193,7 @@ class ConfirmCardResourceIT {
         ConfirmCard updatedConfirmCard = confirmCardRepository.findById(confirmCard.getId()).get();
         // Disconnect from session so that the updates on updatedConfirmCard are not directly saved in db
         em.detach(updatedConfirmCard);
-        updatedConfirmCard.text(UPDATED_TEXT).finish(UPDATED_FINISH).userId(UPDATED_USER_ID);
+        updatedConfirmCard.text(UPDATED_TEXT).finish(UPDATED_FINISH).userId(UPDATED_USER_ID).link(UPDATED_LINK).md1(UPDATED_MD_1);
 
         restConfirmCardMockMvc
             .perform(
@@ -188,6 +210,8 @@ class ConfirmCardResourceIT {
         assertThat(testConfirmCard.getText()).isEqualTo(UPDATED_TEXT);
         assertThat(testConfirmCard.getFinish()).isEqualTo(UPDATED_FINISH);
         assertThat(testConfirmCard.getUserId()).isEqualTo(UPDATED_USER_ID);
+        assertThat(testConfirmCard.getLink()).isEqualTo(UPDATED_LINK);
+        assertThat(testConfirmCard.getMd1()).isEqualTo(UPDATED_MD_1);
     }
 
     @Test
@@ -275,6 +299,8 @@ class ConfirmCardResourceIT {
         assertThat(testConfirmCard.getText()).isEqualTo(UPDATED_TEXT);
         assertThat(testConfirmCard.getFinish()).isEqualTo(UPDATED_FINISH);
         assertThat(testConfirmCard.getUserId()).isEqualTo(UPDATED_USER_ID);
+        assertThat(testConfirmCard.getLink()).isEqualTo(DEFAULT_LINK);
+        assertThat(testConfirmCard.getMd1()).isEqualTo(DEFAULT_MD_1);
     }
 
     @Test
@@ -289,7 +315,7 @@ class ConfirmCardResourceIT {
         ConfirmCard partialUpdatedConfirmCard = new ConfirmCard();
         partialUpdatedConfirmCard.setId(confirmCard.getId());
 
-        partialUpdatedConfirmCard.text(UPDATED_TEXT).finish(UPDATED_FINISH).userId(UPDATED_USER_ID);
+        partialUpdatedConfirmCard.text(UPDATED_TEXT).finish(UPDATED_FINISH).userId(UPDATED_USER_ID).link(UPDATED_LINK).md1(UPDATED_MD_1);
 
         restConfirmCardMockMvc
             .perform(
@@ -306,6 +332,8 @@ class ConfirmCardResourceIT {
         assertThat(testConfirmCard.getText()).isEqualTo(UPDATED_TEXT);
         assertThat(testConfirmCard.getFinish()).isEqualTo(UPDATED_FINISH);
         assertThat(testConfirmCard.getUserId()).isEqualTo(UPDATED_USER_ID);
+        assertThat(testConfirmCard.getLink()).isEqualTo(UPDATED_LINK);
+        assertThat(testConfirmCard.getMd1()).isEqualTo(UPDATED_MD_1);
     }
 
     @Test

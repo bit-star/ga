@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new AlertCardService();
-      elemDefault = new AlertCard(123, 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new AlertCard(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -83,6 +83,8 @@ describe('Service Tests', () => {
           {
             text: 'BBBBBB',
             userId: 'BBBBBB',
+            link: 'BBBBBB',
+            md1: 'BBBBBB',
           },
           elemDefault
         );
@@ -134,6 +136,8 @@ describe('Service Tests', () => {
           {
             text: 'BBBBBB',
             userId: 'BBBBBB',
+            link: 'BBBBBB',
+            md1: 'BBBBBB',
           },
           elemDefault
         );

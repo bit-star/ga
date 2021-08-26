@@ -32,6 +32,8 @@
             <th scope="row"><span v-text="$t('gaApp.confirmCard.text')">Text</span></th>
             <th scope="row"><span v-text="$t('gaApp.confirmCard.finish')">Finish</span></th>
             <th scope="row"><span v-text="$t('gaApp.confirmCard.userId')">User Id</span></th>
+            <th scope="row"><span v-text="$t('gaApp.confirmCard.link')">Link</span></th>
+            <th scope="row"><span v-text="$t('gaApp.confirmCard.md1')">Md 1</span></th>
             <th scope="row"><span v-text="$t('gaApp.confirmCard.publicCardData')">Public Card Data</span></th>
             <th scope="row"></th>
           </tr>
@@ -44,6 +46,8 @@
             <td>{{ confirmCard.text }}</td>
             <td>{{ confirmCard.finish }}</td>
             <td>{{ confirmCard.userId }}</td>
+            <td>{{ confirmCard.link }}</td>
+            <td>{{ confirmCard.md1 }}</td>
             <td>
               <div v-if="confirmCard.publicCardData">
                 <router-link :to="{ name: 'PublicCardDataView', params: { publicCardDataId: confirmCard.publicCardData.id } }">{{
