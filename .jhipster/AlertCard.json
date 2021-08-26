@@ -8,6 +8,14 @@
     {
       "fieldName": "userId",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "link",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "md1",
+      "fieldType": "String"
     }
   ],
   "relationships": [

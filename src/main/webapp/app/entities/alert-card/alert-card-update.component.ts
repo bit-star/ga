@@ -10,6 +10,8 @@ const validations: any = {
   alertCard: {
     text: {},
     userId: {},
+    link: {},
+    md1: {},
   },
 };
 

@@ -54,6 +54,12 @@ public class AlertCardService {
                     if (alertCard.getUserId() != null) {
                         existingAlertCard.setUserId(alertCard.getUserId());
                     }
+                    if (alertCard.getLink() != null) {
+                        existingAlertCard.setLink(alertCard.getLink());
+                    }
+                    if (alertCard.getMd1() != null) {
+                        existingAlertCard.setMd1(alertCard.getMd1());
+                    }
 
                     return existingAlertCard;
                 }

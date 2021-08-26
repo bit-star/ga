@@ -11,6 +11,8 @@ const validations: any = {
     text: {},
     finish: {},
     userId: {},
+    link: {},
+    md1: {},
   },
 };
 

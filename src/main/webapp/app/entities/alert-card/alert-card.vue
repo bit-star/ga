@@ -31,6 +31,8 @@
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
             <th scope="row"><span v-text="$t('gaApp.alertCard.text')">Text</span></th>
             <th scope="row"><span v-text="$t('gaApp.alertCard.userId')">User Id</span></th>
+            <th scope="row"><span v-text="$t('gaApp.alertCard.link')">Link</span></th>
+            <th scope="row"><span v-text="$t('gaApp.alertCard.md1')">Md 1</span></th>
             <th scope="row"><span v-text="$t('gaApp.alertCard.publicCardData')">Public Card Data</span></th>
             <th scope="row"></th>
           </tr>
@@ -42,6 +44,8 @@
             </td>
             <td>{{ alertCard.text }}</td>
             <td>{{ alertCard.userId }}</td>
+            <td>{{ alertCard.link }}</td>
+            <td>{{ alertCard.md1 }}</td>
             <td>
               <div v-if="alertCard.publicCardData">
                 <router-link :to="{ name: 'PublicCardDataView', params: { publicCardDataId: alertCard.publicCardData.id } }">{{

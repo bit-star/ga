@@ -57,6 +57,12 @@ public class ConfirmCardService {
                     if (confirmCard.getUserId() != null) {
                         existingConfirmCard.setUserId(confirmCard.getUserId());
                     }
+                    if (confirmCard.getLink() != null) {
+                        existingConfirmCard.setLink(confirmCard.getLink());
+                    }
+                    if (confirmCard.getMd1() != null) {
+                        existingConfirmCard.setMd1(confirmCard.getMd1());
+                    }
 
                     return existingConfirmCard;
                 }

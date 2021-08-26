@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new ConfirmCardService();
-      elemDefault = new ConfirmCard(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new ConfirmCard(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -84,6 +84,8 @@ describe('Service Tests', () => {
             text: 'BBBBBB',
             finish: 'BBBBBB',
             userId: 'BBBBBB',
+            link: 'BBBBBB',
+            md1: 'BBBBBB',
           },
           elemDefault
         );
@@ -112,6 +114,8 @@ describe('Service Tests', () => {
           {
             text: 'BBBBBB',
             finish: 'BBBBBB',
+            link: 'BBBBBB',
+            md1: 'BBBBBB',
           },
           new ConfirmCard()
         );
@@ -142,6 +146,8 @@ describe('Service Tests', () => {
             text: 'BBBBBB',
             finish: 'BBBBBB',
             userId: 'BBBBBB',
+            link: 'BBBBBB',
+            md1: 'BBBBBB',
           },
           elemDefault
         );
