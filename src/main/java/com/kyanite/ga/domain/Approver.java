@@ -28,6 +28,9 @@ public class Approver implements Serializable {
     @Column(name = "oa_user_id")
     private Long oaUserId;
 
+    @Column(name = "email")
+    private String email;
+
     @ManyToOne
     @JsonIgnoreProperties(value = { "approvers", "workflowTemplate", "creator", "publicCardData" }, allowSetters = true)
     private WorkflowInstance workflowInstance;
@@ -77,6 +80,19 @@ public class Approver implements Serializable {
 
     public void setOaUserId(Long oaUserId) {
         this.oaUserId = oaUserId;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public Approver email(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public WorkflowInstance getWorkflowInstance() {
@@ -131,6 +147,7 @@ public class Approver implements Serializable {
             "id=" + getId() +
             ", approverRole='" + getApproverRole() + "'" +
             ", oaUserId=" + getOaUserId() +
+            ", email='" + getEmail() + "'" +
             "}";
     }
 }

@@ -54,6 +54,9 @@ public class ApproverService {
                     if (approver.getOaUserId() != null) {
                         existingApprover.setOaUserId(approver.getOaUserId());
                     }
+                    if (approver.getEmail() != null) {
+                        existingApprover.setEmail(approver.getEmail());
+                    }
 
                     return existingApprover;
                 }

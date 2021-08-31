@@ -6,6 +6,7 @@ export interface IApprover {
   id?: number;
   approverRole?: ApproverRole | null;
   oaUserId?: number | null;
+  email?: string | null;
   workflowInstance?: IWorkflowInstance | null;
   ddUser?: IDdUser | null;
 }
@@ -15,6 +16,7 @@ export class Approver implements IApprover {
     public id?: number,
     public approverRole?: ApproverRole | null,
     public oaUserId?: number | null,
+    public email?: string | null,
     public workflowInstance?: IWorkflowInstance | null,
     public ddUser?: IDdUser | null
   ) {}

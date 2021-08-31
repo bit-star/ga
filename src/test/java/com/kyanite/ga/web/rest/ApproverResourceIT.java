@@ -36,6 +36,9 @@ class ApproverResourceIT {
     private static final Long DEFAULT_OA_USER_ID = 1L;
     private static final Long UPDATED_OA_USER_ID = 2L;
 
+    private static final String DEFAULT_EMAIL = "AAAAAAAAAA";
+    private static final String UPDATED_EMAIL = "BBBBBBBBBB";
+
     private static final String ENTITY_API_URL = "/api/approvers";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -60,7 +63,7 @@ class ApproverResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Approver createEntity(EntityManager em) {
-        Approver approver = new Approver().approverRole(DEFAULT_APPROVER_ROLE).oaUserId(DEFAULT_OA_USER_ID);
+        Approver approver = new Approver().approverRole(DEFAULT_APPROVER_ROLE).oaUserId(DEFAULT_OA_USER_ID).email(DEFAULT_EMAIL);
         return approver;
     }
 
@@ -71,7 +74,7 @@ class ApproverResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Approver createUpdatedEntity(EntityManager em) {
-        Approver approver = new Approver().approverRole(UPDATED_APPROVER_ROLE).oaUserId(UPDATED_OA_USER_ID);
+        Approver approver = new Approver().approverRole(UPDATED_APPROVER_ROLE).oaUserId(UPDATED_OA_USER_ID).email(UPDATED_EMAIL);
         return approver;
     }
 
@@ -95,6 +98,7 @@ class ApproverResourceIT {
         Approver testApprover = approverList.get(approverList.size() - 1);
         assertThat(testApprover.getApproverRole()).isEqualTo(DEFAULT_APPROVER_ROLE);
         assertThat(testApprover.getOaUserId()).isEqualTo(DEFAULT_OA_USER_ID);
+        assertThat(testApprover.getEmail()).isEqualTo(DEFAULT_EMAIL);
     }
 
     @Test
@@ -128,7 +132,8 @@ class ApproverResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(approver.getId().intValue())))
             .andExpect(jsonPath("$.[*].approverRole").value(hasItem(DEFAULT_APPROVER_ROLE.toString())))
-            .andExpect(jsonPath("$.[*].oaUserId").value(hasItem(DEFAULT_OA_USER_ID.intValue())));
+            .andExpect(jsonPath("$.[*].oaUserId").value(hasItem(DEFAULT_OA_USER_ID.intValue())))
+            .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)));
     }
 
     @Test
@@ -144,7 +149,8 @@ class ApproverResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(approver.getId().intValue()))
             .andExpect(jsonPath("$.approverRole").value(DEFAULT_APPROVER_ROLE.toString()))
-            .andExpect(jsonPath("$.oaUserId").value(DEFAULT_OA_USER_ID.intValue()));
+            .andExpect(jsonPath("$.oaUserId").value(DEFAULT_OA_USER_ID.intValue()))
+            .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL));
     }
 
     @Test
@@ -166,7 +172,7 @@ class ApproverResourceIT {
         Approver updatedApprover = approverRepository.findById(approver.getId()).get();
         // Disconnect from session so that the updates on updatedApprover are not directly saved in db
         em.detach(updatedApprover);
-        updatedApprover.approverRole(UPDATED_APPROVER_ROLE).oaUserId(UPDATED_OA_USER_ID);
+        updatedApprover.approverRole(UPDATED_APPROVER_ROLE).oaUserId(UPDATED_OA_USER_ID).email(UPDATED_EMAIL);
 
         restApproverMockMvc
             .perform(
@@ -182,6 +188,7 @@ class ApproverResourceIT {
         Approver testApprover = approverList.get(approverList.size() - 1);
         assertThat(testApprover.getApproverRole()).isEqualTo(UPDATED_APPROVER_ROLE);
         assertThat(testApprover.getOaUserId()).isEqualTo(UPDATED_OA_USER_ID);
+        assertThat(testApprover.getEmail()).isEqualTo(UPDATED_EMAIL);
     }
 
     @Test
@@ -268,6 +275,7 @@ class ApproverResourceIT {
         Approver testApprover = approverList.get(approverList.size() - 1);
         assertThat(testApprover.getApproverRole()).isEqualTo(DEFAULT_APPROVER_ROLE);
         assertThat(testApprover.getOaUserId()).isEqualTo(UPDATED_OA_USER_ID);
+        assertThat(testApprover.getEmail()).isEqualTo(DEFAULT_EMAIL);
     }
 
     @Test
@@ -282,7 +290,7 @@ class ApproverResourceIT {
         Approver partialUpdatedApprover = new Approver();
         partialUpdatedApprover.setId(approver.getId());
 
-        partialUpdatedApprover.approverRole(UPDATED_APPROVER_ROLE).oaUserId(UPDATED_OA_USER_ID);
+        partialUpdatedApprover.approverRole(UPDATED_APPROVER_ROLE).oaUserId(UPDATED_OA_USER_ID).email(UPDATED_EMAIL);
 
         restApproverMockMvc
             .perform(
@@ -298,6 +306,7 @@ class ApproverResourceIT {
         Approver testApprover = approverList.get(approverList.size() - 1);
         assertThat(testApprover.getApproverRole()).isEqualTo(UPDATED_APPROVER_ROLE);
         assertThat(testApprover.getOaUserId()).isEqualTo(UPDATED_OA_USER_ID);
+        assertThat(testApprover.getEmail()).isEqualTo(UPDATED_EMAIL);
     }
 
     @Test

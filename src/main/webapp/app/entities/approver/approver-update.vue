@@ -41,6 +41,18 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.approver.email')" for="approver-email">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              name="email"
+              id="approver-email"
+              data-cy="email"
+              :class="{ valid: !$v.approver.email.$invalid, invalid: $v.approver.email.$invalid }"
+              v-model="$v.approver.email.$model"
+            />
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.approver.workflowInstance')" for="approver-workflowInstance"
               >Workflow Instance</label
             >

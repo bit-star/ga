@@ -20,6 +20,9 @@
             <column name="oa_user_id" type="bigint">
                 <constraints nullable="true" />
             </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="workflow_instance_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -48,6 +51,7 @@
             <column name="id" type="numeric"/>
             <column name="approver_role" type="string"/>
             <column name="oa_user_id" type="numeric"/>
+            <column name="email" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

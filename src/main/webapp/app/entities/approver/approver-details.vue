@@ -19,6 +19,12 @@
             <span>{{ approver.oaUserId }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.approver.email')">Email</span>
+          </dt>
+          <dd>
+            <span>{{ approver.email }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.approver.workflowInstance')">Workflow Instance</span>
           </dt>
           <dd>

@@ -9,6 +9,10 @@
     {
       "fieldName": "oaUserId",
       "fieldType": "Long"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
     }
   ],
   "relationships": [
