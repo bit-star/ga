@@ -30,7 +30,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new ApproverService();
-      elemDefault = new Approver(123, ApproverRole.Approver, 0);
+      elemDefault = new Approver(123, ApproverRole.Approver, 0, 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -84,6 +84,7 @@ describe('Service Tests', () => {
           {
             approverRole: 'BBBBBB',
             oaUserId: 1,
+            email: 'BBBBBB',
           },
           elemDefault
         );
@@ -108,7 +109,12 @@ describe('Service Tests', () => {
       });
 
       it('should partial update a Approver', async () => {
-        const patchObject = Object.assign({}, new Approver());
+        const patchObject = Object.assign(
+          {
+            email: 'BBBBBB',
+          },
+          new Approver()
+        );
         const returnedFromService = Object.assign(patchObject, elemDefault);
 
         const expected = Object.assign({}, returnedFromService);
@@ -135,6 +141,7 @@ describe('Service Tests', () => {
           {
             approverRole: 'BBBBBB',
             oaUserId: 1,
+            email: 'BBBBBB',
           },
           elemDefault
         );

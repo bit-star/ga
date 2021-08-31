@@ -20,6 +20,7 @@
       "id": "ID",
       "approverRole": "Approver Role",
       "oaUserId": "Oa User Id",
+      "email": "Email",
       "workflowInstance": "Workflow Instance",
       "ddUser": "Dd User"
     }

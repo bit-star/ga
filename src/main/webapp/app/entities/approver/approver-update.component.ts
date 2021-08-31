@@ -13,6 +13,7 @@ const validations: any = {
   approver: {
     approverRole: {},
     oaUserId: {},
+    email: {},
   },
 };
 
