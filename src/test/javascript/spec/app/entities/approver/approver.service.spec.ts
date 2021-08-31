@@ -30,7 +30,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new ApproverService();
-      elemDefault = new Approver(123, ApproverRole.Approver);
+      elemDefault = new Approver(123, ApproverRole.Approver, 0);
     });
 
     describe('Service methods', () => {
@@ -83,6 +83,7 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             approverRole: 'BBBBBB',
+            oaUserId: 1,
           },
           elemDefault
         );
@@ -133,6 +134,7 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             approverRole: 'BBBBBB',
+            oaUserId: 1,
           },
           elemDefault
         );

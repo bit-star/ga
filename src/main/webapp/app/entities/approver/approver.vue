@@ -30,6 +30,7 @@
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
             <th scope="row"><span v-text="$t('gaApp.approver.approverRole')">Approver Role</span></th>
+            <th scope="row"><span v-text="$t('gaApp.approver.oaUserId')">Oa User Id</span></th>
             <th scope="row"><span v-text="$t('gaApp.approver.workflowInstance')">Workflow Instance</span></th>
             <th scope="row"><span v-text="$t('gaApp.approver.ddUser')">Dd User</span></th>
             <th scope="row"></th>
@@ -41,6 +42,7 @@
               <router-link :to="{ name: 'ApproverView', params: { approverId: approver.id } }">{{ approver.id }}</router-link>
             </td>
             <td v-text="$t('gaApp.ApproverRole.' + approver.approverRole)">{{ approver.approverRole }}</td>
+            <td>{{ approver.oaUserId }}</td>
             <td>
               <div v-if="approver.workflowInstance">
                 <router-link :to="{ name: 'WorkflowInstanceView', params: { workflowInstanceId: approver.workflowInstance.id } }">{{

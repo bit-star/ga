@@ -5,6 +5,10 @@
       "fieldName": "approverRole",
       "fieldType": "ApproverRole",
       "fieldValues": "Approver,Proposer"
+    },
+    {
+      "fieldName": "oaUserId",
+      "fieldType": "Long"
     }
   ],
   "relationships": [

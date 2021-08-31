@@ -33,6 +33,9 @@ class ApproverResourceIT {
     private static final ApproverRole DEFAULT_APPROVER_ROLE = ApproverRole.Approver;
     private static final ApproverRole UPDATED_APPROVER_ROLE = ApproverRole.Proposer;
 
+    private static final Long DEFAULT_OA_USER_ID = 1L;
+    private static final Long UPDATED_OA_USER_ID = 2L;
+
     private static final String ENTITY_API_URL = "/api/approvers";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -57,7 +60,7 @@ class ApproverResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Approver createEntity(EntityManager em) {
-        Approver approver = new Approver().approverRole(DEFAULT_APPROVER_ROLE);
+        Approver approver = new Approver().approverRole(DEFAULT_APPROVER_ROLE).oaUserId(DEFAULT_OA_USER_ID);
         return approver;
     }
 
@@ -68,7 +71,7 @@ class ApproverResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Approver createUpdatedEntity(EntityManager em) {
-        Approver approver = new Approver().approverRole(UPDATED_APPROVER_ROLE);
+        Approver approver = new Approver().approverRole(UPDATED_APPROVER_ROLE).oaUserId(UPDATED_OA_USER_ID);
         return approver;
     }
 
@@ -91,6 +94,7 @@ class ApproverResourceIT {
         assertThat(approverList).hasSize(databaseSizeBeforeCreate + 1);
         Approver testApprover = approverList.get(approverList.size() - 1);
         assertThat(testApprover.getApproverRole()).isEqualTo(DEFAULT_APPROVER_ROLE);
+        assertThat(testApprover.getOaUserId()).isEqualTo(DEFAULT_OA_USER_ID);
     }
 
     @Test
@@ -123,7 +127,8 @@ class ApproverResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(approver.getId().intValue())))
-            .andExpect(jsonPath("$.[*].approverRole").value(hasItem(DEFAULT_APPROVER_ROLE.toString())));
+            .andExpect(jsonPath("$.[*].approverRole").value(hasItem(DEFAULT_APPROVER_ROLE.toString())))
+            .andExpect(jsonPath("$.[*].oaUserId").value(hasItem(DEFAULT_OA_USER_ID.intValue())));
     }
 
     @Test
@@ -138,7 +143,8 @@ class ApproverResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(approver.getId().intValue()))
-            .andExpect(jsonPath("$.approverRole").value(DEFAULT_APPROVER_ROLE.toString()));
+            .andExpect(jsonPath("$.approverRole").value(DEFAULT_APPROVER_ROLE.toString()))
+            .andExpect(jsonPath("$.oaUserId").value(DEFAULT_OA_USER_ID.intValue()));
     }
 
     @Test
@@ -160,7 +166,7 @@ class ApproverResourceIT {
         Approver updatedApprover = approverRepository.findById(approver.getId()).get();
         // Disconnect from session so that the updates on updatedApprover are not directly saved in db
         em.detach(updatedApprover);
-        updatedApprover.approverRole(UPDATED_APPROVER_ROLE);
+        updatedApprover.approverRole(UPDATED_APPROVER_ROLE).oaUserId(UPDATED_OA_USER_ID);
 
         restApproverMockMvc
             .perform(
@@ -175,6 +181,7 @@ class ApproverResourceIT {
         assertThat(approverList).hasSize(databaseSizeBeforeUpdate);
         Approver testApprover = approverList.get(approverList.size() - 1);
         assertThat(testApprover.getApproverRole()).isEqualTo(UPDATED_APPROVER_ROLE);
+        assertThat(testApprover.getOaUserId()).isEqualTo(UPDATED_OA_USER_ID);
     }
 
     @Test
@@ -245,6 +252,8 @@ class ApproverResourceIT {
         Approver partialUpdatedApprover = new Approver();
         partialUpdatedApprover.setId(approver.getId());
 
+        partialUpdatedApprover.oaUserId(UPDATED_OA_USER_ID);
+
         restApproverMockMvc
             .perform(
                 patch(ENTITY_API_URL_ID, partialUpdatedApprover.getId())
@@ -258,6 +267,7 @@ class ApproverResourceIT {
         assertThat(approverList).hasSize(databaseSizeBeforeUpdate);
         Approver testApprover = approverList.get(approverList.size() - 1);
         assertThat(testApprover.getApproverRole()).isEqualTo(DEFAULT_APPROVER_ROLE);
+        assertThat(testApprover.getOaUserId()).isEqualTo(UPDATED_OA_USER_ID);
     }
 
     @Test
@@ -272,7 +282,7 @@ class ApproverResourceIT {
         Approver partialUpdatedApprover = new Approver();
         partialUpdatedApprover.setId(approver.getId());
 
-        partialUpdatedApprover.approverRole(UPDATED_APPROVER_ROLE);
+        partialUpdatedApprover.approverRole(UPDATED_APPROVER_ROLE).oaUserId(UPDATED_OA_USER_ID);
 
         restApproverMockMvc
             .perform(
@@ -287,6 +297,7 @@ class ApproverResourceIT {
         assertThat(approverList).hasSize(databaseSizeBeforeUpdate);
         Approver testApprover = approverList.get(approverList.size() - 1);
         assertThat(testApprover.getApproverRole()).isEqualTo(UPDATED_APPROVER_ROLE);
+        assertThat(testApprover.getOaUserId()).isEqualTo(UPDATED_OA_USER_ID);
     }
 
     @Test

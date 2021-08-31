@@ -12,6 +12,7 @@ import ApproverService from './approver.service';
 const validations: any = {
   approver: {
     approverRole: {},
+    oaUserId: {},
   },
 };
 

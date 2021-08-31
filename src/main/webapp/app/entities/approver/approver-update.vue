@@ -29,6 +29,18 @@
             </select>
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.approver.oaUserId')" for="approver-oaUserId">Oa User Id</label>
+            <input
+              type="number"
+              class="form-control"
+              name="oaUserId"
+              id="approver-oaUserId"
+              data-cy="oaUserId"
+              :class="{ valid: !$v.approver.oaUserId.$invalid, invalid: $v.approver.oaUserId.$invalid }"
+              v-model.number="$v.approver.oaUserId.$model"
+            />
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.approver.workflowInstance')" for="approver-workflowInstance"
               >Workflow Instance</label
             >

@@ -19,6 +19,7 @@
       },
       "id": "ID",
       "approverRole": "Approver Role",
+      "oaUserId": "Oa User Id",
       "workflowInstance": "Workflow Instance",
       "ddUser": "Dd User"
     }
