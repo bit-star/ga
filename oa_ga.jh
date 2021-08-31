@@ -47,6 +47,7 @@ entity OperationResults{
 
 entity Approver{
 	approverRole ApproverRole
+    oaUserId Long
 }
 
 

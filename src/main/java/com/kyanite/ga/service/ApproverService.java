@@ -51,6 +51,9 @@ public class ApproverService {
                     if (approver.getApproverRole() != null) {
                         existingApprover.setApproverRole(approver.getApproverRole());
                     }
+                    if (approver.getOaUserId() != null) {
+                        existingApprover.setOaUserId(approver.getOaUserId());
+                    }
 
                     return existingApprover;
                 }

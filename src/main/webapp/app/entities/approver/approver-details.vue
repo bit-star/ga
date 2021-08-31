@@ -13,6 +13,12 @@
             <span v-text="$t('gaApp.ApproverRole.' + approver.approverRole)">{{ approver.approverRole }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.approver.oaUserId')">Oa User Id</span>
+          </dt>
+          <dd>
+            <span>{{ approver.oaUserId }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.approver.workflowInstance')">Workflow Instance</span>
           </dt>
           <dd>
