@@ -139,6 +139,7 @@ entity WorkflowInstance {
 
 entity PublicCardData {
 	//卡片自身的属性
+    title String,
 	requestid Long,
     workflowid Long,
     valid Boolean
