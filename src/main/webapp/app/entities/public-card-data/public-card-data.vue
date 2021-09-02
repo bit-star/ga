@@ -29,6 +29,7 @@
         <thead>
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.title')">Title</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.requestid')">Requestid</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowid')">Workflowid</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.valid')">Valid</span></th>
@@ -53,6 +54,7 @@
                 publicCardData.id
               }}</router-link>
             </td>
+            <td>{{ publicCardData.title }}</td>
             <td>{{ publicCardData.requestid }}</td>
             <td>{{ publicCardData.workflowid }}</td>
             <td>{{ publicCardData.valid }}</td>

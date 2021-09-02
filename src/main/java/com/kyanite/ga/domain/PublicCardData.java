@@ -25,6 +25,9 @@ public class PublicCardData implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "title")
+    private String title;
+
     @Column(name = "requestid")
     private Long requestid;
 
@@ -104,6 +107,19 @@ public class PublicCardData implements Serializable {
     public PublicCardData id(Long id) {
         this.id = id;
         return this;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public PublicCardData title(String title) {
+        this.title = title;
+        return this;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Long getRequestid() {
@@ -436,6 +452,7 @@ public class PublicCardData implements Serializable {
     public String toString() {
         return "PublicCardData{" +
             "id=" + getId() +
+            ", title='" + getTitle() + "'" +
             ", requestid=" + getRequestid() +
             ", workflowid=" + getWorkflowid() +
             ", valid='" + getValid() + "'" +

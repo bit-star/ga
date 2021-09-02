@@ -18,6 +18,7 @@
         "title": "Public Card Data"
       },
       "id": "ID",
+      "title": "Title",
       "requestid": "Requestid",
       "workflowid": "Workflowid",
       "valid": "Valid",

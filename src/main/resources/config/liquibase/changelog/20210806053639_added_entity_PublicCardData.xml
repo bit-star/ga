@@ -14,6 +14,9 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="title" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="requestid" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -77,6 +80,7 @@
                   separator=";"
                   tableName="public_card_data">
             <column name="id" type="numeric"/>
+            <column name="title" type="string"/>
             <column name="requestid" type="numeric"/>
             <column name="workflowid" type="numeric"/>
             <column name="valid" type="boolean"/>

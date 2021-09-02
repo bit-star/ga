@@ -37,6 +37,7 @@ describe('Service Tests', () => {
       currentDate = new Date();
       elemDefault = new PublicCardData(
         123,
+        'AAAAAAA',
         0,
         0,
         false,
@@ -112,6 +113,7 @@ describe('Service Tests', () => {
       it('should update a PublicCardData', async () => {
         const returnedFromService = Object.assign(
           {
+            title: 'BBBBBB',
             requestid: 1,
             workflowid: 1,
             valid: true,
@@ -155,11 +157,11 @@ describe('Service Tests', () => {
       it('should partial update a PublicCardData', async () => {
         const patchObject = Object.assign(
           {
-            workflowid: 1,
+            requestid: 1,
+            valid: true,
             finish: 'BBBBBB',
-            status: 'BBBBBB',
+            link: 'BBBBBB',
             updateLink: 'BBBBBB',
-            agreeNum: 1,
           },
           new PublicCardData()
         );
@@ -192,6 +194,7 @@ describe('Service Tests', () => {
       it('should return a list of PublicCardData', async () => {
         const returnedFromService = Object.assign(
           {
+            title: 'BBBBBB',
             requestid: 1,
             workflowid: 1,
             valid: true,

@@ -2,6 +2,10 @@
   "name": "PublicCardData",
   "fields": [
     {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "requestid",
       "fieldType": "Long"
     },

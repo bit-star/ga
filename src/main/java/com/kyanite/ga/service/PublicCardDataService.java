@@ -48,6 +48,9 @@ public class PublicCardDataService {
             .findById(publicCardData.getId())
             .map(
                 existingPublicCardData -> {
+                    if (publicCardData.getTitle() != null) {
+                        existingPublicCardData.setTitle(publicCardData.getTitle());
+                    }
                     if (publicCardData.getRequestid() != null) {
                         existingPublicCardData.setRequestid(publicCardData.getRequestid());
                     }
