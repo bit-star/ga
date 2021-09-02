@@ -9,6 +9,7 @@ import { PublicDataCardStatus } from '@/shared/model/enumerations/public-data-ca
 import { WorkflowInstanceStatus } from '@/shared/model/enumerations/workflow-instance-status.model';
 export interface IPublicCardData {
   id?: number;
+  title?: string | null;
   requestid?: number | null;
   workflowid?: number | null;
   valid?: boolean | null;
@@ -32,6 +33,7 @@ export interface IPublicCardData {
 export class PublicCardData implements IPublicCardData {
   constructor(
     public id?: number,
+    public title?: string | null,
     public requestid?: number | null,
     public workflowid?: number | null,
     public valid?: boolean | null,

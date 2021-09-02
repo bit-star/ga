@@ -34,6 +34,9 @@ import org.springframework.util.Base64Utils;
 @WithMockUser
 class PublicCardDataResourceIT {
 
+    private static final String DEFAULT_TITLE = "AAAAAAAAAA";
+    private static final String UPDATED_TITLE = "BBBBBBBBBB";
+
     private static final Long DEFAULT_REQUESTID = 1L;
     private static final Long UPDATED_REQUESTID = 2L;
 
@@ -95,6 +98,7 @@ class PublicCardDataResourceIT {
      */
     public static PublicCardData createEntity(EntityManager em) {
         PublicCardData publicCardData = new PublicCardData()
+            .title(DEFAULT_TITLE)
             .requestid(DEFAULT_REQUESTID)
             .workflowid(DEFAULT_WORKFLOWID)
             .valid(DEFAULT_VALID)
@@ -118,6 +122,7 @@ class PublicCardDataResourceIT {
      */
     public static PublicCardData createUpdatedEntity(EntityManager em) {
         PublicCardData publicCardData = new PublicCardData()
+            .title(UPDATED_TITLE)
             .requestid(UPDATED_REQUESTID)
             .workflowid(UPDATED_WORKFLOWID)
             .valid(UPDATED_VALID)
@@ -153,6 +158,7 @@ class PublicCardDataResourceIT {
         List<PublicCardData> publicCardDataList = publicCardDataRepository.findAll();
         assertThat(publicCardDataList).hasSize(databaseSizeBeforeCreate + 1);
         PublicCardData testPublicCardData = publicCardDataList.get(publicCardDataList.size() - 1);
+        assertThat(testPublicCardData.getTitle()).isEqualTo(DEFAULT_TITLE);
         assertThat(testPublicCardData.getRequestid()).isEqualTo(DEFAULT_REQUESTID);
         assertThat(testPublicCardData.getWorkflowid()).isEqualTo(DEFAULT_WORKFLOWID);
         assertThat(testPublicCardData.getValid()).isEqualTo(DEFAULT_VALID);
@@ -199,6 +205,7 @@ class PublicCardDataResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(publicCardData.getId().intValue())))
+            .andExpect(jsonPath("$.[*].title").value(hasItem(DEFAULT_TITLE)))
             .andExpect(jsonPath("$.[*].requestid").value(hasItem(DEFAULT_REQUESTID.intValue())))
             .andExpect(jsonPath("$.[*].workflowid").value(hasItem(DEFAULT_WORKFLOWID.intValue())))
             .andExpect(jsonPath("$.[*].valid").value(hasItem(DEFAULT_VALID.booleanValue())))
@@ -225,6 +232,7 @@ class PublicCardDataResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(publicCardData.getId().intValue()))
+            .andExpect(jsonPath("$.title").value(DEFAULT_TITLE))
             .andExpect(jsonPath("$.requestid").value(DEFAULT_REQUESTID.intValue()))
             .andExpect(jsonPath("$.workflowid").value(DEFAULT_WORKFLOWID.intValue()))
             .andExpect(jsonPath("$.valid").value(DEFAULT_VALID.booleanValue()))
@@ -259,6 +267,7 @@ class PublicCardDataResourceIT {
         // Disconnect from session so that the updates on updatedPublicCardData are not directly saved in db
         em.detach(updatedPublicCardData);
         updatedPublicCardData
+            .title(UPDATED_TITLE)
             .requestid(UPDATED_REQUESTID)
             .workflowid(UPDATED_WORKFLOWID)
             .valid(UPDATED_VALID)
@@ -284,6 +293,7 @@ class PublicCardDataResourceIT {
         List<PublicCardData> publicCardDataList = publicCardDataRepository.findAll();
         assertThat(publicCardDataList).hasSize(databaseSizeBeforeUpdate);
         PublicCardData testPublicCardData = publicCardDataList.get(publicCardDataList.size() - 1);
+        assertThat(testPublicCardData.getTitle()).isEqualTo(UPDATED_TITLE);
         assertThat(testPublicCardData.getRequestid()).isEqualTo(UPDATED_REQUESTID);
         assertThat(testPublicCardData.getWorkflowid()).isEqualTo(UPDATED_WORKFLOWID);
         assertThat(testPublicCardData.getValid()).isEqualTo(UPDATED_VALID);
@@ -367,13 +377,14 @@ class PublicCardDataResourceIT {
         partialUpdatedPublicCardData.setId(publicCardData.getId());
 
         partialUpdatedPublicCardData
+            .title(UPDATED_TITLE)
             .requestid(UPDATED_REQUESTID)
-            .workflowid(UPDATED_WORKFLOWID)
+            .valid(UPDATED_VALID)
             .finish(UPDATED_FINISH)
             .status(UPDATED_STATUS)
             .variables(UPDATED_VARIABLES)
-            .createdTime(UPDATED_CREATED_TIME)
-            .refuseNum(UPDATED_REFUSE_NUM);
+            .agreeNum(UPDATED_AGREE_NUM)
+            .oaStatus(UPDATED_OA_STATUS);
 
         restPublicCardDataMockMvc
             .perform(
@@ -387,18 +398,19 @@ class PublicCardDataResourceIT {
         List<PublicCardData> publicCardDataList = publicCardDataRepository.findAll();
         assertThat(publicCardDataList).hasSize(databaseSizeBeforeUpdate);
         PublicCardData testPublicCardData = publicCardDataList.get(publicCardDataList.size() - 1);
+        assertThat(testPublicCardData.getTitle()).isEqualTo(UPDATED_TITLE);
         assertThat(testPublicCardData.getRequestid()).isEqualTo(UPDATED_REQUESTID);
-        assertThat(testPublicCardData.getWorkflowid()).isEqualTo(UPDATED_WORKFLOWID);
-        assertThat(testPublicCardData.getValid()).isEqualTo(DEFAULT_VALID);
+        assertThat(testPublicCardData.getWorkflowid()).isEqualTo(DEFAULT_WORKFLOWID);
+        assertThat(testPublicCardData.getValid()).isEqualTo(UPDATED_VALID);
         assertThat(testPublicCardData.getFinish()).isEqualTo(UPDATED_FINISH);
         assertThat(testPublicCardData.getStatus()).isEqualTo(UPDATED_STATUS);
         assertThat(testPublicCardData.getVariables()).isEqualTo(UPDATED_VARIABLES);
-        assertThat(testPublicCardData.getCreatedTime()).isEqualTo(UPDATED_CREATED_TIME);
+        assertThat(testPublicCardData.getCreatedTime()).isEqualTo(DEFAULT_CREATED_TIME);
         assertThat(testPublicCardData.getLink()).isEqualTo(DEFAULT_LINK);
         assertThat(testPublicCardData.getUpdateLink()).isEqualTo(DEFAULT_UPDATE_LINK);
-        assertThat(testPublicCardData.getAgreeNum()).isEqualTo(DEFAULT_AGREE_NUM);
-        assertThat(testPublicCardData.getRefuseNum()).isEqualTo(UPDATED_REFUSE_NUM);
-        assertThat(testPublicCardData.getOaStatus()).isEqualTo(DEFAULT_OA_STATUS);
+        assertThat(testPublicCardData.getAgreeNum()).isEqualTo(UPDATED_AGREE_NUM);
+        assertThat(testPublicCardData.getRefuseNum()).isEqualTo(DEFAULT_REFUSE_NUM);
+        assertThat(testPublicCardData.getOaStatus()).isEqualTo(UPDATED_OA_STATUS);
     }
 
     @Test
@@ -414,6 +426,7 @@ class PublicCardDataResourceIT {
         partialUpdatedPublicCardData.setId(publicCardData.getId());
 
         partialUpdatedPublicCardData
+            .title(UPDATED_TITLE)
             .requestid(UPDATED_REQUESTID)
             .workflowid(UPDATED_WORKFLOWID)
             .valid(UPDATED_VALID)
@@ -439,6 +452,7 @@ class PublicCardDataResourceIT {
         List<PublicCardData> publicCardDataList = publicCardDataRepository.findAll();
         assertThat(publicCardDataList).hasSize(databaseSizeBeforeUpdate);
         PublicCardData testPublicCardData = publicCardDataList.get(publicCardDataList.size() - 1);
+        assertThat(testPublicCardData.getTitle()).isEqualTo(UPDATED_TITLE);
         assertThat(testPublicCardData.getRequestid()).isEqualTo(UPDATED_REQUESTID);
         assertThat(testPublicCardData.getWorkflowid()).isEqualTo(UPDATED_WORKFLOWID);
         assertThat(testPublicCardData.getValid()).isEqualTo(UPDATED_VALID);

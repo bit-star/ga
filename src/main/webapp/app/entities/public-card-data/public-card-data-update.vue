@@ -15,6 +15,18 @@
             <input type="text" class="form-control" id="id" name="id" v-model="publicCardData.id" readonly />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.publicCardData.title')" for="public-card-data-title">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              name="title"
+              id="public-card-data-title"
+              data-cy="title"
+              :class="{ valid: !$v.publicCardData.title.$invalid, invalid: $v.publicCardData.title.$invalid }"
+              v-model="$v.publicCardData.title.$model"
+            />
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.requestid')" for="public-card-data-requestid"
               >Requestid</label
             >

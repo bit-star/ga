@@ -29,6 +29,7 @@ import PublicCardDataService from './public-card-data.service';
 
 const validations: any = {
   publicCardData: {
+    title: {},
     requestid: {},
     workflowid: {},
     valid: {},

@@ -7,6 +7,12 @@
         </h2>
         <dl class="row jh-entity-details">
           <dt>
+            <span v-text="$t('gaApp.publicCardData.title')">Title</span>
+          </dt>
+          <dd>
+            <span>{{ publicCardData.title }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.publicCardData.requestid')">Requestid</span>
           </dt>
           <dd>
