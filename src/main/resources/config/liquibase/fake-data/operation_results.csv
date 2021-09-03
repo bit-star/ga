@@ -1,11 +1,11 @@
 id;operation_type;time;text;operation_source
-1;Comment;2021-08-05T17:00:02;reboot indexing Rubber;OA
-2;Refuse;2021-08-06T02:23:13;reboot;OA
+1;Comment;2021-08-05T17:00:02;reboot indexing Rubber;H5
+2;Refuse;2021-08-06T02:23:13;reboot;H5
 3;Comment;2021-08-06T04:15:13;Rustic Chair encoding;Card
-4;Refuse;2021-08-05T13:29:25;Market Uganda;Card
-5;Refuse;2021-08-05T12:19:25;Corporate;Card
+4;Refuse;2021-08-05T13:29:25;Market Uganda;OA
+5;Refuse;2021-08-05T12:19:25;Corporate;OA
 6;Refuse;2021-08-05T11:08:47;microchip Engineer;Card
 7;Refuse;2021-08-05T21:17:58;matrix;Card
 8;Agree;2021-08-05T11:26:02;Programmable;Card
 9;Comment;2021-08-05T20:26:56;Hungary;Card
-10;Agree;2021-08-05T20:48:39;lime input logistical;OA
+10;Agree;2021-08-05T20:48:39;lime input logistical;H5

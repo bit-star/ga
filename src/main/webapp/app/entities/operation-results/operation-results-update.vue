@@ -72,6 +72,7 @@
             >
               <option value="Card" v-bind:label="$t('gaApp.OperationSource.Card')">Card</option>
               <option value="OA" v-bind:label="$t('gaApp.OperationSource.OA')">OA</option>
+              <option value="H5" v-bind:label="$t('gaApp.OperationSource.H5')">H5</option>
             </select>
           </div>
           <div class="form-group">

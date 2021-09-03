@@ -3,7 +3,8 @@
     "OperationSource": {
       "null": "",
       "Card": "Card",
-      "OA": "OA"
+      "OA": "OA",
+      "H5": "H5"
     }
   }
 }
