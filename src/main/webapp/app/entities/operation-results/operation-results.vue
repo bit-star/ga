@@ -32,6 +32,7 @@
             <th scope="row"><span v-text="$t('gaApp.operationResults.operationType')">Operation Type</span></th>
             <th scope="row"><span v-text="$t('gaApp.operationResults.time')">Time</span></th>
             <th scope="row"><span v-text="$t('gaApp.operationResults.text')">Text</span></th>
+            <th scope="row"><span v-text="$t('gaApp.operationResults.operationSource')">Operation Source</span></th>
             <th scope="row"><span v-text="$t('gaApp.operationResults.ddUser')">Dd User</span></th>
             <th scope="row"><span v-text="$t('gaApp.operationResults.publicCardData')">Public Card Data</span></th>
             <th scope="row"></th>
@@ -47,6 +48,7 @@
             <td v-text="$t('gaApp.OperationType.' + operationResults.operationType)">{{ operationResults.operationType }}</td>
             <td>{{ operationResults.time ? $d(Date.parse(operationResults.time), 'short') : '' }}</td>
             <td>{{ operationResults.text }}</td>
+            <td v-text="$t('gaApp.OperationSource.' + operationResults.operationSource)">{{ operationResults.operationSource }}</td>
             <td>
               <div v-if="operationResults.ddUser">
                 <router-link :to="{ name: 'DdUserView', params: { ddUserId: operationResults.ddUser.id } }">{{

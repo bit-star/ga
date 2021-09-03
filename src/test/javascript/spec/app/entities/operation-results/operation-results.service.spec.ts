@@ -7,6 +7,7 @@ import { DATE_TIME_FORMAT } from '@/shared/date/filters';
 import OperationResultsService from '@/entities/operation-results/operation-results.service';
 import { OperationResults } from '@/shared/model/operation-results.model';
 import { OperationType } from '@/shared/model/enumerations/operation-type.model';
+import { OperationSource } from '@/shared/model/enumerations/operation-source.model';
 
 const error = {
   response: {
@@ -34,7 +35,7 @@ describe('Service Tests', () => {
     beforeEach(() => {
       service = new OperationResultsService();
       currentDate = new Date();
-      elemDefault = new OperationResults(123, OperationType.Agree, currentDate, 'AAAAAAA');
+      elemDefault = new OperationResults(123, OperationType.Agree, currentDate, 'AAAAAAA', OperationSource.Card);
     });
 
     describe('Service methods', () => {
@@ -100,6 +101,7 @@ describe('Service Tests', () => {
             operationType: 'BBBBBB',
             time: dayjs(currentDate).format(DATE_TIME_FORMAT),
             text: 'BBBBBB',
+            operationSource: 'BBBBBB',
           },
           elemDefault
         );
@@ -129,7 +131,12 @@ describe('Service Tests', () => {
       });
 
       it('should partial update a OperationResults', async () => {
-        const patchObject = Object.assign({}, new OperationResults());
+        const patchObject = Object.assign(
+          {
+            operationSource: 'BBBBBB',
+          },
+          new OperationResults()
+        );
         const returnedFromService = Object.assign(patchObject, elemDefault);
 
         const expected = Object.assign(
@@ -162,6 +169,7 @@ describe('Service Tests', () => {
             operationType: 'BBBBBB',
             time: dayjs(currentDate).format(DATE_TIME_FORMAT),
             text: 'BBBBBB',
+            operationSource: 'BBBBBB',
           },
           elemDefault
         );

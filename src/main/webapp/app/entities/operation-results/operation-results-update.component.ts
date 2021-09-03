@@ -17,6 +17,7 @@ const validations: any = {
     operationType: {},
     time: {},
     text: {},
+    operationSource: {},
   },
 };
 

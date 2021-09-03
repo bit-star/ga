@@ -59,6 +59,22 @@
             />
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.operationResults.operationSource')" for="operation-results-operationSource"
+              >Operation Source</label
+            >
+            <select
+              class="form-control"
+              name="operationSource"
+              :class="{ valid: !$v.operationResults.operationSource.$invalid, invalid: $v.operationResults.operationSource.$invalid }"
+              v-model="$v.operationResults.operationSource.$model"
+              id="operation-results-operationSource"
+              data-cy="operationSource"
+            >
+              <option value="Card" v-bind:label="$t('gaApp.OperationSource.Card')">Card</option>
+              <option value="OA" v-bind:label="$t('gaApp.OperationSource.OA')">OA</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.operationResults.ddUser')" for="operation-results-ddUser">Dd User</label>
             <select class="form-control" id="operation-results-ddUser" data-cy="ddUser" name="ddUser" v-model="operationResults.ddUser">
               <option v-bind:value="null"></option>

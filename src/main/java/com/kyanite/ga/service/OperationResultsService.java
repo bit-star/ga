@@ -57,6 +57,9 @@ public class OperationResultsService {
                     if (operationResults.getText() != null) {
                         existingOperationResults.setText(operationResults.getText());
                     }
+                    if (operationResults.getOperationSource() != null) {
+                        existingOperationResults.setOperationSource(operationResults.getOperationSource());
+                    }
 
                     return existingOperationResults;
                 }
