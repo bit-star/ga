@@ -17,7 +17,7 @@
     {
       "fieldName": "operationSource",
       "fieldType": "OperationSource",
-      "fieldValues": "Card,OA"
+      "fieldValues": "Card,OA,H5"
     }
   ],
   "relationships": [
