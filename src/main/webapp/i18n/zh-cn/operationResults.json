@@ -21,6 +21,7 @@
       "operationType": "Operation Type",
       "time": "Time",
       "text": "Text",
+      "operationSource": "Operation Source",
       "ddUser": "Dd User",
       "publicCardData": "Public Card Data"
     }

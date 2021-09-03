@@ -23,6 +23,9 @@
             <column name="text" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="operation_source" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="dd_user_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -53,6 +56,7 @@
             <column name="operation_type" type="string"/>
             <column name="time" type="${datetimeType}"/>
             <column name="text" type="string"/>
+            <column name="operation_source" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

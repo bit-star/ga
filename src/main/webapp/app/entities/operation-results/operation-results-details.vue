@@ -25,6 +25,12 @@
             <span>{{ operationResults.text }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.operationResults.operationSource')">Operation Source</span>
+          </dt>
+          <dd>
+            <span v-text="$t('gaApp.OperationSource.' + operationResults.operationSource)">{{ operationResults.operationSource }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.operationResults.ddUser')">Dd User</span>
           </dt>
           <dd>

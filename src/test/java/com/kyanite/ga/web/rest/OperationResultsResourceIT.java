@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import com.kyanite.ga.IntegrationTest;
 import com.kyanite.ga.domain.OperationResults;
+import com.kyanite.ga.domain.enumeration.OperationSource;
 import com.kyanite.ga.domain.enumeration.OperationType;
 import com.kyanite.ga.repository.OperationResultsRepository;
 import java.time.Instant;
@@ -41,6 +42,9 @@ class OperationResultsResourceIT {
     private static final String DEFAULT_TEXT = "AAAAAAAAAA";
     private static final String UPDATED_TEXT = "BBBBBBBBBB";
 
+    private static final OperationSource DEFAULT_OPERATION_SOURCE = OperationSource.Card;
+    private static final OperationSource UPDATED_OPERATION_SOURCE = OperationSource.OA;
+
     private static final String ENTITY_API_URL = "/api/operation-results";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
 
@@ -68,7 +72,8 @@ class OperationResultsResourceIT {
         OperationResults operationResults = new OperationResults()
             .operationType(DEFAULT_OPERATION_TYPE)
             .time(DEFAULT_TIME)
-            .text(DEFAULT_TEXT);
+            .text(DEFAULT_TEXT)
+            .operationSource(DEFAULT_OPERATION_SOURCE);
         return operationResults;
     }
 
@@ -82,7 +87,8 @@ class OperationResultsResourceIT {
         OperationResults operationResults = new OperationResults()
             .operationType(UPDATED_OPERATION_TYPE)
             .time(UPDATED_TIME)
-            .text(UPDATED_TEXT);
+            .text(UPDATED_TEXT)
+            .operationSource(UPDATED_OPERATION_SOURCE);
         return operationResults;
     }
 
@@ -109,6 +115,7 @@ class OperationResultsResourceIT {
         assertThat(testOperationResults.getOperationType()).isEqualTo(DEFAULT_OPERATION_TYPE);
         assertThat(testOperationResults.getTime()).isEqualTo(DEFAULT_TIME);
         assertThat(testOperationResults.getText()).isEqualTo(DEFAULT_TEXT);
+        assertThat(testOperationResults.getOperationSource()).isEqualTo(DEFAULT_OPERATION_SOURCE);
     }
 
     @Test
@@ -145,7 +152,8 @@ class OperationResultsResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(operationResults.getId().intValue())))
             .andExpect(jsonPath("$.[*].operationType").value(hasItem(DEFAULT_OPERATION_TYPE.toString())))
             .andExpect(jsonPath("$.[*].time").value(hasItem(DEFAULT_TIME.toString())))
-            .andExpect(jsonPath("$.[*].text").value(hasItem(DEFAULT_TEXT)));
+            .andExpect(jsonPath("$.[*].text").value(hasItem(DEFAULT_TEXT)))
+            .andExpect(jsonPath("$.[*].operationSource").value(hasItem(DEFAULT_OPERATION_SOURCE.toString())));
     }
 
     @Test
@@ -162,7 +170,8 @@ class OperationResultsResourceIT {
             .andExpect(jsonPath("$.id").value(operationResults.getId().intValue()))
             .andExpect(jsonPath("$.operationType").value(DEFAULT_OPERATION_TYPE.toString()))
             .andExpect(jsonPath("$.time").value(DEFAULT_TIME.toString()))
-            .andExpect(jsonPath("$.text").value(DEFAULT_TEXT));
+            .andExpect(jsonPath("$.text").value(DEFAULT_TEXT))
+            .andExpect(jsonPath("$.operationSource").value(DEFAULT_OPERATION_SOURCE.toString()));
     }
 
     @Test
@@ -184,7 +193,11 @@ class OperationResultsResourceIT {
         OperationResults updatedOperationResults = operationResultsRepository.findById(operationResults.getId()).get();
         // Disconnect from session so that the updates on updatedOperationResults are not directly saved in db
         em.detach(updatedOperationResults);
-        updatedOperationResults.operationType(UPDATED_OPERATION_TYPE).time(UPDATED_TIME).text(UPDATED_TEXT);
+        updatedOperationResults
+            .operationType(UPDATED_OPERATION_TYPE)
+            .time(UPDATED_TIME)
+            .text(UPDATED_TEXT)
+            .operationSource(UPDATED_OPERATION_SOURCE);
 
         restOperationResultsMockMvc
             .perform(
@@ -201,6 +214,7 @@ class OperationResultsResourceIT {
         assertThat(testOperationResults.getOperationType()).isEqualTo(UPDATED_OPERATION_TYPE);
         assertThat(testOperationResults.getTime()).isEqualTo(UPDATED_TIME);
         assertThat(testOperationResults.getText()).isEqualTo(UPDATED_TEXT);
+        assertThat(testOperationResults.getOperationSource()).isEqualTo(UPDATED_OPERATION_SOURCE);
     }
 
     @Test
@@ -290,6 +304,7 @@ class OperationResultsResourceIT {
         assertThat(testOperationResults.getOperationType()).isEqualTo(DEFAULT_OPERATION_TYPE);
         assertThat(testOperationResults.getTime()).isEqualTo(UPDATED_TIME);
         assertThat(testOperationResults.getText()).isEqualTo(UPDATED_TEXT);
+        assertThat(testOperationResults.getOperationSource()).isEqualTo(DEFAULT_OPERATION_SOURCE);
     }
 
     @Test
@@ -304,7 +319,11 @@ class OperationResultsResourceIT {
         OperationResults partialUpdatedOperationResults = new OperationResults();
         partialUpdatedOperationResults.setId(operationResults.getId());
 
-        partialUpdatedOperationResults.operationType(UPDATED_OPERATION_TYPE).time(UPDATED_TIME).text(UPDATED_TEXT);
+        partialUpdatedOperationResults
+            .operationType(UPDATED_OPERATION_TYPE)
+            .time(UPDATED_TIME)
+            .text(UPDATED_TEXT)
+            .operationSource(UPDATED_OPERATION_SOURCE);
 
         restOperationResultsMockMvc
             .perform(
@@ -321,6 +340,7 @@ class OperationResultsResourceIT {
         assertThat(testOperationResults.getOperationType()).isEqualTo(UPDATED_OPERATION_TYPE);
         assertThat(testOperationResults.getTime()).isEqualTo(UPDATED_TIME);
         assertThat(testOperationResults.getText()).isEqualTo(UPDATED_TEXT);
+        assertThat(testOperationResults.getOperationSource()).isEqualTo(UPDATED_OPERATION_SOURCE);
     }
 
     @Test

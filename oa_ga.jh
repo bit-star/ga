@@ -41,6 +41,7 @@ entity OperationResults{
 	operationType OperationType
     time Instant
     text String
+    operationSource OperationSource
 }
 
 
@@ -51,6 +52,10 @@ entity Approver{
     email String
 }
 
+
+enum OperationSource{
+	Card , OA 
+}
 
 
 enum ApproverRole{

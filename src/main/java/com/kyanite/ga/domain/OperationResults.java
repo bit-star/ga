@@ -1,6 +1,7 @@
 package com.kyanite.ga.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.kyanite.ga.domain.enumeration.OperationSource;
 import com.kyanite.ga.domain.enumeration.OperationType;
 import java.io.Serializable;
 import java.time.Instant;
@@ -31,6 +32,10 @@ public class OperationResults implements Serializable {
 
     @Column(name = "text")
     private String text;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "operation_source")
+    private OperationSource operationSource;
 
     @ManyToOne
     @JsonIgnoreProperties(
@@ -99,6 +104,19 @@ public class OperationResults implements Serializable {
         this.text = text;
     }
 
+    public OperationSource getOperationSource() {
+        return this.operationSource;
+    }
+
+    public OperationResults operationSource(OperationSource operationSource) {
+        this.operationSource = operationSource;
+        return this;
+    }
+
+    public void setOperationSource(OperationSource operationSource) {
+        this.operationSource = operationSource;
+    }
+
     public DdUser getDdUser() {
         return this.ddUser;
     }
@@ -152,6 +170,7 @@ public class OperationResults implements Serializable {
             ", operationType='" + getOperationType() + "'" +
             ", time='" + getTime() + "'" +
             ", text='" + getText() + "'" +
+            ", operationSource='" + getOperationSource() + "'" +
             "}";
     }
 }

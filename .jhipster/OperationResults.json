@@ -13,6 +13,11 @@
     {
       "fieldName": "text",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "operationSource",
+      "fieldType": "OperationSource",
+      "fieldValues": "Card,OA"
     }
   ],
   "relationships": [
