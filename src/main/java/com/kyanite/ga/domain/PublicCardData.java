@@ -63,6 +63,10 @@ public class PublicCardData implements Serializable {
     @Column(name = "refuse_num")
     private Long refuseNum;
 
+    @Lob
+    @Column(name = "sys_full_json_obj_json")
+    private String sysFullJsonObjJson;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "oa_status")
     private WorkflowInstanceStatus oaStatus;
@@ -265,6 +269,19 @@ public class PublicCardData implements Serializable {
         this.refuseNum = refuseNum;
     }
 
+    public String getSysFullJsonObjJson() {
+        return this.sysFullJsonObjJson;
+    }
+
+    public PublicCardData sysFullJsonObjJson(String sysFullJsonObjJson) {
+        this.sysFullJsonObjJson = sysFullJsonObjJson;
+        return this;
+    }
+
+    public void setSysFullJsonObjJson(String sysFullJsonObjJson) {
+        this.sysFullJsonObjJson = sysFullJsonObjJson;
+    }
+
     public WorkflowInstanceStatus getOaStatus() {
         return this.oaStatus;
     }
@@ -464,6 +481,7 @@ public class PublicCardData implements Serializable {
             ", updateLink='" + getUpdateLink() + "'" +
             ", agreeNum=" + getAgreeNum() +
             ", refuseNum=" + getRefuseNum() +
+            ", sysFullJsonObjJson='" + getSysFullJsonObjJson() + "'" +
             ", oaStatus='" + getOaStatus() + "'" +
             "}";
     }

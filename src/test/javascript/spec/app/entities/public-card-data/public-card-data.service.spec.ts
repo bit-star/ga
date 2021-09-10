@@ -49,6 +49,7 @@ describe('Service Tests', () => {
         'AAAAAAA',
         0,
         0,
+        'AAAAAAA',
         WorkflowInstanceStatus.Launch
       );
     });
@@ -125,6 +126,7 @@ describe('Service Tests', () => {
             updateLink: 'BBBBBB',
             agreeNum: 1,
             refuseNum: 1,
+            sysFullJsonObjJson: 'BBBBBB',
             oaStatus: 'BBBBBB',
           },
           elemDefault
@@ -206,6 +208,7 @@ describe('Service Tests', () => {
             updateLink: 'BBBBBB',
             agreeNum: 1,
             refuseNum: 1,
+            sysFullJsonObjJson: 'BBBBBB',
             oaStatus: 'BBBBBB',
           },
           elemDefault

@@ -48,7 +48,7 @@
   ],
   "entityTableName": "form_field",
   "dto": "no",
-  "pagination": "pagination",
+  "pagination": "no",
   "service": "serviceClass",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

@@ -52,6 +52,11 @@
       "fieldType": "Long"
     },
     {
+      "fieldName": "sysFullJsonObjJson",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
       "fieldName": "oaStatus",
       "fieldType": "WorkflowInstanceStatus",
       "fieldValues": "Launch,Refuse,Agree,Archive"

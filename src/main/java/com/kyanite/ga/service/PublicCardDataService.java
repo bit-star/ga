@@ -84,6 +84,9 @@ public class PublicCardDataService {
                     if (publicCardData.getRefuseNum() != null) {
                         existingPublicCardData.setRefuseNum(publicCardData.getRefuseNum());
                     }
+                    if (publicCardData.getSysFullJsonObjJson() != null) {
+                        existingPublicCardData.setSysFullJsonObjJson(publicCardData.getSysFullJsonObjJson());
+                    }
                     if (publicCardData.getOaStatus() != null) {
                         existingPublicCardData.setOaStatus(publicCardData.getOaStatus());
                     }
