@@ -157,6 +157,7 @@ entity PublicCardData {
     //OA的业务属性
     agreeNum Long
     refuseNum Long
+    sysFullJsonObjJson TextBlob
     oaStatus WorkflowInstanceStatus
 
 }
@@ -249,6 +250,4 @@ relationship  ManyToMany {
 
 
 service all with serviceClass
-
-paginate FormField with pagination
 
