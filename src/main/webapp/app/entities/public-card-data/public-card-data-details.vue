@@ -79,6 +79,12 @@
             <span>{{ publicCardData.refuseNum }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.publicCardData.sysFullJsonObjJson')">Sys Full Json Obj Json</span>
+          </dt>
+          <dd>
+            <span>{{ publicCardData.sysFullJsonObjJson }}</span>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.publicCardData.oaStatus')">Oa Status</span>
           </dt>
           <dd>

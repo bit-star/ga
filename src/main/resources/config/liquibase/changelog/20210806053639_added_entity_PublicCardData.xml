@@ -50,6 +50,9 @@
             <column name="refuse_num" type="bigint">
                 <constraints nullable="true" />
             </column>
+            <column name="sys_full_json_obj_json" type="${clobType}">
+                <constraints nullable="true" />
+            </column>
             <column name="oa_status" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -92,6 +95,7 @@
             <column name="update_link" type="string"/>
             <column name="agree_num" type="numeric"/>
             <column name="refuse_num" type="numeric"/>
+            <column name="sys_full_json_obj_json" type="clob"/>
             <column name="oa_status" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>

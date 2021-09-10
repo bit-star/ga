@@ -2,11 +2,10 @@ package com.kyanite.ga.service;
 
 import com.kyanite.ga.domain.FormField;
 import com.kyanite.ga.repository.FormFieldRepository;
+import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -86,13 +85,12 @@ public class FormFieldService {
     /**
      * Get all the formFields.
      *
-     * @param pageable the pagination information.
      * @return the list of entities.
      */
     @Transactional(readOnly = true)
-    public Page<FormField> findAll(Pageable pageable) {
+    public List<FormField> findAll() {
         log.debug("Request to get all FormFields");
-        return formFieldRepository.findAll(pageable);
+        return formFieldRepository.findAll();
     }
 
     /**

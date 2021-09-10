@@ -41,6 +41,7 @@
             <th scope="row"><span v-text="$t('gaApp.publicCardData.updateLink')">Update Link</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.agreeNum')">Agree Num</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.refuseNum')">Refuse Num</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.sysFullJsonObjJson')">Sys Full Json Obj Json</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.oaStatus')">Oa Status</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowInstance')">Workflow Instance</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.conversation')">Conversation</span></th>
@@ -66,6 +67,7 @@
             <td>{{ publicCardData.updateLink }}</td>
             <td>{{ publicCardData.agreeNum }}</td>
             <td>{{ publicCardData.refuseNum }}</td>
+            <td>{{ publicCardData.sysFullJsonObjJson }}</td>
             <td v-text="$t('gaApp.WorkflowInstanceStatus.' + publicCardData.oaStatus)">{{ publicCardData.oaStatus }}</td>
             <td>
               <div v-if="publicCardData.workflowInstance">

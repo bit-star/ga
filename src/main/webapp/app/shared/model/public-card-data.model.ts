@@ -21,6 +21,7 @@ export interface IPublicCardData {
   updateLink?: string | null;
   agreeNum?: number | null;
   refuseNum?: number | null;
+  sysFullJsonObjJson?: string | null;
   oaStatus?: WorkflowInstanceStatus | null;
   privateCardData?: IPrivateCardData[] | null;
   operationResults?: IOperationResults[] | null;
@@ -45,6 +46,7 @@ export class PublicCardData implements IPublicCardData {
     public updateLink?: string | null,
     public agreeNum?: number | null,
     public refuseNum?: number | null,
+    public sysFullJsonObjJson?: string | null,
     public oaStatus?: WorkflowInstanceStatus | null,
     public privateCardData?: IPrivateCardData[] | null,
     public operationResults?: IOperationResults[] | null,

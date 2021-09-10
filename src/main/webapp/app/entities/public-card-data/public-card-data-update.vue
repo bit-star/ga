@@ -176,6 +176,22 @@
             />
           </div>
           <div class="form-group">
+            <label
+              class="form-control-label"
+              v-text="$t('gaApp.publicCardData.sysFullJsonObjJson')"
+              for="public-card-data-sysFullJsonObjJson"
+              >Sys Full Json Obj Json</label
+            >
+            <textarea
+              class="form-control"
+              name="sysFullJsonObjJson"
+              id="public-card-data-sysFullJsonObjJson"
+              data-cy="sysFullJsonObjJson"
+              :class="{ valid: !$v.publicCardData.sysFullJsonObjJson.$invalid, invalid: $v.publicCardData.sysFullJsonObjJson.$invalid }"
+              v-model="$v.publicCardData.sysFullJsonObjJson.$model"
+            ></textarea>
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.oaStatus')" for="public-card-data-oaStatus">Oa Status</label>
             <select
               class="form-control"

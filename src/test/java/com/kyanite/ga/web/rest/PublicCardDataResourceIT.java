@@ -70,6 +70,9 @@ class PublicCardDataResourceIT {
     private static final Long DEFAULT_REFUSE_NUM = 1L;
     private static final Long UPDATED_REFUSE_NUM = 2L;
 
+    private static final String DEFAULT_SYS_FULL_JSON_OBJ_JSON = "AAAAAAAAAA";
+    private static final String UPDATED_SYS_FULL_JSON_OBJ_JSON = "BBBBBBBBBB";
+
     private static final WorkflowInstanceStatus DEFAULT_OA_STATUS = WorkflowInstanceStatus.Launch;
     private static final WorkflowInstanceStatus UPDATED_OA_STATUS = WorkflowInstanceStatus.Refuse;
 
@@ -110,6 +113,7 @@ class PublicCardDataResourceIT {
             .updateLink(DEFAULT_UPDATE_LINK)
             .agreeNum(DEFAULT_AGREE_NUM)
             .refuseNum(DEFAULT_REFUSE_NUM)
+            .sysFullJsonObjJson(DEFAULT_SYS_FULL_JSON_OBJ_JSON)
             .oaStatus(DEFAULT_OA_STATUS);
         return publicCardData;
     }
@@ -134,6 +138,7 @@ class PublicCardDataResourceIT {
             .updateLink(UPDATED_UPDATE_LINK)
             .agreeNum(UPDATED_AGREE_NUM)
             .refuseNum(UPDATED_REFUSE_NUM)
+            .sysFullJsonObjJson(UPDATED_SYS_FULL_JSON_OBJ_JSON)
             .oaStatus(UPDATED_OA_STATUS);
         return publicCardData;
     }
@@ -170,6 +175,7 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getUpdateLink()).isEqualTo(DEFAULT_UPDATE_LINK);
         assertThat(testPublicCardData.getAgreeNum()).isEqualTo(DEFAULT_AGREE_NUM);
         assertThat(testPublicCardData.getRefuseNum()).isEqualTo(DEFAULT_REFUSE_NUM);
+        assertThat(testPublicCardData.getSysFullJsonObjJson()).isEqualTo(DEFAULT_SYS_FULL_JSON_OBJ_JSON);
         assertThat(testPublicCardData.getOaStatus()).isEqualTo(DEFAULT_OA_STATUS);
     }
 
@@ -217,6 +223,7 @@ class PublicCardDataResourceIT {
             .andExpect(jsonPath("$.[*].updateLink").value(hasItem(DEFAULT_UPDATE_LINK)))
             .andExpect(jsonPath("$.[*].agreeNum").value(hasItem(DEFAULT_AGREE_NUM.intValue())))
             .andExpect(jsonPath("$.[*].refuseNum").value(hasItem(DEFAULT_REFUSE_NUM.intValue())))
+            .andExpect(jsonPath("$.[*].sysFullJsonObjJson").value(hasItem(DEFAULT_SYS_FULL_JSON_OBJ_JSON.toString())))
             .andExpect(jsonPath("$.[*].oaStatus").value(hasItem(DEFAULT_OA_STATUS.toString())));
     }
 
@@ -244,6 +251,7 @@ class PublicCardDataResourceIT {
             .andExpect(jsonPath("$.updateLink").value(DEFAULT_UPDATE_LINK))
             .andExpect(jsonPath("$.agreeNum").value(DEFAULT_AGREE_NUM.intValue()))
             .andExpect(jsonPath("$.refuseNum").value(DEFAULT_REFUSE_NUM.intValue()))
+            .andExpect(jsonPath("$.sysFullJsonObjJson").value(DEFAULT_SYS_FULL_JSON_OBJ_JSON.toString()))
             .andExpect(jsonPath("$.oaStatus").value(DEFAULT_OA_STATUS.toString()));
     }
 
@@ -279,6 +287,7 @@ class PublicCardDataResourceIT {
             .updateLink(UPDATED_UPDATE_LINK)
             .agreeNum(UPDATED_AGREE_NUM)
             .refuseNum(UPDATED_REFUSE_NUM)
+            .sysFullJsonObjJson(UPDATED_SYS_FULL_JSON_OBJ_JSON)
             .oaStatus(UPDATED_OA_STATUS);
 
         restPublicCardDataMockMvc
@@ -305,6 +314,7 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getUpdateLink()).isEqualTo(UPDATED_UPDATE_LINK);
         assertThat(testPublicCardData.getAgreeNum()).isEqualTo(UPDATED_AGREE_NUM);
         assertThat(testPublicCardData.getRefuseNum()).isEqualTo(UPDATED_REFUSE_NUM);
+        assertThat(testPublicCardData.getSysFullJsonObjJson()).isEqualTo(UPDATED_SYS_FULL_JSON_OBJ_JSON);
         assertThat(testPublicCardData.getOaStatus()).isEqualTo(UPDATED_OA_STATUS);
     }
 
@@ -384,6 +394,7 @@ class PublicCardDataResourceIT {
             .status(UPDATED_STATUS)
             .variables(UPDATED_VARIABLES)
             .agreeNum(UPDATED_AGREE_NUM)
+            .sysFullJsonObjJson(UPDATED_SYS_FULL_JSON_OBJ_JSON)
             .oaStatus(UPDATED_OA_STATUS);
 
         restPublicCardDataMockMvc
@@ -410,6 +421,7 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getUpdateLink()).isEqualTo(DEFAULT_UPDATE_LINK);
         assertThat(testPublicCardData.getAgreeNum()).isEqualTo(UPDATED_AGREE_NUM);
         assertThat(testPublicCardData.getRefuseNum()).isEqualTo(DEFAULT_REFUSE_NUM);
+        assertThat(testPublicCardData.getSysFullJsonObjJson()).isEqualTo(UPDATED_SYS_FULL_JSON_OBJ_JSON);
         assertThat(testPublicCardData.getOaStatus()).isEqualTo(UPDATED_OA_STATUS);
     }
 
@@ -438,6 +450,7 @@ class PublicCardDataResourceIT {
             .updateLink(UPDATED_UPDATE_LINK)
             .agreeNum(UPDATED_AGREE_NUM)
             .refuseNum(UPDATED_REFUSE_NUM)
+            .sysFullJsonObjJson(UPDATED_SYS_FULL_JSON_OBJ_JSON)
             .oaStatus(UPDATED_OA_STATUS);
 
         restPublicCardDataMockMvc
@@ -464,6 +477,7 @@ class PublicCardDataResourceIT {
         assertThat(testPublicCardData.getUpdateLink()).isEqualTo(UPDATED_UPDATE_LINK);
         assertThat(testPublicCardData.getAgreeNum()).isEqualTo(UPDATED_AGREE_NUM);
         assertThat(testPublicCardData.getRefuseNum()).isEqualTo(UPDATED_REFUSE_NUM);
+        assertThat(testPublicCardData.getSysFullJsonObjJson()).isEqualTo(UPDATED_SYS_FULL_JSON_OBJ_JSON);
         assertThat(testPublicCardData.getOaStatus()).isEqualTo(UPDATED_OA_STATUS);
     }
 

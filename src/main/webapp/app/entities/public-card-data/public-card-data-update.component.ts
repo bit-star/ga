@@ -41,6 +41,7 @@ const validations: any = {
     updateLink: {},
     agreeNum: {},
     refuseNum: {},
+    sysFullJsonObjJson: {},
     oaStatus: {},
   },
 };
