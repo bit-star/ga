@@ -118,7 +118,7 @@ class TopboxesResourceIT {
     @Transactional
     void createTopboxesWithExistingId() throws Exception {
         // Create the Topboxes with an existing ID
-        topboxesRepository.saveAndFlush(topboxes);
+        topboxes.setId("existing_id");
 
         int databaseSizeBeforeCreate = topboxesRepository.findAll().size();
 
@@ -136,6 +136,7 @@ class TopboxesResourceIT {
     @Transactional
     void getAllTopboxes() throws Exception {
         // Initialize the database
+        topboxes.setId(UUID.randomUUID().toString());
         topboxesRepository.saveAndFlush(topboxes);
 
         // Get all the topboxesList
@@ -143,7 +144,7 @@ class TopboxesResourceIT {
             .perform(get(ENTITY_API_URL + "?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(topboxes.getId().toString())))
+            .andExpect(jsonPath("$.[*].id").value(hasItem(topboxes.getId())))
             .andExpect(jsonPath("$.[*].text").value(hasItem(DEFAULT_TEXT)))
             .andExpect(jsonPath("$.[*].link").value(hasItem(DEFAULT_LINK)))
             .andExpect(jsonPath("$.[*].cardId").value(hasItem(DEFAULT_CARD_ID)))
@@ -155,6 +156,7 @@ class TopboxesResourceIT {
     @Transactional
     void getTopboxes() throws Exception {
         // Initialize the database
+        topboxes.setId(UUID.randomUUID().toString());
         topboxesRepository.saveAndFlush(topboxes);
 
         // Get the topboxes
@@ -162,7 +164,7 @@ class TopboxesResourceIT {
             .perform(get(ENTITY_API_URL_ID, topboxes.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-            .andExpect(jsonPath("$.id").value(topboxes.getId().toString()))
+            .andExpect(jsonPath("$.id").value(topboxes.getId()))
             .andExpect(jsonPath("$.text").value(DEFAULT_TEXT))
             .andExpect(jsonPath("$.link").value(DEFAULT_LINK))
             .andExpect(jsonPath("$.cardId").value(DEFAULT_CARD_ID))
@@ -174,13 +176,14 @@ class TopboxesResourceIT {
     @Transactional
     void getNonExistingTopboxes() throws Exception {
         // Get the topboxes
-        restTopboxesMockMvc.perform(get(ENTITY_API_URL_ID, UUID.randomUUID().toString())).andExpect(status().isNotFound());
+        restTopboxesMockMvc.perform(get(ENTITY_API_URL_ID, Long.MAX_VALUE)).andExpect(status().isNotFound());
     }
 
     @Test
     @Transactional
     void putNewTopboxes() throws Exception {
         // Initialize the database
+        topboxes.setId(UUID.randomUUID().toString());
         topboxesRepository.saveAndFlush(topboxes);
 
         int databaseSizeBeforeUpdate = topboxesRepository.findAll().size();
@@ -214,7 +217,7 @@ class TopboxesResourceIT {
     @Transactional
     void putNonExistingTopboxes() throws Exception {
         int databaseSizeBeforeUpdate = topboxesRepository.findAll().size();
-        topboxes.setId(UUID.randomUUID());
+        topboxes.setId(UUID.randomUUID().toString());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restTopboxesMockMvc
@@ -234,12 +237,12 @@ class TopboxesResourceIT {
     @Transactional
     void putWithIdMismatchTopboxes() throws Exception {
         int databaseSizeBeforeUpdate = topboxesRepository.findAll().size();
-        topboxes.setId(UUID.randomUUID());
+        topboxes.setId(UUID.randomUUID().toString());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restTopboxesMockMvc
             .perform(
-                put(ENTITY_API_URL_ID, UUID.randomUUID())
+                put(ENTITY_API_URL_ID, UUID.randomUUID().toString())
                     .contentType(MediaType.APPLICATION_JSON)
                     .content(TestUtil.convertObjectToJsonBytes(topboxes))
             )
@@ -254,7 +257,7 @@ class TopboxesResourceIT {
     @Transactional
     void putWithMissingIdPathParamTopboxes() throws Exception {
         int databaseSizeBeforeUpdate = topboxesRepository.findAll().size();
-        topboxes.setId(UUID.randomUUID());
+        topboxes.setId(UUID.randomUUID().toString());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restTopboxesMockMvc
@@ -270,6 +273,7 @@ class TopboxesResourceIT {
     @Transactional
     void partialUpdateTopboxesWithPatch() throws Exception {
         // Initialize the database
+        topboxes.setId(UUID.randomUUID().toString());
         topboxesRepository.saveAndFlush(topboxes);
 
         int databaseSizeBeforeUpdate = topboxesRepository.findAll().size();
@@ -303,6 +307,7 @@ class TopboxesResourceIT {
     @Transactional
     void fullUpdateTopboxesWithPatch() throws Exception {
         // Initialize the database
+        topboxes.setId(UUID.randomUUID().toString());
         topboxesRepository.saveAndFlush(topboxes);
 
         int databaseSizeBeforeUpdate = topboxesRepository.findAll().size();
@@ -341,7 +346,7 @@ class TopboxesResourceIT {
     @Transactional
     void patchNonExistingTopboxes() throws Exception {
         int databaseSizeBeforeUpdate = topboxesRepository.findAll().size();
-        topboxes.setId(UUID.randomUUID());
+        topboxes.setId(UUID.randomUUID().toString());
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restTopboxesMockMvc
@@ -361,12 +366,12 @@ class TopboxesResourceIT {
     @Transactional
     void patchWithIdMismatchTopboxes() throws Exception {
         int databaseSizeBeforeUpdate = topboxesRepository.findAll().size();
-        topboxes.setId(UUID.randomUUID());
+        topboxes.setId(UUID.randomUUID().toString());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restTopboxesMockMvc
             .perform(
-                patch(ENTITY_API_URL_ID, UUID.randomUUID())
+                patch(ENTITY_API_URL_ID, UUID.randomUUID().toString())
                     .contentType("application/merge-patch+json")
                     .content(TestUtil.convertObjectToJsonBytes(topboxes))
             )
@@ -381,7 +386,7 @@ class TopboxesResourceIT {
     @Transactional
     void patchWithMissingIdPathParamTopboxes() throws Exception {
         int databaseSizeBeforeUpdate = topboxesRepository.findAll().size();
-        topboxes.setId(UUID.randomUUID());
+        topboxes.setId(UUID.randomUUID().toString());
 
         // If url ID doesn't match entity ID, it will throw BadRequestAlertException
         restTopboxesMockMvc
@@ -397,13 +402,14 @@ class TopboxesResourceIT {
     @Transactional
     void deleteTopboxes() throws Exception {
         // Initialize the database
+        topboxes.setId(UUID.randomUUID().toString());
         topboxesRepository.saveAndFlush(topboxes);
 
         int databaseSizeBeforeDelete = topboxesRepository.findAll().size();
 
         // Delete the topboxes
         restTopboxesMockMvc
-            .perform(delete(ENTITY_API_URL_ID, topboxes.getId().toString()).accept(MediaType.APPLICATION_JSON))
+            .perform(delete(ENTITY_API_URL_ID, topboxes.getId()).accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isNoContent());
 
         // Validate the database contains one less item

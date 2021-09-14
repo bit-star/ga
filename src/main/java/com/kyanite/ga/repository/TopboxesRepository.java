@@ -1,7 +1,6 @@
 package com.kyanite.ga.repository;
 
 import com.kyanite.ga.domain.Topboxes;
-import java.util.UUID;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
@@ -10,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface TopboxesRepository extends JpaRepository<Topboxes, UUID> {}
+public interface TopboxesRepository extends JpaRepository<Topboxes, String> {}

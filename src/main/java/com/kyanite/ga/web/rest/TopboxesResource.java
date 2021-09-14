@@ -9,7 +9,6 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.UUID;
 import java.util.stream.StreamSupport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,7 +57,7 @@ public class TopboxesResource {
         Topboxes result = topboxesService.save(topboxes);
         return ResponseEntity
             .created(new URI("/api/topboxes/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId()))
             .body(result);
     }
 
@@ -74,7 +73,7 @@ public class TopboxesResource {
      */
     @PutMapping("/topboxes/{id}")
     public ResponseEntity<Topboxes> updateTopboxes(
-        @PathVariable(value = "id", required = false) final UUID id,
+        @PathVariable(value = "id", required = false) final String id,
         @RequestBody Topboxes topboxes
     ) throws URISyntaxException {
         log.debug("REST request to update Topboxes : {}, {}", id, topboxes);
@@ -92,7 +91,7 @@ public class TopboxesResource {
         Topboxes result = topboxesService.save(topboxes);
         return ResponseEntity
             .ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, topboxes.getId().toString()))
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, topboxes.getId()))
             .body(result);
     }
 
@@ -109,7 +108,7 @@ public class TopboxesResource {
      */
     @PatchMapping(value = "/topboxes/{id}", consumes = "application/merge-patch+json")
     public ResponseEntity<Topboxes> partialUpdateTopboxes(
-        @PathVariable(value = "id", required = false) final UUID id,
+        @PathVariable(value = "id", required = false) final String id,
         @RequestBody Topboxes topboxes
     ) throws URISyntaxException {
         log.debug("REST request to partial update Topboxes partially : {}, {}", id, topboxes);
@@ -128,7 +127,7 @@ public class TopboxesResource {
 
         return ResponseUtil.wrapOrNotFound(
             result,
-            HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, topboxes.getId().toString())
+            HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, topboxes.getId())
         );
     }
 
@@ -155,7 +154,7 @@ public class TopboxesResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the topboxes, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/topboxes/{id}")
-    public ResponseEntity<Topboxes> getTopboxes(@PathVariable UUID id) {
+    public ResponseEntity<Topboxes> getTopboxes(@PathVariable String id) {
         log.debug("REST request to get Topboxes : {}", id);
         Optional<Topboxes> topboxes = topboxesService.findOne(id);
         return ResponseUtil.wrapOrNotFound(topboxes);
@@ -168,12 +167,9 @@ public class TopboxesResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/topboxes/{id}")
-    public ResponseEntity<Void> deleteTopboxes(@PathVariable UUID id) {
+    public ResponseEntity<Void> deleteTopboxes(@PathVariable String id) {
         log.debug("REST request to delete Topboxes : {}", id);
         topboxesService.delete(id);
-        return ResponseEntity
-            .noContent()
-            .headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString()))
-            .build();
+        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id)).build();
     }
 }

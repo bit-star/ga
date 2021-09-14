@@ -53,7 +53,7 @@ describe('Component Tests', () => {
     describe('save', () => {
       it('Should call update service on save for existing entity', async () => {
         // GIVEN
-        const entity = { id: '9fec3727-3421-4967-b213-ba36557ca194' };
+        const entity = { id: 'ABC' };
         comp.topboxes = entity;
         topboxesServiceStub.update.resolves(entity);
 
@@ -85,12 +85,12 @@ describe('Component Tests', () => {
     describe('Before route enter', () => {
       it('Should retrieve data', async () => {
         // GIVEN
-        const foundTopboxes = { id: '9fec3727-3421-4967-b213-ba36557ca194' };
+        const foundTopboxes = { id: 'ABC' };
         topboxesServiceStub.find.resolves(foundTopboxes);
         topboxesServiceStub.retrieve.resolves([foundTopboxes]);
 
         // WHEN
-        comp.beforeRouteEnter({ params: { topboxesId: '9fec3727-3421-4967-b213-ba36557ca194' } }, null, cb => cb(comp));
+        comp.beforeRouteEnter({ params: { topboxesId: 'ABC' } }, null, cb => cb(comp));
         await comp.$nextTick();
 
         // THEN

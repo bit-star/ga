@@ -11,7 +11,7 @@
     -->
     <changeSet id="20210914060517-1" author="jhipster">
         <createTable tableName="topboxes">
-            <column name="id" type="${uuidType}">
+            <column name="id" type="varchar(255)">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="text" type="varchar(255)">
