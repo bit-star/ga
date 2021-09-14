@@ -144,7 +144,8 @@ entity WorkflowInstance {
 
 
 entity Topboxes {
-	id UUID,
+	@Id 
+    id String,
     text String,
 	link String,
     cardId String,

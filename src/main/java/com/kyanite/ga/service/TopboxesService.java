@@ -4,7 +4,6 @@ import com.kyanite.ga.domain.Topboxes;
 import com.kyanite.ga.repository.TopboxesRepository;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 import org.slf4j.Logger;
@@ -104,7 +103,7 @@ public class TopboxesService {
      * @return the entity.
      */
     @Transactional(readOnly = true)
-    public Optional<Topboxes> findOne(UUID id) {
+    public Optional<Topboxes> findOne(String id) {
         log.debug("Request to get Topboxes : {}", id);
         return topboxesRepository.findById(id);
     }
@@ -114,7 +113,7 @@ public class TopboxesService {
      *
      * @param id the id of the entity.
      */
-    public void delete(UUID id) {
+    public void delete(String id) {
         log.debug("Request to delete Topboxes : {}", id);
         topboxesRepository.deleteById(id);
     }

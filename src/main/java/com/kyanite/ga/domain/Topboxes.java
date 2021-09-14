@@ -2,11 +2,9 @@ package com.kyanite.ga.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
-import java.util.UUID;
 import javax.persistence.*;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.hibernate.annotations.Type;
 
 /**
  * A Topboxes.
@@ -19,8 +17,7 @@ public class Topboxes implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue
-    private UUID id;
+    private String id;
 
     @Column(name = "text")
     private String text;
@@ -49,15 +46,15 @@ public class Topboxes implements Serializable {
     private Conversation conversation;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
-    public UUID getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Topboxes id(UUID id) {
+    public Topboxes id(String id) {
         this.id = id;
         return this;
     }

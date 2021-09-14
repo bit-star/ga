@@ -3,7 +3,10 @@
   "fields": [
     {
       "fieldName": "id",
-      "fieldType": "UUID"
+      "fieldType": "String",
+      "options": {
+        "id": true
+      }
     },
     {
       "fieldName": "text",
