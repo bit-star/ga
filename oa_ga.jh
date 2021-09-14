@@ -46,7 +46,7 @@ entity OperationResults{
 
 
 
-entity Approver{
+entity Approver {
 	approverRole ApproverRole
     oaUserId Long
     email String
@@ -58,13 +58,13 @@ enum OperationSource{
 }
 
 
-enum ApproverRole{
+enum ApproverRole {
 	Approver , Proposer 
 }
 
 
 
-enum OperationType{
+enum OperationType {
 	Agree , Refuse , Comment 
 }
 
@@ -140,6 +140,15 @@ entity WorkflowInstance {
     ddCardCallBackKey String //
     requestId String
     status WorkflowInstanceStatus
+}
+
+
+entity Topboxes {
+    text String,
+	link String,
+    cardId String,
+    auxiliary Boolean,
+    open Boolean
 }
 
 entity PublicCardData {
@@ -223,6 +232,7 @@ enum TypesOfFee {
 relationship  OneToMany {
 	PublicCardData to PrivateCardData
     Conversation to PublicCardData
+    Conversation to Topboxes
     DdUser to PrivateCardData
     LinkSystem to WorkflowTemplate
     WorkflowTemplate to FormField
@@ -232,6 +242,7 @@ relationship  OneToMany {
     PublicCardData to OperationResults
     PublicCardData to ConfirmCard
     PublicCardData to AlertCard
+    
 }
 
 
@@ -245,6 +256,12 @@ relationship  ManyToOne {
 relationship  ManyToMany {
     Conversation to DdUser
 }
+
+
+relationship  OneToOne {
+	PublicCardData to Topboxes
+}
+
 
 
 
