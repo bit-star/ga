@@ -1,0 +1,50 @@
+{
+  "name": "Topboxes",
+  "fields": [
+    {
+      "fieldName": "text",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "link",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cardId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "auxiliary",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "open",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "publicCardData",
+      "otherEntityRelationshipName": "topboxes",
+      "relationshipName": "publicCardData",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "conversation",
+      "otherEntityRelationshipName": "topboxes",
+      "relationshipName": "conversation"
+    }
+  ],
+  "entityTableName": "topboxes",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210914060517"
+}

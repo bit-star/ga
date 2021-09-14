@@ -46,7 +46,7 @@ public class OperationResults implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties(
-        value = { "privateCardData", "operationResults", "confirmCards", "alertCards", "workflowInstance", "conversation" },
+        value = { "topboxes", "privateCardData", "operationResults", "confirmCards", "alertCards", "workflowInstance", "conversation" },
         allowSetters = true
     )
     private PublicCardData publicCardData;

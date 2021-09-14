@@ -89,10 +89,15 @@ public class Conversation implements Serializable {
     @OneToMany(mappedBy = "conversation")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(
-        value = { "privateCardData", "operationResults", "confirmCards", "alertCards", "workflowInstance", "conversation" },
+        value = { "topboxes", "privateCardData", "operationResults", "confirmCards", "alertCards", "workflowInstance", "conversation" },
         allowSetters = true
     )
     private Set<PublicCardData> publicCardData = new HashSet<>();
+
+    @OneToMany(mappedBy = "conversation")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "publicCardData", "conversation" }, allowSetters = true)
+    private Set<Topboxes> topboxes = new HashSet<>();
 
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
@@ -423,6 +428,37 @@ public class Conversation implements Serializable {
             publicCardData.forEach(i -> i.setConversation(this));
         }
         this.publicCardData = publicCardData;
+    }
+
+    public Set<Topboxes> getTopboxes() {
+        return this.topboxes;
+    }
+
+    public Conversation topboxes(Set<Topboxes> topboxes) {
+        this.setTopboxes(topboxes);
+        return this;
+    }
+
+    public Conversation addTopboxes(Topboxes topboxes) {
+        this.topboxes.add(topboxes);
+        topboxes.setConversation(this);
+        return this;
+    }
+
+    public Conversation removeTopboxes(Topboxes topboxes) {
+        this.topboxes.remove(topboxes);
+        topboxes.setConversation(null);
+        return this;
+    }
+
+    public void setTopboxes(Set<Topboxes> topboxes) {
+        if (this.topboxes != null) {
+            this.topboxes.forEach(i -> i.setConversation(null));
+        }
+        if (topboxes != null) {
+            topboxes.forEach(i -> i.setConversation(this));
+        }
+        this.topboxes = topboxes;
     }
 
     public Set<DdUser> getDdUsers() {

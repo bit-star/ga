@@ -13,6 +13,8 @@ import ConversationService from '@/entities/conversation/conversation.service';
 
 import PublicCardDataService from '@/entities/public-card-data/public-card-data.service';
 
+import TopboxesService from '@/entities/topboxes/topboxes.service';
+
 import DdUserService from '@/entities/dd-user/dd-user.service';
 
 const localVue = createLocalVue();
@@ -46,6 +48,8 @@ describe('Component Tests', () => {
           conversationService: () => conversationServiceStub,
 
           publicCardDataService: () => new PublicCardDataService(),
+
+          topboxesService: () => new TopboxesService(),
 
           ddUserService: () => new DdUserService(),
         },

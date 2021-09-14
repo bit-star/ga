@@ -1,0 +1,30 @@
+{
+  "gaApp": {
+    "topboxes": {
+      "home": {
+        "title": "Topboxes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "创建新 Topboxes",
+        "createOrEditLabel": "创建或编辑 Topboxes",
+        "notFound": "No Topboxes found"
+      },
+      "created": "Topboxes {{ param }} 创建成功",
+      "updated": "Topboxes {{ param }} 更新成功",
+      "deleted": "Topboxes {{ param }} 删除成功",
+      "delete": {
+        "question": "你确定要删除 Topboxes {{ id }} 吗？"
+      },
+      "detail": {
+        "title": "Topboxes"
+      },
+      "id": "ID",
+      "text": "Text",
+      "link": "Link",
+      "cardId": "Card Id",
+      "auxiliary": "Auxiliary",
+      "open": "Open",
+      "publicCardData": "Public Card Data",
+      "conversation": "Conversation"
+    }
+  }
+}

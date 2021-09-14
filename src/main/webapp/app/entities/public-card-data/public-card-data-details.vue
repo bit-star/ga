@@ -91,6 +91,16 @@
             <span v-text="$t('gaApp.WorkflowInstanceStatus.' + publicCardData.oaStatus)">{{ publicCardData.oaStatus }}</span>
           </dd>
           <dt>
+            <span v-text="$t('gaApp.publicCardData.topboxes')">Topboxes</span>
+          </dt>
+          <dd>
+            <div v-if="publicCardData.topboxes">
+              <router-link :to="{ name: 'TopboxesView', params: { topboxesId: publicCardData.topboxes.id } }">{{
+                publicCardData.topboxes.id
+              }}</router-link>
+            </div>
+          </dd>
+          <dt>
             <span v-text="$t('gaApp.publicCardData.workflowInstance')">Workflow Instance</span>
           </dt>
           <dd>

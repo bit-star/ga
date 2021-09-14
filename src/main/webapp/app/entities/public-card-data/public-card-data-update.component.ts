@@ -6,6 +6,9 @@ import JhiDataUtils from '@/shared/data/data-utils.service';
 import dayjs from 'dayjs';
 import { DATE_TIME_LONG_FORMAT } from '@/shared/date/filters';
 
+import TopboxesService from '@/entities/topboxes/topboxes.service';
+import { ITopboxes } from '@/shared/model/topboxes.model';
+
 import PrivateCardDataService from '@/entities/private-card-data/private-card-data.service';
 import { IPrivateCardData } from '@/shared/model/private-card-data.model';
 
@@ -52,6 +55,10 @@ const validations: any = {
 export default class PublicCardDataUpdate extends mixins(JhiDataUtils) {
   @Inject('publicCardDataService') private publicCardDataService: () => PublicCardDataService;
   public publicCardData: IPublicCardData = new PublicCardData();
+
+  @Inject('topboxesService') private topboxesService: () => TopboxesService;
+
+  public topboxes: ITopboxes[] = [];
 
   @Inject('privateCardDataService') private privateCardDataService: () => PrivateCardDataService;
 
@@ -170,6 +177,11 @@ export default class PublicCardDataUpdate extends mixins(JhiDataUtils) {
   }
 
   public initRelationships(): void {
+    this.topboxesService()
+      .retrieve()
+      .then(res => {
+        this.topboxes = res.data;
+      });
     this.privateCardDataService()
       .retrieve()
       .then(res => {

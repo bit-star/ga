@@ -86,6 +86,12 @@ const ApiInvokeLog = () => import('@/entities/api-invoke-log/api-invoke-log.vue'
 const ApiInvokeLogUpdate = () => import('@/entities/api-invoke-log/api-invoke-log-update.vue');
 // prettier-ignore
 const ApiInvokeLogDetails = () => import('@/entities/api-invoke-log/api-invoke-log-details.vue');
+// prettier-ignore
+const Topboxes = () => import('@/entities/topboxes/topboxes.vue');
+// prettier-ignore
+const TopboxesUpdate = () => import('@/entities/topboxes/topboxes-update.vue');
+// prettier-ignore
+const TopboxesDetails = () => import('@/entities/topboxes/topboxes-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -423,6 +429,30 @@ export default [
     path: '/api-invoke-log/:apiInvokeLogId/view',
     name: 'ApiInvokeLogView',
     component: ApiInvokeLogDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/topboxes',
+    name: 'Topboxes',
+    component: Topboxes,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/topboxes/new',
+    name: 'TopboxesCreate',
+    component: TopboxesUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/topboxes/:topboxesId/edit',
+    name: 'TopboxesEdit',
+    component: TopboxesUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/topboxes/:topboxesId/view',
+    name: 'TopboxesView',
+    component: TopboxesDetails,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

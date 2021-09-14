@@ -11,6 +11,8 @@ import PublicCardDataUpdateComponent from '@/entities/public-card-data/public-ca
 import PublicCardDataClass from '@/entities/public-card-data/public-card-data-update.component';
 import PublicCardDataService from '@/entities/public-card-data/public-card-data.service';
 
+import TopboxesService from '@/entities/topboxes/topboxes.service';
+
 import PrivateCardDataService from '@/entities/private-card-data/private-card-data.service';
 
 import OperationResultsService from '@/entities/operation-results/operation-results.service';
@@ -52,6 +54,8 @@ describe('Component Tests', () => {
         router,
         provide: {
           publicCardDataService: () => publicCardDataServiceStub,
+
+          topboxesService: () => new TopboxesService(),
 
           privateCardDataService: () => new PrivateCardDataService(),
 

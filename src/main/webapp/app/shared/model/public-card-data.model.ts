@@ -1,3 +1,4 @@
+import { ITopboxes } from '@/shared/model/topboxes.model';
 import { IPrivateCardData } from '@/shared/model/private-card-data.model';
 import { IOperationResults } from '@/shared/model/operation-results.model';
 import { IConfirmCard } from '@/shared/model/confirm-card.model';
@@ -23,6 +24,7 @@ export interface IPublicCardData {
   refuseNum?: number | null;
   sysFullJsonObjJson?: string | null;
   oaStatus?: WorkflowInstanceStatus | null;
+  topboxes?: ITopboxes | null;
   privateCardData?: IPrivateCardData[] | null;
   operationResults?: IOperationResults[] | null;
   confirmCards?: IConfirmCard[] | null;
@@ -48,6 +50,7 @@ export class PublicCardData implements IPublicCardData {
     public refuseNum?: number | null,
     public sysFullJsonObjJson?: string | null,
     public oaStatus?: WorkflowInstanceStatus | null,
+    public topboxes?: ITopboxes | null,
     public privateCardData?: IPrivateCardData[] | null,
     public operationResults?: IOperationResults[] | null,
     public confirmCards?: IConfirmCard[] | null,

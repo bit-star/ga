@@ -8,6 +8,12 @@
     -->
     <changeSet id="20210806053639-2" author="jhipster">
 
+        <addForeignKeyConstraint baseColumnNames="topboxes_id"
+                                 baseTableName="public_card_data"
+                                 constraintName="fk_public_card_data__topboxes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="topboxes"/>
+
         <addForeignKeyConstraint baseColumnNames="workflow_instance_id"
                                  baseTableName="public_card_data"
                                  constraintName="fk_public_card_data__workflow_instance_id"

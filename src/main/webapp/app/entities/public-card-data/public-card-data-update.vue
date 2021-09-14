@@ -208,6 +208,27 @@
             </select>
           </div>
           <div class="form-group">
+            <label class="form-control-label" v-text="$t('gaApp.publicCardData.topboxes')" for="public-card-data-topboxes">Topboxes</label>
+            <select
+              class="form-control"
+              id="public-card-data-topboxes"
+              data-cy="topboxes"
+              name="topboxes"
+              v-model="publicCardData.topboxes"
+            >
+              <option v-bind:value="null"></option>
+              <option
+                v-bind:value="
+                  publicCardData.topboxes && topboxesOption.id === publicCardData.topboxes.id ? publicCardData.topboxes : topboxesOption
+                "
+                v-for="topboxesOption in topboxes"
+                :key="topboxesOption.id"
+              >
+                {{ topboxesOption.id }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.publicCardData.workflowInstance')" for="public-card-data-workflowInstance"
               >Workflow Instance</label
             >

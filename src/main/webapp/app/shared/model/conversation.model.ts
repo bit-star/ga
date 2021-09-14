@@ -1,4 +1,5 @@
 import { IPublicCardData } from '@/shared/model/public-card-data.model';
+import { ITopboxes } from '@/shared/model/topboxes.model';
 import { IDdUser } from '@/shared/model/dd-user.model';
 
 export interface IConversation {
@@ -25,6 +26,7 @@ export interface IConversation {
   groupUrl?: string | null;
   time?: Date | null;
   publicCardData?: IPublicCardData[] | null;
+  topboxes?: ITopboxes[] | null;
   ddUsers?: IDdUser[] | null;
 }
 
@@ -53,6 +55,7 @@ export class Conversation implements IConversation {
     public groupUrl?: string | null,
     public time?: Date | null,
     public publicCardData?: IPublicCardData[] | null,
+    public topboxes?: ITopboxes[] | null,
     public ddUsers?: IDdUser[] | null
   ) {
     this.officialGroup = this.officialGroup ?? false;
