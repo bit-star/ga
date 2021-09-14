@@ -149,7 +149,7 @@ entity Topboxes {
     text String,
 	link String,
     cardId String,
-    auxiliary Boolean,
+    auxiliary String,
     open Boolean
 }
 

@@ -37,8 +37,8 @@ class TopboxesResourceIT {
     private static final String DEFAULT_CARD_ID = "AAAAAAAAAA";
     private static final String UPDATED_CARD_ID = "BBBBBBBBBB";
 
-    private static final Boolean DEFAULT_AUXILIARY = false;
-    private static final Boolean UPDATED_AUXILIARY = true;
+    private static final String DEFAULT_AUXILIARY = "AAAAAAAAAA";
+    private static final String UPDATED_AUXILIARY = "BBBBBBBBBB";
 
     private static final Boolean DEFAULT_OPEN = false;
     private static final Boolean UPDATED_OPEN = true;
@@ -148,7 +148,7 @@ class TopboxesResourceIT {
             .andExpect(jsonPath("$.[*].text").value(hasItem(DEFAULT_TEXT)))
             .andExpect(jsonPath("$.[*].link").value(hasItem(DEFAULT_LINK)))
             .andExpect(jsonPath("$.[*].cardId").value(hasItem(DEFAULT_CARD_ID)))
-            .andExpect(jsonPath("$.[*].auxiliary").value(hasItem(DEFAULT_AUXILIARY.booleanValue())))
+            .andExpect(jsonPath("$.[*].auxiliary").value(hasItem(DEFAULT_AUXILIARY)))
             .andExpect(jsonPath("$.[*].open").value(hasItem(DEFAULT_OPEN.booleanValue())));
     }
 
@@ -168,7 +168,7 @@ class TopboxesResourceIT {
             .andExpect(jsonPath("$.text").value(DEFAULT_TEXT))
             .andExpect(jsonPath("$.link").value(DEFAULT_LINK))
             .andExpect(jsonPath("$.cardId").value(DEFAULT_CARD_ID))
-            .andExpect(jsonPath("$.auxiliary").value(DEFAULT_AUXILIARY.booleanValue()))
+            .andExpect(jsonPath("$.auxiliary").value(DEFAULT_AUXILIARY))
             .andExpect(jsonPath("$.open").value(DEFAULT_OPEN.booleanValue()));
     }
 

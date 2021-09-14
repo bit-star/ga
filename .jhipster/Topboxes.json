@@ -22,7 +22,7 @@
     },
     {
       "fieldName": "auxiliary",
-      "fieldType": "Boolean"
+      "fieldType": "String"
     },
     {
       "fieldName": "open",

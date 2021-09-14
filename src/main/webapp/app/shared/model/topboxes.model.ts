@@ -6,7 +6,7 @@ export interface ITopboxes {
   text?: string | null;
   link?: string | null;
   cardId?: string | null;
-  auxiliary?: boolean | null;
+  auxiliary?: string | null;
   open?: boolean | null;
   publicCardData?: IPublicCardData | null;
   conversation?: IConversation | null;
@@ -18,12 +18,11 @@ export class Topboxes implements ITopboxes {
     public text?: string | null,
     public link?: string | null,
     public cardId?: string | null,
-    public auxiliary?: boolean | null,
+    public auxiliary?: string | null,
     public open?: boolean | null,
     public publicCardData?: IPublicCardData | null,
     public conversation?: IConversation | null
   ) {
-    this.auxiliary = this.auxiliary ?? false;
     this.open = this.open ?? false;
   }
 }
