@@ -1,0 +1,30 @@
+{
+  "gaApp": {
+    "topboxes": {
+      "home": {
+        "title": "Topboxes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Topboxes",
+        "createOrEditLabel": "Create or edit a Topboxes",
+        "notFound": "No Topboxes found"
+      },
+      "created": "A new Topboxes is created with identifier {{ param }}",
+      "updated": "A Topboxes is updated with identifier {{ param }}",
+      "deleted": "A Topboxes is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Topboxes {{ id }}?"
+      },
+      "detail": {
+        "title": "Topboxes"
+      },
+      "id": "ID",
+      "text": "Text",
+      "link": "Link",
+      "cardId": "Card Id",
+      "auxiliary": "Auxiliary",
+      "open": "Open",
+      "publicCardData": "Public Card Data",
+      "conversation": "Conversation"
+    }
+  }
+}

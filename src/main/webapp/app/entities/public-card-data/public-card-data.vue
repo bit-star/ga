@@ -43,6 +43,7 @@
             <th scope="row"><span v-text="$t('gaApp.publicCardData.refuseNum')">Refuse Num</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.sysFullJsonObjJson')">Sys Full Json Obj Json</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.oaStatus')">Oa Status</span></th>
+            <th scope="row"><span v-text="$t('gaApp.publicCardData.topboxes')">Topboxes</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.workflowInstance')">Workflow Instance</span></th>
             <th scope="row"><span v-text="$t('gaApp.publicCardData.conversation')">Conversation</span></th>
             <th scope="row"></th>
@@ -69,6 +70,13 @@
             <td>{{ publicCardData.refuseNum }}</td>
             <td>{{ publicCardData.sysFullJsonObjJson }}</td>
             <td v-text="$t('gaApp.WorkflowInstanceStatus.' + publicCardData.oaStatus)">{{ publicCardData.oaStatus }}</td>
+            <td>
+              <div v-if="publicCardData.topboxes">
+                <router-link :to="{ name: 'TopboxesView', params: { topboxesId: publicCardData.topboxes.id } }">{{
+                  publicCardData.topboxes.id
+                }}</router-link>
+              </div>
+            </td>
             <td>
               <div v-if="publicCardData.workflowInstance">
                 <router-link :to="{ name: 'WorkflowInstanceView', params: { workflowInstanceId: publicCardData.workflowInstance.id } }">{{

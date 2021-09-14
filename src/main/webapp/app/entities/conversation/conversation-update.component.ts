@@ -9,6 +9,9 @@ import { DATE_TIME_LONG_FORMAT } from '@/shared/date/filters';
 import PublicCardDataService from '@/entities/public-card-data/public-card-data.service';
 import { IPublicCardData } from '@/shared/model/public-card-data.model';
 
+import TopboxesService from '@/entities/topboxes/topboxes.service';
+import { ITopboxes } from '@/shared/model/topboxes.model';
+
 import DdUserService from '@/entities/dd-user/dd-user.service';
 import { IDdUser } from '@/shared/model/dd-user.model';
 
@@ -51,6 +54,10 @@ export default class ConversationUpdate extends mixins(JhiDataUtils) {
   @Inject('publicCardDataService') private publicCardDataService: () => PublicCardDataService;
 
   public publicCardData: IPublicCardData[] = [];
+
+  @Inject('topboxesService') private topboxesService: () => TopboxesService;
+
+  public topboxes: ITopboxes[] = [];
 
   @Inject('ddUserService') private ddUserService: () => DdUserService;
 
@@ -154,6 +161,11 @@ export default class ConversationUpdate extends mixins(JhiDataUtils) {
       .retrieve()
       .then(res => {
         this.publicCardData = res.data;
+      });
+    this.topboxesService()
+      .retrieve()
+      .then(res => {
+        this.topboxes = res.data;
       });
     this.ddUserService()
       .retrieve()

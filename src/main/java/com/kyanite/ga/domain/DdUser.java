@@ -117,7 +117,7 @@ public class DdUser implements Serializable {
 
     @ManyToMany(mappedBy = "ddUsers")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "publicCardData", "ddUsers" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "publicCardData", "topboxes", "ddUsers" }, allowSetters = true)
     private Set<Conversation> conversations = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

@@ -58,9 +58,10 @@
       "Approver",
       "ConfirmCard",
       "AlertCard",
-      "ApiInvokeLog"
+      "ApiInvokeLog",
+      "Topboxes"
     ],
-    "lastLiquibaseTimestamp": 1629716843000
+    "lastLiquibaseTimestamp": 1631599517000
   },
   "git-provider": "GitHub",
   "git-company": "bit-star",

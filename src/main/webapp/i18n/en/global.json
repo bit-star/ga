@@ -21,6 +21,7 @@
         "confirmCard": "Confirm Card",
         "alertCard": "Alert Card",
         "apiInvokeLog": "Api Invoke Log",
+        "topboxes": "Topboxes",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

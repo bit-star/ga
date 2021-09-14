@@ -65,7 +65,7 @@ public class WorkflowInstance implements Serializable {
     @OneToMany(mappedBy = "workflowInstance")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(
-        value = { "privateCardData", "operationResults", "confirmCards", "alertCards", "workflowInstance", "conversation" },
+        value = { "topboxes", "privateCardData", "operationResults", "confirmCards", "alertCards", "workflowInstance", "conversation" },
         allowSetters = true
     )
     private Set<PublicCardData> publicCardData = new HashSet<>();

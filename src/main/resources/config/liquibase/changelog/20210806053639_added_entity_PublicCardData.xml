@@ -56,6 +56,9 @@
             <column name="oa_status" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="topboxes_id" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_public_card_data__topboxes_id" />
+            </column>
             <column name="workflow_instance_id" type="bigint">
                 <constraints nullable="true" />
             </column>

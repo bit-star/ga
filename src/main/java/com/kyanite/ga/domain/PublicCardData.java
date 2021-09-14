@@ -71,6 +71,11 @@ public class PublicCardData implements Serializable {
     @Column(name = "oa_status")
     private WorkflowInstanceStatus oaStatus;
 
+    @JsonIgnoreProperties(value = { "publicCardData", "conversation" }, allowSetters = true)
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Topboxes topboxes;
+
     @OneToMany(mappedBy = "publicCardData")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(value = { "publicCardData", "ddUser" }, allowSetters = true)
@@ -96,7 +101,7 @@ public class PublicCardData implements Serializable {
     private WorkflowInstance workflowInstance;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "publicCardData", "ddUsers" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "publicCardData", "topboxes", "ddUsers" }, allowSetters = true)
     private Conversation conversation;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
@@ -293,6 +298,19 @@ public class PublicCardData implements Serializable {
 
     public void setOaStatus(WorkflowInstanceStatus oaStatus) {
         this.oaStatus = oaStatus;
+    }
+
+    public Topboxes getTopboxes() {
+        return this.topboxes;
+    }
+
+    public PublicCardData topboxes(Topboxes topboxes) {
+        this.setTopboxes(topboxes);
+        return this;
+    }
+
+    public void setTopboxes(Topboxes topboxes) {
+        this.topboxes = topboxes;
     }
 
     public Set<PrivateCardData> getPrivateCardData() {
