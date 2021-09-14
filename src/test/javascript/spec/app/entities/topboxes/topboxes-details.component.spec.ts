@@ -40,11 +40,11 @@ describe('Component Tests', () => {
     describe('OnInit', () => {
       it('Should call load all on init', async () => {
         // GIVEN
-        const foundTopboxes = { id: 123 };
+        const foundTopboxes = { id: '9fec3727-3421-4967-b213-ba36557ca194' };
         topboxesServiceStub.find.resolves(foundTopboxes);
 
         // WHEN
-        comp.retrieveTopboxes(123);
+        comp.retrieveTopboxes('9fec3727-3421-4967-b213-ba36557ca194');
         await comp.$nextTick();
 
         // THEN
@@ -55,11 +55,11 @@ describe('Component Tests', () => {
     describe('Before route enter', () => {
       it('Should retrieve data', async () => {
         // GIVEN
-        const foundTopboxes = { id: 123 };
+        const foundTopboxes = { id: '9fec3727-3421-4967-b213-ba36557ca194' };
         topboxesServiceStub.find.resolves(foundTopboxes);
 
         // WHEN
-        comp.beforeRouteEnter({ params: { topboxesId: 123 } }, null, cb => cb(comp));
+        comp.beforeRouteEnter({ params: { topboxesId: '9fec3727-3421-4967-b213-ba36557ca194' } }, null, cb => cb(comp));
         await comp.$nextTick();
 
         // THEN
