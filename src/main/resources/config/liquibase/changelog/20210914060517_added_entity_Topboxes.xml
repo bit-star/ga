@@ -23,7 +23,7 @@
             <column name="card_id" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="auxiliary" type="boolean">
+            <column name="auxiliary" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="open" type="boolean">
@@ -55,7 +55,7 @@
             <column name="text" type="string"/>
             <column name="link" type="string"/>
             <column name="card_id" type="string"/>
-            <column name="auxiliary" type="boolean"/>
+            <column name="auxiliary" type="string"/>
             <column name="open" type="boolean"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>

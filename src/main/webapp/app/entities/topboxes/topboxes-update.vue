@@ -53,8 +53,8 @@
           <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.topboxes.auxiliary')" for="topboxes-auxiliary">Auxiliary</label>
             <input
-              type="checkbox"
-              class="form-check"
+              type="text"
+              class="form-control"
               name="auxiliary"
               id="topboxes-auxiliary"
               data-cy="auxiliary"

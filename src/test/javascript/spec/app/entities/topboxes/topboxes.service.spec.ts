@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new TopboxesService();
-      elemDefault = new Topboxes('ABC', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false, false);
+      elemDefault = new Topboxes('ABC', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false);
     });
 
     describe('Service methods', () => {
@@ -84,7 +84,7 @@ describe('Service Tests', () => {
             text: 'BBBBBB',
             link: 'BBBBBB',
             cardId: 'BBBBBB',
-            auxiliary: true,
+            auxiliary: 'BBBBBB',
             open: true,
           },
           elemDefault
@@ -146,7 +146,7 @@ describe('Service Tests', () => {
             text: 'BBBBBB',
             link: 'BBBBBB',
             cardId: 'BBBBBB',
-            auxiliary: true,
+            auxiliary: 'BBBBBB',
             open: true,
           },
           elemDefault

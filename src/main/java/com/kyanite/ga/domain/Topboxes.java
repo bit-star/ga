@@ -29,7 +29,7 @@ public class Topboxes implements Serializable {
     private String cardId;
 
     @Column(name = "auxiliary")
-    private Boolean auxiliary;
+    private String auxiliary;
 
     @Column(name = "open")
     private Boolean open;
@@ -98,16 +98,16 @@ public class Topboxes implements Serializable {
         this.cardId = cardId;
     }
 
-    public Boolean getAuxiliary() {
+    public String getAuxiliary() {
         return this.auxiliary;
     }
 
-    public Topboxes auxiliary(Boolean auxiliary) {
+    public Topboxes auxiliary(String auxiliary) {
         this.auxiliary = auxiliary;
         return this;
     }
 
-    public void setAuxiliary(Boolean auxiliary) {
+    public void setAuxiliary(String auxiliary) {
         this.auxiliary = auxiliary;
     }
 
