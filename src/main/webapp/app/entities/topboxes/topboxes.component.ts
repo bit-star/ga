@@ -11,7 +11,7 @@ import TopboxesService from './topboxes.service';
 })
 export default class Topboxes extends Vue {
   @Inject('topboxesService') private topboxesService: () => TopboxesService;
-  private removeId: number = null;
+  private removeId: string = null;
 
   public topboxes: ITopboxes[] = [];
 

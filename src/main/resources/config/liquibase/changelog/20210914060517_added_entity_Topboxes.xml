@@ -11,7 +11,7 @@
     -->
     <changeSet id="20210914060517-1" author="jhipster">
         <createTable tableName="topboxes">
-            <column name="id" type="bigint" autoIncrement="true">
+            <column name="id" type="${uuidType}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="text" type="varchar(255)">
@@ -51,7 +51,7 @@
                   file="config/liquibase/fake-data/topboxes.csv"
                   separator=";"
                   tableName="topboxes">
-            <column name="id" type="numeric"/>
+            <column name="id" type="string"/>
             <column name="text" type="string"/>
             <column name="link" type="string"/>
             <column name="card_id" type="string"/>

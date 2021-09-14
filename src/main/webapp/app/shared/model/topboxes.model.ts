@@ -2,7 +2,7 @@ import { IPublicCardData } from '@/shared/model/public-card-data.model';
 import { IConversation } from '@/shared/model/conversation.model';
 
 export interface ITopboxes {
-  id?: number;
+  id?: string;
   text?: string | null;
   link?: string | null;
   cardId?: string | null;
@@ -14,7 +14,7 @@ export interface ITopboxes {
 
 export class Topboxes implements ITopboxes {
   constructor(
-    public id?: number,
+    public id?: string,
     public text?: string | null,
     public link?: string | null,
     public cardId?: string | null,

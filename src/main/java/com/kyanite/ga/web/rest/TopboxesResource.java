@@ -9,6 +9,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.StreamSupport;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -73,7 +74,7 @@ public class TopboxesResource {
      */
     @PutMapping("/topboxes/{id}")
     public ResponseEntity<Topboxes> updateTopboxes(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final UUID id,
         @RequestBody Topboxes topboxes
     ) throws URISyntaxException {
         log.debug("REST request to update Topboxes : {}, {}", id, topboxes);
@@ -108,7 +109,7 @@ public class TopboxesResource {
      */
     @PatchMapping(value = "/topboxes/{id}", consumes = "application/merge-patch+json")
     public ResponseEntity<Topboxes> partialUpdateTopboxes(
-        @PathVariable(value = "id", required = false) final Long id,
+        @PathVariable(value = "id", required = false) final UUID id,
         @RequestBody Topboxes topboxes
     ) throws URISyntaxException {
         log.debug("REST request to partial update Topboxes partially : {}, {}", id, topboxes);
@@ -154,7 +155,7 @@ public class TopboxesResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the topboxes, or with status {@code 404 (Not Found)}.
      */
     @GetMapping("/topboxes/{id}")
-    public ResponseEntity<Topboxes> getTopboxes(@PathVariable Long id) {
+    public ResponseEntity<Topboxes> getTopboxes(@PathVariable UUID id) {
         log.debug("REST request to get Topboxes : {}", id);
         Optional<Topboxes> topboxes = topboxesService.findOne(id);
         return ResponseUtil.wrapOrNotFound(topboxes);
@@ -167,7 +168,7 @@ public class TopboxesResource {
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
     @DeleteMapping("/topboxes/{id}")
-    public ResponseEntity<Void> deleteTopboxes(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteTopboxes(@PathVariable UUID id) {
         log.debug("REST request to delete Topboxes : {}", id);
         topboxesService.delete(id);
         return ResponseEntity

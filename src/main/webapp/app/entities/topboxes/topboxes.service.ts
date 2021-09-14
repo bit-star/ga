@@ -5,7 +5,7 @@ import { ITopboxes } from '@/shared/model/topboxes.model';
 const baseApiUrl = 'api/topboxes';
 
 export default class TopboxesService {
-  public find(id: number): Promise<ITopboxes> {
+  public find(id: string): Promise<ITopboxes> {
     return new Promise<ITopboxes>((resolve, reject) => {
       axios
         .get(`${baseApiUrl}/${id}`)
@@ -31,7 +31,7 @@ export default class TopboxesService {
     });
   }
 
-  public delete(id: number): Promise<any> {
+  public delete(id: string): Promise<any> {
     return new Promise<any>((resolve, reject) => {
       axios
         .delete(`${baseApiUrl}/${id}`)
