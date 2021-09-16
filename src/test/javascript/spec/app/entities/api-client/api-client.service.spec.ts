@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new ApiClientService();
-      elemDefault = new ApiClient(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new ApiClient(123, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', false);
     });
 
     describe('Service methods', () => {
@@ -84,7 +84,7 @@ describe('Service Tests', () => {
             name: 'BBBBBB',
             apiKey: 'BBBBBB',
             apiSecret: 'BBBBBB',
-            enable: 'BBBBBB',
+            enable: true,
           },
           elemDefault
         );
@@ -143,7 +143,7 @@ describe('Service Tests', () => {
             name: 'BBBBBB',
             apiKey: 'BBBBBB',
             apiSecret: 'BBBBBB',
-            enable: 'BBBBBB',
+            enable: true,
           },
           elemDefault
         );

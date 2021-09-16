@@ -15,7 +15,7 @@
     },
     {
       "fieldName": "enable",
-      "fieldType": "String"
+      "fieldType": "Boolean"
     }
   ],
   "relationships": [

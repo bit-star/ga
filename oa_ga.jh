@@ -81,7 +81,7 @@ entity ApiClient{
 	name String,
 	apiKey String,
     apiSecret String,
-    enable String
+    enable Boolean
 }
 
 
@@ -151,7 +151,7 @@ entity WorkflowInstance {
 
 
 entity Topboxes {
-	@Id 
+	@Id
     id String,
     text String,
 	link String,

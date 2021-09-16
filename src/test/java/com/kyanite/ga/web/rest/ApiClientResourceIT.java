@@ -38,8 +38,8 @@ class ApiClientResourceIT {
     private static final String DEFAULT_API_SECRET = "AAAAAAAAAA";
     private static final String UPDATED_API_SECRET = "BBBBBBBBBB";
 
-    private static final String DEFAULT_ENABLE = "AAAAAAAAAA";
-    private static final String UPDATED_ENABLE = "BBBBBBBBBB";
+    private static final Boolean DEFAULT_ENABLE = false;
+    private static final Boolean UPDATED_ENABLE = true;
 
     private static final String ENTITY_API_URL = "/api/api-clients";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -145,7 +145,7 @@ class ApiClientResourceIT {
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
             .andExpect(jsonPath("$.[*].apiKey").value(hasItem(DEFAULT_API_KEY)))
             .andExpect(jsonPath("$.[*].apiSecret").value(hasItem(DEFAULT_API_SECRET)))
-            .andExpect(jsonPath("$.[*].enable").value(hasItem(DEFAULT_ENABLE)));
+            .andExpect(jsonPath("$.[*].enable").value(hasItem(DEFAULT_ENABLE.booleanValue())));
     }
 
     @Test
@@ -163,7 +163,7 @@ class ApiClientResourceIT {
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
             .andExpect(jsonPath("$.apiKey").value(DEFAULT_API_KEY))
             .andExpect(jsonPath("$.apiSecret").value(DEFAULT_API_SECRET))
-            .andExpect(jsonPath("$.enable").value(DEFAULT_ENABLE));
+            .andExpect(jsonPath("$.enable").value(DEFAULT_ENABLE.booleanValue()));
     }
 
     @Test
