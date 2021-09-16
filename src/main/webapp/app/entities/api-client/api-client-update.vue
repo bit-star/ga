@@ -53,8 +53,8 @@
           <div class="form-group">
             <label class="form-control-label" v-text="$t('gaApp.apiClient.enable')" for="api-client-enable">Enable</label>
             <input
-              type="text"
-              class="form-control"
+              type="checkbox"
+              class="form-check"
               name="enable"
               id="api-client-enable"
               data-cy="enable"

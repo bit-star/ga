@@ -31,7 +31,7 @@ public class ApiClient implements Serializable {
     private String apiSecret;
 
     @Column(name = "enable")
-    private String enable;
+    private Boolean enable;
 
     @ManyToOne
     @JsonIgnoreProperties(value = { "workflowTemplates", "apiClients" }, allowSetters = true)
@@ -91,16 +91,16 @@ public class ApiClient implements Serializable {
         this.apiSecret = apiSecret;
     }
 
-    public String getEnable() {
+    public Boolean getEnable() {
         return this.enable;
     }
 
-    public ApiClient enable(String enable) {
+    public ApiClient enable(Boolean enable) {
         this.setEnable(enable);
         return this;
     }
 
-    public void setEnable(String enable) {
+    public void setEnable(Boolean enable) {
         this.enable = enable;
     }
 

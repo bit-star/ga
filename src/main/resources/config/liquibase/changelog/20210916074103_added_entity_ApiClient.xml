@@ -23,7 +23,7 @@
             <column name="api_secret" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="enable" type="varchar(255)">
+            <column name="enable" type="boolean">
                 <constraints nullable="true" />
             </column>
             <column name="link_system_id" type="bigint">
@@ -53,7 +53,7 @@
             <column name="name" type="string"/>
             <column name="api_key" type="string"/>
             <column name="api_secret" type="string"/>
-            <column name="enable" type="string"/>
+            <column name="enable" type="boolean"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>
