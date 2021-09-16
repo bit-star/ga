@@ -18,6 +18,7 @@ public class AlertCard implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "text")
@@ -40,17 +41,18 @@ public class AlertCard implements Serializable {
     private PublicCardData publicCardData;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
     public Long getId() {
-        return id;
+        return this.id;
+    }
+
+    public AlertCard id(Long id) {
+        this.setId(id);
+        return this;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public AlertCard id(Long id) {
-        this.id = id;
-        return this;
     }
 
     public String getText() {
@@ -58,7 +60,7 @@ public class AlertCard implements Serializable {
     }
 
     public AlertCard text(String text) {
-        this.text = text;
+        this.setText(text);
         return this;
     }
 
@@ -71,7 +73,7 @@ public class AlertCard implements Serializable {
     }
 
     public AlertCard userId(String userId) {
-        this.userId = userId;
+        this.setUserId(userId);
         return this;
     }
 
@@ -84,7 +86,7 @@ public class AlertCard implements Serializable {
     }
 
     public AlertCard link(String link) {
-        this.link = link;
+        this.setLink(link);
         return this;
     }
 
@@ -97,7 +99,7 @@ public class AlertCard implements Serializable {
     }
 
     public AlertCard md1(String md1) {
-        this.md1 = md1;
+        this.setMd1(md1);
         return this;
     }
 
@@ -109,13 +111,13 @@ public class AlertCard implements Serializable {
         return this.publicCardData;
     }
 
+    public void setPublicCardData(PublicCardData publicCardData) {
+        this.publicCardData = publicCardData;
+    }
+
     public AlertCard publicCardData(PublicCardData publicCardData) {
         this.setPublicCardData(publicCardData);
         return this;
-    }
-
-    public void setPublicCardData(PublicCardData publicCardData) {
-        this.publicCardData = publicCardData;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

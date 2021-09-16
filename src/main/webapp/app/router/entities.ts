@@ -92,6 +92,12 @@ const Topboxes = () => import('@/entities/topboxes/topboxes.vue');
 const TopboxesUpdate = () => import('@/entities/topboxes/topboxes-update.vue');
 // prettier-ignore
 const TopboxesDetails = () => import('@/entities/topboxes/topboxes-details.vue');
+// prettier-ignore
+const ApiClient = () => import('@/entities/api-client/api-client.vue');
+// prettier-ignore
+const ApiClientUpdate = () => import('@/entities/api-client/api-client-update.vue');
+// prettier-ignore
+const ApiClientDetails = () => import('@/entities/api-client/api-client-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -453,6 +459,30 @@ export default [
     path: '/topboxes/:topboxesId/view',
     name: 'TopboxesView',
     component: TopboxesDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/api-client',
+    name: 'ApiClient',
+    component: ApiClient,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/api-client/new',
+    name: 'ApiClientCreate',
+    component: ApiClientUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/api-client/:apiClientId/edit',
+    name: 'ApiClientEdit',
+    component: ApiClientUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/api-client/:apiClientId/view',
+    name: 'ApiClientView',
+    component: ApiClientDetails,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

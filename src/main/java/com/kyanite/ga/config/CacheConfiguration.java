@@ -85,6 +85,8 @@ public class CacheConfiguration {
             createCache(cm, com.kyanite.ga.domain.ApiInvokeLog.class.getName());
             createCache(cm, com.kyanite.ga.domain.Conversation.class.getName() + ".topboxes");
             createCache(cm, com.kyanite.ga.domain.Topboxes.class.getName());
+            createCache(cm, com.kyanite.ga.domain.LinkSystem.class.getName() + ".apiClients");
+            createCache(cm, com.kyanite.ga.domain.ApiClient.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

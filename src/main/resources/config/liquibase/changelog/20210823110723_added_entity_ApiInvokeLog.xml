@@ -3,7 +3,7 @@
     xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
     xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!--
@@ -60,14 +60,15 @@
         <loadData
                   file="config/liquibase/fake-data/api_invoke_log.csv"
                   separator=";"
-                  tableName="api_invoke_log">
+                  tableName="api_invoke_log"
+                  usePreparedStatements="true">
             <column name="id" type="numeric"/>
             <column name="login" type="string"/>
             <column name="api_name" type="string"/>
             <column name="method" type="string"/>
             <column name="direction" type="string"/>
             <column name="http_status_code" type="numeric"/>
-            <column name="time" type="${datetimeType}"/>
+            <column name="time" type="date"/>
             <column name="reqeust_data" type="clob"/>
             <column name="response_data" type="clob"/>
             <column name="ok" type="boolean"/>

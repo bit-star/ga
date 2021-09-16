@@ -3,6 +3,9 @@ import { Component, Vue, Inject } from 'vue-property-decorator';
 import WorkflowTemplateService from '@/entities/workflow-template/workflow-template.service';
 import { IWorkflowTemplate } from '@/shared/model/workflow-template.model';
 
+import ApiClientService from '@/entities/api-client/api-client.service';
+import { IApiClient } from '@/shared/model/api-client.model';
+
 import { ILinkSystem, LinkSystem } from '@/shared/model/link-system.model';
 import LinkSystemService from './link-system.service';
 
@@ -22,6 +25,10 @@ export default class LinkSystemUpdate extends Vue {
   @Inject('workflowTemplateService') private workflowTemplateService: () => WorkflowTemplateService;
 
   public workflowTemplates: IWorkflowTemplate[] = [];
+
+  @Inject('apiClientService') private apiClientService: () => ApiClientService;
+
+  public apiClients: IApiClient[] = [];
   public isSaving = false;
   public currentLanguage = '';
 
@@ -96,6 +103,11 @@ export default class LinkSystemUpdate extends Vue {
       .retrieve()
       .then(res => {
         this.workflowTemplates = res.data;
+      });
+    this.apiClientService()
+      .retrieve()
+      .then(res => {
+        this.apiClients = res.data;
       });
   }
 }

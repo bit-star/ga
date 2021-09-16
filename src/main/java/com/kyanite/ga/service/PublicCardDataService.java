@@ -46,54 +46,52 @@ public class PublicCardDataService {
 
         return publicCardDataRepository
             .findById(publicCardData.getId())
-            .map(
-                existingPublicCardData -> {
-                    if (publicCardData.getTitle() != null) {
-                        existingPublicCardData.setTitle(publicCardData.getTitle());
-                    }
-                    if (publicCardData.getRequestid() != null) {
-                        existingPublicCardData.setRequestid(publicCardData.getRequestid());
-                    }
-                    if (publicCardData.getWorkflowid() != null) {
-                        existingPublicCardData.setWorkflowid(publicCardData.getWorkflowid());
-                    }
-                    if (publicCardData.getValid() != null) {
-                        existingPublicCardData.setValid(publicCardData.getValid());
-                    }
-                    if (publicCardData.getFinish() != null) {
-                        existingPublicCardData.setFinish(publicCardData.getFinish());
-                    }
-                    if (publicCardData.getStatus() != null) {
-                        existingPublicCardData.setStatus(publicCardData.getStatus());
-                    }
-                    if (publicCardData.getVariables() != null) {
-                        existingPublicCardData.setVariables(publicCardData.getVariables());
-                    }
-                    if (publicCardData.getCreatedTime() != null) {
-                        existingPublicCardData.setCreatedTime(publicCardData.getCreatedTime());
-                    }
-                    if (publicCardData.getLink() != null) {
-                        existingPublicCardData.setLink(publicCardData.getLink());
-                    }
-                    if (publicCardData.getUpdateLink() != null) {
-                        existingPublicCardData.setUpdateLink(publicCardData.getUpdateLink());
-                    }
-                    if (publicCardData.getAgreeNum() != null) {
-                        existingPublicCardData.setAgreeNum(publicCardData.getAgreeNum());
-                    }
-                    if (publicCardData.getRefuseNum() != null) {
-                        existingPublicCardData.setRefuseNum(publicCardData.getRefuseNum());
-                    }
-                    if (publicCardData.getSysFullJsonObjJson() != null) {
-                        existingPublicCardData.setSysFullJsonObjJson(publicCardData.getSysFullJsonObjJson());
-                    }
-                    if (publicCardData.getOaStatus() != null) {
-                        existingPublicCardData.setOaStatus(publicCardData.getOaStatus());
-                    }
-
-                    return existingPublicCardData;
+            .map(existingPublicCardData -> {
+                if (publicCardData.getTitle() != null) {
+                    existingPublicCardData.setTitle(publicCardData.getTitle());
                 }
-            )
+                if (publicCardData.getRequestid() != null) {
+                    existingPublicCardData.setRequestid(publicCardData.getRequestid());
+                }
+                if (publicCardData.getWorkflowid() != null) {
+                    existingPublicCardData.setWorkflowid(publicCardData.getWorkflowid());
+                }
+                if (publicCardData.getValid() != null) {
+                    existingPublicCardData.setValid(publicCardData.getValid());
+                }
+                if (publicCardData.getFinish() != null) {
+                    existingPublicCardData.setFinish(publicCardData.getFinish());
+                }
+                if (publicCardData.getStatus() != null) {
+                    existingPublicCardData.setStatus(publicCardData.getStatus());
+                }
+                if (publicCardData.getVariables() != null) {
+                    existingPublicCardData.setVariables(publicCardData.getVariables());
+                }
+                if (publicCardData.getCreatedTime() != null) {
+                    existingPublicCardData.setCreatedTime(publicCardData.getCreatedTime());
+                }
+                if (publicCardData.getLink() != null) {
+                    existingPublicCardData.setLink(publicCardData.getLink());
+                }
+                if (publicCardData.getUpdateLink() != null) {
+                    existingPublicCardData.setUpdateLink(publicCardData.getUpdateLink());
+                }
+                if (publicCardData.getAgreeNum() != null) {
+                    existingPublicCardData.setAgreeNum(publicCardData.getAgreeNum());
+                }
+                if (publicCardData.getRefuseNum() != null) {
+                    existingPublicCardData.setRefuseNum(publicCardData.getRefuseNum());
+                }
+                if (publicCardData.getSysFullJsonObjJson() != null) {
+                    existingPublicCardData.setSysFullJsonObjJson(publicCardData.getSysFullJsonObjJson());
+                }
+                if (publicCardData.getOaStatus() != null) {
+                    existingPublicCardData.setOaStatus(publicCardData.getOaStatus());
+                }
+
+                return existingPublicCardData;
+            })
             .map(publicCardDataRepository::save);
     }
 

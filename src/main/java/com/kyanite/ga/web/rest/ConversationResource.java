@@ -105,7 +105,7 @@ public class ConversationResource {
      * or with status {@code 500 (Internal Server Error)} if the conversation couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @PatchMapping(value = "/conversations/{id}", consumes = "application/merge-patch+json")
+    @PatchMapping(value = "/conversations/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<Conversation> partialUpdateConversation(
         @PathVariable(value = "id", required = false) final String id,
         @RequestBody Conversation conversation

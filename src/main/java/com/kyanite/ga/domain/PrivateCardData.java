@@ -19,6 +19,7 @@ public class PrivateCardData implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "agree")
@@ -51,17 +52,18 @@ public class PrivateCardData implements Serializable {
     private DdUser ddUser;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
     public Long getId() {
-        return id;
+        return this.id;
+    }
+
+    public PrivateCardData id(Long id) {
+        this.setId(id);
+        return this;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public PrivateCardData id(Long id) {
-        this.id = id;
-        return this;
     }
 
     public Boolean getAgree() {
@@ -69,7 +71,7 @@ public class PrivateCardData implements Serializable {
     }
 
     public PrivateCardData agree(Boolean agree) {
-        this.agree = agree;
+        this.setAgree(agree);
         return this;
     }
 
@@ -82,7 +84,7 @@ public class PrivateCardData implements Serializable {
     }
 
     public PrivateCardData finish(String finish) {
-        this.finish = finish;
+        this.setFinish(finish);
         return this;
     }
 
@@ -95,7 +97,7 @@ public class PrivateCardData implements Serializable {
     }
 
     public PrivateCardData authority(String authority) {
-        this.authority = authority;
+        this.setAuthority(authority);
         return this;
     }
 
@@ -108,7 +110,7 @@ public class PrivateCardData implements Serializable {
     }
 
     public PrivateCardData createdByMe(String createdByMe) {
-        this.createdByMe = createdByMe;
+        this.setCreatedByMe(createdByMe);
         return this;
     }
 
@@ -121,7 +123,7 @@ public class PrivateCardData implements Serializable {
     }
 
     public PrivateCardData updateTime(Instant updateTime) {
-        this.updateTime = updateTime;
+        this.setUpdateTime(updateTime);
         return this;
     }
 
@@ -133,26 +135,26 @@ public class PrivateCardData implements Serializable {
         return this.publicCardData;
     }
 
+    public void setPublicCardData(PublicCardData publicCardData) {
+        this.publicCardData = publicCardData;
+    }
+
     public PrivateCardData publicCardData(PublicCardData publicCardData) {
         this.setPublicCardData(publicCardData);
         return this;
-    }
-
-    public void setPublicCardData(PublicCardData publicCardData) {
-        this.publicCardData = publicCardData;
     }
 
     public DdUser getDdUser() {
         return this.ddUser;
     }
 
+    public void setDdUser(DdUser ddUser) {
+        this.ddUser = ddUser;
+    }
+
     public PrivateCardData ddUser(DdUser ddUser) {
         this.setDdUser(ddUser);
         return this;
-    }
-
-    public void setDdUser(DdUser ddUser) {
-        this.ddUser = ddUser;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

@@ -46,24 +46,22 @@ public class OperationResultsService {
 
         return operationResultsRepository
             .findById(operationResults.getId())
-            .map(
-                existingOperationResults -> {
-                    if (operationResults.getOperationType() != null) {
-                        existingOperationResults.setOperationType(operationResults.getOperationType());
-                    }
-                    if (operationResults.getTime() != null) {
-                        existingOperationResults.setTime(operationResults.getTime());
-                    }
-                    if (operationResults.getText() != null) {
-                        existingOperationResults.setText(operationResults.getText());
-                    }
-                    if (operationResults.getOperationSource() != null) {
-                        existingOperationResults.setOperationSource(operationResults.getOperationSource());
-                    }
-
-                    return existingOperationResults;
+            .map(existingOperationResults -> {
+                if (operationResults.getOperationType() != null) {
+                    existingOperationResults.setOperationType(operationResults.getOperationType());
                 }
-            )
+                if (operationResults.getTime() != null) {
+                    existingOperationResults.setTime(operationResults.getTime());
+                }
+                if (operationResults.getText() != null) {
+                    existingOperationResults.setText(operationResults.getText());
+                }
+                if (operationResults.getOperationSource() != null) {
+                    existingOperationResults.setOperationSource(operationResults.getOperationSource());
+                }
+
+                return existingOperationResults;
+            })
             .map(operationResultsRepository::save);
     }
 

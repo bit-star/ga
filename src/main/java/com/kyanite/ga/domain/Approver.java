@@ -19,6 +19,7 @@ public class Approver implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Enumerated(EnumType.STRING)
@@ -43,17 +44,18 @@ public class Approver implements Serializable {
     private DdUser ddUser;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
     public Long getId() {
-        return id;
+        return this.id;
+    }
+
+    public Approver id(Long id) {
+        this.setId(id);
+        return this;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Approver id(Long id) {
-        this.id = id;
-        return this;
     }
 
     public ApproverRole getApproverRole() {
@@ -61,7 +63,7 @@ public class Approver implements Serializable {
     }
 
     public Approver approverRole(ApproverRole approverRole) {
-        this.approverRole = approverRole;
+        this.setApproverRole(approverRole);
         return this;
     }
 
@@ -74,7 +76,7 @@ public class Approver implements Serializable {
     }
 
     public Approver oaUserId(Long oaUserId) {
-        this.oaUserId = oaUserId;
+        this.setOaUserId(oaUserId);
         return this;
     }
 
@@ -87,7 +89,7 @@ public class Approver implements Serializable {
     }
 
     public Approver email(String email) {
-        this.email = email;
+        this.setEmail(email);
         return this;
     }
 
@@ -99,26 +101,26 @@ public class Approver implements Serializable {
         return this.workflowInstance;
     }
 
+    public void setWorkflowInstance(WorkflowInstance workflowInstance) {
+        this.workflowInstance = workflowInstance;
+    }
+
     public Approver workflowInstance(WorkflowInstance workflowInstance) {
         this.setWorkflowInstance(workflowInstance);
         return this;
-    }
-
-    public void setWorkflowInstance(WorkflowInstance workflowInstance) {
-        this.workflowInstance = workflowInstance;
     }
 
     public DdUser getDdUser() {
         return this.ddUser;
     }
 
+    public void setDdUser(DdUser ddUser) {
+        this.ddUser = ddUser;
+    }
+
     public Approver ddUser(DdUser ddUser) {
         this.setDdUser(ddUser);
         return this;
-    }
-
-    public void setDdUser(DdUser ddUser) {
-        this.ddUser = ddUser;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

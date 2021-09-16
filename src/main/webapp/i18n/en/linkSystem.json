@@ -19,7 +19,8 @@
       },
       "id": "ID",
       "name": "Name",
-      "workflowTemplate": "Workflow Template"
+      "workflowTemplate": "Workflow Template",
+      "apiClient": "Api Client"
     }
   }
 }

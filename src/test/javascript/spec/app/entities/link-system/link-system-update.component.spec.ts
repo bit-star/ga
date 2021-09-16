@@ -10,6 +10,8 @@ import LinkSystemService from '@/entities/link-system/link-system.service';
 
 import WorkflowTemplateService from '@/entities/workflow-template/workflow-template.service';
 
+import ApiClientService from '@/entities/api-client/api-client.service';
+
 const localVue = createLocalVue();
 
 config.initVueApp(localVue);
@@ -41,6 +43,8 @@ describe('Component Tests', () => {
           linkSystemService: () => linkSystemServiceStub,
 
           workflowTemplateService: () => new WorkflowTemplateService(),
+
+          apiClientService: () => new ApiClientService(),
         },
       });
       comp = wrapper.vm;

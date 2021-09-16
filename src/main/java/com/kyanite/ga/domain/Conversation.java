@@ -20,6 +20,7 @@ public class Conversation implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @Column(name = "id")
     private String id;
 
     @Column(name = "name")
@@ -100,12 +101,12 @@ public class Conversation implements Serializable {
     private Set<Topboxes> topboxes = new HashSet<>();
 
     @ManyToMany
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JoinTable(
         name = "rel_conversation__dd_user",
         joinColumns = @JoinColumn(name = "conversation_id"),
         inverseJoinColumns = @JoinColumn(name = "dd_user_id")
     )
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @JsonIgnoreProperties(
         value = { "privateCardData", "approvers", "operationResults", "createdInstances", "conversations" },
         allowSetters = true
@@ -113,17 +114,18 @@ public class Conversation implements Serializable {
     private Set<DdUser> ddUsers = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
     public String getId() {
-        return id;
+        return this.id;
+    }
+
+    public Conversation id(String id) {
+        this.setId(id);
+        return this;
     }
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public Conversation id(String id) {
-        this.id = id;
-        return this;
     }
 
     public String getName() {
@@ -131,7 +133,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation name(String name) {
-        this.name = name;
+        this.setName(name);
         return this;
     }
 
@@ -144,7 +146,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation title(String title) {
-        this.title = title;
+        this.setTitle(title);
         return this;
     }
 
@@ -157,7 +159,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation owner(String owner) {
-        this.owner = owner;
+        this.setOwner(owner);
         return this;
     }
 
@@ -170,7 +172,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation ownerUserId(String ownerUserId) {
-        this.ownerUserId = ownerUserId;
+        this.setOwnerUserId(ownerUserId);
         return this;
     }
 
@@ -183,7 +185,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation chatid(String chatid) {
-        this.chatid = chatid;
+        this.setChatid(chatid);
         return this;
     }
 
@@ -196,7 +198,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation openConversationId(String openConversationId) {
-        this.openConversationId = openConversationId;
+        this.setOpenConversationId(openConversationId);
         return this;
     }
 
@@ -209,7 +211,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation conversationTag(Integer conversationTag) {
-        this.conversationTag = conversationTag;
+        this.setConversationTag(conversationTag);
         return this;
     }
 
@@ -222,7 +224,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation useridlist(String useridlist) {
-        this.useridlist = useridlist;
+        this.setUseridlist(useridlist);
         return this;
     }
 
@@ -235,7 +237,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation uuid(String uuid) {
-        this.uuid = uuid;
+        this.setUuid(uuid);
         return this;
     }
 
@@ -248,7 +250,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation icon(String icon) {
-        this.icon = icon;
+        this.setIcon(icon);
         return this;
     }
 
@@ -261,7 +263,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation showHistoryType(String showHistoryType) {
-        this.showHistoryType = showHistoryType;
+        this.setShowHistoryType(showHistoryType);
         return this;
     }
 
@@ -274,7 +276,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation searchable(String searchable) {
-        this.searchable = searchable;
+        this.setSearchable(searchable);
         return this;
     }
 
@@ -287,7 +289,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation validationType(String validationType) {
-        this.validationType = validationType;
+        this.setValidationType(validationType);
         return this;
     }
 
@@ -300,7 +302,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation chatBannedType(String chatBannedType) {
-        this.chatBannedType = chatBannedType;
+        this.setChatBannedType(chatBannedType);
         return this;
     }
 
@@ -313,7 +315,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation mentionAllAuthority(String mentionAllAuthority) {
-        this.mentionAllAuthority = mentionAllAuthority;
+        this.setMentionAllAuthority(mentionAllAuthority);
         return this;
     }
 
@@ -326,7 +328,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation managementType(String managementType) {
-        this.managementType = managementType;
+        this.setManagementType(managementType);
         return this;
     }
 
@@ -339,7 +341,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation templateId(String templateId) {
-        this.templateId = templateId;
+        this.setTemplateId(templateId);
         return this;
     }
 
@@ -352,7 +354,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation officialGroup(Boolean officialGroup) {
-        this.officialGroup = officialGroup;
+        this.setOfficialGroup(officialGroup);
         return this;
     }
 
@@ -365,7 +367,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation enableScenegroup(Boolean enableScenegroup) {
-        this.enableScenegroup = enableScenegroup;
+        this.setEnableScenegroup(enableScenegroup);
         return this;
     }
 
@@ -378,7 +380,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation groupUrl(String groupUrl) {
-        this.groupUrl = groupUrl;
+        this.setGroupUrl(groupUrl);
         return this;
     }
 
@@ -391,7 +393,7 @@ public class Conversation implements Serializable {
     }
 
     public Conversation time(Instant time) {
-        this.time = time;
+        this.setTime(time);
         return this;
     }
 
@@ -401,6 +403,16 @@ public class Conversation implements Serializable {
 
     public Set<PublicCardData> getPublicCardData() {
         return this.publicCardData;
+    }
+
+    public void setPublicCardData(Set<PublicCardData> publicCardData) {
+        if (this.publicCardData != null) {
+            this.publicCardData.forEach(i -> i.setConversation(null));
+        }
+        if (publicCardData != null) {
+            publicCardData.forEach(i -> i.setConversation(this));
+        }
+        this.publicCardData = publicCardData;
     }
 
     public Conversation publicCardData(Set<PublicCardData> publicCardData) {
@@ -420,18 +432,18 @@ public class Conversation implements Serializable {
         return this;
     }
 
-    public void setPublicCardData(Set<PublicCardData> publicCardData) {
-        if (this.publicCardData != null) {
-            this.publicCardData.forEach(i -> i.setConversation(null));
-        }
-        if (publicCardData != null) {
-            publicCardData.forEach(i -> i.setConversation(this));
-        }
-        this.publicCardData = publicCardData;
-    }
-
     public Set<Topboxes> getTopboxes() {
         return this.topboxes;
+    }
+
+    public void setTopboxes(Set<Topboxes> topboxes) {
+        if (this.topboxes != null) {
+            this.topboxes.forEach(i -> i.setConversation(null));
+        }
+        if (topboxes != null) {
+            topboxes.forEach(i -> i.setConversation(this));
+        }
+        this.topboxes = topboxes;
     }
 
     public Conversation topboxes(Set<Topboxes> topboxes) {
@@ -451,18 +463,12 @@ public class Conversation implements Serializable {
         return this;
     }
 
-    public void setTopboxes(Set<Topboxes> topboxes) {
-        if (this.topboxes != null) {
-            this.topboxes.forEach(i -> i.setConversation(null));
-        }
-        if (topboxes != null) {
-            topboxes.forEach(i -> i.setConversation(this));
-        }
-        this.topboxes = topboxes;
-    }
-
     public Set<DdUser> getDdUsers() {
         return this.ddUsers;
+    }
+
+    public void setDdUsers(Set<DdUser> ddUsers) {
+        this.ddUsers = ddUsers;
     }
 
     public Conversation ddUsers(Set<DdUser> ddUsers) {
@@ -480,10 +486,6 @@ public class Conversation implements Serializable {
         this.ddUsers.remove(ddUser);
         ddUser.getConversations().remove(this);
         return this;
-    }
-
-    public void setDdUsers(Set<DdUser> ddUsers) {
-        this.ddUsers = ddUsers;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

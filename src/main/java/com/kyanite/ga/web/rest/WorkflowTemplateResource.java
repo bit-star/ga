@@ -109,7 +109,7 @@ public class WorkflowTemplateResource {
      * or with status {@code 500 (Internal Server Error)} if the workflowTemplate couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @PatchMapping(value = "/workflow-templates/{id}", consumes = "application/merge-patch+json")
+    @PatchMapping(value = "/workflow-templates/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<WorkflowTemplate> partialUpdateWorkflowTemplate(
         @PathVariable(value = "id", required = false) final Long id,
         @RequestBody WorkflowTemplate workflowTemplate

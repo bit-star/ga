@@ -46,33 +46,31 @@ public class WorkflowInstanceService {
 
         return workflowInstanceRepository
             .findById(workflowInstance.getId())
-            .map(
-                existingWorkflowInstance -> {
-                    if (workflowInstance.getForm() != null) {
-                        existingWorkflowInstance.setForm(workflowInstance.getForm());
-                    }
-                    if (workflowInstance.getDdCardId() != null) {
-                        existingWorkflowInstance.setDdCardId(workflowInstance.getDdCardId());
-                    }
-                    if (workflowInstance.getTitle() != null) {
-                        existingWorkflowInstance.setTitle(workflowInstance.getTitle());
-                    }
-                    if (workflowInstance.getDdCardTemplateId() != null) {
-                        existingWorkflowInstance.setDdCardTemplateId(workflowInstance.getDdCardTemplateId());
-                    }
-                    if (workflowInstance.getDdCardCallBackKey() != null) {
-                        existingWorkflowInstance.setDdCardCallBackKey(workflowInstance.getDdCardCallBackKey());
-                    }
-                    if (workflowInstance.getRequestId() != null) {
-                        existingWorkflowInstance.setRequestId(workflowInstance.getRequestId());
-                    }
-                    if (workflowInstance.getStatus() != null) {
-                        existingWorkflowInstance.setStatus(workflowInstance.getStatus());
-                    }
-
-                    return existingWorkflowInstance;
+            .map(existingWorkflowInstance -> {
+                if (workflowInstance.getForm() != null) {
+                    existingWorkflowInstance.setForm(workflowInstance.getForm());
                 }
-            )
+                if (workflowInstance.getDdCardId() != null) {
+                    existingWorkflowInstance.setDdCardId(workflowInstance.getDdCardId());
+                }
+                if (workflowInstance.getTitle() != null) {
+                    existingWorkflowInstance.setTitle(workflowInstance.getTitle());
+                }
+                if (workflowInstance.getDdCardTemplateId() != null) {
+                    existingWorkflowInstance.setDdCardTemplateId(workflowInstance.getDdCardTemplateId());
+                }
+                if (workflowInstance.getDdCardCallBackKey() != null) {
+                    existingWorkflowInstance.setDdCardCallBackKey(workflowInstance.getDdCardCallBackKey());
+                }
+                if (workflowInstance.getRequestId() != null) {
+                    existingWorkflowInstance.setRequestId(workflowInstance.getRequestId());
+                }
+                if (workflowInstance.getStatus() != null) {
+                    existingWorkflowInstance.setStatus(workflowInstance.getStatus());
+                }
+
+                return existingWorkflowInstance;
+            })
             .map(workflowInstanceRepository::save);
     }
 

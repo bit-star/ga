@@ -48,75 +48,73 @@ public class ConversationService {
 
         return conversationRepository
             .findById(conversation.getId())
-            .map(
-                existingConversation -> {
-                    if (conversation.getName() != null) {
-                        existingConversation.setName(conversation.getName());
-                    }
-                    if (conversation.getTitle() != null) {
-                        existingConversation.setTitle(conversation.getTitle());
-                    }
-                    if (conversation.getOwner() != null) {
-                        existingConversation.setOwner(conversation.getOwner());
-                    }
-                    if (conversation.getOwnerUserId() != null) {
-                        existingConversation.setOwnerUserId(conversation.getOwnerUserId());
-                    }
-                    if (conversation.getChatid() != null) {
-                        existingConversation.setChatid(conversation.getChatid());
-                    }
-                    if (conversation.getOpenConversationId() != null) {
-                        existingConversation.setOpenConversationId(conversation.getOpenConversationId());
-                    }
-                    if (conversation.getConversationTag() != null) {
-                        existingConversation.setConversationTag(conversation.getConversationTag());
-                    }
-                    if (conversation.getUseridlist() != null) {
-                        existingConversation.setUseridlist(conversation.getUseridlist());
-                    }
-                    if (conversation.getUuid() != null) {
-                        existingConversation.setUuid(conversation.getUuid());
-                    }
-                    if (conversation.getIcon() != null) {
-                        existingConversation.setIcon(conversation.getIcon());
-                    }
-                    if (conversation.getShowHistoryType() != null) {
-                        existingConversation.setShowHistoryType(conversation.getShowHistoryType());
-                    }
-                    if (conversation.getSearchable() != null) {
-                        existingConversation.setSearchable(conversation.getSearchable());
-                    }
-                    if (conversation.getValidationType() != null) {
-                        existingConversation.setValidationType(conversation.getValidationType());
-                    }
-                    if (conversation.getChatBannedType() != null) {
-                        existingConversation.setChatBannedType(conversation.getChatBannedType());
-                    }
-                    if (conversation.getMentionAllAuthority() != null) {
-                        existingConversation.setMentionAllAuthority(conversation.getMentionAllAuthority());
-                    }
-                    if (conversation.getManagementType() != null) {
-                        existingConversation.setManagementType(conversation.getManagementType());
-                    }
-                    if (conversation.getTemplateId() != null) {
-                        existingConversation.setTemplateId(conversation.getTemplateId());
-                    }
-                    if (conversation.getOfficialGroup() != null) {
-                        existingConversation.setOfficialGroup(conversation.getOfficialGroup());
-                    }
-                    if (conversation.getEnableScenegroup() != null) {
-                        existingConversation.setEnableScenegroup(conversation.getEnableScenegroup());
-                    }
-                    if (conversation.getGroupUrl() != null) {
-                        existingConversation.setGroupUrl(conversation.getGroupUrl());
-                    }
-                    if (conversation.getTime() != null) {
-                        existingConversation.setTime(conversation.getTime());
-                    }
-
-                    return existingConversation;
+            .map(existingConversation -> {
+                if (conversation.getName() != null) {
+                    existingConversation.setName(conversation.getName());
                 }
-            )
+                if (conversation.getTitle() != null) {
+                    existingConversation.setTitle(conversation.getTitle());
+                }
+                if (conversation.getOwner() != null) {
+                    existingConversation.setOwner(conversation.getOwner());
+                }
+                if (conversation.getOwnerUserId() != null) {
+                    existingConversation.setOwnerUserId(conversation.getOwnerUserId());
+                }
+                if (conversation.getChatid() != null) {
+                    existingConversation.setChatid(conversation.getChatid());
+                }
+                if (conversation.getOpenConversationId() != null) {
+                    existingConversation.setOpenConversationId(conversation.getOpenConversationId());
+                }
+                if (conversation.getConversationTag() != null) {
+                    existingConversation.setConversationTag(conversation.getConversationTag());
+                }
+                if (conversation.getUseridlist() != null) {
+                    existingConversation.setUseridlist(conversation.getUseridlist());
+                }
+                if (conversation.getUuid() != null) {
+                    existingConversation.setUuid(conversation.getUuid());
+                }
+                if (conversation.getIcon() != null) {
+                    existingConversation.setIcon(conversation.getIcon());
+                }
+                if (conversation.getShowHistoryType() != null) {
+                    existingConversation.setShowHistoryType(conversation.getShowHistoryType());
+                }
+                if (conversation.getSearchable() != null) {
+                    existingConversation.setSearchable(conversation.getSearchable());
+                }
+                if (conversation.getValidationType() != null) {
+                    existingConversation.setValidationType(conversation.getValidationType());
+                }
+                if (conversation.getChatBannedType() != null) {
+                    existingConversation.setChatBannedType(conversation.getChatBannedType());
+                }
+                if (conversation.getMentionAllAuthority() != null) {
+                    existingConversation.setMentionAllAuthority(conversation.getMentionAllAuthority());
+                }
+                if (conversation.getManagementType() != null) {
+                    existingConversation.setManagementType(conversation.getManagementType());
+                }
+                if (conversation.getTemplateId() != null) {
+                    existingConversation.setTemplateId(conversation.getTemplateId());
+                }
+                if (conversation.getOfficialGroup() != null) {
+                    existingConversation.setOfficialGroup(conversation.getOfficialGroup());
+                }
+                if (conversation.getEnableScenegroup() != null) {
+                    existingConversation.setEnableScenegroup(conversation.getEnableScenegroup());
+                }
+                if (conversation.getGroupUrl() != null) {
+                    existingConversation.setGroupUrl(conversation.getGroupUrl());
+                }
+                if (conversation.getTime() != null) {
+                    existingConversation.setTime(conversation.getTime());
+                }
+
+                return existingConversation;
+            })
             .map(conversationRepository::save);
     }
 

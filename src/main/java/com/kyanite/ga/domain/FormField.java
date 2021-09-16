@@ -18,6 +18,7 @@ public class FormField implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "field_name")
@@ -52,17 +53,18 @@ public class FormField implements Serializable {
     private WorkflowTemplate workflowTemplate;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
     public Long getId() {
-        return id;
+        return this.id;
+    }
+
+    public FormField id(Long id) {
+        this.setId(id);
+        return this;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public FormField id(Long id) {
-        this.id = id;
-        return this;
     }
 
     public String getFieldName() {
@@ -70,7 +72,7 @@ public class FormField implements Serializable {
     }
 
     public FormField fieldName(String fieldName) {
-        this.fieldName = fieldName;
+        this.setFieldName(fieldName);
         return this;
     }
 
@@ -83,7 +85,7 @@ public class FormField implements Serializable {
     }
 
     public FormField oaId(String oaId) {
-        this.oaId = oaId;
+        this.setOaId(oaId);
         return this;
     }
 
@@ -96,7 +98,7 @@ public class FormField implements Serializable {
     }
 
     public FormField fielddbtype(String fielddbtype) {
-        this.fielddbtype = fielddbtype;
+        this.setFielddbtype(fielddbtype);
         return this;
     }
 
@@ -109,7 +111,7 @@ public class FormField implements Serializable {
     }
 
     public FormField labelName(String labelName) {
-        this.labelName = labelName;
+        this.setLabelName(labelName);
         return this;
     }
 
@@ -122,7 +124,7 @@ public class FormField implements Serializable {
     }
 
     public FormField detailtable(String detailtable) {
-        this.detailtable = detailtable;
+        this.setDetailtable(detailtable);
         return this;
     }
 
@@ -135,7 +137,7 @@ public class FormField implements Serializable {
     }
 
     public FormField show(Boolean show) {
-        this.show = show;
+        this.setShow(show);
         return this;
     }
 
@@ -148,7 +150,7 @@ public class FormField implements Serializable {
     }
 
     public FormField isCardField(Boolean isCardField) {
-        this.isCardField = isCardField;
+        this.setIsCardField(isCardField);
         return this;
     }
 
@@ -161,7 +163,7 @@ public class FormField implements Serializable {
     }
 
     public FormField isOaField(Boolean isOaField) {
-        this.isOaField = isOaField;
+        this.setIsOaField(isOaField);
         return this;
     }
 
@@ -174,7 +176,7 @@ public class FormField implements Serializable {
     }
 
     public FormField orderNum(Integer orderNum) {
-        this.orderNum = orderNum;
+        this.setOrderNum(orderNum);
         return this;
     }
 
@@ -186,13 +188,13 @@ public class FormField implements Serializable {
         return this.workflowTemplate;
     }
 
+    public void setWorkflowTemplate(WorkflowTemplate workflowTemplate) {
+        this.workflowTemplate = workflowTemplate;
+    }
+
     public FormField workflowTemplate(WorkflowTemplate workflowTemplate) {
         this.setWorkflowTemplate(workflowTemplate);
         return this;
-    }
-
-    public void setWorkflowTemplate(WorkflowTemplate workflowTemplate) {
-        this.workflowTemplate = workflowTemplate;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

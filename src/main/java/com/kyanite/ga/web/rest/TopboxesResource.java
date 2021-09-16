@@ -106,7 +106,7 @@ public class TopboxesResource {
      * or with status {@code 500 (Internal Server Error)} if the topboxes couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @PatchMapping(value = "/topboxes/{id}", consumes = "application/merge-patch+json")
+    @PatchMapping(value = "/topboxes/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<Topboxes> partialUpdateTopboxes(
         @PathVariable(value = "id", required = false) final String id,
         @RequestBody Topboxes topboxes

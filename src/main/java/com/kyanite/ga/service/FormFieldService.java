@@ -46,39 +46,37 @@ public class FormFieldService {
 
         return formFieldRepository
             .findById(formField.getId())
-            .map(
-                existingFormField -> {
-                    if (formField.getFieldName() != null) {
-                        existingFormField.setFieldName(formField.getFieldName());
-                    }
-                    if (formField.getOaId() != null) {
-                        existingFormField.setOaId(formField.getOaId());
-                    }
-                    if (formField.getFielddbtype() != null) {
-                        existingFormField.setFielddbtype(formField.getFielddbtype());
-                    }
-                    if (formField.getLabelName() != null) {
-                        existingFormField.setLabelName(formField.getLabelName());
-                    }
-                    if (formField.getDetailtable() != null) {
-                        existingFormField.setDetailtable(formField.getDetailtable());
-                    }
-                    if (formField.getShow() != null) {
-                        existingFormField.setShow(formField.getShow());
-                    }
-                    if (formField.getIsCardField() != null) {
-                        existingFormField.setIsCardField(formField.getIsCardField());
-                    }
-                    if (formField.getIsOaField() != null) {
-                        existingFormField.setIsOaField(formField.getIsOaField());
-                    }
-                    if (formField.getOrderNum() != null) {
-                        existingFormField.setOrderNum(formField.getOrderNum());
-                    }
-
-                    return existingFormField;
+            .map(existingFormField -> {
+                if (formField.getFieldName() != null) {
+                    existingFormField.setFieldName(formField.getFieldName());
                 }
-            )
+                if (formField.getOaId() != null) {
+                    existingFormField.setOaId(formField.getOaId());
+                }
+                if (formField.getFielddbtype() != null) {
+                    existingFormField.setFielddbtype(formField.getFielddbtype());
+                }
+                if (formField.getLabelName() != null) {
+                    existingFormField.setLabelName(formField.getLabelName());
+                }
+                if (formField.getDetailtable() != null) {
+                    existingFormField.setDetailtable(formField.getDetailtable());
+                }
+                if (formField.getShow() != null) {
+                    existingFormField.setShow(formField.getShow());
+                }
+                if (formField.getIsCardField() != null) {
+                    existingFormField.setIsCardField(formField.getIsCardField());
+                }
+                if (formField.getIsOaField() != null) {
+                    existingFormField.setIsOaField(formField.getIsOaField());
+                }
+                if (formField.getOrderNum() != null) {
+                    existingFormField.setOrderNum(formField.getOrderNum());
+                }
+
+                return existingFormField;
+            })
             .map(formFieldRepository::save);
     }
 

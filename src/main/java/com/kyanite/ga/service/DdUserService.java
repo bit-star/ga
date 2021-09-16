@@ -46,81 +46,79 @@ public class DdUserService {
 
         return ddUserRepository
             .findById(ddUser.getId())
-            .map(
-                existingDdUser -> {
-                    if (ddUser.getUnionid() != null) {
-                        existingDdUser.setUnionid(ddUser.getUnionid());
-                    }
-                    if (ddUser.getRemark() != null) {
-                        existingDdUser.setRemark(ddUser.getRemark());
-                    }
-                    if (ddUser.getUserid() != null) {
-                        existingDdUser.setUserid(ddUser.getUserid());
-                    }
-                    if (ddUser.getIsLeaderInDepts() != null) {
-                        existingDdUser.setIsLeaderInDepts(ddUser.getIsLeaderInDepts());
-                    }
-                    if (ddUser.getIsBoss() != null) {
-                        existingDdUser.setIsBoss(ddUser.getIsBoss());
-                    }
-                    if (ddUser.getHiredDate() != null) {
-                        existingDdUser.setHiredDate(ddUser.getHiredDate());
-                    }
-                    if (ddUser.getIsSenior() != null) {
-                        existingDdUser.setIsSenior(ddUser.getIsSenior());
-                    }
-                    if (ddUser.getTel() != null) {
-                        existingDdUser.setTel(ddUser.getTel());
-                    }
-                    if (ddUser.getDepartment() != null) {
-                        existingDdUser.setDepartment(ddUser.getDepartment());
-                    }
-                    if (ddUser.getWorkPlace() != null) {
-                        existingDdUser.setWorkPlace(ddUser.getWorkPlace());
-                    }
-                    if (ddUser.getOrderInDepts() != null) {
-                        existingDdUser.setOrderInDepts(ddUser.getOrderInDepts());
-                    }
-                    if (ddUser.getMobile() != null) {
-                        existingDdUser.setMobile(ddUser.getMobile());
-                    }
-                    if (ddUser.getErrmsg() != null) {
-                        existingDdUser.setErrmsg(ddUser.getErrmsg());
-                    }
-                    if (ddUser.getActive() != null) {
-                        existingDdUser.setActive(ddUser.getActive());
-                    }
-                    if (ddUser.getAvatar() != null) {
-                        existingDdUser.setAvatar(ddUser.getAvatar());
-                    }
-                    if (ddUser.getIsAdmin() != null) {
-                        existingDdUser.setIsAdmin(ddUser.getIsAdmin());
-                    }
-                    if (ddUser.getIsHide() != null) {
-                        existingDdUser.setIsHide(ddUser.getIsHide());
-                    }
-                    if (ddUser.getJobnumber() != null) {
-                        existingDdUser.setJobnumber(ddUser.getJobnumber());
-                    }
-                    if (ddUser.getName() != null) {
-                        existingDdUser.setName(ddUser.getName());
-                    }
-                    if (ddUser.getExtattr() != null) {
-                        existingDdUser.setExtattr(ddUser.getExtattr());
-                    }
-                    if (ddUser.getStateCode() != null) {
-                        existingDdUser.setStateCode(ddUser.getStateCode());
-                    }
-                    if (ddUser.getPosition() != null) {
-                        existingDdUser.setPosition(ddUser.getPosition());
-                    }
-                    if (ddUser.getRoles() != null) {
-                        existingDdUser.setRoles(ddUser.getRoles());
-                    }
-
-                    return existingDdUser;
+            .map(existingDdUser -> {
+                if (ddUser.getUnionid() != null) {
+                    existingDdUser.setUnionid(ddUser.getUnionid());
                 }
-            )
+                if (ddUser.getRemark() != null) {
+                    existingDdUser.setRemark(ddUser.getRemark());
+                }
+                if (ddUser.getUserid() != null) {
+                    existingDdUser.setUserid(ddUser.getUserid());
+                }
+                if (ddUser.getIsLeaderInDepts() != null) {
+                    existingDdUser.setIsLeaderInDepts(ddUser.getIsLeaderInDepts());
+                }
+                if (ddUser.getIsBoss() != null) {
+                    existingDdUser.setIsBoss(ddUser.getIsBoss());
+                }
+                if (ddUser.getHiredDate() != null) {
+                    existingDdUser.setHiredDate(ddUser.getHiredDate());
+                }
+                if (ddUser.getIsSenior() != null) {
+                    existingDdUser.setIsSenior(ddUser.getIsSenior());
+                }
+                if (ddUser.getTel() != null) {
+                    existingDdUser.setTel(ddUser.getTel());
+                }
+                if (ddUser.getDepartment() != null) {
+                    existingDdUser.setDepartment(ddUser.getDepartment());
+                }
+                if (ddUser.getWorkPlace() != null) {
+                    existingDdUser.setWorkPlace(ddUser.getWorkPlace());
+                }
+                if (ddUser.getOrderInDepts() != null) {
+                    existingDdUser.setOrderInDepts(ddUser.getOrderInDepts());
+                }
+                if (ddUser.getMobile() != null) {
+                    existingDdUser.setMobile(ddUser.getMobile());
+                }
+                if (ddUser.getErrmsg() != null) {
+                    existingDdUser.setErrmsg(ddUser.getErrmsg());
+                }
+                if (ddUser.getActive() != null) {
+                    existingDdUser.setActive(ddUser.getActive());
+                }
+                if (ddUser.getAvatar() != null) {
+                    existingDdUser.setAvatar(ddUser.getAvatar());
+                }
+                if (ddUser.getIsAdmin() != null) {
+                    existingDdUser.setIsAdmin(ddUser.getIsAdmin());
+                }
+                if (ddUser.getIsHide() != null) {
+                    existingDdUser.setIsHide(ddUser.getIsHide());
+                }
+                if (ddUser.getJobnumber() != null) {
+                    existingDdUser.setJobnumber(ddUser.getJobnumber());
+                }
+                if (ddUser.getName() != null) {
+                    existingDdUser.setName(ddUser.getName());
+                }
+                if (ddUser.getExtattr() != null) {
+                    existingDdUser.setExtattr(ddUser.getExtattr());
+                }
+                if (ddUser.getStateCode() != null) {
+                    existingDdUser.setStateCode(ddUser.getStateCode());
+                }
+                if (ddUser.getPosition() != null) {
+                    existingDdUser.setPosition(ddUser.getPosition());
+                }
+                if (ddUser.getRoles() != null) {
+                    existingDdUser.setRoles(ddUser.getRoles());
+                }
+
+                return existingDdUser;
+            })
             .map(ddUserRepository::save);
     }
 

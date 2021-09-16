@@ -105,7 +105,7 @@ public class PrivateCardDataResource {
      * or with status {@code 500 (Internal Server Error)} if the privateCardData couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @PatchMapping(value = "/private-card-data/{id}", consumes = "application/merge-patch+json")
+    @PatchMapping(value = "/private-card-data/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<PrivateCardData> partialUpdatePrivateCardData(
         @PathVariable(value = "id", required = false) final Long id,
         @RequestBody PrivateCardData privateCardData

@@ -77,6 +77,13 @@ enum WorkflowInstanceStatus{
 }
 
 
+entity ApiClient{
+	name String,
+	apiKey String,
+    apiSecret String,
+    enable String
+}
+
 
 entity Conversation {
   id String
@@ -253,6 +260,7 @@ relationship  ManyToOne {
 	WorkflowInstance to WorkflowTemplate
     PublicCardData to WorkflowInstance
     WorkflowInstance{creator} to DdUser{createdInstance}
+    ApiClient to LinkSystem
 }
 
 relationship  ManyToMany {

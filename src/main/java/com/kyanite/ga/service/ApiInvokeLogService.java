@@ -46,39 +46,37 @@ public class ApiInvokeLogService {
 
         return apiInvokeLogRepository
             .findById(apiInvokeLog.getId())
-            .map(
-                existingApiInvokeLog -> {
-                    if (apiInvokeLog.getLogin() != null) {
-                        existingApiInvokeLog.setLogin(apiInvokeLog.getLogin());
-                    }
-                    if (apiInvokeLog.getApiName() != null) {
-                        existingApiInvokeLog.setApiName(apiInvokeLog.getApiName());
-                    }
-                    if (apiInvokeLog.getMethod() != null) {
-                        existingApiInvokeLog.setMethod(apiInvokeLog.getMethod());
-                    }
-                    if (apiInvokeLog.getDirection() != null) {
-                        existingApiInvokeLog.setDirection(apiInvokeLog.getDirection());
-                    }
-                    if (apiInvokeLog.getHttpStatusCode() != null) {
-                        existingApiInvokeLog.setHttpStatusCode(apiInvokeLog.getHttpStatusCode());
-                    }
-                    if (apiInvokeLog.getTime() != null) {
-                        existingApiInvokeLog.setTime(apiInvokeLog.getTime());
-                    }
-                    if (apiInvokeLog.getReqeustData() != null) {
-                        existingApiInvokeLog.setReqeustData(apiInvokeLog.getReqeustData());
-                    }
-                    if (apiInvokeLog.getResponseData() != null) {
-                        existingApiInvokeLog.setResponseData(apiInvokeLog.getResponseData());
-                    }
-                    if (apiInvokeLog.getOk() != null) {
-                        existingApiInvokeLog.setOk(apiInvokeLog.getOk());
-                    }
-
-                    return existingApiInvokeLog;
+            .map(existingApiInvokeLog -> {
+                if (apiInvokeLog.getLogin() != null) {
+                    existingApiInvokeLog.setLogin(apiInvokeLog.getLogin());
                 }
-            )
+                if (apiInvokeLog.getApiName() != null) {
+                    existingApiInvokeLog.setApiName(apiInvokeLog.getApiName());
+                }
+                if (apiInvokeLog.getMethod() != null) {
+                    existingApiInvokeLog.setMethod(apiInvokeLog.getMethod());
+                }
+                if (apiInvokeLog.getDirection() != null) {
+                    existingApiInvokeLog.setDirection(apiInvokeLog.getDirection());
+                }
+                if (apiInvokeLog.getHttpStatusCode() != null) {
+                    existingApiInvokeLog.setHttpStatusCode(apiInvokeLog.getHttpStatusCode());
+                }
+                if (apiInvokeLog.getTime() != null) {
+                    existingApiInvokeLog.setTime(apiInvokeLog.getTime());
+                }
+                if (apiInvokeLog.getReqeustData() != null) {
+                    existingApiInvokeLog.setReqeustData(apiInvokeLog.getReqeustData());
+                }
+                if (apiInvokeLog.getResponseData() != null) {
+                    existingApiInvokeLog.setResponseData(apiInvokeLog.getResponseData());
+                }
+                if (apiInvokeLog.getOk() != null) {
+                    existingApiInvokeLog.setOk(apiInvokeLog.getOk());
+                }
+
+                return existingApiInvokeLog;
+            })
             .map(apiInvokeLogRepository::save);
     }
 

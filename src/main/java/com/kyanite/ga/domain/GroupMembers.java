@@ -19,6 +19,7 @@ public class GroupMembers implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Enumerated(EnumType.STRING)
@@ -37,17 +38,18 @@ public class GroupMembers implements Serializable {
     private DdUser ddUser;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
     public Long getId() {
-        return id;
+        return this.id;
+    }
+
+    public GroupMembers id(Long id) {
+        this.setId(id);
+        return this;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public GroupMembers id(Long id) {
-        this.id = id;
-        return this;
     }
 
     public GroupRole getGroupRole() {
@@ -55,7 +57,7 @@ public class GroupMembers implements Serializable {
     }
 
     public GroupMembers groupRole(GroupRole groupRole) {
-        this.groupRole = groupRole;
+        this.setGroupRole(groupRole);
         return this;
     }
 
@@ -67,26 +69,26 @@ public class GroupMembers implements Serializable {
         return this.conversation;
     }
 
+    public void setConversation(Conversation conversation) {
+        this.conversation = conversation;
+    }
+
     public GroupMembers conversation(Conversation conversation) {
         this.setConversation(conversation);
         return this;
-    }
-
-    public void setConversation(Conversation conversation) {
-        this.conversation = conversation;
     }
 
     public DdUser getDdUser() {
         return this.ddUser;
     }
 
+    public void setDdUser(DdUser ddUser) {
+        this.ddUser = ddUser;
+    }
+
     public GroupMembers ddUser(DdUser ddUser) {
         this.setDdUser(ddUser);
         return this;
-    }
-
-    public void setDdUser(DdUser ddUser) {
-        this.ddUser = ddUser;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
