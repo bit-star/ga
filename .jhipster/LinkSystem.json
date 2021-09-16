@@ -12,6 +12,12 @@
       "otherEntityName": "workflowTemplate",
       "otherEntityRelationshipName": "linkSystem",
       "relationshipName": "workflowTemplate"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "apiClient",
+      "otherEntityRelationshipName": "linkSystem",
+      "relationshipName": "apiClient"
     }
   ],
   "entityTableName": "link_system",

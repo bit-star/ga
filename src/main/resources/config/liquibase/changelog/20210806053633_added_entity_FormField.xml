@@ -3,7 +3,7 @@
     xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
     xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!--
@@ -62,7 +62,8 @@
         <loadData
                   file="config/liquibase/fake-data/form_field.csv"
                   separator=";"
-                  tableName="form_field">
+                  tableName="form_field"
+                  usePreparedStatements="true">
             <column name="id" type="numeric"/>
             <column name="field_name" type="string"/>
             <column name="oa_id" type="string"/>

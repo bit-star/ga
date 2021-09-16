@@ -46,21 +46,19 @@ public class ApproverService {
 
         return approverRepository
             .findById(approver.getId())
-            .map(
-                existingApprover -> {
-                    if (approver.getApproverRole() != null) {
-                        existingApprover.setApproverRole(approver.getApproverRole());
-                    }
-                    if (approver.getOaUserId() != null) {
-                        existingApprover.setOaUserId(approver.getOaUserId());
-                    }
-                    if (approver.getEmail() != null) {
-                        existingApprover.setEmail(approver.getEmail());
-                    }
-
-                    return existingApprover;
+            .map(existingApprover -> {
+                if (approver.getApproverRole() != null) {
+                    existingApprover.setApproverRole(approver.getApproverRole());
                 }
-            )
+                if (approver.getOaUserId() != null) {
+                    existingApprover.setOaUserId(approver.getOaUserId());
+                }
+                if (approver.getEmail() != null) {
+                    existingApprover.setEmail(approver.getEmail());
+                }
+
+                return existingApprover;
+            })
             .map(approverRepository::save);
     }
 

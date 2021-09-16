@@ -20,6 +20,7 @@ public class LinkSystem implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "name")
@@ -30,18 +31,24 @@ public class LinkSystem implements Serializable {
     @JsonIgnoreProperties(value = { "formFields", "linkSystem", "workflowInstances" }, allowSetters = true)
     private Set<WorkflowTemplate> workflowTemplates = new HashSet<>();
 
+    @OneToMany(mappedBy = "linkSystem")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "linkSystem" }, allowSetters = true)
+    private Set<ApiClient> apiClients = new HashSet<>();
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
     public Long getId() {
-        return id;
+        return this.id;
+    }
+
+    public LinkSystem id(Long id) {
+        this.setId(id);
+        return this;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public LinkSystem id(Long id) {
-        this.id = id;
-        return this;
     }
 
     public String getName() {
@@ -49,7 +56,7 @@ public class LinkSystem implements Serializable {
     }
 
     public LinkSystem name(String name) {
-        this.name = name;
+        this.setName(name);
         return this;
     }
 
@@ -59,6 +66,16 @@ public class LinkSystem implements Serializable {
 
     public Set<WorkflowTemplate> getWorkflowTemplates() {
         return this.workflowTemplates;
+    }
+
+    public void setWorkflowTemplates(Set<WorkflowTemplate> workflowTemplates) {
+        if (this.workflowTemplates != null) {
+            this.workflowTemplates.forEach(i -> i.setLinkSystem(null));
+        }
+        if (workflowTemplates != null) {
+            workflowTemplates.forEach(i -> i.setLinkSystem(this));
+        }
+        this.workflowTemplates = workflowTemplates;
     }
 
     public LinkSystem workflowTemplates(Set<WorkflowTemplate> workflowTemplates) {
@@ -78,14 +95,35 @@ public class LinkSystem implements Serializable {
         return this;
     }
 
-    public void setWorkflowTemplates(Set<WorkflowTemplate> workflowTemplates) {
-        if (this.workflowTemplates != null) {
-            this.workflowTemplates.forEach(i -> i.setLinkSystem(null));
+    public Set<ApiClient> getApiClients() {
+        return this.apiClients;
+    }
+
+    public void setApiClients(Set<ApiClient> apiClients) {
+        if (this.apiClients != null) {
+            this.apiClients.forEach(i -> i.setLinkSystem(null));
         }
-        if (workflowTemplates != null) {
-            workflowTemplates.forEach(i -> i.setLinkSystem(this));
+        if (apiClients != null) {
+            apiClients.forEach(i -> i.setLinkSystem(this));
         }
-        this.workflowTemplates = workflowTemplates;
+        this.apiClients = apiClients;
+    }
+
+    public LinkSystem apiClients(Set<ApiClient> apiClients) {
+        this.setApiClients(apiClients);
+        return this;
+    }
+
+    public LinkSystem addApiClient(ApiClient apiClient) {
+        this.apiClients.add(apiClient);
+        apiClient.setLinkSystem(this);
+        return this;
+    }
+
+    public LinkSystem removeApiClient(ApiClient apiClient) {
+        this.apiClients.remove(apiClient);
+        apiClient.setLinkSystem(null);
+        return this;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

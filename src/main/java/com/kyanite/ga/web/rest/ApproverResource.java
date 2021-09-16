@@ -105,7 +105,7 @@ public class ApproverResource {
      * or with status {@code 500 (Internal Server Error)} if the approver couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @PatchMapping(value = "/approvers/{id}", consumes = "application/merge-patch+json")
+    @PatchMapping(value = "/approvers/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<Approver> partialUpdateApprover(
         @PathVariable(value = "id", required = false) final Long id,
         @RequestBody Approver approver

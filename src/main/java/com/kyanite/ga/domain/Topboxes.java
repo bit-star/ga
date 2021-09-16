@@ -17,6 +17,7 @@ public class Topboxes implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @Column(name = "id")
     private String id;
 
     @Column(name = "text")
@@ -46,17 +47,18 @@ public class Topboxes implements Serializable {
     private Conversation conversation;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
     public String getId() {
-        return id;
+        return this.id;
+    }
+
+    public Topboxes id(String id) {
+        this.setId(id);
+        return this;
     }
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public Topboxes id(String id) {
-        this.id = id;
-        return this;
     }
 
     public String getText() {
@@ -64,7 +66,7 @@ public class Topboxes implements Serializable {
     }
 
     public Topboxes text(String text) {
-        this.text = text;
+        this.setText(text);
         return this;
     }
 
@@ -77,7 +79,7 @@ public class Topboxes implements Serializable {
     }
 
     public Topboxes link(String link) {
-        this.link = link;
+        this.setLink(link);
         return this;
     }
 
@@ -90,7 +92,7 @@ public class Topboxes implements Serializable {
     }
 
     public Topboxes cardId(String cardId) {
-        this.cardId = cardId;
+        this.setCardId(cardId);
         return this;
     }
 
@@ -103,7 +105,7 @@ public class Topboxes implements Serializable {
     }
 
     public Topboxes auxiliary(String auxiliary) {
-        this.auxiliary = auxiliary;
+        this.setAuxiliary(auxiliary);
         return this;
     }
 
@@ -116,7 +118,7 @@ public class Topboxes implements Serializable {
     }
 
     public Topboxes open(Boolean open) {
-        this.open = open;
+        this.setOpen(open);
         return this;
     }
 
@@ -126,11 +128,6 @@ public class Topboxes implements Serializable {
 
     public PublicCardData getPublicCardData() {
         return this.publicCardData;
-    }
-
-    public Topboxes publicCardData(PublicCardData publicCardData) {
-        this.setPublicCardData(publicCardData);
-        return this;
     }
 
     public void setPublicCardData(PublicCardData publicCardData) {
@@ -143,17 +140,22 @@ public class Topboxes implements Serializable {
         this.publicCardData = publicCardData;
     }
 
+    public Topboxes publicCardData(PublicCardData publicCardData) {
+        this.setPublicCardData(publicCardData);
+        return this;
+    }
+
     public Conversation getConversation() {
         return this.conversation;
+    }
+
+    public void setConversation(Conversation conversation) {
+        this.conversation = conversation;
     }
 
     public Topboxes conversation(Conversation conversation) {
         this.setConversation(conversation);
         return this;
-    }
-
-    public void setConversation(Conversation conversation) {
-        this.conversation = conversation;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

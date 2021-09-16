@@ -43,6 +43,7 @@ import ConfirmCardService from '@/entities/confirm-card/confirm-card.service';
 import AlertCardService from '@/entities/alert-card/alert-card.service';
 import ApiInvokeLogService from '@/entities/api-invoke-log/api-invoke-log.service';
 import TopboxesService from '@/entities/topboxes/topboxes.service';
+import ApiClientService from '@/entities/api-client/api-client.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -118,6 +119,7 @@ new Vue({
     alertCardService: () => new AlertCardService(),
     apiInvokeLogService: () => new ApiInvokeLogService(),
     topboxesService: () => new TopboxesService(),
+    apiClientService: () => new ApiClientService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

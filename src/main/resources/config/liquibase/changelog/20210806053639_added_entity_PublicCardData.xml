@@ -3,7 +3,7 @@
     xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
     xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!--
@@ -84,7 +84,8 @@
         <loadData
                   file="config/liquibase/fake-data/public_card_data.csv"
                   separator=";"
-                  tableName="public_card_data">
+                  tableName="public_card_data"
+                  usePreparedStatements="true">
             <column name="id" type="numeric"/>
             <column name="title" type="string"/>
             <column name="requestid" type="numeric"/>
@@ -93,7 +94,7 @@
             <column name="finish" type="string"/>
             <column name="status" type="string"/>
             <column name="variables" type="clob"/>
-            <column name="created_time" type="${datetimeType}"/>
+            <column name="created_time" type="date"/>
             <column name="link" type="string"/>
             <column name="update_link" type="string"/>
             <column name="agree_num" type="numeric"/>

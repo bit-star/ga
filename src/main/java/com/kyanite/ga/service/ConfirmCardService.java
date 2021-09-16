@@ -46,27 +46,25 @@ public class ConfirmCardService {
 
         return confirmCardRepository
             .findById(confirmCard.getId())
-            .map(
-                existingConfirmCard -> {
-                    if (confirmCard.getText() != null) {
-                        existingConfirmCard.setText(confirmCard.getText());
-                    }
-                    if (confirmCard.getFinish() != null) {
-                        existingConfirmCard.setFinish(confirmCard.getFinish());
-                    }
-                    if (confirmCard.getUserId() != null) {
-                        existingConfirmCard.setUserId(confirmCard.getUserId());
-                    }
-                    if (confirmCard.getLink() != null) {
-                        existingConfirmCard.setLink(confirmCard.getLink());
-                    }
-                    if (confirmCard.getMd1() != null) {
-                        existingConfirmCard.setMd1(confirmCard.getMd1());
-                    }
-
-                    return existingConfirmCard;
+            .map(existingConfirmCard -> {
+                if (confirmCard.getText() != null) {
+                    existingConfirmCard.setText(confirmCard.getText());
                 }
-            )
+                if (confirmCard.getFinish() != null) {
+                    existingConfirmCard.setFinish(confirmCard.getFinish());
+                }
+                if (confirmCard.getUserId() != null) {
+                    existingConfirmCard.setUserId(confirmCard.getUserId());
+                }
+                if (confirmCard.getLink() != null) {
+                    existingConfirmCard.setLink(confirmCard.getLink());
+                }
+                if (confirmCard.getMd1() != null) {
+                    existingConfirmCard.setMd1(confirmCard.getMd1());
+                }
+
+                return existingConfirmCard;
+            })
             .map(confirmCardRepository::save);
     }
 

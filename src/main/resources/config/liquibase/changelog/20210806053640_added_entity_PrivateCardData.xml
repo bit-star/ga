@@ -3,7 +3,7 @@
     xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
     xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!--
@@ -54,13 +54,14 @@
         <loadData
                   file="config/liquibase/fake-data/private_card_data.csv"
                   separator=";"
-                  tableName="private_card_data">
+                  tableName="private_card_data"
+                  usePreparedStatements="true">
             <column name="id" type="numeric"/>
             <column name="agree" type="boolean"/>
             <column name="finish" type="string"/>
             <column name="authority" type="string"/>
             <column name="created_by_me" type="string"/>
-            <column name="update_time" type="${datetimeType}"/>
+            <column name="update_time" type="date"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

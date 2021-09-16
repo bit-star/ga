@@ -21,6 +21,7 @@ public class DdUser implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "unionid")
@@ -121,17 +122,18 @@ public class DdUser implements Serializable {
     private Set<Conversation> conversations = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
     public Long getId() {
-        return id;
+        return this.id;
+    }
+
+    public DdUser id(Long id) {
+        this.setId(id);
+        return this;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public DdUser id(Long id) {
-        this.id = id;
-        return this;
     }
 
     public String getUnionid() {
@@ -139,7 +141,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser unionid(String unionid) {
-        this.unionid = unionid;
+        this.setUnionid(unionid);
         return this;
     }
 
@@ -152,7 +154,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser remark(String remark) {
-        this.remark = remark;
+        this.setRemark(remark);
         return this;
     }
 
@@ -165,7 +167,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser userid(String userid) {
-        this.userid = userid;
+        this.setUserid(userid);
         return this;
     }
 
@@ -178,7 +180,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser isLeaderInDepts(String isLeaderInDepts) {
-        this.isLeaderInDepts = isLeaderInDepts;
+        this.setIsLeaderInDepts(isLeaderInDepts);
         return this;
     }
 
@@ -191,7 +193,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser isBoss(Boolean isBoss) {
-        this.isBoss = isBoss;
+        this.setIsBoss(isBoss);
         return this;
     }
 
@@ -204,7 +206,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser hiredDate(BigDecimal hiredDate) {
-        this.hiredDate = hiredDate;
+        this.setHiredDate(hiredDate);
         return this;
     }
 
@@ -217,7 +219,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser isSenior(Boolean isSenior) {
-        this.isSenior = isSenior;
+        this.setIsSenior(isSenior);
         return this;
     }
 
@@ -230,7 +232,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser tel(String tel) {
-        this.tel = tel;
+        this.setTel(tel);
         return this;
     }
 
@@ -243,7 +245,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser department(String department) {
-        this.department = department;
+        this.setDepartment(department);
         return this;
     }
 
@@ -256,7 +258,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser workPlace(String workPlace) {
-        this.workPlace = workPlace;
+        this.setWorkPlace(workPlace);
         return this;
     }
 
@@ -269,7 +271,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser orderInDepts(String orderInDepts) {
-        this.orderInDepts = orderInDepts;
+        this.setOrderInDepts(orderInDepts);
         return this;
     }
 
@@ -282,7 +284,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser mobile(String mobile) {
-        this.mobile = mobile;
+        this.setMobile(mobile);
         return this;
     }
 
@@ -295,7 +297,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser errmsg(String errmsg) {
-        this.errmsg = errmsg;
+        this.setErrmsg(errmsg);
         return this;
     }
 
@@ -308,7 +310,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser active(Boolean active) {
-        this.active = active;
+        this.setActive(active);
         return this;
     }
 
@@ -321,7 +323,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser avatar(String avatar) {
-        this.avatar = avatar;
+        this.setAvatar(avatar);
         return this;
     }
 
@@ -334,7 +336,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser isAdmin(Boolean isAdmin) {
-        this.isAdmin = isAdmin;
+        this.setIsAdmin(isAdmin);
         return this;
     }
 
@@ -347,7 +349,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser isHide(Boolean isHide) {
-        this.isHide = isHide;
+        this.setIsHide(isHide);
         return this;
     }
 
@@ -360,7 +362,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser jobnumber(String jobnumber) {
-        this.jobnumber = jobnumber;
+        this.setJobnumber(jobnumber);
         return this;
     }
 
@@ -373,7 +375,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser name(String name) {
-        this.name = name;
+        this.setName(name);
         return this;
     }
 
@@ -386,7 +388,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser extattr(String extattr) {
-        this.extattr = extattr;
+        this.setExtattr(extattr);
         return this;
     }
 
@@ -399,7 +401,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser stateCode(String stateCode) {
-        this.stateCode = stateCode;
+        this.setStateCode(stateCode);
         return this;
     }
 
@@ -412,7 +414,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser position(String position) {
-        this.position = position;
+        this.setPosition(position);
         return this;
     }
 
@@ -425,7 +427,7 @@ public class DdUser implements Serializable {
     }
 
     public DdUser roles(String roles) {
-        this.roles = roles;
+        this.setRoles(roles);
         return this;
     }
 
@@ -435,6 +437,16 @@ public class DdUser implements Serializable {
 
     public Set<PrivateCardData> getPrivateCardData() {
         return this.privateCardData;
+    }
+
+    public void setPrivateCardData(Set<PrivateCardData> privateCardData) {
+        if (this.privateCardData != null) {
+            this.privateCardData.forEach(i -> i.setDdUser(null));
+        }
+        if (privateCardData != null) {
+            privateCardData.forEach(i -> i.setDdUser(this));
+        }
+        this.privateCardData = privateCardData;
     }
 
     public DdUser privateCardData(Set<PrivateCardData> privateCardData) {
@@ -454,18 +466,18 @@ public class DdUser implements Serializable {
         return this;
     }
 
-    public void setPrivateCardData(Set<PrivateCardData> privateCardData) {
-        if (this.privateCardData != null) {
-            this.privateCardData.forEach(i -> i.setDdUser(null));
-        }
-        if (privateCardData != null) {
-            privateCardData.forEach(i -> i.setDdUser(this));
-        }
-        this.privateCardData = privateCardData;
-    }
-
     public Set<Approver> getApprovers() {
         return this.approvers;
+    }
+
+    public void setApprovers(Set<Approver> approvers) {
+        if (this.approvers != null) {
+            this.approvers.forEach(i -> i.setDdUser(null));
+        }
+        if (approvers != null) {
+            approvers.forEach(i -> i.setDdUser(this));
+        }
+        this.approvers = approvers;
     }
 
     public DdUser approvers(Set<Approver> approvers) {
@@ -485,18 +497,18 @@ public class DdUser implements Serializable {
         return this;
     }
 
-    public void setApprovers(Set<Approver> approvers) {
-        if (this.approvers != null) {
-            this.approvers.forEach(i -> i.setDdUser(null));
-        }
-        if (approvers != null) {
-            approvers.forEach(i -> i.setDdUser(this));
-        }
-        this.approvers = approvers;
-    }
-
     public Set<OperationResults> getOperationResults() {
         return this.operationResults;
+    }
+
+    public void setOperationResults(Set<OperationResults> operationResults) {
+        if (this.operationResults != null) {
+            this.operationResults.forEach(i -> i.setDdUser(null));
+        }
+        if (operationResults != null) {
+            operationResults.forEach(i -> i.setDdUser(this));
+        }
+        this.operationResults = operationResults;
     }
 
     public DdUser operationResults(Set<OperationResults> operationResults) {
@@ -516,18 +528,18 @@ public class DdUser implements Serializable {
         return this;
     }
 
-    public void setOperationResults(Set<OperationResults> operationResults) {
-        if (this.operationResults != null) {
-            this.operationResults.forEach(i -> i.setDdUser(null));
-        }
-        if (operationResults != null) {
-            operationResults.forEach(i -> i.setDdUser(this));
-        }
-        this.operationResults = operationResults;
-    }
-
     public Set<WorkflowInstance> getCreatedInstances() {
         return this.createdInstances;
+    }
+
+    public void setCreatedInstances(Set<WorkflowInstance> workflowInstances) {
+        if (this.createdInstances != null) {
+            this.createdInstances.forEach(i -> i.setCreator(null));
+        }
+        if (workflowInstances != null) {
+            workflowInstances.forEach(i -> i.setCreator(this));
+        }
+        this.createdInstances = workflowInstances;
     }
 
     public DdUser createdInstances(Set<WorkflowInstance> workflowInstances) {
@@ -547,18 +559,18 @@ public class DdUser implements Serializable {
         return this;
     }
 
-    public void setCreatedInstances(Set<WorkflowInstance> workflowInstances) {
-        if (this.createdInstances != null) {
-            this.createdInstances.forEach(i -> i.setCreator(null));
-        }
-        if (workflowInstances != null) {
-            workflowInstances.forEach(i -> i.setCreator(this));
-        }
-        this.createdInstances = workflowInstances;
-    }
-
     public Set<Conversation> getConversations() {
         return this.conversations;
+    }
+
+    public void setConversations(Set<Conversation> conversations) {
+        if (this.conversations != null) {
+            this.conversations.forEach(i -> i.removeDdUser(this));
+        }
+        if (conversations != null) {
+            conversations.forEach(i -> i.addDdUser(this));
+        }
+        this.conversations = conversations;
     }
 
     public DdUser conversations(Set<Conversation> conversations) {
@@ -576,16 +588,6 @@ public class DdUser implements Serializable {
         this.conversations.remove(conversation);
         conversation.getDdUsers().remove(this);
         return this;
-    }
-
-    public void setConversations(Set<Conversation> conversations) {
-        if (this.conversations != null) {
-            this.conversations.forEach(i -> i.removeDdUser(this));
-        }
-        if (conversations != null) {
-            conversations.forEach(i -> i.addDdUser(this));
-        }
-        this.conversations = conversations;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

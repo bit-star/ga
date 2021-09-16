@@ -21,6 +21,7 @@ public class WorkflowInstance implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Lob
@@ -71,17 +72,18 @@ public class WorkflowInstance implements Serializable {
     private Set<PublicCardData> publicCardData = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
     public Long getId() {
-        return id;
+        return this.id;
+    }
+
+    public WorkflowInstance id(Long id) {
+        this.setId(id);
+        return this;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public WorkflowInstance id(Long id) {
-        this.id = id;
-        return this;
     }
 
     public String getForm() {
@@ -89,7 +91,7 @@ public class WorkflowInstance implements Serializable {
     }
 
     public WorkflowInstance form(String form) {
-        this.form = form;
+        this.setForm(form);
         return this;
     }
 
@@ -102,7 +104,7 @@ public class WorkflowInstance implements Serializable {
     }
 
     public WorkflowInstance ddCardId(String ddCardId) {
-        this.ddCardId = ddCardId;
+        this.setDdCardId(ddCardId);
         return this;
     }
 
@@ -115,7 +117,7 @@ public class WorkflowInstance implements Serializable {
     }
 
     public WorkflowInstance title(String title) {
-        this.title = title;
+        this.setTitle(title);
         return this;
     }
 
@@ -128,7 +130,7 @@ public class WorkflowInstance implements Serializable {
     }
 
     public WorkflowInstance ddCardTemplateId(String ddCardTemplateId) {
-        this.ddCardTemplateId = ddCardTemplateId;
+        this.setDdCardTemplateId(ddCardTemplateId);
         return this;
     }
 
@@ -141,7 +143,7 @@ public class WorkflowInstance implements Serializable {
     }
 
     public WorkflowInstance ddCardCallBackKey(String ddCardCallBackKey) {
-        this.ddCardCallBackKey = ddCardCallBackKey;
+        this.setDdCardCallBackKey(ddCardCallBackKey);
         return this;
     }
 
@@ -154,7 +156,7 @@ public class WorkflowInstance implements Serializable {
     }
 
     public WorkflowInstance requestId(String requestId) {
-        this.requestId = requestId;
+        this.setRequestId(requestId);
         return this;
     }
 
@@ -167,7 +169,7 @@ public class WorkflowInstance implements Serializable {
     }
 
     public WorkflowInstance status(WorkflowInstanceStatus status) {
-        this.status = status;
+        this.setStatus(status);
         return this;
     }
 
@@ -177,6 +179,16 @@ public class WorkflowInstance implements Serializable {
 
     public Set<Approver> getApprovers() {
         return this.approvers;
+    }
+
+    public void setApprovers(Set<Approver> approvers) {
+        if (this.approvers != null) {
+            this.approvers.forEach(i -> i.setWorkflowInstance(null));
+        }
+        if (approvers != null) {
+            approvers.forEach(i -> i.setWorkflowInstance(this));
+        }
+        this.approvers = approvers;
     }
 
     public WorkflowInstance approvers(Set<Approver> approvers) {
@@ -196,18 +208,12 @@ public class WorkflowInstance implements Serializable {
         return this;
     }
 
-    public void setApprovers(Set<Approver> approvers) {
-        if (this.approvers != null) {
-            this.approvers.forEach(i -> i.setWorkflowInstance(null));
-        }
-        if (approvers != null) {
-            approvers.forEach(i -> i.setWorkflowInstance(this));
-        }
-        this.approvers = approvers;
-    }
-
     public WorkflowTemplate getWorkflowTemplate() {
         return this.workflowTemplate;
+    }
+
+    public void setWorkflowTemplate(WorkflowTemplate workflowTemplate) {
+        this.workflowTemplate = workflowTemplate;
     }
 
     public WorkflowInstance workflowTemplate(WorkflowTemplate workflowTemplate) {
@@ -215,12 +221,12 @@ public class WorkflowInstance implements Serializable {
         return this;
     }
 
-    public void setWorkflowTemplate(WorkflowTemplate workflowTemplate) {
-        this.workflowTemplate = workflowTemplate;
-    }
-
     public DdUser getCreator() {
         return this.creator;
+    }
+
+    public void setCreator(DdUser ddUser) {
+        this.creator = ddUser;
     }
 
     public WorkflowInstance creator(DdUser ddUser) {
@@ -228,12 +234,18 @@ public class WorkflowInstance implements Serializable {
         return this;
     }
 
-    public void setCreator(DdUser ddUser) {
-        this.creator = ddUser;
-    }
-
     public Set<PublicCardData> getPublicCardData() {
         return this.publicCardData;
+    }
+
+    public void setPublicCardData(Set<PublicCardData> publicCardData) {
+        if (this.publicCardData != null) {
+            this.publicCardData.forEach(i -> i.setWorkflowInstance(null));
+        }
+        if (publicCardData != null) {
+            publicCardData.forEach(i -> i.setWorkflowInstance(this));
+        }
+        this.publicCardData = publicCardData;
     }
 
     public WorkflowInstance publicCardData(Set<PublicCardData> publicCardData) {
@@ -251,16 +263,6 @@ public class WorkflowInstance implements Serializable {
         this.publicCardData.remove(publicCardData);
         publicCardData.setWorkflowInstance(null);
         return this;
-    }
-
-    public void setPublicCardData(Set<PublicCardData> publicCardData) {
-        if (this.publicCardData != null) {
-            this.publicCardData.forEach(i -> i.setWorkflowInstance(null));
-        }
-        if (publicCardData != null) {
-            publicCardData.forEach(i -> i.setWorkflowInstance(this));
-        }
-        this.publicCardData = publicCardData;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

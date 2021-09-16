@@ -23,6 +23,7 @@ public class PublicCardData implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "title")
@@ -105,17 +106,18 @@ public class PublicCardData implements Serializable {
     private Conversation conversation;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
     public Long getId() {
-        return id;
+        return this.id;
+    }
+
+    public PublicCardData id(Long id) {
+        this.setId(id);
+        return this;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public PublicCardData id(Long id) {
-        this.id = id;
-        return this;
     }
 
     public String getTitle() {
@@ -123,7 +125,7 @@ public class PublicCardData implements Serializable {
     }
 
     public PublicCardData title(String title) {
-        this.title = title;
+        this.setTitle(title);
         return this;
     }
 
@@ -136,7 +138,7 @@ public class PublicCardData implements Serializable {
     }
 
     public PublicCardData requestid(Long requestid) {
-        this.requestid = requestid;
+        this.setRequestid(requestid);
         return this;
     }
 
@@ -149,7 +151,7 @@ public class PublicCardData implements Serializable {
     }
 
     public PublicCardData workflowid(Long workflowid) {
-        this.workflowid = workflowid;
+        this.setWorkflowid(workflowid);
         return this;
     }
 
@@ -162,7 +164,7 @@ public class PublicCardData implements Serializable {
     }
 
     public PublicCardData valid(Boolean valid) {
-        this.valid = valid;
+        this.setValid(valid);
         return this;
     }
 
@@ -175,7 +177,7 @@ public class PublicCardData implements Serializable {
     }
 
     public PublicCardData finish(String finish) {
-        this.finish = finish;
+        this.setFinish(finish);
         return this;
     }
 
@@ -188,7 +190,7 @@ public class PublicCardData implements Serializable {
     }
 
     public PublicCardData status(PublicDataCardStatus status) {
-        this.status = status;
+        this.setStatus(status);
         return this;
     }
 
@@ -201,7 +203,7 @@ public class PublicCardData implements Serializable {
     }
 
     public PublicCardData variables(String variables) {
-        this.variables = variables;
+        this.setVariables(variables);
         return this;
     }
 
@@ -214,7 +216,7 @@ public class PublicCardData implements Serializable {
     }
 
     public PublicCardData createdTime(Instant createdTime) {
-        this.createdTime = createdTime;
+        this.setCreatedTime(createdTime);
         return this;
     }
 
@@ -227,7 +229,7 @@ public class PublicCardData implements Serializable {
     }
 
     public PublicCardData link(String link) {
-        this.link = link;
+        this.setLink(link);
         return this;
     }
 
@@ -240,7 +242,7 @@ public class PublicCardData implements Serializable {
     }
 
     public PublicCardData updateLink(String updateLink) {
-        this.updateLink = updateLink;
+        this.setUpdateLink(updateLink);
         return this;
     }
 
@@ -253,7 +255,7 @@ public class PublicCardData implements Serializable {
     }
 
     public PublicCardData agreeNum(Long agreeNum) {
-        this.agreeNum = agreeNum;
+        this.setAgreeNum(agreeNum);
         return this;
     }
 
@@ -266,7 +268,7 @@ public class PublicCardData implements Serializable {
     }
 
     public PublicCardData refuseNum(Long refuseNum) {
-        this.refuseNum = refuseNum;
+        this.setRefuseNum(refuseNum);
         return this;
     }
 
@@ -279,7 +281,7 @@ public class PublicCardData implements Serializable {
     }
 
     public PublicCardData sysFullJsonObjJson(String sysFullJsonObjJson) {
-        this.sysFullJsonObjJson = sysFullJsonObjJson;
+        this.setSysFullJsonObjJson(sysFullJsonObjJson);
         return this;
     }
 
@@ -292,7 +294,7 @@ public class PublicCardData implements Serializable {
     }
 
     public PublicCardData oaStatus(WorkflowInstanceStatus oaStatus) {
-        this.oaStatus = oaStatus;
+        this.setOaStatus(oaStatus);
         return this;
     }
 
@@ -304,17 +306,27 @@ public class PublicCardData implements Serializable {
         return this.topboxes;
     }
 
+    public void setTopboxes(Topboxes topboxes) {
+        this.topboxes = topboxes;
+    }
+
     public PublicCardData topboxes(Topboxes topboxes) {
         this.setTopboxes(topboxes);
         return this;
     }
 
-    public void setTopboxes(Topboxes topboxes) {
-        this.topboxes = topboxes;
-    }
-
     public Set<PrivateCardData> getPrivateCardData() {
         return this.privateCardData;
+    }
+
+    public void setPrivateCardData(Set<PrivateCardData> privateCardData) {
+        if (this.privateCardData != null) {
+            this.privateCardData.forEach(i -> i.setPublicCardData(null));
+        }
+        if (privateCardData != null) {
+            privateCardData.forEach(i -> i.setPublicCardData(this));
+        }
+        this.privateCardData = privateCardData;
     }
 
     public PublicCardData privateCardData(Set<PrivateCardData> privateCardData) {
@@ -334,18 +346,18 @@ public class PublicCardData implements Serializable {
         return this;
     }
 
-    public void setPrivateCardData(Set<PrivateCardData> privateCardData) {
-        if (this.privateCardData != null) {
-            this.privateCardData.forEach(i -> i.setPublicCardData(null));
-        }
-        if (privateCardData != null) {
-            privateCardData.forEach(i -> i.setPublicCardData(this));
-        }
-        this.privateCardData = privateCardData;
-    }
-
     public Set<OperationResults> getOperationResults() {
         return this.operationResults;
+    }
+
+    public void setOperationResults(Set<OperationResults> operationResults) {
+        if (this.operationResults != null) {
+            this.operationResults.forEach(i -> i.setPublicCardData(null));
+        }
+        if (operationResults != null) {
+            operationResults.forEach(i -> i.setPublicCardData(this));
+        }
+        this.operationResults = operationResults;
     }
 
     public PublicCardData operationResults(Set<OperationResults> operationResults) {
@@ -365,18 +377,18 @@ public class PublicCardData implements Serializable {
         return this;
     }
 
-    public void setOperationResults(Set<OperationResults> operationResults) {
-        if (this.operationResults != null) {
-            this.operationResults.forEach(i -> i.setPublicCardData(null));
-        }
-        if (operationResults != null) {
-            operationResults.forEach(i -> i.setPublicCardData(this));
-        }
-        this.operationResults = operationResults;
-    }
-
     public Set<ConfirmCard> getConfirmCards() {
         return this.confirmCards;
+    }
+
+    public void setConfirmCards(Set<ConfirmCard> confirmCards) {
+        if (this.confirmCards != null) {
+            this.confirmCards.forEach(i -> i.setPublicCardData(null));
+        }
+        if (confirmCards != null) {
+            confirmCards.forEach(i -> i.setPublicCardData(this));
+        }
+        this.confirmCards = confirmCards;
     }
 
     public PublicCardData confirmCards(Set<ConfirmCard> confirmCards) {
@@ -396,18 +408,18 @@ public class PublicCardData implements Serializable {
         return this;
     }
 
-    public void setConfirmCards(Set<ConfirmCard> confirmCards) {
-        if (this.confirmCards != null) {
-            this.confirmCards.forEach(i -> i.setPublicCardData(null));
-        }
-        if (confirmCards != null) {
-            confirmCards.forEach(i -> i.setPublicCardData(this));
-        }
-        this.confirmCards = confirmCards;
-    }
-
     public Set<AlertCard> getAlertCards() {
         return this.alertCards;
+    }
+
+    public void setAlertCards(Set<AlertCard> alertCards) {
+        if (this.alertCards != null) {
+            this.alertCards.forEach(i -> i.setPublicCardData(null));
+        }
+        if (alertCards != null) {
+            alertCards.forEach(i -> i.setPublicCardData(this));
+        }
+        this.alertCards = alertCards;
     }
 
     public PublicCardData alertCards(Set<AlertCard> alertCards) {
@@ -427,18 +439,12 @@ public class PublicCardData implements Serializable {
         return this;
     }
 
-    public void setAlertCards(Set<AlertCard> alertCards) {
-        if (this.alertCards != null) {
-            this.alertCards.forEach(i -> i.setPublicCardData(null));
-        }
-        if (alertCards != null) {
-            alertCards.forEach(i -> i.setPublicCardData(this));
-        }
-        this.alertCards = alertCards;
-    }
-
     public WorkflowInstance getWorkflowInstance() {
         return this.workflowInstance;
+    }
+
+    public void setWorkflowInstance(WorkflowInstance workflowInstance) {
+        this.workflowInstance = workflowInstance;
     }
 
     public PublicCardData workflowInstance(WorkflowInstance workflowInstance) {
@@ -446,21 +452,17 @@ public class PublicCardData implements Serializable {
         return this;
     }
 
-    public void setWorkflowInstance(WorkflowInstance workflowInstance) {
-        this.workflowInstance = workflowInstance;
-    }
-
     public Conversation getConversation() {
         return this.conversation;
+    }
+
+    public void setConversation(Conversation conversation) {
+        this.conversation = conversation;
     }
 
     public PublicCardData conversation(Conversation conversation) {
         this.setConversation(conversation);
         return this;
-    }
-
-    public void setConversation(Conversation conversation) {
-        this.conversation = conversation;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

@@ -46,24 +46,22 @@ public class AlertCardService {
 
         return alertCardRepository
             .findById(alertCard.getId())
-            .map(
-                existingAlertCard -> {
-                    if (alertCard.getText() != null) {
-                        existingAlertCard.setText(alertCard.getText());
-                    }
-                    if (alertCard.getUserId() != null) {
-                        existingAlertCard.setUserId(alertCard.getUserId());
-                    }
-                    if (alertCard.getLink() != null) {
-                        existingAlertCard.setLink(alertCard.getLink());
-                    }
-                    if (alertCard.getMd1() != null) {
-                        existingAlertCard.setMd1(alertCard.getMd1());
-                    }
-
-                    return existingAlertCard;
+            .map(existingAlertCard -> {
+                if (alertCard.getText() != null) {
+                    existingAlertCard.setText(alertCard.getText());
                 }
-            )
+                if (alertCard.getUserId() != null) {
+                    existingAlertCard.setUserId(alertCard.getUserId());
+                }
+                if (alertCard.getLink() != null) {
+                    existingAlertCard.setLink(alertCard.getLink());
+                }
+                if (alertCard.getMd1() != null) {
+                    existingAlertCard.setMd1(alertCard.getMd1());
+                }
+
+                return existingAlertCard;
+            })
             .map(alertCardRepository::save);
     }
 

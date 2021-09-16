@@ -46,51 +46,49 @@ public class WorkflowTemplateService {
 
         return workflowTemplateRepository
             .findById(workflowTemplate.getId())
-            .map(
-                existingWorkflowTemplate -> {
-                    if (workflowTemplate.getFormId() != null) {
-                        existingWorkflowTemplate.setFormId(workflowTemplate.getFormId());
-                    }
-                    if (workflowTemplate.getWorkflowId() != null) {
-                        existingWorkflowTemplate.setWorkflowId(workflowTemplate.getWorkflowId());
-                    }
-                    if (workflowTemplate.getWorkflowName() != null) {
-                        existingWorkflowTemplate.setWorkflowName(workflowTemplate.getWorkflowName());
-                    }
-                    if (workflowTemplate.getWorkflowTypeId() != null) {
-                        existingWorkflowTemplate.setWorkflowTypeId(workflowTemplate.getWorkflowTypeId());
-                    }
-                    if (workflowTemplate.getWorkflowTypeName() != null) {
-                        existingWorkflowTemplate.setWorkflowTypeName(workflowTemplate.getWorkflowTypeName());
-                    }
-                    if (workflowTemplate.getDdGroupTemplateId() != null) {
-                        existingWorkflowTemplate.setDdGroupTemplateId(workflowTemplate.getDdGroupTemplateId());
-                    }
-                    if (workflowTemplate.getDdCardTemplateId() != null) {
-                        existingWorkflowTemplate.setDdCardTemplateId(workflowTemplate.getDdCardTemplateId());
-                    }
-                    if (workflowTemplate.getDdCardCallBackKey() != null) {
-                        existingWorkflowTemplate.setDdCardCallBackKey(workflowTemplate.getDdCardCallBackKey());
-                    }
-                    if (workflowTemplate.getDdRobotCode() != null) {
-                        existingWorkflowTemplate.setDdRobotCode(workflowTemplate.getDdRobotCode());
-                    }
-                    if (workflowTemplate.geteMobileCreatePageUrl() != null) {
-                        existingWorkflowTemplate.seteMobileCreatePageUrl(workflowTemplate.geteMobileCreatePageUrl());
-                    }
-                    if (workflowTemplate.getChatidField() != null) {
-                        existingWorkflowTemplate.setChatidField(workflowTemplate.getChatidField());
-                    }
-                    if (workflowTemplate.getSourceField() != null) {
-                        existingWorkflowTemplate.setSourceField(workflowTemplate.getSourceField());
-                    }
-                    if (workflowTemplate.getCommentsField() != null) {
-                        existingWorkflowTemplate.setCommentsField(workflowTemplate.getCommentsField());
-                    }
-
-                    return existingWorkflowTemplate;
+            .map(existingWorkflowTemplate -> {
+                if (workflowTemplate.getFormId() != null) {
+                    existingWorkflowTemplate.setFormId(workflowTemplate.getFormId());
                 }
-            )
+                if (workflowTemplate.getWorkflowId() != null) {
+                    existingWorkflowTemplate.setWorkflowId(workflowTemplate.getWorkflowId());
+                }
+                if (workflowTemplate.getWorkflowName() != null) {
+                    existingWorkflowTemplate.setWorkflowName(workflowTemplate.getWorkflowName());
+                }
+                if (workflowTemplate.getWorkflowTypeId() != null) {
+                    existingWorkflowTemplate.setWorkflowTypeId(workflowTemplate.getWorkflowTypeId());
+                }
+                if (workflowTemplate.getWorkflowTypeName() != null) {
+                    existingWorkflowTemplate.setWorkflowTypeName(workflowTemplate.getWorkflowTypeName());
+                }
+                if (workflowTemplate.getDdGroupTemplateId() != null) {
+                    existingWorkflowTemplate.setDdGroupTemplateId(workflowTemplate.getDdGroupTemplateId());
+                }
+                if (workflowTemplate.getDdCardTemplateId() != null) {
+                    existingWorkflowTemplate.setDdCardTemplateId(workflowTemplate.getDdCardTemplateId());
+                }
+                if (workflowTemplate.getDdCardCallBackKey() != null) {
+                    existingWorkflowTemplate.setDdCardCallBackKey(workflowTemplate.getDdCardCallBackKey());
+                }
+                if (workflowTemplate.getDdRobotCode() != null) {
+                    existingWorkflowTemplate.setDdRobotCode(workflowTemplate.getDdRobotCode());
+                }
+                if (workflowTemplate.geteMobileCreatePageUrl() != null) {
+                    existingWorkflowTemplate.seteMobileCreatePageUrl(workflowTemplate.geteMobileCreatePageUrl());
+                }
+                if (workflowTemplate.getChatidField() != null) {
+                    existingWorkflowTemplate.setChatidField(workflowTemplate.getChatidField());
+                }
+                if (workflowTemplate.getSourceField() != null) {
+                    existingWorkflowTemplate.setSourceField(workflowTemplate.getSourceField());
+                }
+                if (workflowTemplate.getCommentsField() != null) {
+                    existingWorkflowTemplate.setCommentsField(workflowTemplate.getCommentsField());
+                }
+
+                return existingWorkflowTemplate;
+            })
             .map(workflowTemplateRepository::save);
     }
 

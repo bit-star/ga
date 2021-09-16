@@ -46,15 +46,13 @@ public class GroupMembersService {
 
         return groupMembersRepository
             .findById(groupMembers.getId())
-            .map(
-                existingGroupMembers -> {
-                    if (groupMembers.getGroupRole() != null) {
-                        existingGroupMembers.setGroupRole(groupMembers.getGroupRole());
-                    }
-
-                    return existingGroupMembers;
+            .map(existingGroupMembers -> {
+                if (groupMembers.getGroupRole() != null) {
+                    existingGroupMembers.setGroupRole(groupMembers.getGroupRole());
                 }
-            )
+
+                return existingGroupMembers;
+            })
             .map(groupMembersRepository::save);
     }
 

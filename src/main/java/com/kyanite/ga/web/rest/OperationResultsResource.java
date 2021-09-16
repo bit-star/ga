@@ -109,7 +109,7 @@ public class OperationResultsResource {
      * or with status {@code 500 (Internal Server Error)} if the operationResults couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @PatchMapping(value = "/operation-results/{id}", consumes = "application/merge-patch+json")
+    @PatchMapping(value = "/operation-results/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<OperationResults> partialUpdateOperationResults(
         @PathVariable(value = "id", required = false) final Long id,
         @RequestBody OperationResults operationResults

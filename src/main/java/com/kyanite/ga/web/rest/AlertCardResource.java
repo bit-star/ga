@@ -105,7 +105,7 @@ public class AlertCardResource {
      * or with status {@code 500 (Internal Server Error)} if the alertCard couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @PatchMapping(value = "/alert-cards/{id}", consumes = "application/merge-patch+json")
+    @PatchMapping(value = "/alert-cards/{id}", consumes = { "application/json", "application/merge-patch+json" })
     public ResponseEntity<AlertCard> partialUpdateAlertCard(
         @PathVariable(value = "id", required = false) final Long id,
         @RequestBody AlertCard alertCard

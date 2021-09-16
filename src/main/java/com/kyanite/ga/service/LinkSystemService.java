@@ -46,15 +46,13 @@ public class LinkSystemService {
 
         return linkSystemRepository
             .findById(linkSystem.getId())
-            .map(
-                existingLinkSystem -> {
-                    if (linkSystem.getName() != null) {
-                        existingLinkSystem.setName(linkSystem.getName());
-                    }
-
-                    return existingLinkSystem;
+            .map(existingLinkSystem -> {
+                if (linkSystem.getName() != null) {
+                    existingLinkSystem.setName(linkSystem.getName());
                 }
-            )
+
+                return existingLinkSystem;
+            })
             .map(linkSystemRepository::save);
     }
 

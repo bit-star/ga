@@ -2121,6 +2121,10 @@
             <font-awesome-icon icon="asterisk" />
             <span v-text="$t('global.menu.entities.topboxes')">Topboxes</span>
           </b-dropdown-item>
+          <b-dropdown-item to="/api-client">
+            <font-awesome-icon icon="asterisk" />
+            <span v-text="$t('global.menu.entities.apiClient')">Api Client</span>
+          </b-dropdown-item>
           <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
         </b-nav-item-dropdown>
         <b-nav-item-dropdown

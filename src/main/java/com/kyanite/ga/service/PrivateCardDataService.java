@@ -46,27 +46,25 @@ public class PrivateCardDataService {
 
         return privateCardDataRepository
             .findById(privateCardData.getId())
-            .map(
-                existingPrivateCardData -> {
-                    if (privateCardData.getAgree() != null) {
-                        existingPrivateCardData.setAgree(privateCardData.getAgree());
-                    }
-                    if (privateCardData.getFinish() != null) {
-                        existingPrivateCardData.setFinish(privateCardData.getFinish());
-                    }
-                    if (privateCardData.getAuthority() != null) {
-                        existingPrivateCardData.setAuthority(privateCardData.getAuthority());
-                    }
-                    if (privateCardData.getCreatedByMe() != null) {
-                        existingPrivateCardData.setCreatedByMe(privateCardData.getCreatedByMe());
-                    }
-                    if (privateCardData.getUpdateTime() != null) {
-                        existingPrivateCardData.setUpdateTime(privateCardData.getUpdateTime());
-                    }
-
-                    return existingPrivateCardData;
+            .map(existingPrivateCardData -> {
+                if (privateCardData.getAgree() != null) {
+                    existingPrivateCardData.setAgree(privateCardData.getAgree());
                 }
-            )
+                if (privateCardData.getFinish() != null) {
+                    existingPrivateCardData.setFinish(privateCardData.getFinish());
+                }
+                if (privateCardData.getAuthority() != null) {
+                    existingPrivateCardData.setAuthority(privateCardData.getAuthority());
+                }
+                if (privateCardData.getCreatedByMe() != null) {
+                    existingPrivateCardData.setCreatedByMe(privateCardData.getCreatedByMe());
+                }
+                if (privateCardData.getUpdateTime() != null) {
+                    existingPrivateCardData.setUpdateTime(privateCardData.getUpdateTime());
+                }
+
+                return existingPrivateCardData;
+            })
             .map(privateCardDataRepository::save);
     }
 

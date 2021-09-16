@@ -20,6 +20,7 @@ public class ApiInvokeLog implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "login")
@@ -54,17 +55,18 @@ public class ApiInvokeLog implements Serializable {
     private Boolean ok;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
     public Long getId() {
-        return id;
+        return this.id;
+    }
+
+    public ApiInvokeLog id(Long id) {
+        this.setId(id);
+        return this;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public ApiInvokeLog id(Long id) {
-        this.id = id;
-        return this;
     }
 
     public String getLogin() {
@@ -72,7 +74,7 @@ public class ApiInvokeLog implements Serializable {
     }
 
     public ApiInvokeLog login(String login) {
-        this.login = login;
+        this.setLogin(login);
         return this;
     }
 
@@ -85,7 +87,7 @@ public class ApiInvokeLog implements Serializable {
     }
 
     public ApiInvokeLog apiName(String apiName) {
-        this.apiName = apiName;
+        this.setApiName(apiName);
         return this;
     }
 
@@ -98,7 +100,7 @@ public class ApiInvokeLog implements Serializable {
     }
 
     public ApiInvokeLog method(HttpMethod method) {
-        this.method = method;
+        this.setMethod(method);
         return this;
     }
 
@@ -111,7 +113,7 @@ public class ApiInvokeLog implements Serializable {
     }
 
     public ApiInvokeLog direction(ApiDirection direction) {
-        this.direction = direction;
+        this.setDirection(direction);
         return this;
     }
 
@@ -124,7 +126,7 @@ public class ApiInvokeLog implements Serializable {
     }
 
     public ApiInvokeLog httpStatusCode(Integer httpStatusCode) {
-        this.httpStatusCode = httpStatusCode;
+        this.setHttpStatusCode(httpStatusCode);
         return this;
     }
 
@@ -137,7 +139,7 @@ public class ApiInvokeLog implements Serializable {
     }
 
     public ApiInvokeLog time(Instant time) {
-        this.time = time;
+        this.setTime(time);
         return this;
     }
 
@@ -150,7 +152,7 @@ public class ApiInvokeLog implements Serializable {
     }
 
     public ApiInvokeLog reqeustData(String reqeustData) {
-        this.reqeustData = reqeustData;
+        this.setReqeustData(reqeustData);
         return this;
     }
 
@@ -163,7 +165,7 @@ public class ApiInvokeLog implements Serializable {
     }
 
     public ApiInvokeLog responseData(String responseData) {
-        this.responseData = responseData;
+        this.setResponseData(responseData);
         return this;
     }
 
@@ -176,7 +178,7 @@ public class ApiInvokeLog implements Serializable {
     }
 
     public ApiInvokeLog ok(Boolean ok) {
-        this.ok = ok;
+        this.setOk(ok);
         return this;
     }
 

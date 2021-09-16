@@ -21,6 +21,7 @@ public class OperationResults implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Enumerated(EnumType.STRING)
@@ -52,17 +53,18 @@ public class OperationResults implements Serializable {
     private PublicCardData publicCardData;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
     public Long getId() {
-        return id;
+        return this.id;
+    }
+
+    public OperationResults id(Long id) {
+        this.setId(id);
+        return this;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public OperationResults id(Long id) {
-        this.id = id;
-        return this;
     }
 
     public OperationType getOperationType() {
@@ -70,7 +72,7 @@ public class OperationResults implements Serializable {
     }
 
     public OperationResults operationType(OperationType operationType) {
-        this.operationType = operationType;
+        this.setOperationType(operationType);
         return this;
     }
 
@@ -83,7 +85,7 @@ public class OperationResults implements Serializable {
     }
 
     public OperationResults time(Instant time) {
-        this.time = time;
+        this.setTime(time);
         return this;
     }
 
@@ -96,7 +98,7 @@ public class OperationResults implements Serializable {
     }
 
     public OperationResults text(String text) {
-        this.text = text;
+        this.setText(text);
         return this;
     }
 
@@ -109,7 +111,7 @@ public class OperationResults implements Serializable {
     }
 
     public OperationResults operationSource(OperationSource operationSource) {
-        this.operationSource = operationSource;
+        this.setOperationSource(operationSource);
         return this;
     }
 
@@ -121,26 +123,26 @@ public class OperationResults implements Serializable {
         return this.ddUser;
     }
 
+    public void setDdUser(DdUser ddUser) {
+        this.ddUser = ddUser;
+    }
+
     public OperationResults ddUser(DdUser ddUser) {
         this.setDdUser(ddUser);
         return this;
-    }
-
-    public void setDdUser(DdUser ddUser) {
-        this.ddUser = ddUser;
     }
 
     public PublicCardData getPublicCardData() {
         return this.publicCardData;
     }
 
+    public void setPublicCardData(PublicCardData publicCardData) {
+        this.publicCardData = publicCardData;
+    }
+
     public OperationResults publicCardData(PublicCardData publicCardData) {
         this.setPublicCardData(publicCardData);
         return this;
-    }
-
-    public void setPublicCardData(PublicCardData publicCardData) {
-        this.publicCardData = publicCardData;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

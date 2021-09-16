@@ -48,27 +48,25 @@ public class TopboxesService {
 
         return topboxesRepository
             .findById(topboxes.getId())
-            .map(
-                existingTopboxes -> {
-                    if (topboxes.getText() != null) {
-                        existingTopboxes.setText(topboxes.getText());
-                    }
-                    if (topboxes.getLink() != null) {
-                        existingTopboxes.setLink(topboxes.getLink());
-                    }
-                    if (topboxes.getCardId() != null) {
-                        existingTopboxes.setCardId(topboxes.getCardId());
-                    }
-                    if (topboxes.getAuxiliary() != null) {
-                        existingTopboxes.setAuxiliary(topboxes.getAuxiliary());
-                    }
-                    if (topboxes.getOpen() != null) {
-                        existingTopboxes.setOpen(topboxes.getOpen());
-                    }
-
-                    return existingTopboxes;
+            .map(existingTopboxes -> {
+                if (topboxes.getText() != null) {
+                    existingTopboxes.setText(topboxes.getText());
                 }
-            )
+                if (topboxes.getLink() != null) {
+                    existingTopboxes.setLink(topboxes.getLink());
+                }
+                if (topboxes.getCardId() != null) {
+                    existingTopboxes.setCardId(topboxes.getCardId());
+                }
+                if (topboxes.getAuxiliary() != null) {
+                    existingTopboxes.setAuxiliary(topboxes.getAuxiliary());
+                }
+                if (topboxes.getOpen() != null) {
+                    existingTopboxes.setOpen(topboxes.getOpen());
+                }
+
+                return existingTopboxes;
+            })
             .map(topboxesRepository::save);
     }
 
