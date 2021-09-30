@@ -1,0 +1,270 @@
+
+
+entity LinkSystem {
+   name String
+}
+
+
+
+
+entity WorkflowTemplate {
+  formId	String	//表单id
+  workflowId	String	//流程id
+  workflowName	String	//流程名称
+  workflowTypeId	String	//流程类型
+  workflowTypeName	String	//流程类型名称
+  ddGroupTemplateId String //
+  ddCardTemplateId String //
+  ddConfirmCardTemplateId String //
+  ddAlertCardTemplateId String //
+  ddTopCardTemplateId String //
+  ddCardCallBackKey String //
+  ddConfirmCardCallBackKey String //
+  ddTopCardCallBackKey String //
+  ddRobotCode String
+  //3个约定字段
+  chatidField String
+  sourceField String
+}
+
+
+entity FormField {
+	fieldName String
+    oaId String
+    fielddbtype String
+    fieldhtmltype String
+    labelName String
+    detailtable String
+    show Boolean
+    isCardField Boolean
+    isOaField Boolean
+    orderNum Integer
+}
+
+entity OperationResults{
+	operationType OperationType
+    time Instant
+    text String
+    operationSource OperationSource
+}
+
+
+
+entity Approver {
+	approverRole ApproverRole
+    oaUserId Long
+    email String
+}
+
+
+enum OperationSource{
+	Card , OA  , H5
+}
+
+
+enum ApproverRole {
+	Approver , Proposer 
+}
+
+
+
+enum OperationType {
+	Agree , Refuse , Comment 
+}
+
+enum PublicDataCardStatus{
+	Effect , Invalid , Archive
+}
+
+enum WorkflowInstanceStatus{
+	Launch , Refuse , Agree , Archive 
+}
+
+
+entity ApiClient{
+	name String,
+	apiKey String,
+    apiSecret String,
+    enable Boolean
+}
+
+
+entity Conversation {
+  @Id
+  id String
+  name String
+  title String,
+  owner String,
+  ownerUserId String,
+  chatid String,
+  openConversationId String,
+  conversationTag Integer,
+  useridlist TextBlob,
+  uuid String,
+  icon String, 
+  showHistoryType String,
+  searchable String,
+  validationType String,
+  chatBannedType String,
+  mentionAllAuthority String,
+  managementType String,
+  templateId String,
+  officialGroup Boolean,
+  enableScenegroup Boolean,
+  groupUrl String
+  time Instant
+
+}
+
+
+
+
+entity WorkflowInstance {
+	form TextBlob,
+    title String
+    requestId String
+    status WorkflowInstanceStatus
+}
+
+
+entity Topboxes {
+	@Id
+    id String,
+    text String,
+	link String,
+    cardId String,
+    auxiliary String,
+    open Boolean,
+    expirationTime Instant
+}
+
+entity PublicCardData {
+	//卡片自身的属性
+    @Id
+    id String,
+    title String,
+	requestid Long,
+    workflowid Long,
+    valid Boolean
+    finish String
+    status PublicDataCardStatus
+    variables TextBlob
+    createdTime Instant
+    link String
+    updateLink String
+    refuseUsers String
+    approvedUsers String
+    unapprovedUser String
+    /**
+    * markdown 数据表单数据
+    **/
+    formFields TextBlob
+    //OA的业务属性
+    agreeNum Long
+    refuseNum Long
+    oaStatus WorkflowInstanceStatus
+
+}
+
+entity PrivateCardData {
+    agree Boolean
+    finish String
+    authority String
+    createdByMe String
+    updateTime Instant
+}
+
+entity ConfirmCard{
+	@Id
+    id String
+	text String
+    finish String
+    userId String
+    link String
+    md1 String
+}
+
+entity AlertCard{
+	@Id
+    id String
+	text String
+    userId String
+    link String
+    md1 String
+}
+
+entity ApiInvokeLog{
+	login String,
+	apiName String,
+    method HttpMethod,
+    direction ApiDirection,
+    httpStatusCode Integer,
+    time Instant,
+    reqeustData TextBlob,
+    responseData TextBlob,
+    ok Boolean
+}
+
+
+enum ApiDirection{
+	Enter , Out
+}
+
+enum HttpMethod{
+	GET, HEAD, POST, PUT, PATCH, DELETE, OPTIONS, TRACE
+}
+
+
+enum ItemType {
+	CostBudget,
+    ContractAmount
+}
+
+enum TypesOfFee {
+	InternalWork,   IT , DueDiligence, 
+    FDueDiligence , TaxDueDiligence, BrandPromotion , 
+    BusinessActivity , Other , InvestorRelations
+    HeadhuntingFee, Marketing , InvestmentBankingFee
+}
+
+
+relationship  OneToMany {
+	PublicCardData to PrivateCardData
+    Conversation{publicCardData} to PublicCardData{conversation(name)}
+    Conversation{topboxes} to Topboxes{conversation(name)}
+    LinkSystem{workflowTemplates} to WorkflowTemplate{linkSystem(name)}
+    WorkflowTemplate{formFields} to FormField{workflowTemplate(workflowName)}
+    WorkflowInstance{approvers(email)} to Approver{WorkflowInstance}
+    PublicCardData to OperationResults
+    PublicCardData to ConfirmCard
+    PublicCardData to AlertCard
+    
+}
+
+
+
+relationship  ManyToOne {
+	PrivateCardData{user(login)} to  User{privateCardDatas} 
+	WorkflowInstance{workflowTemplate(workflowName)} to WorkflowTemplate{WorkflowInstances(title)}
+    PublicCardData{WorkflowInstance(title)} to WorkflowInstance{publicCardDatas}
+    WorkflowInstance{creator(login)} to User{createdInstance}
+    ApiClient to LinkSystem
+    Approver{user(login)} to  User{approvers}
+    OperationResults{user(login)} to    User{operationResults} 
+}
+
+relationship  ManyToMany {
+    Conversation{user(login)} to User{conversation(name)}
+}
+
+
+relationship  OneToOne {
+	PublicCardData to Topboxes
+}
+
+
+
+
+
+service all with serviceClass
+
